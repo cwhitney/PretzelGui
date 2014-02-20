@@ -1,4 +1,0 @@
-PanelGui
-========
-
-PanelGui for cinder

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>32DA71C6-82ED-4F1E-BA46-F1DA8028DFDE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BasicSample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>711F7DAE-2B61-40DC-849F-CA86C82EF550</key>
+		<string>git://github.com/cinder/Cinder.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>blocks/Cinder-Panels/samples/BasicSample/xcode/BasicSample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>711F7DAE-2B61-40DC-849F-CA86C82EF550</key>
+		<string>../../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>git://github.com/cinder/Cinder.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>711F7DAE-2B61-40DC-849F-CA86C82EF550</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>711F7DAE-2B61-40DC-849F-CA86C82EF550</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Cinder_dev</string>
+		</dict>
+	</array>
+</dict>
+</plist>
