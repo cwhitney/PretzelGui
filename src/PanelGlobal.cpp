@@ -27,9 +27,9 @@ namespace Panel {
 	void PanelGlobal::renderTextInternal(std::string text, ci::Vec2i pos, int align){
 		if (!guiFont){
 #ifdef _WIN32
-			ci::Font tmp("Arial", 16 * (96 / 72));
+			ci::Font tmp("Arial", 12);
 #else
-			ci::Font tmp("Arial", 16);
+			ci::Font tmp("Arial", 12);
 #endif
 			guiFont = ci::gl::TextureFont::create(tmp);
 		}

@@ -53,7 +53,7 @@ class PanelGui : public PanelRow {
 		//PanelButton *newButton = new PanelButton(this, labelText);
 		newButton->signalOnPress.connect(std::bind(callback, callbackObject));
 
-		console() << "adding a button" << endl;
+		cinder::app::console() << "adding a button" << std::endl;
 	}
 
   private:

@@ -1,12 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <cinder>
   <block 
   	name="Pretzel GUI" 
   	id="com.sharkbox.pretzel"
   	author="Charlie Whitney"
   	summary="A gui alternative built from the ground up for Cinder"
+	git="https://github.com/cwhitney/PretzelGui"
   	>
-  
-	<includePath>src</includePath>
+	<supports os="macosx" />
+	<supports os="msw" />
 
+	<sourcePattern>src/*.cpp</sourcePattern>
+	<headerPattern>src/*.h</headerPattern>
+
+	<includePath>src</includePath>
+	
+	<asset>assets/default_skin.png</asset>
   </block>
 </cinder>

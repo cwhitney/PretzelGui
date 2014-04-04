@@ -5,23 +5,27 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>32DA71C6-82ED-4F1E-BA46-F1DA8028DFDE</string>
+	<string>95C6C89E-C07E-4754-B519-B8EE68254BB7</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BasicSample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>21297169-E937-4856-8ABD-4CDC7E8F1D33</key>
+		<string>ssh://github.com/cwhitney/PretzelGui.git</string>
 		<key>711F7DAE-2B61-40DC-849F-CA86C82EF550</key>
 		<string>git://github.com/cinder/Cinder.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>blocks/Cinder-Panels/samples/BasicSample/xcode/BasicSample.xcodeproj/project.xcworkspace</string>
+	<string>blocks/PretzelGui/samples/BasicSample/xcode/BasicSample.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>21297169-E937-4856-8ABD-4CDC7E8F1D33</key>
+		<string>../../../../..</string>
 		<key>711F7DAE-2B61-40DC-849F-CA86C82EF550</key>
 		<string>../../../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>git://github.com/cinder/Cinder.git</string>
+	<string>ssh://github.com/cwhitney/PretzelGui.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -35,6 +39,14 @@
 			<string>711F7DAE-2B61-40DC-849F-CA86C82EF550</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Cinder_dev</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>21297169-E937-4856-8ABD-4CDC7E8F1D33</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PretzelGui</string>
 		</dict>
 	</array>
 </dict>
