@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <cinder>
   <block 
-  	name="Pretzel GUI" 
+  	name="PretzelGUI" 
   	id="com.sharkbox.pretzel"
   	author="Charlie Whitney"
   	summary="A gui alternative built from the ground up for Cinder"

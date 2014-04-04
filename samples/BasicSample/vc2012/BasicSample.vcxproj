@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -11,7 +10,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{60AFAAA2-790F-434E-8963-C4B13ADD3530}</ProjectGuid>
+    <ProjectGuid>{1240D4B9-140F-4C96-9D4E-DF2CA549F880}</ProjectGuid>
     <RootNamespace>BasicSample</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
@@ -50,7 +49,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\..\src;..\include;..\..\..\..\..\\include;..\..\..\..\..\\boost</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;"..\..\..\..\..\\include";"..\..\..\..\..\\boost";..\blocks\PretzelGUI\src</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NOMINMAX;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -76,7 +75,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;"..\..\..\..\..\\include";"..\..\..\..\..\\boost"</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;"..\..\..\..\..\\include";"..\..\..\..\..\\boost";..\blocks\PretzelGUI\src</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;NOMINMAX;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader />
@@ -107,28 +106,28 @@
     <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\BasePanel.cpp" />
-    <ClCompile Include="..\..\..\src\PanelButton.cpp" />
-    <ClCompile Include="..\..\..\src\PanelGlobal.cpp" />
-    <ClCompile Include="..\..\..\src\PanelGui.cpp" />
-    <ClCompile Include="..\..\..\src\PanelLabel.cpp" />
-    <ClCompile Include="..\..\..\src\PanelRow.cpp" />
-    <ClCompile Include="..\..\..\src\PanelSaveLoad.cpp" />
-    <ClCompile Include="..\..\..\src\PanelSlider.cpp" />
-    <ClCompile Include="..\..\..\src\PanelToggle.cpp" />
     <ClCompile Include="..\src\BasicSampleApp.cpp" />
+    <ClCompile Include="..\blocks\PretzelGUI\src\BasePretzel.cpp" />
+    <ClCompile Include="..\blocks\PretzelGUI\src\PretzelButton.cpp" />
+    <ClCompile Include="..\blocks\PretzelGUI\src\PretzelGlobal.cpp" />
+    <ClCompile Include="..\blocks\PretzelGUI\src\PretzelGui.cpp" />
+    <ClCompile Include="..\blocks\PretzelGUI\src\PretzelLabel.cpp" />
+    <ClCompile Include="..\blocks\PretzelGUI\src\PretzelRow.cpp" />
+    <ClCompile Include="..\blocks\PretzelGUI\src\PretzelSaveLoad.cpp" />
+    <ClCompile Include="..\blocks\PretzelGUI\src\PretzelSlider.cpp" />
+    <ClCompile Include="..\blocks\PretzelGUI\src\PretzelToggle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\src\BasePanel.h" />
-    <ClInclude Include="..\..\..\src\PanelButton.h" />
-    <ClInclude Include="..\..\..\src\PanelGlobal.h" />
-    <ClInclude Include="..\..\..\src\PanelGui.h" />
-    <ClInclude Include="..\..\..\src\PanelLabel.h" />
-    <ClInclude Include="..\..\..\src\PanelRow.h" />
-    <ClInclude Include="..\..\..\src\PanelSaveLoad.h" />
-    <ClInclude Include="..\..\..\src\PanelSlider.h" />
-    <ClInclude Include="..\..\..\src\PanelToggle.h" />
     <ClInclude Include="..\include\Resources.h" />
+    <ClInclude Include="..\blocks\PretzelGUI\src\BasePretzel.h" />
+    <ClInclude Include="..\blocks\PretzelGUI\src\PretzelButton.h" />
+    <ClInclude Include="..\blocks\PretzelGUI\src\PretzelGlobal.h" />
+    <ClInclude Include="..\blocks\PretzelGUI\src\PretzelGui.h" />
+    <ClInclude Include="..\blocks\PretzelGUI\src\PretzelLabel.h" />
+    <ClInclude Include="..\blocks\PretzelGUI\src\PretzelRow.h" />
+    <ClInclude Include="..\blocks\PretzelGUI\src\PretzelSaveLoad.h" />
+    <ClInclude Include="..\blocks\PretzelGUI\src\PretzelSlider.h" />
+    <ClInclude Include="..\blocks\PretzelGUI\src\PretzelToggle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
