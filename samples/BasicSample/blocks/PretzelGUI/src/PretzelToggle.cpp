@@ -15,10 +15,9 @@ PretzelToggle::PretzelToggle(BasePretzel *parent, std::string label, bool *value
 
 void PretzelToggle::draw() {
 	gl::pushMatrices(); {
-		gl::translate(mOffset + Vec2f(5, 0));
+		gl::translate(mOffset + Vec2f(6, 0));
 
 		mGlobal->renderText(mLabel, Vec2i(24, 4));
-
 
 		Rectf tmpRect = Rectf(0,0,mBounds.getHeight(), mBounds.getHeight());
 		tmpRect.inflate( Vec2i(-5, -5));
