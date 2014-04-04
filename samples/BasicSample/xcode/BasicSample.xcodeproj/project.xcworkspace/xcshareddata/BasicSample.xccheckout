@@ -5,46 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>95C6C89E-C07E-4754-B519-B8EE68254BB7</string>
+	<string>62859B0B-49F2-4C06-B458-40ADEBAF16A9</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BasicSample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>21297169-E937-4856-8ABD-4CDC7E8F1D33</key>
+		<key>6B6FCED1-AE1E-4039-81C2-7896441BF202</key>
 		<string>ssh://github.com/cwhitney/PretzelGui.git</string>
-		<key>711F7DAE-2B61-40DC-849F-CA86C82EF550</key>
-		<string>git://github.com/cinder/Cinder.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>blocks/PretzelGui/samples/BasicSample/xcode/BasicSample.xcodeproj/project.xcworkspace</string>
+	<string>samples/BasicSample/xcode/BasicSample.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>21297169-E937-4856-8ABD-4CDC7E8F1D33</key>
+		<key>6B6FCED1-AE1E-4039-81C2-7896441BF202</key>
 		<string>../../../../..</string>
-		<key>711F7DAE-2B61-40DC-849F-CA86C82EF550</key>
-		<string>../../../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/cwhitney/PretzelGui.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>711F7DAE-2B61-40DC-849F-CA86C82EF550</string>
+	<string>6B6FCED1-AE1E-4039-81C2-7896441BF202</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>711F7DAE-2B61-40DC-849F-CA86C82EF550</string>
-			<key>IDESourceControlWCCName</key>
-			<string>Cinder_dev</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>21297169-E937-4856-8ABD-4CDC7E8F1D33</string>
+			<string>6B6FCED1-AE1E-4039-81C2-7896441BF202</string>
 			<key>IDESourceControlWCCName</key>
 			<string>PretzelGui</string>
 		</dict>
