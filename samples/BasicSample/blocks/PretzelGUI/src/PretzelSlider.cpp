@@ -22,7 +22,7 @@ PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, float *
 	mSliderRight = mBounds.getUpperRight() + Vec2f(-10, 22);
 
 	// texture skin rect
-	mSkinTexRect.set(0, 0, 14, 12);
+	mSkinTexRect.set(0, 0, 13, 12);
 	mSkinDestRect.set(-7, -6, 7, 6);
 
 	parent->registerPretzel(this);
@@ -86,14 +86,9 @@ void PretzelSlider::draw() {
 		gl::drawLine(mSliderLeft, mSliderRight);
 
 		gl::color(ColorA(1,1,1,1));
-		gl::enableAlphaBlending();
 		gl::pushMatrices(); {
 			gl::translate(mHandlePos);
 			gl::draw(mGlobal->mSkinTex, mSkinTexRect, mSkinDestRect);
-			//gl::drawSolidRect(handle);
 		}gl::popMatrices();
-
-		//gl::color(mGlobal->P_OUTLINE_COLOR);
-		//gl::drawLine(mBounds.getLowerLeft(), mBounds.getLowerRight());
 	}gl::popMatrices();
 }
