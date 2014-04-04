@@ -7,6 +7,7 @@ Tested for version of Cinder 0.8.5+
 
 This is very much alpha software and apis are subject to change. Pull requests and bug fixes welcomed.
 
+----
 The MIT License (MIT)
 
 Copyright (c) 2014 Charlie Whitney

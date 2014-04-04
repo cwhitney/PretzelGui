@@ -10,6 +10,7 @@
 
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/Gl.h"
+#include "cinder/gl/Texture.h"
 #include "cinder/gl/TextureFont.h"
 
 namespace Pretzel {
@@ -27,6 +28,8 @@ namespace Pretzel {
 		ci::Color P_SLIDER_COLOR;
 
 		ci::gl::TextureFontRef guiFont;
+
+		ci::gl::TextureRef		mSkinTex;
 
 		void renderText(std::string text, ci::Vec2i pos = ci::Vec2i::zero());
 		void renderTextRight(std::string text, ci::Vec2i pos = ci::Vec2i::zero());

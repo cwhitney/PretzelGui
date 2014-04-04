@@ -26,6 +26,8 @@ private:
 
 	ci::Vec2f		mHandlePos;
 	ci::Rectf		mHandleHitbox;
+	ci::Area		mSkinTexRect;
+	ci::Rectf		mSkinDestRect;
 
 	ci::Vec2f		mSliderLeft, mSliderRight;
 

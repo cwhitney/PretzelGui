@@ -19,8 +19,10 @@ PretzelGui::PretzelGui(std::string title, PretzelFillStyle width, PretzelFillSty
 
 void PretzelGui::init( std::string title ){
 	bDragging = false;
-    mSkin = Surface32f( loadImage( ci::app::loadAsset("../../../assets/default_skin.png") ) );
+    mSkin = Surface32f( loadImage( ci::app::loadAsset("default_skin.png") ) );
     mTex = gl::Texture( mSkin );
+
+	mGlobal->mSkinTex = gl::Texture::create(mSkin);
 
 	mGlobal->P_GUI_BORDER.set(mSkin.getPixel(ci::Vec2i(10, 380)));
 	mGlobal->P_BG_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 400)));
