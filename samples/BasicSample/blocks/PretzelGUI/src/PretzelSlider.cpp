@@ -23,7 +23,8 @@ PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, float *
 
 	// texture skin rect
 	mSkinTexRect.set(0, 0, 13, 12);
-	mSkinDestRect.set(-7, -6, 7, 6);
+	mSkinDestRect = mSkinTexRect;
+	mSkinDestRect.offset(Vec2i(-7,-6));
 
 	parent->registerPretzel(this);
 

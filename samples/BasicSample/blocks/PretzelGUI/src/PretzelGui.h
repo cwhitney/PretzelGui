@@ -30,14 +30,7 @@ class PretzelGui : public PretzelRow {
 	PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height);
     
     void draw();
-	
-	void setSize( ci::Vec2f size ){
-		mBounds.x2 = size.x;
-		mBounds.y2 = size.y;
-
-		//updateBounds(Vec2f::zero(), mBounds);
-		updateChildrenBounds();
-	}
+	void setSize(ci::Vec2i size);
 
 	// ------------------
 	void addLabel(std::string labelText);
@@ -48,8 +41,6 @@ class PretzelGui : public PretzelRow {
 	template<typename T, typename Y>
 	inline void addButton(std::string labelText, T callback, Y *callbackObject){
 		PretzelButton *newButton = new PretzelButton(this, labelText);
-
-		//PretzelButton *newButton = new PretzelButton(this, labelText);
 		newButton->signalOnPress.connect(std::bind(callback, callbackObject));
 	}
 
@@ -70,8 +61,12 @@ class PretzelGui : public PretzelRow {
     ci::Surface32f  mSkin;
     ci::gl::Texture mTex;
 
-
 	PretzelLabel	*defaultLabel;
-	bool		bDragging;
-	ci::Vec2f	mDragOffset;
+	bool			bDragging;
+	bool			bResizing;
+
+	ci::Vec2f		mMouseOffset;
+	ci::Vec2f		mResizeStartSize;
+
+	ci::Rectf		mResizeRect;
 };
