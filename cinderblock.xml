@@ -1,0 +1,12 @@
+<cinder>
+  <block 
+  	name="Pretzel GUI" 
+  	id="com.sharkbox.pretzel"
+  	author="Charlie Whitney"
+  	summary="A gui alternative built from the ground up for Cinder"
+  	>
+  
+	<includePath>src</includePath>
+
+  </block>
+</cinder>

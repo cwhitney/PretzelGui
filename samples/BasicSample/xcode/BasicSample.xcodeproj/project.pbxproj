@@ -19,6 +19,7 @@
 		CB52DD4318A1AC96009AFDDE /* BasePanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB52DD3D18A1AC96009AFDDE /* BasePanel.cpp */; };
 		CB52DD4418A1AC96009AFDDE /* PanelGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB52DD3F18A1AC96009AFDDE /* PanelGui.cpp */; };
 		CB52DD4518A1AC96009AFDDE /* PanelRow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB52DD4118A1AC96009AFDDE /* PanelRow.cpp */; };
+		CBFF218918B7331700164CA5 /* PanelGlobal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBFF218818B7331700164CA5 /* PanelGlobal.cpp */; };
 		E0150C2D8AC94A0EA8219DD1 /* BasicSampleApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BBEEA86FB5B8439CB617F06A /* BasicSampleApp.cpp */; };
 /* End PBXBuildFile section */
 
@@ -37,13 +38,15 @@
 		8D1107320486CEB800E47090 /* BasicSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEEA86FB5B8439CB617F06A /* BasicSampleApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = BasicSampleApp.cpp; path = ../src/BasicSampleApp.cpp; sourceTree = "<group>"; };
 		BE37635AD8D54F9391AC9046 /* BasicSample_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = BasicSample_Prefix.pch; sourceTree = "<group>"; };
-		CB52DD3A18A1AC56009AFDDE /* BasePanel.cpp */ = {isa = PBXFileReference; lastKnownFileType = file; name = BasePanel.cpp; path = ../../../src/BasePanel.cpp; sourceTree = "<group>"; };
+		CB52DD3A18A1AC56009AFDDE /* BasePanel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BasePanel.cpp; path = ../../../src/BasePanel.cpp; sourceTree = "<group>"; };
 		CB52DD3D18A1AC96009AFDDE /* BasePanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BasePanel.cpp; sourceTree = "<group>"; };
 		CB52DD3E18A1AC96009AFDDE /* BasePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePanel.h; sourceTree = "<group>"; };
 		CB52DD3F18A1AC96009AFDDE /* PanelGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PanelGui.cpp; sourceTree = "<group>"; };
 		CB52DD4018A1AC96009AFDDE /* PanelGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelGui.h; sourceTree = "<group>"; };
 		CB52DD4118A1AC96009AFDDE /* PanelRow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PanelRow.cpp; sourceTree = "<group>"; };
 		CB52DD4218A1AC96009AFDDE /* PanelRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelRow.h; sourceTree = "<group>"; };
+		CBFF218718B70F7900164CA5 /* PanelGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanelGlobal.h; sourceTree = "<group>"; };
+		CBFF218818B7331700164CA5 /* PanelGlobal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PanelGlobal.cpp; sourceTree = "<group>"; };
 		CDE0E1A16C6848FFB2474D0B /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 		DD41BC77D8C94A46B48B0720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,10 +170,12 @@
 		CB52DD3C18A1AC96009AFDDE /* src */ = {
 			isa = PBXGroup;
 			children = (
-				CB52DD3D18A1AC96009AFDDE /* BasePanel.cpp */,
-				CB52DD3E18A1AC96009AFDDE /* BasePanel.h */,
+				CBFF218718B70F7900164CA5 /* PanelGlobal.h */,
+				CBFF218818B7331700164CA5 /* PanelGlobal.cpp */,
 				CB52DD3F18A1AC96009AFDDE /* PanelGui.cpp */,
 				CB52DD4018A1AC96009AFDDE /* PanelGui.h */,
+				CB52DD3D18A1AC96009AFDDE /* BasePanel.cpp */,
+				CB52DD3E18A1AC96009AFDDE /* BasePanel.h */,
 				CB52DD4118A1AC96009AFDDE /* PanelRow.cpp */,
 				CB52DD4218A1AC96009AFDDE /* PanelRow.h */,
 			);
@@ -242,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB52DD4418A1AC96009AFDDE /* PanelGui.cpp in Sources */,
+				CBFF218918B7331700164CA5 /* PanelGlobal.cpp in Sources */,
 				CB52DD4518A1AC96009AFDDE /* PanelRow.cpp in Sources */,
 				E0150C2D8AC94A0EA8219DD1 /* BasicSampleApp.cpp in Sources */,
 				CB52DD4318A1AC96009AFDDE /* BasePanel.cpp in Sources */,

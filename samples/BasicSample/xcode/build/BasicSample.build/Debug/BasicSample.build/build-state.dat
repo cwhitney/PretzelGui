@@ -9,7 +9,9 @@ cCompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/
 cCompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGlobal.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cLd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app/Contents/MacOS/BasicSample normal i386
+cTouch /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app
 
 N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
 c000000005243E79F00000000000000AA
@@ -427,9 +429,9 @@ t1391549929
 s459637
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp
-c0000000052F4758E0000000000000328
-t1391752590
-s808
+c000000005306FC310000000000000401
+t1392966705
+s1025
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/BasicSample_Prefix.pch
 c0000000052F15DE9000000000000012D
@@ -442,83 +444,88 @@ t1391549929
 s1122
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.o
-t1391999878
-s135780
+t1392964028
+s136188
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSample.LinkFileList
-c0000000052F1751B00000000000002E7
-t1391555867
-s743
+c000000005306FBB800000000000003A2
+t1392966584
+s930
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.o
-t1391999878
-s1674832
+t1392966707
+s1697332
+
+N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGlobal.o
+t1392966619
+s90532
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.o
-t1391999878
-s2072224
+t1392966687
+s2134212
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.o
-t1391999878
-s2059484
+t1392966753
+s2060460
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app
-t1391752485
+t1392966708
 s102
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/Info.plist
-t1391555332
+t1392962768
 s1494
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/MacOS/BasicSample
-t1391753212
-s2889968
+t1392966753
+s3102952
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/PkgInfo
-t1391555332
+t1392962768
 s8
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/Resources/CinderApp.icns
-t1391555332
+t1392962768
 s459637
 
-N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/Resources/src
-t1391555426
-s272
-
-N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src
-c0000000052F173B70000000000000132
-t1391555511
-s306
-
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp
-c0000000052F47A220000000000000230
-t1391753762
-s560
+c000000005306F1AC000000000000026A
+t1392964012
+s618
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.h
-c0000000052F478CB00000000000002A0
-t1391753419
-s672
+c000000005306D39400000000000002C3
+t1392956308
+s707
+
+N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.cpp
+c000000005306FBD10000000000000112
+t1392966609
+s274
+
+N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.h
+c000000005306FBDA0000000000000147
+t1392966618
+s327
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp
-c0000000052F479FB0000000000000560
-t1391753723
-s1376
+c000000005306FC1E00000000000007B4
+t1392966686
+s1972
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.h
-c0000000052F479AA00000000000001B0
-t1391753642
-s432
+c000000005306EA290000000000000235
+t1392962089
+s565
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.cpp
-c0000000052F83B8400000000000006B7
-t1391999876
-s1719
+c000000005306FC5D00000000000008C3
+t1392966749
+s2243
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.h
-c0000000052F47A4F000000000000031E
-t1391753807
+c000000005306F40E000000000000031E
+t1392964622
 s798
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/boost/boost/aligned_storage.hpp
@@ -4392,8 +4399,8 @@ t1391040821
 s2720
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/Rect.h
-c0000000052E999350000000000001B18
-t1391040821
+c000000005306F1A40000000000001B18
+t1392964004
 s6936
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/Shape2d.h
@@ -4407,8 +4414,8 @@ t1391040821
 s13778
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/Surface.h
-c0000000052E999350000000000007382
-t1391040821
+c000000005306E89D0000000000007382
+t1392961693
 s29570
 
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/Thread.h
@@ -4486,6 +4493,11 @@ c0000000052E999350000000000002552
 t1391040821
 s9554
 
+N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/gl/Texture.h
+c000000005306DC020000000000004B66
+t1392958466
+s19302
+
 N/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/gl/gl.h
 c0000000052E999350000000000006469
 t1391040821
@@ -4497,13 +4509,16 @@ t1391041664
 s25109488
 
 N/var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch.pch
-t1391555336
-s65768428
+t1392964026
+s65768504
 
 CBuild AST from /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp
 r0
 
 CBuild AST from /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp
+r0
+
+CBuild AST from /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.cpp
 r0
 
 CBuild AST from /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp
@@ -4514,11 +4529,11 @@ r0
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies0bd1890473a8b841^d576930473a8b841^---0#1#1#--18"Check dependencies36"71D4A440-830E-421B-911B-D34FC1178F38-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesb7eebadf33b7b841^e943bbdf33b7b841^---0#1#1#--18"Check dependencies36"F0FF9F17-FEA5-49A4-BC2C-439E3A77144A-
 
 CCompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s413692676.587334
-e413692678.297305
+s414656827.012918
+e414656828.157625
 r1
 xCompileC
 x./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.o
@@ -4529,12 +4544,12 @@ xc++
 xcom.apple.compilers.llvm.clang.1_0.compiler
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compile /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp247"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compilerad6d960473a8b841^501c4c0673a8b841^---0#0#1#-19%DVTDocumentLocation2@103"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp0000000000000000^3850"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-generated-files.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-own-target-headers.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-all-target-headers.hmap -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-project-headers.hmap -iquote../../../../../include -iquote../include -iquote../../../../../blocks/Cinder-Panels/src -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/include -I../../../../../boost -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources/i386 -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources -F/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug -include /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch -MMD -MT dependencies -MF /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.d --serialize-diagnostics /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.dia -c /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp -o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.o36"845E9717-86DF-43BA-A02E-00D33456205C-
-bC700C629-18C5-41CB-ABBC-E03A85DE937C
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compile /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp247"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compileraa65033b29b7b841^1976283c29b7b841^---0#0#1#-19%DVTDocumentLocation2@103"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp0000000000000000^3850"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-generated-files.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-own-target-headers.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-all-target-headers.hmap -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-project-headers.hmap -iquote../../../../../include -iquote../include -iquote../../../../../blocks/Cinder-Panels/src -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/include -I../../../../../boost -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources/i386 -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources -F/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug -include /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch -MMD -MT dependencies -MF /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.d --serialize-diagnostics /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.dia -c /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.cpp -o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.o36"5B3BB07C-FA2B-4CC9-A003-FF54F66E383F-
+bC47C02A7-CA7B-4C88-AF79-9C13B772A789
 
 CCompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s413692676.587062
-e413692678.782724
+s414659506.191815
+e414659507.521402
 r1
 xCompileC
 x./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.o
@@ -4547,14 +4562,33 @@ d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/app/AppNative.h
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/Rand.h
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.h
+d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/gl/Texture.h
+d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.h
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.h
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection129"Compile /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp277"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler685e960473a8b841^a75dc80673a8b841^---0#0#1#-19%DVTDocumentLocation2@128"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp0000000000000000^3920"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-generated-files.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-own-target-headers.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-all-target-headers.hmap -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-project-headers.hmap -iquote../../../../../include -iquote../include -iquote../../../../../blocks/Cinder-Panels/src -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/include -I../../../../../boost -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources/i386 -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources -F/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug -include /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch -MMD -MT dependencies -MF /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.d --serialize-diagnostics /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.dia -c /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp -o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.o36"C660E3D4-D8EE-40D2-AA1A-74DF0FF296DE-
-bC700C629-18C5-41CB-ABBC-E03A85DE937C
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection129"Compile /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp277"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler412e31b233b7b841^6b7d85b333b7b841^---0#0#1#-19%DVTDocumentLocation2@128"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp0000000000000000^3920"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-generated-files.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-own-target-headers.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-all-target-headers.hmap -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-project-headers.hmap -iquote../../../../../include -iquote../include -iquote../../../../../blocks/Cinder-Panels/src -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/include -I../../../../../boost -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources/i386 -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources -F/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug -include /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch -MMD -MT dependencies -MF /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.d --serialize-diagnostics /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.dia -c /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/src/BasicSampleApp.cpp -o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.o36"0D31C37A-37F8-494F-ABC4-8A0FA3564F30-
+bCC28D057-B273-4242-BDFB-CDB742A3EC95
+
+CCompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGlobal.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s414659418.903337
+e414659419.930472
+r1
+xCompileC
+x./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGlobal.o
+x/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.cpp
+d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.h
+d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/app/AppNative.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"Compile /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.cpp251"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGlobal.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler5c58e75a33b7b841^8b33ee5b33b7b841^---0#0#1#-19%DVTDocumentLocation2@105"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.cpp0000000000000000^3862"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGlobal.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-generated-files.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-own-target-headers.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-all-target-headers.hmap -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-project-headers.hmap -iquote../../../../../include -iquote../include -iquote../../../../../blocks/Cinder-Panels/src -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/include -I../../../../../boost -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources/i386 -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources -F/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug -include /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch -MMD -MT dependencies -MF /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGlobal.d --serialize-diagnostics /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGlobal.dia -c /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.cpp -o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGlobal.o36"08C82093-2A5D-4F4B-8820-D93A80F6582A-
+b97C083D1-EBF4-4569-AD20-C73695F700A3
 
 CCompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s413692676.586731
-e413692678.672270
+s414659486.595175
+e414659488.012554
 r1
 xCompileC
 x./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.o
@@ -4566,13 +4600,15 @@ xcom.apple.compilers.llvm.clang.1_0.compiler
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.h
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/app/AppNative.h
+d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/gl/Texture.h
+d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.h
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compile /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp245"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler8847960473a8b841^7a1aac0673a8b841^---0#0#1#-19%DVTDocumentLocation2@102"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp0000000000000000^3844"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-generated-files.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-own-target-headers.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-all-target-headers.hmap -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-project-headers.hmap -iquote../../../../../include -iquote../include -iquote../../../../../blocks/Cinder-Panels/src -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/include -I../../../../../boost -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources/i386 -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources -F/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug -include /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch -MMD -MT dependencies -MF /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.d --serialize-diagnostics /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.dia -c /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp -o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.o36"DE3DD87E-CB00-4B54-B301-78413379593C-
-bC700C629-18C5-41CB-ABBC-E03A85DE937C
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compile /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp245"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler3b72989e33b7b841^2a3903a033b7b841^---0#0#1#-19%DVTDocumentLocation2@102"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp0000000000000000^3844"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-generated-files.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-own-target-headers.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-all-target-headers.hmap -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-project-headers.hmap -iquote../../../../../include -iquote../include -iquote../../../../../blocks/Cinder-Panels/src -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/include -I../../../../../boost -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources/i386 -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources -F/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug -include /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch -MMD -MT dependencies -MF /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.d --serialize-diagnostics /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.dia -c /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGui.cpp -o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.o36"A285FAD0-755F-4E0A-98CC-1140DBC8F5B4-
+b68473454-58BD-416A-888E-7190D2D347A3
 
 CCompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s413692676.586884
-e413692678.704317
+s414659551.741782
+e414659553.076150
 r1
 xCompileC
 x./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.o
@@ -4585,34 +4621,25 @@ d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.h
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/app/AppNative.h
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/Rand.h
+d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelGlobal.h
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/BasePanel.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compile /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.cpp245"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler834c960473a8b841^c64eb40673a8b841^---0#0#1#-19%DVTDocumentLocation2@102"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.cpp0000000000000000^3844"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-generated-files.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-own-target-headers.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-all-target-headers.hmap -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-project-headers.hmap -iquote../../../../../include -iquote../include -iquote../../../../../blocks/Cinder-Panels/src -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/include -I../../../../../boost -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources/i386 -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources -F/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug -include /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch -MMD -MT dependencies -MF /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.d --serialize-diagnostics /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.dia -c /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.cpp -o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.o36"CEB37CC0-4C72-4190-8A93-BEDB9CB79FEE-
-bC700C629-18C5-41CB-ABBC-E03A85DE937C
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compile /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.cpp245"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compilerfcfebddf33b7b841^e17f13e133b7b841^---0#0#1#-19%DVTDocumentLocation2@102"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.cpp0000000000000000^3844"CompileC ./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-generated-files.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-own-target-headers.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-all-target-headers.hmap -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-project-headers.hmap -iquote../../../../../include -iquote../include -iquote../../../../../blocks/Cinder-Panels/src -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/include -I../../../../../boost -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources/i386 -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources -F/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug -include /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch -MMD -MT dependencies -MF /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.d --serialize-diagnostics /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.dia -c /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src/PanelRow.cpp -o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.o36"59E7EEA1-ECC5-4A83-A97D-AEB60E8319AA-
+b1CFE1FBA-8F7F-4A03-AEE1-EBE2B12AE30C
 
 CCpResource /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/resources/CinderApp.icns build/Debug/BasicSample.app/Contents/Resources/CinderApp.icns
-s413248132.612392
-e413248132.613559
+s414655568.801306
+e414655568.802512
 r1
 xCpResource
 x/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/resources/CinderApp.icns
 xbuild/Debug/BasicSample.app/Contents/Resources/CinderApp.icns
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Copy build/Debug/BasicSample.app/Contents/Resources/CinderApp.icns196"CpResource /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/resources/CinderApp.icns build/Debug/BasicSample.app/Contents/Resources/CinderApp.icns68cc9c84aaa1b841^0e139d84aaa1b841^---0#0#1#-19%DVTDocumentLocation2@173"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/Resources/CinderApp.icns003424c5dcffdf42^697"CpResource /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/resources/CinderApp.icns build/Debug/BasicSample.app/Contents/Resources/CinderApp.icns    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/resources/CinderApp.icns /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/Resources36"F062E667-3BB4-4C48-8F75-D8008A8BD094-
-bB26C0996-7C38-473E-BECD-3BF48B3627DA
-
-CCpResource /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src build/Debug/BasicSample.app/Contents/Resources/src
-s413248311.868362
-e413248311.871797
-r1
-xCpResource
-x/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src
-xbuild/Debug/BasicSample.app/Contents/Resources/src
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Copy build/Debug/BasicSample.app/Contents/Resources/src144"CpResource /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src build/Debug/BasicSample.app/Contents/Resources/srcd654de37aba1b841^8c2edf37aba1b841^---0#0#1#-19%DVTDocumentLocation2@163"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/Resources/src/0000000000000000^604"CpResource /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src build/Debug/BasicSample.app/Contents/Resources/src    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/src /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/Resources36"3071B046-20A4-4ABD-A96C-B60FCCCB1AE0-
-b6D3E635C-D2AD-4A0B-B348-94055D7FEF84
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Copy build/Debug/BasicSample.app/Contents/Resources/CinderApp.icns196"CpResource /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/resources/CinderApp.icns build/Debug/BasicSample.app/Contents/Resources/CinderApp.icns3529cd5024b7b841^f371cd5024b7b841^---0#0#1#-19%DVTDocumentLocation2@173"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/Resources/CinderApp.icns00343c0ddeffdf42^697"CpResource /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/resources/CinderApp.icns build/Debug/BasicSample.app/Contents/Resources/CinderApp.icns    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/resources/CinderApp.icns /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/Resources36"7E51E662-BC29-4024-A863-13DADA08BA34-
+b0EEEE91C-857A-43F9-8CE8-A9B54B0E291F
 
 CLd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app/Contents/MacOS/BasicSample normal i386
-s413692678.793561
-e413692679.738195
-r0
+s414659553.077946
+e414659553.758426
+r1
 xLd
 x/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app/Contents/MacOS/BasicSample
 xnormal
@@ -4620,6 +4647,7 @@ xi386
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSample.LinkFileList
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/crt1.10.6.o
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGui.o
+d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelGlobal.o
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/PanelRow.o
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSampleApp.o
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasePanel.o
@@ -4636,8 +4664,13 @@ d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
 d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.eprintf.a
 d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.osx.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework/AppKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreData.framework/CoreData
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
@@ -4667,16 +4700,11 @@ d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework/AppKit
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreData.framework/CoreData
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreText.framework/CoreText
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ImageIO.framework/ImageIO
@@ -4698,30 +4726,25 @@ d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
-oUndefined symbols for architecture i386:
-o  "PanelRow::updateBounds(cinder::Vec2<float> const&, cinder::RectT<float> const&)", referenced from:
-o      vtable for PanelRow in PanelRow.o
-old: symbol(s) not found for architecture i386
-oclang: error: linker command failed with exit code 1 (use -v to see invocation)
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection166"Link /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app/Contents/MacOS/BasicSample71"Ld ./build/Debug/BasicSample.app/Contents/MacOS/BasicSample normal i386f435cb0673a8b841^98fbbc0773a8b841^-309"Undefined symbols for architecture i386:  "PanelRow::updateBounds(cinder::Vec2<float> const&, cinder::RectT<float> const&)", referenced from:      vtable for PanelRow in PanelRow.old: symbol(s) not found for architecture i386clang: error: linker command failed with exit code 1 (use -v to see invocation)4(21%IDEActivityLogMessage2@99""PanelRow::updateBounds(cinder::Vec2<float> const&, cinder::RectT<float> const&)", referenced from:-413692679#41#102#-2#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@33"Vtable for PanelRow in PanelRow.o-413692679#143#40#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@41"Symbol(s) not found for architecture i386-413692679#183#46#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@65"Linker command failed with exit code 1 (use -v to see invocation)-413692679#229#80#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--0#0#1#--1546"Ld ./build/Debug/BasicSample.app/Contents/MacOS/BasicSample normal i386    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    setenv MACOSX_DEPLOYMENT_TARGET 10.7    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug -F/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug -filelist /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSample.LinkFileList -mmacosx-version-min=10.7 -dead_strip ../../../../../lib/libcinder_d.a -stdlib=libc++ -framework Cocoa -framework OpenGL -framework CoreVideo -framework QTKit -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework CoreAudio -Xlinker -dependency_info -Xlinker /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSample_dependency_info.dat -o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app/Contents/MacOS/BasicSample36"9B1345C5-A656-48C0-A11C-66633E6DB59C-
-bC700C629-18C5-41CB-ABBC-E03A85DE937C
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection166"Link /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app/Contents/MacOS/BasicSample71"Ld ./build/Debug/BasicSample.app/Contents/MacOS/BasicSample normal i386500114e133b7b841^fe28c2e133b7b841^---0#0#1#--1546"Ld ./build/Debug/BasicSample.app/Contents/MacOS/BasicSample normal i386    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    setenv MACOSX_DEPLOYMENT_TARGET 10.7    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug -F/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug -filelist /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSample.LinkFileList -mmacosx-version-min=10.7 -dead_strip ../../../../../lib/libcinder_d.a -stdlib=libc++ -framework Cocoa -framework OpenGL -framework CoreVideo -framework QTKit -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework CoreAudio -Xlinker -dependency_info -Xlinker /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/Objects-normal/i386/BasicSample_dependency_info.dat -o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app/Contents/MacOS/BasicSample36"515EA980-D08C-4B83-9432-6E8E91C6F5F3-
+b1CFE1FBA-8F7F-4A03-AEE1-EBE2B12AE30C
 
 CProcessInfoPlistFile /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/Info.plist /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/Info.plist
-s413248132.611153
-e413248132.612149
+s414655568.799886
+e414655568.801020
 r1
 xProcessInfoPlistFile
 x/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/Info.plist
 x/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/Info.plist
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Process /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/Info.plist79"ProcessInfoPlistFile build/Debug/BasicSample.app/Contents/Info.plist Info.plist287e9c84aaa1b841^bfd79c84aaa1b841^---0#0#1#-19%DVTDocumentLocation2@122"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/Info.plist0000000000000000^693"ProcessInfoPlistFile build/Debug/BasicSample.app/Contents/Info.plist Info.plist    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    builtin-infoPlistUtility /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/Info.plist -genpkginfo /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/Info.plist36"20A3827A-0B77-4881-823E-F37442A221EA-
-bB26C0996-7C38-473E-BECD-3BF48B3627DA
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Process /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/Info.plist79"ProcessInfoPlistFile build/Debug/BasicSample.app/Contents/Info.plist Info.pliste6cecc5024b7b841^c43ecd5024b7b841^---0#0#1#-19%DVTDocumentLocation2@122"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/Info.plist0000000000000000^693"ProcessInfoPlistFile build/Debug/BasicSample.app/Contents/Info.plist Info.plist    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    builtin-infoPlistUtility /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/Info.plist -genpkginfo /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/BasicSample.app/Contents/Info.plist36"B9B315A1-C7A1-4CE6-B0C5-B76F8CAF63F6-
+b0EEEE91C-857A-43F9-8CE8-A9B54B0E291F
 
 CProcessPCH++ /Users/charlie/Library/Developer/Xcode/DerivedData/BasicSample-ehughnjcoaelmcgbikywlllpbqot/Index/PrecompiledHeaders/BasicSample_Prefix-acbanyhasgfyeqgbkvxmoznpvluv_ast/BasicSample_Prefix.pch.pch BasicSample_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.astbuilder
 r0
 
 CProcessPCH++ /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch.pch BasicSample_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s413248132.614727
-e413248136.647700
+s414656822.719391
+e414656827.009710
 r1
 xProcessPCH++
 x/var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch.pch
@@ -5523,15 +5546,15 @@ d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/Thread
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/cocoa/CinderCocoa.h
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/ImageIo.h
 d/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/include/cinder/DataTarget.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection33"Precompile BasicSample_Prefix.pch288"ProcessPCH++ /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch.pch BasicSample_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler6e6d9d84aaa1b841^85d0a588aaa1b841^---0#0#1#-19%DVTDocumentLocation2@134"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/BasicSample_Prefix.pch0000000000000000^3747"ProcessPCH++ /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch.pch BasicSample_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++-header -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-generated-files.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-own-target-headers.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-all-target-headers.hmap -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-project-headers.hmap -iquote../../../../../include -iquote../include -iquote../../../../../blocks/Cinder-Panels/src -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/include -I../../../../../boost -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources/i386 -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources -F/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug --serialize-diagnostics /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch.d -c /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/BasicSample_Prefix.pch -o /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch.pch36"5B97A9F6-7C40-4C0E-940E-EE3411F5410A-
-bB26C0996-7C38-473E-BECD-3BF48B3627DA
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection33"Precompile BasicSample_Prefix.pch288"ProcessPCH++ /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch.pch BasicSample_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler603bb83629b7b841^567d023b29b7b841^---0#0#1#-19%DVTDocumentLocation2@134"file:///Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/BasicSample_Prefix.pch0000000000000000^3747"ProcessPCH++ /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch.pch BasicSample_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++-header -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-generated-files.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-own-target-headers.hmap -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-all-target-headers.hmap -iquote /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/BasicSample-project-headers.hmap -iquote../../../../../include -iquote../include -iquote../../../../../blocks/Cinder-Panels/src -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug/include -I../../../../../boost -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources/i386 -I/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/BasicSample.build/Debug/BasicSample.build/DerivedSources -F/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/build/Debug --serialize-diagnostics /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch.d -c /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/BasicSample_Prefix.pch -o /var/folders/4b/t87qk6g11yxfydnn4z_qkbtr0000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/BasicSample_Prefix-frvyjkzsdvhovwgofabhjhfposjh/BasicSample_Prefix.pch.pch36"449ECAB4-DCC6-4A71-AF75-7033D76EB9C3-
+bC47C02A7-CA7B-4C88-AF79-9C13B772A789
 
 CTouch /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app
-s413446012.557910
-e413446012.560932
+s414659553.759172
+e414659553.762238
 r1
 xTouch
 x/Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection140"Touch /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app35"Touch ./build/Debug/BasicSample.app83db8e7cafa4b841^079a8f7cafa4b841^---0#0#1#--305"Touch ./build/Debug/BasicSample.app    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    /usr/bin/touch -c /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app36"0ECE5B24-4167-4F05-A9B6-FC5A39CD264B-
-b1C4ADE3F-D295-41A4-93BC-324825A73155
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection140"Touch /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app35"Touch ./build/Debug/BasicSample.app0262c2e133b7b841^7424c3e133b7b841^---0#0#1#--305"Touch ./build/Debug/BasicSample.app    cd /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode    /usr/bin/touch -c /Users/charlie/Documents/Development/_libs/cpp/Cinder_dev/blocks/Cinder-Panels/samples/BasicSample/xcode/./build/Debug/BasicSample.app36"F402129D-000A-47E0-A922-E1F71EF4CDD1-
+b1CFE1FBA-8F7F-4A03-AEE1-EBE2B12AE30C
 

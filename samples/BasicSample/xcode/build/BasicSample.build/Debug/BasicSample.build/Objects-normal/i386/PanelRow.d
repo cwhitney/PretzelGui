@@ -3,4 +3,5 @@ dependencies: \
   ../../../../../blocks/Cinder-Panels/src/PanelRow.h \
   ../../../../../include/cinder/app/AppNative.h \
   ../../../../../include/cinder/Rand.h \
+  ../../../../../blocks/Cinder-Panels/src/PanelGlobal.h \
   ../../../../../blocks/Cinder-Panels/src/BasePanel.h

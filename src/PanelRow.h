@@ -10,6 +10,8 @@
 
 #include "cinder/app/AppNative.h"
 #include "cinder/Rand.h"
+
+#include "PanelGlobal.h"
 #include "BasePanel.h"
 
 class PanelRow : public BasePanel {
@@ -23,10 +25,11 @@ class PanelRow : public BasePanel {
     
     virtual void updateBounds( const ci::Vec2f &offset, const ci::Rectf &parentBounds );
     
+protected:
+	void updateChildrenBounds();
+
   private:
     void initPanel( BasePanel *base, int width, int height );
-    void updateChildrenBounds();
     
-    ci::Color   mBgColor;
     bool        bFillWidth, bFillHeight;
 };

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="blocks">
+      <UniqueIdentifier>{9f2b91b9-ebbc-45ce-b149-ae1e85c27d25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks\Panels">
+      <UniqueIdentifier>{8d980169-a6d7-44a2-b2f3-c4723492b2f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks\Panels\BaseElements">
+      <UniqueIdentifier>{93d0c7d1-7ec8-42e2-bae9-a26317ddc6c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks\Panels\Components">
+      <UniqueIdentifier>{bf321c87-2e88-44d7-8f25-f9a3fb170c73}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\BasicSampleApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BasicSampleApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\src\BasePanel.cpp">
+      <Filter>blocks\Panels\BaseElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PanelGlobal.cpp">
+      <Filter>blocks\Panels\BaseElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PanelGui.cpp">
+      <Filter>blocks\Panels\BaseElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PanelRow.cpp">
+      <Filter>blocks\Panels\BaseElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PanelLabel.cpp">
+      <Filter>blocks\Panels\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PanelSlider.cpp">
+      <Filter>blocks\Panels\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PanelSaveLoad.cpp">
+      <Filter>blocks\Panels\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PanelButton.cpp">
+      <Filter>blocks\Panels\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PanelToggle.cpp">
+      <Filter>blocks\Panels\Components</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BasePanel.h">
+      <Filter>blocks\Panels\BaseElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PanelGlobal.h">
+      <Filter>blocks\Panels\BaseElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PanelGui.h">
+      <Filter>blocks\Panels\BaseElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PanelRow.h">
+      <Filter>blocks\Panels\BaseElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PanelLabel.h">
+      <Filter>blocks\Panels\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PanelSlider.h">
+      <Filter>blocks\Panels\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PanelSaveLoad.h">
+      <Filter>blocks\Panels\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PanelButton.h">
+      <Filter>blocks\Panels\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PanelToggle.h">
+      <Filter>blocks\Panels\Components</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
