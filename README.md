@@ -1,4 +1,4 @@
-Pretzel
+Pretzel ![](https://github.com/cwhitney/PretzelGui/icon_48.png)
 ========
 
 A GUI built from the ground up for [Cinder](http://libcinder.org) for mac and pc. Currently untested on linux.
