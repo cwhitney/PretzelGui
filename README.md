@@ -1,4 +1,4 @@
-PanelGui
+Pretzel
 ========
 
-PanelGui for cinder
+A GUI built from the ground up for (Cinder)[libcinder.org]
