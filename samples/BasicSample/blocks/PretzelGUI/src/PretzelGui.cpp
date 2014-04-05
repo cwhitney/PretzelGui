@@ -20,8 +20,11 @@ PretzelGui::PretzelGui(std::string title, PretzelFillStyle width, PretzelFillSty
 void PretzelGui::init( std::string title ){
 	bDragging = false;
 	bResizing = false;
+	bDrawMinimized = false;
     mSkin = Surface32f( loadImage( ci::app::loadAsset("default_skin.png") ) );
     mTex = gl::Texture( mSkin );
+
+	mLastClickTime = 0.0;
 
 	mGlobal->mSkinTex = gl::Texture::create(mSkin);
 
@@ -50,7 +53,7 @@ void PretzelGui::init( std::string title ){
 	if (title == ""){
 		title = "Settings";
 	}
-	defaultLabel = new PretzelLabel(this, title);
+	mDefaultLabel = new PretzelLabel(this, title);
 }
 
 void PretzelGui::setSize(Vec2i size){
@@ -69,15 +72,26 @@ void PretzelGui::setSize(Vec2i size){
 
 // ---------------------------------------------------------
 void PretzelGui::onMouseDown(ci::app::MouseEvent &event){
-	if (defaultLabel->getBounds().contains(event.getPos() - mPos)){
-		bDragging = true;
-		mMouseOffset = event.getPos() - mPos;
-	}else if ( mResizeRect.contains(event.getPos() - mPos)){
+
+	if (mDefaultLabel->getBounds().contains(event.getPos() - mPos)){	
+		
+		if (getElapsedSeconds() - mLastClickTime < 0.25){	// Double click title bar, minimize
+			bDrawMinimized = !bDrawMinimized;
+		}else{												// Single click title bar, drag
+			bDragging = true;
+			mMouseOffset = event.getPos() - mPos;
+		}
+		mLastClickTime = getElapsedSeconds();
+	}
+	else if (bDrawMinimized){								// We are minimized, don't go further
+		return;
+	}
+	else if ( mResizeRect.contains(event.getPos() - mPos)){	// Hit in lower right corner for resize
 		bResizing = true;
 		mResizeStartSize = mBounds.getSize();
 		mMouseOffset = event.getPos() - mPos;
 	}else{
-		mouseDown(event.getPos() - mPos);
+		mouseDown(event.getPos() - mPos);					// Propagate to children
 	}
 }
 
@@ -109,21 +123,30 @@ void PretzelGui::draw(){
 	gl::enableAlphaBlending();
 	gl::color(Color(1, 1, 1));
 
-	gl::pushMatrices(); {
-		gl::translate(mPos);
-		PretzelRow::draw();
+	if (bDrawMinimized){
+		gl::pushMatrices(); {
+			gl::translate(mPos);
+			mDefaultLabel->draw();
 
-		gl::color(mGlobal->P_TAB_COLOR);
-		gl::drawSolidRect( Rectf(mBounds.getLowerLeft() - Vec2i(0, 10), mBounds.getLowerRight()) );
+			gl::color(mGlobal->P_GUI_BORDER);
+			gl::drawStrokedRect(mDefaultLabel->getBounds());
+		}gl::popMatrices();
+	}
+	else{
+		gl::pushMatrices(); {
+			gl::translate(mPos);
+			PretzelRow::draw();
 
-		gl::color(mGlobal->P_BG_COLOR );
-		gl::drawSolidTriangle(mResizeRect.getLowerLeft(), mResizeRect.getUpperRight(), mResizeRect.getLowerRight() );
+			gl::color(mGlobal->P_TAB_COLOR);
+			gl::drawSolidRect(Rectf(mBounds.getLowerLeft() - Vec2i(0, 10), mBounds.getLowerRight()));
 
-		
+			gl::color(mGlobal->P_BG_COLOR);
+			gl::drawSolidTriangle(mResizeRect.getLowerLeft(), mResizeRect.getUpperRight(), mResizeRect.getLowerRight());
 
-		gl::color(mGlobal->P_GUI_BORDER);
-		gl::drawStrokedRect(mBounds);
-	}gl::popMatrices();
+			gl::color(mGlobal->P_GUI_BORDER);
+			gl::drawStrokedRect(mBounds);
+		}gl::popMatrices();
+	}
 
 	glEnable(GL_MULTISAMPLE);
 }

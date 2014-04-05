@@ -61,7 +61,7 @@ class PretzelGui : public PretzelRow {
     ci::Surface32f  mSkin;
     ci::gl::Texture mTex;
 
-	PretzelLabel	*defaultLabel;
+	PretzelLabel	*mDefaultLabel;
 	bool			bDragging;
 	bool			bResizing;
 
@@ -69,4 +69,7 @@ class PretzelGui : public PretzelRow {
 	ci::Vec2f		mResizeStartSize;
 
 	ci::Rectf		mResizeRect;
+
+	double			mLastClickTime;
+	bool			bDrawMinimized;
 };

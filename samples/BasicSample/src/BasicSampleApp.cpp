@@ -65,6 +65,8 @@ void BasicSampleApp::draw() {
 		gl::drawSolidCircle(getWindowCenter(), mRadius);
 	}
 
+	gl::drawString("Framerate :: " + to_string(getAverageFps()) , Vec2i(500, 300));
+
 	gui->draw();
 }
 
