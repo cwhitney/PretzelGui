@@ -9,30 +9,39 @@ PretzelToggle::PretzelToggle(BasePretzel *parent, std::string label, bool *value
 	mValue = value;
 	mLabel = label;
 
+	int size = 11;
+	mCheckBoxRect.set(0,0,size, size);
+	mCheckBoxRect.offset(Vec2i(11, 3));
+
+	// texture skin rect
+	mSkinTexRect.set(14, 0, 27, 11);
+	mSkinDestRect.set(0, 0, mSkinTexRect.getWidth(), mSkinTexRect.getHeight());
+	mSkinDestRect.offset(Vec2i(12, 2));
+
 	parent->registerPretzel(this);
 }
 
 
 void PretzelToggle::draw() {
 	gl::pushMatrices(); {
-		gl::translate(mOffset + Vec2f(5, 0));
+		gl::translate(mOffset);
 
-		mGlobal->renderText(mLabel, Vec2i(24, 4));
+		// draw box
+		Rectf tmpRect = mCheckBoxRect;
 
-
-		Rectf tmpRect = Rectf(0,0,mBounds.getHeight(), mBounds.getHeight());
-		tmpRect.inflate( Vec2i(-5, -5));
 		gl::color(mGlobal->P_SLIDER_COLOR);
 		gl::drawSolidRect(tmpRect);
 
 		tmpRect.inflate(Vec2i(-2, -2));
-		if (*mValue){
-			gl::color(mGlobal->P_SLIDER_COLOR);
-		}else{
-			gl::color(mGlobal->P_BG_COLOR);
-		}
-		
+		gl::color(mGlobal->P_BG_COLOR);
 		gl::drawSolidRect(tmpRect);
+
+		// draw check
+		if (*mValue){
+			gl::color(ColorA(1, 1, 1, 1));
+			gl::draw(mGlobal->mSkinTex, mSkinTexRect, mSkinDestRect);
+		}
+		mGlobal->renderText(mLabel, Vec2i(27, 1));
 
 	}gl::popMatrices();
 }

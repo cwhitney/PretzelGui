@@ -43,6 +43,8 @@ void BasicSampleApp::setup() {
 	gui->addSaveLoad();
 	gui->addButton("Resize", &BasicSampleApp::onButtonPress, this);
 	gui->addToggle("Draw outline", &bDrawOutline);
+
+//	gui->minimize();
 }
 void BasicSampleApp::onButtonPress(){
 	console() << "Got a button press event" << endl;
@@ -64,8 +66,6 @@ void BasicSampleApp::draw() {
 	else{
 		gl::drawSolidCircle(getWindowCenter(), mRadius);
 	}
-
-	gl::drawString("Framerate :: " + to_string(getAverageFps()) , Vec2i(500, 300));
 
 	gui->draw();
 }

@@ -70,6 +70,10 @@ void PretzelGui::setSize(Vec2i size){
 	mResizeRect.set(ul.x, ul.y, lr.x, lr.y);
 }
 
+void PretzelGui::minimize(bool doMinimize){
+	bDrawMinimized = doMinimize;
+}
+
 // ---------------------------------------------------------
 void PretzelGui::onMouseDown(ci::app::MouseEvent &event){
 

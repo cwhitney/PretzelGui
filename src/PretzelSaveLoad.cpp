@@ -18,7 +18,7 @@ void PretzelSaveLoad::updateBounds(const ci::Vec2f &offset, const ci::Rectf &par
 
 	int margin = 10;
 	int buttonWidth = (mBounds.getWidth() - margin * 3.0) * 0.5;
-	int buttonHeight = 19;
+	int buttonHeight = 18;
 
 	mSaveRect.set(margin, 0, buttonWidth + margin, buttonHeight);
 	mLoadRect = mSaveRect.getOffset(Vec2f(buttonWidth + margin, 0));

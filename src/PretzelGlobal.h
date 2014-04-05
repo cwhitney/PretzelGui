@@ -10,6 +10,7 @@
 
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/Gl.h"
+#include "cinder/gl/Texture.h"
 #include "cinder/gl/TextureFont.h"
 
 namespace Pretzel {
@@ -18,15 +19,17 @@ namespace Pretzel {
 	public:
 		static PretzelGlobal* getInstance();
 
-		ci::Color P_GUI_BORDER;
-		ci::Color P_BG_COLOR;
-		ci::Color P_TAB_COLOR;
-		ci::Color P_TEXT_COLOR;
-		ci::Color P_OUTLINE_COLOR;
-		ci::Color P_HIGHLIGHT_COLOR;
-		ci::Color P_SLIDER_COLOR;
+		ci::ColorA P_GUI_BORDER;
+		ci::ColorA P_BG_COLOR;
+		ci::ColorA P_TAB_COLOR;
+		ci::ColorA P_TEXT_COLOR;
+		ci::ColorA P_OUTLINE_COLOR;
+		ci::ColorA P_HIGHLIGHT_COLOR;
+		ci::ColorA P_SLIDER_COLOR;
 
 		ci::gl::TextureFontRef guiFont;
+
+		ci::gl::TextureRef		mSkinTex;
 
 		void renderText(std::string text, ci::Vec2i pos = ci::Vec2i::zero());
 		void renderTextRight(std::string text, ci::Vec2i pos = ci::Vec2i::zero());

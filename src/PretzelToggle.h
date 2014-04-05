@@ -18,5 +18,10 @@ public:
 private:
 	bool			*mValue;
 	std::string		mLabel;
+
+	ci::Rectf		mCheckBoxRect;
+
+	ci::Area		mSkinTexRect;
+	ci::Rectf		mSkinDestRect;
 };
 

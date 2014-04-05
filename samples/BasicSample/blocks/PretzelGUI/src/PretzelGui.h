@@ -31,6 +31,7 @@ class PretzelGui : public PretzelRow {
     
     void draw();
 	void setSize(ci::Vec2i size);
+	void minimize(bool doMinimize=true);
 
 	// ------------------
 	void addLabel(std::string labelText);

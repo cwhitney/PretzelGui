@@ -5,9 +5,10 @@ using namespace ci::app;
 using namespace std;
 
 PretzelButton::PretzelButton(BasePretzel *parent, string labelText) : BasePretzel() {
-	mBounds.set(0, 0, 200, 23);
+	mBounds.set(0, 0, 200, 22);
 	mButtonBounds = mBounds;
-	mButtonBounds.inflate(Vec2f(-5, -3));
+	mButtonBounds.inflate(Vec2f(-10, -1));
+	mButtonBounds.y2--;
 
 	mLabelText = labelText;
 	parent->registerPretzel(this);
@@ -18,6 +19,7 @@ void PretzelButton::updateBounds(const ci::Vec2f &offset, const ci::Rectf &paren
 
 	mButtonBounds = mBounds;
 	mButtonBounds.inflate(Vec2f(-10, -1));
+	mButtonBounds.y2 -= 1;
 }
 
 void PretzelButton::mouseDown(const ci::Vec2i &pos){
