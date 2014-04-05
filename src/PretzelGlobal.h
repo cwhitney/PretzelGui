@@ -39,7 +39,7 @@ namespace Pretzel {
 		void loadSettings();
 
 		template <typename T>
-		std::string to_string_with_precision(const T num, const int n = 3) {
+		std::string to_string_with_precision(const T num, const int n = 2) {
 			std::ostringstream out;
 			out << fixed << std::setprecision(n) << num;
 			return out.str();

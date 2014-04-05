@@ -80,7 +80,7 @@ void PretzelSlider::draw() {
 
 		gl::pushMatrices(); {
 			mGlobal->renderText(mLabelText, mBounds.getUpperLeft() + Vec2i(12,1));
-			mGlobal->renderTextRight(mGlobal->to_string_with_precision(*mValue, 3), mBounds.getUpperRight() + Vec2i(-12, 1) );
+			mGlobal->renderTextRight(mGlobal->to_string_with_precision(*mValue), mBounds.getUpperRight() + Vec2i(-12, 1) );
 		}gl::popMatrices();
 
 		gl::color(mGlobal->P_SLIDER_COLOR);
