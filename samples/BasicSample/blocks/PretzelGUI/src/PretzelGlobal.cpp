@@ -9,7 +9,6 @@
 #include "PretzelGlobal.h"
 
 namespace Pretzel {
-
 	PretzelGlobal* PretzelGlobal::mInstance = NULL;
 	enum {
 		Pretzel_FONT_ALIGN_LEFT,
@@ -32,6 +31,7 @@ namespace Pretzel {
 			ci::Font tmp("Arial", 12);
 #endif
 			guiFont = ci::gl::TextureFont::create(tmp);
+			emHeight = guiFont->measureString("M").y;
 		}
 
 		ci::gl::TextureFont::DrawOptions opts;
@@ -41,7 +41,7 @@ namespace Pretzel {
 
 		ci::gl::pushMatrices(); {
 			ci::gl::translate(pos);
-			ci::gl::translate(0, (int)textSize.y);
+			ci::gl::translate(0, (int)emHeight);
 
 			if (align == Pretzel_FONT_ALIGN_RIGHT){
 				ci::gl::translate(-textSize.x, 0);
@@ -60,7 +60,7 @@ namespace Pretzel {
 	}
 
 	void PretzelGlobal::renderTextRight(std::string text, ci::Vec2i pos) {
-		renderTextInternal(text, pos, Pretzel_FONT_ALIGN_LEFT);
+		renderTextInternal(text, pos, Pretzel_FONT_ALIGN_RIGHT);
 	}
 
 	void PretzelGlobal::renderTextCentered(std::string text, ci::Vec2i pos) {

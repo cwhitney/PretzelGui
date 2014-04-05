@@ -38,11 +38,19 @@ namespace Pretzel {
 		void saveSettings();
 		void loadSettings();
 
+		template <typename T>
+		std::string to_string_with_precision(const T num, const int n = 3) {
+			std::ostringstream out;
+			out << fixed << std::setprecision(n) << num;
+			return out.str();
+		}
+
 	private:
 		PretzelGlobal(){};
 		PretzelGlobal(PretzelGlobal const&){};
 		static PretzelGlobal		*mInstance;
 
 		void renderTextInternal(std::string text, ci::Vec2i pos, int align);
+		float	emHeight;
 	};
 }

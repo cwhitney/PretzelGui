@@ -39,6 +39,7 @@ void BasicSampleApp::setup() {
 	gui = new PretzelGui("My settings");
 	gui->addSlider("Opacity", &mOpacity, 0, 1);
 	gui->addSlider("Radius", &mRadius, 0, 100);
+
 	gui->addLabel("Other Settings");
 	gui->addSaveLoad();
 	gui->addButton("Resize", &BasicSampleApp::onButtonPress, this);
