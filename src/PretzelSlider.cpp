@@ -43,7 +43,11 @@ void PretzelSlider::updateBounds(const ci::Vec2f &offset, const ci::Rectf &paren
 }
 
 void PretzelSlider::updateValue(float val){
-	val = math<float>::clamp(val, mMin, mMax);
+	if (mMin < mMax){
+		val = math<float>::clamp(val, mMin, mMax);
+	}else{
+		val = math<float>::clamp(val, mMax, mMin);
+	}
 	*mValue = val;
 
 	mSliderPct = (val - mMin) / (mMax - mMin);

@@ -33,11 +33,11 @@ void BasicSampleApp::setup() {
 	Rand::randomize();
 
 	mRadius = 25;
-	mOpacity = 1.0;
+	mOpacity = 0.5;
 	bDrawOutline = false;
 
 	gui = new PretzelGui("My settings");
-	gui->addSlider("Opacity", &mOpacity, 0, 1);
+	gui->addSlider("Opacity", &mOpacity, 0.0, 1.0);
 	gui->addSlider("Radius", &mRadius, 0, 100);
 
 	gui->addLabel("Other Settings");
@@ -46,6 +46,8 @@ void BasicSampleApp::setup() {
 	gui->addToggle("Draw outline", &bDrawOutline);
 
 //	gui->minimize();
+
+	ci::gl::enableAlphaBlending();
 }
 void BasicSampleApp::onButtonPress(){
 	console() << "Got a button press event" << endl;
@@ -59,7 +61,7 @@ void BasicSampleApp::update() {
 
 void BasicSampleApp::draw() {
 	gl::clear(Color(84. / 255., 166. / 255., 1));
-	gl::color(ColorA(1, 1, 1, mOpacity));
+	gl::color(ColorA(1.0, 1.0, 1.0, mOpacity));
 
 	if (bDrawOutline){
 		gl::drawStrokedCircle(getWindowCenter(), mRadius);

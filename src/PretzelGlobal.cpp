@@ -43,15 +43,17 @@ namespace Pretzel {
 			ci::gl::translate(pos);
 			ci::gl::translate(0, (int)emHeight);
 
+			ci::gl::color(P_TEXT_COLOR);
+
 			if (align == Pretzel_FONT_ALIGN_RIGHT){
-				ci::gl::translate(-textSize.x, 0);
+				guiFont->drawString(text, ci::Vec2i(-textSize.x, 0), opts);
 			}
 			else if (align == Pretzel_FONT_ALIGN_CENTER){
-				ci::gl::translate((int)textSize.x*-0.5, 0);
+				guiFont->drawString(text, ci::Vec2i((int)textSize.x*-0.5, 0), opts);
 			}
-
-			ci::gl::color(P_TEXT_COLOR);
-			guiFont->drawString(text, ci::Vec2f::zero(), opts);
+			else{
+				guiFont->drawString(text, ci::Vec2i::zero(), opts);
+			}
 		}ci::gl::popMatrices();
 	}
 

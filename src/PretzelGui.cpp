@@ -122,8 +122,21 @@ void PretzelGui::onMouseUp(ci::app::MouseEvent &event){
 
 // ---------------------------------------------------------
 void PretzelGui::draw(){
-	glDisable(GL_MULTISAMPLE);
 
+	// grab some gl settings
+	glPushAttrib(GL_ALL_ATTRIB_BITS);
+
+	glDisable(GL_MULTISAMPLE);
+	float curCol[4];
+	glGetFloatv(GL_CURRENT_COLOR, curCol);
+
+	GLboolean bDepthtestEnable;
+	glGetBooleanv(GL_DEPTH_TEST, &bDepthtestEnable);
+	gl::disableDepthRead();
+
+	
+
+	// -----------------------------------------------------------
 	gl::enableAlphaBlending();
 	gl::color(Color(1, 1, 1));
 
@@ -152,7 +165,13 @@ void PretzelGui::draw(){
 		}gl::popMatrices();
 	}
 
+	// -----------------------------------------------------------
+	// reset those gl settings
 	glEnable(GL_MULTISAMPLE);
+	glColor4f(curCol[0], curCol[1], curCol[2], curCol[3]);
+	if (bDepthtestEnable == GL_TRUE){ gl::enableDepthRead(); }
+
+	glPopAttrib();
 }
 
 // --------------------------------------------------
