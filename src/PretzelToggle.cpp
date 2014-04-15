@@ -18,6 +18,8 @@ PretzelToggle::PretzelToggle(BasePretzel *parent, std::string label, bool *value
 	mSkinDestRect.set(0, 0, mSkinTexRect.getWidth(), mSkinTexRect.getHeight());
 	mSkinDestRect.offset(Vec2i(12, 2));
 
+	mGlobal->addSaveParam(label, value);
+
 	parent->registerPretzel(this);
 }
 

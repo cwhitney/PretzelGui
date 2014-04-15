@@ -26,10 +26,9 @@ PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, float *
 	mSkinDestRect = mSkinTexRect;
 	mSkinDestRect.offset(Vec2i(-7,-6));
 
+	mGlobal->addSaveParam(labelText, value);
+
 	parent->registerPretzel(this);
-
-	mGlobal = Pretzel::PretzelGlobal::getInstance();
-
 	updateValue(*mValue);
 }
 

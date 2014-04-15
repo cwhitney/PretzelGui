@@ -12,6 +12,7 @@
 #include "cinder/gl/Gl.h"
 #include "cinder/gl/Texture.h"
 #include "cinder/gl/TextureFont.h"
+#include "cinder/Json.h"
 
 namespace Pretzel {
 
@@ -35,8 +36,11 @@ namespace Pretzel {
 		void renderTextRight(std::string text, ci::Vec2i pos = ci::Vec2i::zero());
 		void renderTextCentered(std::string text, ci::Vec2i pos = ci::Vec2i::zero());
 
-		void saveSettings();
-		void loadSettings();
+		void saveSettings(ci::fs::path &settingsPath = ci::fs::path() );
+		void loadSettings(ci::fs::path &settingsPath = ci::fs::path() );
+
+		void addSaveParam(std::string name, float *val);
+		void addSaveParam(std::string name, bool *val);
 
 		template <typename T>
 		std::string to_string_with_precision(const T num, const int n = 2) {
@@ -46,9 +50,24 @@ namespace Pretzel {
 		}
 
 	private:
+		enum PretzelTypes {
+			_FLOAT,
+			_BOOL
+		};
+
+		struct PretzelParam{
+			std::string name;
+			void* value;
+			PretzelTypes type;
+		};
+
+		std::vector<PretzelParam>	mParamList;
+
 		PretzelGlobal(){};
 		PretzelGlobal(PretzelGlobal const&){};
 		static PretzelGlobal		*mInstance;
+
+		void addParamInternal(std::string name, void* value, PretzelTypes type);
 
 		void renderTextInternal(std::string text, ci::Vec2i pos, int align);
 		float	emHeight;
