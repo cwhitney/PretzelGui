@@ -78,6 +78,14 @@ void PretzelGui::minimize(bool doMinimize){
 	bDrawMinimized = doMinimize;
 }
 
+void PretzelGui::saveSettings(ci::fs::path &settingsPath){
+	mGlobal->saveSettings(settingsPath);
+}
+
+void PretzelGui::loadSettings(ci::fs::path &settingsPath){
+	mGlobal->loadSettings(settingsPath);
+}
+
 // ---------------------------------------------------------
 void PretzelGui::onMouseDown(ci::app::MouseEvent &event){
 
