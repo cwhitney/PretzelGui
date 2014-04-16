@@ -26,11 +26,9 @@ void PretzelSaveLoad::updateBounds(const ci::Vec2f &offset, const ci::Rectf &par
 
 void PretzelSaveLoad::mouseDown(const ci::Vec2i &pos){
 	if (mSaveRect.contains(pos-mOffset)){
-		console() << "Save!" << endl;
 		mGlobal->saveSettings();
 	}
 	else if (mLoadRect.contains(pos-mOffset)){
-		console() << "Load! " << endl;
 		mGlobal->loadSettings();
 	}
 }

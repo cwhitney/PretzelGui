@@ -31,6 +31,7 @@ class PretzelGui : public PretzelRow {
     
     void draw();
 	void setSize(ci::Vec2i size);
+	void setPos(const ci::Vec2i &pos);
 	void minimize(bool doMinimize=true);
 
 	// ------------------

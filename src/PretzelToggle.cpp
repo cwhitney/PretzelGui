@@ -23,7 +23,6 @@ PretzelToggle::PretzelToggle(BasePretzel *parent, std::string label, bool *value
 	parent->registerPretzel(this);
 }
 
-
 void PretzelToggle::draw() {
 	gl::pushMatrices(); {
 		gl::translate(mOffset);

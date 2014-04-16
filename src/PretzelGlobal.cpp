@@ -135,7 +135,25 @@ namespace Pretzel {
 		}
 		else{
 			JsonTree loadTree(loadFile(loadPath));
-			console() << "LOAD TREE " << loadTree << endl;
+			JsonTree appSettings = loadTree.getChild(0);
+
+			for (int i = 0; i < mParamList.size(); i++){
+				string pName = mParamList[i].name;
+				switch (mParamList[i].type){
+				case _FLOAT:{
+					float fVal = appSettings.getChild(pName).getValue<float>();
+					*((float*)mParamList[i].value) = fVal;
+					break;
+				}
+				case _BOOL:{
+					bool bVal = appSettings.getChild(pName).getValue<float>();
+					*((bool*)mParamList[i].value) = bVal;
+					break; }
+				default:
+					console() << "Pretzel :: Can't load settings type " << endl;
+					break;
+				}
+			}
 		}
 	}
 

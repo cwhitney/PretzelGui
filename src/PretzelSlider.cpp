@@ -78,6 +78,8 @@ void PretzelSlider::mouseUp(const Vec2i &pos){
 }
 
 void PretzelSlider::draw() {
+	updateValue(*mValue);
+
 	gl::pushMatrices(); {
 		gl::translate(mOffset);
 

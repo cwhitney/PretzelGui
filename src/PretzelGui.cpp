@@ -70,6 +70,10 @@ void PretzelGui::setSize(Vec2i size){
 	mResizeRect.set(ul.x, ul.y, lr.x, lr.y);
 }
 
+void PretzelGui::setPos(const Vec2i &pos){
+	mPos.set(pos);
+}
+
 void PretzelGui::minimize(bool doMinimize){
 	bDrawMinimized = doMinimize;
 }
@@ -103,7 +107,7 @@ void PretzelGui::onMouseDragged(ci::app::MouseEvent &event){
 	if (bDragging){
 		mPos = event.getPos() - mMouseOffset;
 	}else if (bResizing){
-		Vec2i newSize = mResizeStartSize + event.getPos() - mMouseOffset;
+		Vec2i newSize = mResizeStartSize + event.getPos() - mPos - mMouseOffset;
 		setSize(newSize);
 	}else{
 		mouseDragged(event.getPos() - mPos);

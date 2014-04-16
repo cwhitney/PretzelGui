@@ -61,14 +61,16 @@ namespace Pretzel {
 			PretzelTypes type;
 		};
 
-		std::vector<PretzelParam>	mParamList;
-
+		// PRIVATE CONSTRUCTOR + COPY
 		PretzelGlobal(){};
 		PretzelGlobal(PretzelGlobal const&){};
 		static PretzelGlobal		*mInstance;
 
+		// PARAMS
 		void addParamInternal(std::string name, void* value, PretzelTypes type);
+		std::vector<PretzelParam>	mParamList;
 
+		// TEXT
 		void renderTextInternal(std::string text, ci::Vec2i pos, int align);
 		float	emHeight;
 	};
