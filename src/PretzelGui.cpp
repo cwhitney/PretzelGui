@@ -28,6 +28,7 @@ void PretzelGui::init( std::string title ){
 
 	mGlobal->mSkinTex = gl::Texture::create(mSkin);
 
+	mGlobal->P_HOVER_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 360)));
 	mGlobal->P_GUI_BORDER.set(mSkin.getPixel(ci::Vec2i(10, 380)));
 	mGlobal->P_BG_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 400)));
 	mGlobal->P_TAB_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 420)));
@@ -39,9 +40,10 @@ void PretzelGui::init( std::string title ){
 	ci::app::WindowRef window = cinder::app::getWindow();
 	
 	mMouseBeganCallBack = window->getSignalMouseDown().connect(std::bind(&PretzelGui::onMouseDown, this, std::placeholders::_1));
-	mMouseMovedCallBack = window->getSignalMouseDrag().connect(std::bind(&PretzelGui::onMouseDragged, this, std::placeholders::_1));
+	mMouseDragCallBack = window->getSignalMouseDrag().connect(std::bind(&PretzelGui::onMouseDragged, this, std::placeholders::_1));
 	mMouseEndCallBack = window->getSignalMouseUp().connect(std::bind(&PretzelGui::onMouseUp, this, std::placeholders::_1));
-	
+	mMouseMovedCallBack = window->getSignalMouseMove().connect(std::bind(&PretzelGui::onMouseMoved, this, std::placeholders::_1));
+
 	mPos.set(10, 10);
 
 	Vec2i ul = mBounds.getSize() - Vec2i(10, 10);
@@ -130,6 +132,10 @@ void PretzelGui::onMouseUp(ci::app::MouseEvent &event){
 	}else{
 		mouseUp(event.getPos() - mPos);
 	}
+}
+
+void PretzelGui::onMouseMoved(ci::app::MouseEvent &event){
+	mouseMoved(event.getPos() - mPos);
 }
 
 // ---------------------------------------------------------

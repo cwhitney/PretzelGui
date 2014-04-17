@@ -65,6 +65,10 @@ void PretzelSlider::mouseDown(const Vec2i &pos){
 	}
 }
 
+void PretzelSlider::mouseMoved(const ci::Vec2i &pos){
+
+}
+
 void PretzelSlider::mouseDragged(const Vec2i &pos){
 	if (bIsDragging){
 		mHandlePos.x = ci::math<float>::clamp(pos.x - mOffset.x, mSliderLeft.x, mSliderRight.x);

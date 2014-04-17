@@ -54,12 +54,14 @@ class PretzelGui : public PretzelRow {
 
 	// mouse events
 	boost::signals2::scoped_connection  mMouseBeganCallBack,
-										mMouseMovedCallBack,
-										mMouseEndCallBack;
+										mMouseDragCallBack,
+										mMouseEndCallBack,
+										mMouseMovedCallBack;
 
 	virtual void onMouseDown(ci::app::MouseEvent &event);
 	virtual void onMouseDragged(ci::app::MouseEvent &event);
 	virtual void onMouseUp(ci::app::MouseEvent &event);
+	virtual void onMouseMoved(ci::app::MouseEvent &event);
 
 	ci::Vec2i		mPos;
 

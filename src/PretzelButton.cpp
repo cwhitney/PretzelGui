@@ -10,6 +10,7 @@ PretzelButton::PretzelButton(BasePretzel *parent, string labelText) : BasePretze
 	mButtonBounds.inflate(Vec2f(-10, -1));
 	mButtonBounds.y2--;
 
+	bHover = false;
 	mLabelText = labelText;
 	parent->registerPretzel(this);
 }
@@ -28,10 +29,22 @@ void PretzelButton::mouseDown(const ci::Vec2i &pos){
 	}
 }
 
+void PretzelButton::mouseMoved(const ci::Vec2i &pos){
+	if (mBounds.contains(pos - mOffset)){
+		bHover = true;
+	}else{
+		bHover = false;
+	}
+}
+
 void PretzelButton::draw(){
 	gl::pushMatrices(); {
 		gl::translate(mOffset);
-		gl::color(mGlobal->P_TAB_COLOR);
+		if (bHover){
+			gl::color(mGlobal->P_HOVER_COLOR);
+		}else{
+			gl::color(mGlobal->P_TAB_COLOR);
+		}
 		gl::drawSolidRect(mButtonBounds);
 
 		gl::color(mGlobal->P_HIGHLIGHT_COLOR);
@@ -39,6 +52,6 @@ void PretzelButton::draw(){
 
 		gl::color(mGlobal->P_OUTLINE_COLOR);
 		gl::drawStrokedRect(mButtonBounds);
-		mGlobal->renderTextCentered(mLabelText, Vec2f(mButtonBounds.getCenter().x, 2));
+		mGlobal->renderTextCentered(mLabelText, Vec2f(mButtonBounds.getCenter().x, 3));
 	}gl::popMatrices();
 }

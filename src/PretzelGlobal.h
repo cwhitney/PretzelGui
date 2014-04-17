@@ -27,6 +27,7 @@ namespace Pretzel {
 		ci::ColorA P_OUTLINE_COLOR;
 		ci::ColorA P_HIGHLIGHT_COLOR;
 		ci::ColorA P_SLIDER_COLOR;
+		ci::ColorA P_HOVER_COLOR;
 
 		ci::gl::TextureFontRef guiFont;
 

@@ -14,6 +14,7 @@ public:
 	virtual void mouseDown(const ci::Vec2i &pos);
 	virtual void mouseDragged(const ci::Vec2i &pos);
 	virtual void mouseUp(const ci::Vec2i &pos);
+	virtual void mouseMoved(const ci::Vec2i &pos);
 
 	void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
 

@@ -65,3 +65,8 @@ void BasePretzel::mouseUp(const ci::Vec2i &pos){
 		(*it)->mouseUp(pos);
 	}
 }
+void BasePretzel::mouseMoved(const ci::Vec2i &pos){
+	for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
+		(*it)->mouseMoved(pos);
+	}
+}

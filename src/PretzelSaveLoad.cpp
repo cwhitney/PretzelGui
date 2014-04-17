@@ -7,10 +7,14 @@ using namespace std;
 PretzelSaveLoad::PretzelSaveLoad(BasePretzel *parent) : BasePretzel() {
 	mBounds.set(0, 0, 200, 23);
 	parent->registerPretzel(this);
+	bHoverSave = false;
+	bHoverLoad = false;
 }
 
 PretzelSaveLoad::PretzelSaveLoad(BasePretzel *parent, fs::path savePath) : BasePretzel() {
 	parent->registerPretzel(this);
+	bHoverSave = false;
+	bHoverLoad = false;
 }
 
 void PretzelSaveLoad::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds) {
@@ -33,12 +37,17 @@ void PretzelSaveLoad::mouseDown(const ci::Vec2i &pos){
 	}
 }
 
-void PretzelSaveLoad::mouseDragged(const ci::Vec2i &pos){
-
-}
-
-void PretzelSaveLoad::mouseUp(const ci::Vec2i &pos){
-
+void PretzelSaveLoad::mouseMoved(const ci::Vec2i &pos){
+	if (mSaveRect.contains(pos - mOffset)){
+		bHoverSave = true;
+		bHoverLoad = false;
+	}else if (mLoadRect.contains(pos - mOffset)){
+		bHoverSave = false;
+		bHoverLoad = true;
+	}else{
+		bHoverSave = false;
+		bHoverLoad = false;
+	}
 }
 
 void PretzelSaveLoad::draw() {
@@ -46,7 +55,7 @@ void PretzelSaveLoad::draw() {
 		gl::translate(mOffset + Vec2f(0,3));
 
 		// SAVE
-		gl::color(mGlobal->P_TAB_COLOR);
+		gl::color((bHoverSave) ? mGlobal->P_HOVER_COLOR : mGlobal->P_TAB_COLOR);
 		gl::drawSolidRect(mSaveRect);
 
 		gl::color(mGlobal->P_HIGHLIGHT_COLOR);
@@ -57,7 +66,7 @@ void PretzelSaveLoad::draw() {
 		mGlobal->renderTextCentered("Save", Vec2f(mSaveRect.getCenter().x, 2));
 		
 		// LOAD
-		gl::color(mGlobal->P_TAB_COLOR);
+		gl::color((bHoverLoad) ? mGlobal->P_HOVER_COLOR : mGlobal->P_TAB_COLOR);
 		gl::drawSolidRect(mLoadRect);
 
 		gl::color(mGlobal->P_HIGHLIGHT_COLOR);
