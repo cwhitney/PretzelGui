@@ -4,18 +4,48 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, float *value, float minVal, float maxVal) : BasePretzel(){
+PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, int *value, int minVal, int maxVal) : BasePretzel(){
 	mLabelText = labelText;
-	//boost::to_upper(mLabelText);
+
 	mMin = minVal;
 	mMax = maxVal;
-	mValue = value;
+	mValueInt = value;
 
+	bUseInteger = true;
 	bIsDragging = false;
 	mBounds.set(0, 0, 200, 30);
 	mHandlePos.set(15, 22);
 	mHandleHitbox.set(-5, -5, 5, 5);
 	mSliderPct = 0.0f;
+
+	// slider boundaries
+	mSliderLeft = mBounds.getUpperLeft() + Vec2f(10, 22);
+	mSliderRight = mBounds.getUpperRight() + Vec2f(-10, 22);
+
+	// texture skin rect
+	mSkinTexRect.set(0, 0, 13, 12);
+	mSkinDestRect = mSkinTexRect;
+	mSkinDestRect.offset(Vec2i(-7, -6));
+
+	mGlobal->addSaveParam(labelText, value);
+
+	parent->registerPretzel(this);
+	updateValue(*mValueInt);
+}
+
+PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, float *value, float minVal, float maxVal) : BasePretzel(){
+	mLabelText = labelText;
+
+	mMin = minVal;
+	mMax = maxVal;
+	mValue = value;
+
+	bUseInteger = false;
+	bIsDragging = false;
+	mBounds.set(0, 0, 200, 30);
+	mHandlePos.set(15, 22);
+	mHandleHitbox.set(-5, -5, 5, 5);
+	mSliderPct = 0.0f;	
 
 	// slider boundaries
 	mSliderLeft = mBounds.getUpperLeft() + Vec2f(10, 22);
@@ -38,7 +68,11 @@ void PretzelSlider::updateBounds(const ci::Vec2f &offset, const ci::Rectf &paren
 	mSliderLeft = mBounds.getUpperLeft() + Vec2f(10, 19);
 	mSliderRight = mBounds.getUpperRight() + Vec2f(-10, 19);
 
-	updateValue(*mValue);
+	if (bUseInteger){
+		updateValue(*mValueInt);
+	}else{
+		updateValue(*mValue);
+	}
 }
 
 void PretzelSlider::updateValue(float val){
@@ -47,8 +81,11 @@ void PretzelSlider::updateValue(float val){
 	}else{
 		val = math<float>::clamp(val, mMax, mMin);
 	}
-	*mValue = val;
-
+	if (bUseInteger){
+		*mValueInt = floor(val);
+	}else{
+		*mValue = val;
+	}
 	mSliderPct = (val - mMin) / (mMax - mMin);
 	mHandlePos.x = lerp(mSliderLeft.x, mSliderRight.x, mSliderPct);
 }
@@ -74,7 +111,11 @@ void PretzelSlider::mouseDragged(const Vec2i &pos){
 		mHandlePos.x = ci::math<float>::clamp(pos.x - mOffset.x, mSliderLeft.x, mSliderRight.x);
 		mSliderPct = lmap<float>(mHandlePos.x, mSliderLeft.x, mSliderRight.x, 0.0, 1.0);
 
-		*mValue = (mMax - mMin) * mSliderPct + mMin;
+		if (bUseInteger){
+			*mValueInt = floor((mMax - mMin) * mSliderPct + mMin);
+		}else{
+			*mValue = (mMax - mMin) * mSliderPct + mMin;
+		}
 	}
 }
 void PretzelSlider::mouseUp(const Vec2i &pos){
@@ -82,14 +123,22 @@ void PretzelSlider::mouseUp(const Vec2i &pos){
 }
 
 void PretzelSlider::draw() {
-	updateValue(*mValue);
+	if (bUseInteger){
+		updateValue(*mValueInt);
+	}else{
+		updateValue(*mValue);
+	}
 
 	gl::pushMatrices(); {
 		gl::translate(mOffset);
 
 		gl::pushMatrices(); {
 			mGlobal->renderText(mLabelText, mBounds.getUpperLeft() + Vec2i(12,1));
-			mGlobal->renderTextRight(mGlobal->to_string_with_precision(*mValue), mBounds.getUpperRight() + Vec2i(-12, 1) );
+			if (bUseInteger){
+				mGlobal->renderTextRight(to_string(*mValueInt), mBounds.getUpperRight() + Vec2i(-12, 1));
+			}else{
+				mGlobal->renderTextRight(mGlobal->to_string_with_precision(*mValue), mBounds.getUpperRight() + Vec2i(-12, 1));
+			}
 		}gl::popMatrices();
 
 		gl::color(mGlobal->P_SLIDER_COLOR);

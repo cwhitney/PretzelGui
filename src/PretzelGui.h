@@ -40,6 +40,7 @@ class PretzelGui : public PretzelRow {
 	// ------------------
 	void addLabel(std::string labelText);
 	void addSlider(std::string label, float *variable, float min, float max);
+	void addSlider(std::string label, int *variable, int min, int max);
 	void addSaveLoad();
 	void addToggle( std::string label, bool *value);
 

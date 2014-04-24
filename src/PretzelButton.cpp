@@ -5,9 +5,9 @@ using namespace ci::app;
 using namespace std;
 
 PretzelButton::PretzelButton(BasePretzel *parent, string labelText) : BasePretzel() {
-	mBounds.set(0, 0, 200, 22);
+	mBounds.set(0, 0, 200, 26);
 	mButtonBounds = mBounds;
-	mButtonBounds.inflate(Vec2f(-10, -1));
+	mButtonBounds.inflate(Vec2f(-10, -3));
 	mButtonBounds.y2--;
 
 	bHover = false;
@@ -19,7 +19,7 @@ void PretzelButton::updateBounds(const ci::Vec2f &offset, const ci::Rectf &paren
 	BasePretzel::updateBounds(offset, parentBounds);
 
 	mButtonBounds = mBounds;
-	mButtonBounds.inflate(Vec2f(-10, -1));
+	mButtonBounds.inflate(Vec2f(-10, -3));
 	mButtonBounds.y2 -= 1;
 }
 
@@ -52,6 +52,6 @@ void PretzelButton::draw(){
 
 		gl::color(mGlobal->P_OUTLINE_COLOR);
 		gl::drawStrokedRect(mButtonBounds);
-		mGlobal->renderTextCentered(mLabelText, Vec2f(mButtonBounds.getCenter().x, 3));
+		mGlobal->renderTextCentered(mLabelText, Vec2f(mButtonBounds.getCenter().x, 5));
 	}gl::popMatrices();
 }

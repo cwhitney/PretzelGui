@@ -13,7 +13,7 @@ using namespace ci::app;
 using namespace std;
 using namespace Pretzel;
 
-PretzelGui::PretzelGui(std::string title) : PretzelRow(NULL, 300, 500) { init(title); }
+PretzelGui::PretzelGui(std::string title) : PretzelRow(NULL, 200, 500) { init(title); }
 PretzelGui::PretzelGui(std::string title, int width, int height) : PretzelRow(NULL, width, height){ init(title); }
 PretzelGui::PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height) : PretzelRow(NULL, width, height){ init(title); }
 
@@ -198,6 +198,10 @@ void PretzelGui::addLabel(std::string labelText){
 }
 
 void PretzelGui::addSlider(std::string label, float *variable, float min, float max){
+	new PretzelSlider(this, label, variable, min, max);
+}
+
+void PretzelGui::addSlider(std::string label, int *variable, int min, int max){
 	new PretzelSlider(this, label, variable, min, max);
 }
 

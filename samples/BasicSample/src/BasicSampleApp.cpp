@@ -19,7 +19,10 @@ public:
 
 	float		mRadius;
 	float		mOpacity;
+	int			xShift;
 	bool		bDrawOutline;
+
+	ci::ColorA	mCol;
 
 	void onButtonPress();
 };
@@ -34,24 +37,32 @@ void BasicSampleApp::setup() {
 
 	mRadius = 25;
 	mOpacity = 0.5;
+	xShift = 0;
 	bDrawOutline = false;
+	mCol = Color::white();
 
-	gui = new PretzelGui("My settings");
+	gui = new PretzelGui("Circle settings");
+
+	// Passing floats will keep your sliders as floats
 	gui->addSlider("Opacity", &mOpacity, 0.0, 1.0);
 	gui->addSlider("Radius", &mRadius, 0, 100);
 
+	// Int sliders have the same signature
+	gui->addSlider("X Shift", &xShift, -100, 100);
+
 	gui->addLabel("Other Settings");
 	gui->addSaveLoad();
-	gui->addButton("Resize", &BasicSampleApp::onButtonPress, this);
+	gui->addButton("Random Color", &BasicSampleApp::onButtonPress, this);
 	gui->addToggle("Draw outline", &bDrawOutline);
+	gui->addSaveLoad();
 
 //	gui->minimize();
 
 	ci::gl::enableAlphaBlending();
 }
 void BasicSampleApp::onButtonPress(){
-	console() << "Got a button press event" << endl;
-	gui->setSize(Vec2f(200, 400));
+	//gui->setSize(Vec2f(200, 400));
+	mCol = ColorA(Rand::randFloat(), Rand::randFloat(), Rand::randFloat(), mOpacity);
 }
 
 
@@ -61,13 +72,16 @@ void BasicSampleApp::update() {
 
 void BasicSampleApp::draw() {
 	gl::clear(Color(84. / 255., 166. / 255., 1));
-	gl::color(ColorA(1.0, 1.0, 1.0, mOpacity));
+
+	mCol.a = mOpacity;
+
+	gl::color(mCol);
 
 	if (bDrawOutline){
-		gl::drawStrokedCircle(getWindowCenter(), mRadius);
+		gl::drawStrokedCircle(getWindowCenter() + Vec2f(xShift,0), mRadius);
 	}
 	else{
-		gl::drawSolidCircle(getWindowCenter(), mRadius);
+		gl::drawSolidCircle(getWindowCenter() + Vec2f(xShift, 0), mRadius);
 	}
 
 	gui->draw();

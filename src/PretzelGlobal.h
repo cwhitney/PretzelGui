@@ -41,6 +41,7 @@ namespace Pretzel {
 		void loadSettings(ci::fs::path &settingsPath = ci::fs::path() );
 
 		void addSaveParam(std::string name, float *val);
+		void addSaveParam(std::string name, int *val);
 		void addSaveParam(std::string name, bool *val);
 
 		template <typename T>
@@ -53,7 +54,8 @@ namespace Pretzel {
 	private:
 		enum PretzelTypes {
 			_FLOAT,
-			_BOOL
+			_INT,
+			_BOOL,
 		};
 
 		struct PretzelParam{

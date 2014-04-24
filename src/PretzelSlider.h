@@ -8,6 +8,7 @@
 class PretzelSlider : public BasePretzel {
 public:
 	PretzelSlider(BasePretzel *parent, std::string labelText, float *value, float min, float max);
+	PretzelSlider(BasePretzel *parent, std::string labelText, int *value, int min, int max);
 
 	virtual void draw();
 
@@ -25,6 +26,8 @@ private:
 	float			*mValue;
 	float			mMin, mMax;
 
+	int				*mValueInt;
+
 	ci::Vec2f		mHandlePos;
 	ci::Rectf		mHandleHitbox;
 	ci::Area		mSkinTexRect;
@@ -34,5 +37,6 @@ private:
 
 	bool			bIsDragging;
 	float			mSliderPct;
+	bool			bUseInteger;
 };
 

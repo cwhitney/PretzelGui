@@ -78,6 +78,10 @@ namespace Pretzel {
 		addParamInternal(name, val, _FLOAT);
 	}
 
+	void PretzelGlobal::addSaveParam(std::string name, int *val){
+		addParamInternal(name, val, _INT);
+	}
+
 	void PretzelGlobal::addSaveParam(std::string name, bool *val){
 		addParamInternal(name, val, _BOOL);
 	}
@@ -110,6 +114,9 @@ namespace Pretzel {
 			case _FLOAT:
 				pSettings.pushBack( JsonTree(mParamList[i].name, to_string(*(float*)mParamList[i].value)) );
 				break;
+			case _INT:
+				pSettings.pushBack(JsonTree(mParamList[i].name, to_string(*(int*)mParamList[i].value)));
+				break;
 			case _BOOL:
 				tmp = ((*(bool*)mParamList[i].value) == true) ? "1" : "0";
 				pSettings.pushBack(JsonTree(mParamList[i].name, tmp));
@@ -140,15 +147,24 @@ namespace Pretzel {
 			for (int i = 0; i < mParamList.size(); i++){
 				string pName = mParamList[i].name;
 				switch (mParamList[i].type){
-				case _FLOAT:{
-					float fVal = appSettings.getChild(pName).getValue<float>();
-					*((float*)mParamList[i].value) = fVal;
+				case _FLOAT:
+					if (appSettings.hasChild(pName)){
+						float fVal = appSettings.getChild(pName).getValue<float>();
+						*((float*)mParamList[i].value) = fVal;
+					}
 					break;
-				}
-				case _BOOL:{
-					bool bVal = appSettings.getChild(pName).getValue<float>();
-					*((bool*)mParamList[i].value) = bVal;
-					break; }
+				case _INT:
+					if (appSettings.hasChild(pName)){
+						int fVal = appSettings.getChild(pName).getValue<int>();
+						*((int*)mParamList[i].value) = fVal;
+					}
+					break;
+				case _BOOL:
+					if (appSettings.hasChild(pName)){
+						bool bVal = appSettings.getChild(pName).getValue<float>();
+						*((bool*)mParamList[i].value) = bVal;
+					}
+					break;
 				default:
 					console() << "Pretzel :: Can't load settings type " << endl;
 					break;
