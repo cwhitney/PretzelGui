@@ -5,38 +5,41 @@
 #include "PretzelGlobal.h"
 #include "BasePretzel.h"
 
-class PretzelSlider : public BasePretzel {
-public:
-	PretzelSlider(BasePretzel *parent, std::string labelText, float *value, float min, float max);
-	PretzelSlider(BasePretzel *parent, std::string labelText, int *value, int min, int max);
+namespace Pretzel {
 
-	virtual void draw();
+	class PretzelSlider : public BasePretzel {
+	public:
+		PretzelSlider(BasePretzel *parent, std::string labelText, float *value, float min, float max);
+		PretzelSlider(BasePretzel *parent, std::string labelText, int *value, int min, int max);
 
-	virtual void mouseDown(const ci::Vec2i &pos);
-	virtual void mouseDragged(const ci::Vec2i &pos);
-	virtual void mouseUp(const ci::Vec2i &pos);
-	virtual void mouseMoved(const ci::Vec2i &pos);
+		virtual void draw();
 
-	void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
+		virtual void mouseDown(const ci::Vec2i &pos);
+		virtual void mouseDragged(const ci::Vec2i &pos);
+		virtual void mouseUp(const ci::Vec2i &pos);
+		virtual void mouseMoved(const ci::Vec2i &pos);
 
-private:
-	void updateValue( float newVal );
+		void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
 
-	std::string		mLabelText;
-	float			*mValue;
-	float			mMin, mMax;
+	private:
+		void updateValue(float newVal);
 
-	int				*mValueInt;
+		std::string		mLabelText;
+		float			*mValue;
+		float			mMin, mMax;
 
-	ci::Vec2f		mHandlePos;
-	ci::Rectf		mHandleHitbox;
-	ci::Area		mSkinTexRect;
-	ci::Rectf		mSkinDestRect;
+		int				*mValueInt;
 
-	ci::Vec2f		mSliderLeft, mSliderRight;
+		ci::Vec2f		mHandlePos;
+		ci::Rectf		mHandleHitbox;
+		ci::Area		mSkinTexRect;
+		ci::Rectf		mSkinDestRect;
 
-	bool			bIsDragging;
-	float			mSliderPct;
-	bool			bUseInteger;
-};
+		ci::Vec2f		mSliderLeft, mSliderRight;
 
+		bool			bIsDragging;
+		float			mSliderPct;
+		bool			bUseInteger;
+	};
+
+}

@@ -15,7 +15,7 @@ public:
 	void update();
 	void draw();
 
-	PretzelGui    *gui;
+	Pretzel::PretzelGui    *gui;
 
 	float		mRadius;
 	float		mOpacity;
@@ -41,7 +41,7 @@ void BasicSampleApp::setup() {
 	bDrawOutline = false;
 	mCol = Color::white();
 
-	gui = new PretzelGui("Circle settings");
+	gui = new Pretzel::PretzelGui("Circle settings");
 
 	// Passing floats will keep your sliders as floats
 	gui->addSlider("Opacity", &mOpacity, 0.0, 1.0);

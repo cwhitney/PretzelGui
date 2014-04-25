@@ -12,36 +12,38 @@
 #include <boost/algorithm/string.hpp>
 #include "PretzelGlobal.h"
 
-enum PretzelFillStyle {
-    FILL = 0
-};
+namespace Pretzel{
+	enum PretzelFillStyle {
+		FILL = 0
+	};
 
-class BasePretzel {
-  public:
-    BasePretzel();
-  
-    virtual void draw(){};
-	virtual void registerPretzel(BasePretzel *Pretzel);
-    
-    virtual void updateBounds( const ci::Vec2f &offset, const ci::Rectf &parentBounds );
-    
-    virtual ci::Rectf getBounds();
-    virtual float getWidth();
-    virtual float getHeight();
+	class BasePretzel {
+	public:
+		BasePretzel();
 
-	virtual void mouseDown(const ci::Vec2i &pos);
-	virtual void mouseDragged(const ci::Vec2i &pos);
-	virtual void mouseUp(const ci::Vec2i &pos);
-	virtual void mouseMoved(const ci::Vec2i &pos);
-    
-  protected:
-    virtual void updateChildrenBounds();
+		virtual void draw(){};
+		virtual void registerPretzel(BasePretzel *Pretzel);
 
-	ci::Vec2f                   mOffset;
-	ci::Rectf                   mBounds;
+		virtual void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
 
-	std::vector<BasePretzel*>     mPretzelChildren;
-    ci::Rectf                   mParentBounds;
+		virtual ci::Rectf getBounds();
+		virtual float getWidth();
+		virtual float getHeight();
 
-	Pretzel::PretzelGlobal			*mGlobal;
-};
+		virtual void mouseDown(const ci::Vec2i &pos);
+		virtual void mouseDragged(const ci::Vec2i &pos);
+		virtual void mouseUp(const ci::Vec2i &pos);
+		virtual void mouseMoved(const ci::Vec2i &pos);
+
+	protected:
+		virtual void updateChildrenBounds();
+
+		ci::Vec2f                   mOffset;
+		ci::Rectf                   mBounds;
+
+		std::vector<BasePretzel*>     mPretzelChildren;
+		ci::Rectf                   mParentBounds;
+
+		Pretzel::PretzelGlobal			*mGlobal;
+	};
+}
