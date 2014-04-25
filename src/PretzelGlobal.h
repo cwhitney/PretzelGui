@@ -37,8 +37,8 @@ namespace Pretzel {
 		void renderTextRight(std::string text, ci::Vec2i pos = ci::Vec2i::zero());
 		void renderTextCentered(std::string text, ci::Vec2i pos = ci::Vec2i::zero());
 
-		void saveSettings(ci::fs::path &settingsPath = ci::fs::path() );
-		void loadSettings(ci::fs::path &settingsPath = ci::fs::path() );
+		void saveSettings(ci::fs::path settingsPath = ci::fs::path() );
+		void loadSettings(ci::fs::path settingsPath = ci::fs::path() );
 
 		void addSaveParam(std::string name, float *val);
 		void addSaveParam(std::string name, int *val);
@@ -47,7 +47,7 @@ namespace Pretzel {
 		template <typename T>
 		std::string to_string_with_precision(const T num, const int n = 2) {
 			std::ostringstream out;
-			out << fixed << std::setprecision(n) << num;
+			out << std::fixed << std::setprecision(n) << num;
 			return out.str();
 		}
 

@@ -34,8 +34,8 @@ namespace Pretzel{
 		void setPos(const ci::Vec2i &pos);
 		void minimize(bool doMinimize = true);
 
-		void saveSettings(ci::fs::path &settingsPath = ci::fs::path());
-		void loadSettings(ci::fs::path &settingsPath = ci::fs::path());
+		void saveSettings(ci::fs::path settingsPath = ci::fs::path());
+		void loadSettings(ci::fs::path settingsPath = ci::fs::path());
 
 		// ------------------
 		void addLabel(std::string labelText);

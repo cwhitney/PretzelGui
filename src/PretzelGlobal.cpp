@@ -95,7 +95,7 @@ namespace Pretzel {
 		mParamList.push_back( p );
 	}
 
-	void PretzelGlobal::saveSettings(fs::path &settingsPath){
+	void PretzelGlobal::saveSettings(fs::path settingsPath){
 		fs::path appPath = settingsPath;
 
 		if (appPath.string() == ""){
@@ -131,7 +131,7 @@ namespace Pretzel {
 		root.write(appPath, JsonTree::WriteOptions());
 	}
 
-	void PretzelGlobal::loadSettings(fs::path &settingsPath){
+	void PretzelGlobal::loadSettings(fs::path settingsPath){
 		fs::path loadPath = settingsPath;
 		if (loadPath.string() == ""){
 			loadPath = getAppPath() / "guiSettings" / "settings.json";

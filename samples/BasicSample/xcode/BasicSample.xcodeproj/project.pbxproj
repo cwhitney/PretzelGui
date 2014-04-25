@@ -15,28 +15,28 @@
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		88839544800940529064F6D9 /* PretzelToggle.h in Headers */ = {isa = PBXBuildFile; fileRef = 613E7828AE964E45A4C0A595 /* PretzelToggle.h */; };
-		5C1431F56D0E4AE680B871CE /* PretzelSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = B037BDCCC440433A968D138A /* PretzelSlider.h */; };
-		EEDE9EE6877C4A9687B1D0CF /* PretzelSaveLoad.h in Headers */ = {isa = PBXBuildFile; fileRef = 06D822ECE1534DA8AAF1E47B /* PretzelSaveLoad.h */; };
-		149F37A5F7F54CE6964F7A8A /* PretzelRow.h in Headers */ = {isa = PBXBuildFile; fileRef = 37EE57D7184A403B9908A9F1 /* PretzelRow.h */; };
-		B6286300E52A4B7C90B52A8E /* PretzelLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F8E2D42C194056867E7C0C /* PretzelLabel.h */; };
-		F20B264EEF9343999DE5A8ED /* PretzelGui.h in Headers */ = {isa = PBXBuildFile; fileRef = 65437A8B36D34747862429B4 /* PretzelGui.h */; };
-		86F5E76B261D43BA899892A7 /* PretzelGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = 08198EC4E121431999F325E1 /* PretzelGlobal.h */; };
-		995B6C6F18C2442FBCF5BF3B /* PretzelButton.h in Headers */ = {isa = PBXBuildFile; fileRef = D87D9DA115584BE0B5DB1429 /* PretzelButton.h */; };
-		CA50548BB0F541F28468CFDB /* BasePretzel.h in Headers */ = {isa = PBXBuildFile; fileRef = 11761A803011464AAC429B87 /* BasePretzel.h */; };
-		F93B0F775DE74F0E839586F1 /* PretzelToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 239A2A187B3C4960A12EE8EE /* PretzelToggle.cpp */; };
-		A2463C1814FC419492AC8049 /* PretzelSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16541DC83C7D4806A4C12370 /* PretzelSlider.cpp */; };
-		3FB4633E86ED41B998AB4CC6 /* PretzelSaveLoad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB31C6412E40FCB64606F5 /* PretzelSaveLoad.cpp */; };
-		727B1AC67ED94307859650F3 /* PretzelRow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF3DAEB0E4B9F8441A310 /* PretzelRow.cpp */; };
-		F89D505AC2EE402AA28C0706 /* PretzelLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DABB0C13C44AF5B954BCDF /* PretzelLabel.cpp */; };
-		443EB0E5DA2846E89B9528B4 /* PretzelGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 446D7DFB74D84A26ACEBB97B /* PretzelGui.cpp */; };
-		6EF8ADD06E344F1F927BF812 /* PretzelGlobal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D3CADC2A7F4F2088680371 /* PretzelGlobal.cpp */; };
-		CEB2130A37334835935EC3AC /* PretzelButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C83BDE372EFB459584FA784B /* PretzelButton.cpp */; };
-		3D08CB7547CD4920B0BA3830 /* BasePretzel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0151E3778D464ED1B76653CE /* BasePretzel.cpp */; };
-		2D37F2B0D7AB4E7892C06D5D /* BasicSample_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 3A29409FEC104469B021DFE5 /* BasicSample_Prefix.pch */; };
-		C95EDF66D912432D9CAFF58E /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 04727A2D7EAD40ADAF98019E /* CinderApp.icns */; };
-		B7000657D175475C96F668DB /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = B86C5099831E481B8C536AFE /* Resources.h */; };
-		9208978880E743AD9A9FC574 /* BasicSampleApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7F8250FAC104E1C9F5ECDBD /* BasicSampleApp.cpp */; };
+		E0A18B545789444A9E01FD8B /* PretzelToggle.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B1AF6C3B0545F4A6B34115 /* PretzelToggle.h */; };
+		11901DAB0843410EAEAEDD6D /* PretzelSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 23E45F32AED144A48DDA6851 /* PretzelSlider.h */; };
+		E797B6329C5C4891AA538271 /* PretzelSaveLoad.h in Headers */ = {isa = PBXBuildFile; fileRef = C2B33947FD0343EF99132E54 /* PretzelSaveLoad.h */; };
+		D6EDE79432074027B7DEDFF7 /* PretzelRow.h in Headers */ = {isa = PBXBuildFile; fileRef = A48A117320E346AB9ACAE51E /* PretzelRow.h */; };
+		C4F6ABA008D940A1BB1CDF7B /* PretzelLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = C97A60D2686B4930B2A6E70B /* PretzelLabel.h */; };
+		A52B243DBA714C4695DE1E3F /* PretzelGui.h in Headers */ = {isa = PBXBuildFile; fileRef = FA18EEA92C954E30895A1F1B /* PretzelGui.h */; };
+		6C241303068942C5B7518FFA /* PretzelGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = 26BCB91EB78F417F85711FAB /* PretzelGlobal.h */; };
+		997535A404A64E9897104043 /* PretzelButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 67D9DFD031C8475C984A4F2D /* PretzelButton.h */; };
+		DFC1CB7342B54055B24138CD /* BasePretzel.h in Headers */ = {isa = PBXBuildFile; fileRef = 30D9A04C8EE04702BD042D5E /* BasePretzel.h */; };
+		FF0DA3BDE3914C08BAFA2EBA /* PretzelToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15B2C017B7A4E04952F6090 /* PretzelToggle.cpp */; };
+		595BCA59710947F98DB030B9 /* PretzelSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2811460F71EA441CA1C513F7 /* PretzelSlider.cpp */; };
+		F699614FC4DC4F34980FCC94 /* PretzelSaveLoad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCF3D73FB07E4210B5971241 /* PretzelSaveLoad.cpp */; };
+		9A614D4314DA4338B24FA2B0 /* PretzelRow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0365D0EAC0CB4A00B45C957A /* PretzelRow.cpp */; };
+		815C849FAABB4523AB5E0809 /* PretzelLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97AED188ABC740CF8E7570F1 /* PretzelLabel.cpp */; };
+		064227E692464D4ABC7A878B /* PretzelGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95276285AB0C4B679FA97113 /* PretzelGui.cpp */; };
+		2FD1C1A100C54962B1415711 /* PretzelGlobal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0D082F5F7B349BB93EEE198 /* PretzelGlobal.cpp */; };
+		AE415FD7D4994138859CC2EF /* PretzelButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D558F28A05943ADBE911C88 /* PretzelButton.cpp */; };
+		D45E7644843E4258A5DCA6F1 /* BasePretzel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8D2F8248960400CB8142435 /* BasePretzel.cpp */; };
+		8F2A408E944A40B4A32A0B07 /* BasicSample_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 4DB49A5028284B0C8F5F96A8 /* BasicSample_Prefix.pch */; };
+		DBE2D2C044774A68B94DE7FB /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 20EB6CBEB90042868ED17FF2 /* CinderApp.icns */; };
+		37F67B57C7684860AA40AD61 /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = A540AD37ADCF4C738DB204DF /* Resources.h */; };
+		DFDC411B66674C0DAF0FC1E8 /* BasicSampleApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6CC33BAC62694257991F5562 /* BasicSampleApp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,29 +51,29 @@
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		8D1107320486CEB800E47090 /* BasicSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7F8250FAC104E1C9F5ECDBD /* BasicSampleApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../src/BasicSampleApp.cpp; sourceTree = "<group>"; name = BasicSampleApp.cpp; };
-		B86C5099831E481B8C536AFE /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../include/Resources.h; sourceTree = "<group>"; name = Resources.h; };
-		04727A2D7EAD40ADAF98019E /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; name = CinderApp.icns; };
-		76C53B099A6B4E9BB60FB7CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; name = Info.plist; };
-		3A29409FEC104469B021DFE5 /* BasicSample_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = BasicSample_Prefix.pch; sourceTree = "<group>"; name = BasicSample_Prefix.pch; };
-		0151E3778D464ED1B76653CE /* BasePretzel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/PretzelGUI/src/BasePretzel.cpp; sourceTree = "<group>"; name = BasePretzel.cpp; };
-		C83BDE372EFB459584FA784B /* PretzelButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/PretzelGUI/src/PretzelButton.cpp; sourceTree = "<group>"; name = PretzelButton.cpp; };
-		67D3CADC2A7F4F2088680371 /* PretzelGlobal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/PretzelGUI/src/PretzelGlobal.cpp; sourceTree = "<group>"; name = PretzelGlobal.cpp; };
-		446D7DFB74D84A26ACEBB97B /* PretzelGui.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/PretzelGUI/src/PretzelGui.cpp; sourceTree = "<group>"; name = PretzelGui.cpp; };
-		95DABB0C13C44AF5B954BCDF /* PretzelLabel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/PretzelGUI/src/PretzelLabel.cpp; sourceTree = "<group>"; name = PretzelLabel.cpp; };
-		49DCF3DAEB0E4B9F8441A310 /* PretzelRow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/PretzelGUI/src/PretzelRow.cpp; sourceTree = "<group>"; name = PretzelRow.cpp; };
-		1EEB31C6412E40FCB64606F5 /* PretzelSaveLoad.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/PretzelGUI/src/PretzelSaveLoad.cpp; sourceTree = "<group>"; name = PretzelSaveLoad.cpp; };
-		16541DC83C7D4806A4C12370 /* PretzelSlider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/PretzelGUI/src/PretzelSlider.cpp; sourceTree = "<group>"; name = PretzelSlider.cpp; };
-		239A2A187B3C4960A12EE8EE /* PretzelToggle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/PretzelGUI/src/PretzelToggle.cpp; sourceTree = "<group>"; name = PretzelToggle.cpp; };
-		11761A803011464AAC429B87 /* BasePretzel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/PretzelGUI/src/BasePretzel.h; sourceTree = "<group>"; name = BasePretzel.h; };
-		D87D9DA115584BE0B5DB1429 /* PretzelButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/PretzelGUI/src/PretzelButton.h; sourceTree = "<group>"; name = PretzelButton.h; };
-		08198EC4E121431999F325E1 /* PretzelGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/PretzelGUI/src/PretzelGlobal.h; sourceTree = "<group>"; name = PretzelGlobal.h; };
-		65437A8B36D34747862429B4 /* PretzelGui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/PretzelGUI/src/PretzelGui.h; sourceTree = "<group>"; name = PretzelGui.h; };
-		F0F8E2D42C194056867E7C0C /* PretzelLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/PretzelGUI/src/PretzelLabel.h; sourceTree = "<group>"; name = PretzelLabel.h; };
-		37EE57D7184A403B9908A9F1 /* PretzelRow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/PretzelGUI/src/PretzelRow.h; sourceTree = "<group>"; name = PretzelRow.h; };
-		06D822ECE1534DA8AAF1E47B /* PretzelSaveLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/PretzelGUI/src/PretzelSaveLoad.h; sourceTree = "<group>"; name = PretzelSaveLoad.h; };
-		B037BDCCC440433A968D138A /* PretzelSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/PretzelGUI/src/PretzelSlider.h; sourceTree = "<group>"; name = PretzelSlider.h; };
-		613E7828AE964E45A4C0A595 /* PretzelToggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/PretzelGUI/src/PretzelToggle.h; sourceTree = "<group>"; name = PretzelToggle.h; };
+		6CC33BAC62694257991F5562 /* BasicSampleApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../src/BasicSampleApp.cpp; sourceTree = "<group>"; name = BasicSampleApp.cpp; };
+		A540AD37ADCF4C738DB204DF /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../include/Resources.h; sourceTree = "<group>"; name = Resources.h; };
+		20EB6CBEB90042868ED17FF2 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; name = CinderApp.icns; };
+		AA4F9A4D51FC44F0B98D45E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; name = Info.plist; };
+		4DB49A5028284B0C8F5F96A8 /* BasicSample_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = BasicSample_Prefix.pch; sourceTree = "<group>"; name = BasicSample_Prefix.pch; };
+		B8D2F8248960400CB8142435 /* BasePretzel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../../../src/BasePretzel.cpp; sourceTree = "<group>"; name = BasePretzel.cpp; };
+		0D558F28A05943ADBE911C88 /* PretzelButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../../../src/PretzelButton.cpp; sourceTree = "<group>"; name = PretzelButton.cpp; };
+		B0D082F5F7B349BB93EEE198 /* PretzelGlobal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../../../src/PretzelGlobal.cpp; sourceTree = "<group>"; name = PretzelGlobal.cpp; };
+		95276285AB0C4B679FA97113 /* PretzelGui.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../../../src/PretzelGui.cpp; sourceTree = "<group>"; name = PretzelGui.cpp; };
+		97AED188ABC740CF8E7570F1 /* PretzelLabel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../../../src/PretzelLabel.cpp; sourceTree = "<group>"; name = PretzelLabel.cpp; };
+		0365D0EAC0CB4A00B45C957A /* PretzelRow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../../../src/PretzelRow.cpp; sourceTree = "<group>"; name = PretzelRow.cpp; };
+		DCF3D73FB07E4210B5971241 /* PretzelSaveLoad.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../../../src/PretzelSaveLoad.cpp; sourceTree = "<group>"; name = PretzelSaveLoad.cpp; };
+		2811460F71EA441CA1C513F7 /* PretzelSlider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../../../src/PretzelSlider.cpp; sourceTree = "<group>"; name = PretzelSlider.cpp; };
+		F15B2C017B7A4E04952F6090 /* PretzelToggle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../../../src/PretzelToggle.cpp; sourceTree = "<group>"; name = PretzelToggle.cpp; };
+		30D9A04C8EE04702BD042D5E /* BasePretzel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../src/BasePretzel.h; sourceTree = "<group>"; name = BasePretzel.h; };
+		67D9DFD031C8475C984A4F2D /* PretzelButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../src/PretzelButton.h; sourceTree = "<group>"; name = PretzelButton.h; };
+		26BCB91EB78F417F85711FAB /* PretzelGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../src/PretzelGlobal.h; sourceTree = "<group>"; name = PretzelGlobal.h; };
+		FA18EEA92C954E30895A1F1B /* PretzelGui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../src/PretzelGui.h; sourceTree = "<group>"; name = PretzelGui.h; };
+		C97A60D2686B4930B2A6E70B /* PretzelLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../src/PretzelLabel.h; sourceTree = "<group>"; name = PretzelLabel.h; };
+		A48A117320E346AB9ACAE51E /* PretzelRow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../src/PretzelRow.h; sourceTree = "<group>"; name = PretzelRow.h; };
+		C2B33947FD0343EF99132E54 /* PretzelSaveLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../src/PretzelSaveLoad.h; sourceTree = "<group>"; name = PretzelSaveLoad.h; };
+		23E45F32AED144A48DDA6851 /* PretzelSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../src/PretzelSlider.h; sourceTree = "<group>"; name = PretzelSlider.h; };
+		36B1AF6C3B0545F4A6B34115 /* PretzelToggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../src/PretzelToggle.h; sourceTree = "<group>"; name = PretzelToggle.h; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E7F8250FAC104E1C9F5ECDBD /* BasicSampleApp.cpp */,
+				6CC33BAC62694257991F5562 /* BasicSampleApp.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -148,35 +148,35 @@
 			name = BasicSample;
 			sourceTree = "<group>";
 		};
-		050C575896BE48788274F710 /* src */ = {
+		6D6402D439D24B53A8F4104C /* src */ = {
 			isa = PBXGroup;
 			children = (
-				0151E3778D464ED1B76653CE /* BasePretzel.cpp */,
-				C83BDE372EFB459584FA784B /* PretzelButton.cpp */,
-				67D3CADC2A7F4F2088680371 /* PretzelGlobal.cpp */,
-				446D7DFB74D84A26ACEBB97B /* PretzelGui.cpp */,
-				95DABB0C13C44AF5B954BCDF /* PretzelLabel.cpp */,
-				49DCF3DAEB0E4B9F8441A310 /* PretzelRow.cpp */,
-				1EEB31C6412E40FCB64606F5 /* PretzelSaveLoad.cpp */,
-				16541DC83C7D4806A4C12370 /* PretzelSlider.cpp */,
-				239A2A187B3C4960A12EE8EE /* PretzelToggle.cpp */,
-				11761A803011464AAC429B87 /* BasePretzel.h */,
-				D87D9DA115584BE0B5DB1429 /* PretzelButton.h */,
-				08198EC4E121431999F325E1 /* PretzelGlobal.h */,
-				65437A8B36D34747862429B4 /* PretzelGui.h */,
-				F0F8E2D42C194056867E7C0C /* PretzelLabel.h */,
-				37EE57D7184A403B9908A9F1 /* PretzelRow.h */,
-				06D822ECE1534DA8AAF1E47B /* PretzelSaveLoad.h */,
-				B037BDCCC440433A968D138A /* PretzelSlider.h */,
-				613E7828AE964E45A4C0A595 /* PretzelToggle.h */,
+				B8D2F8248960400CB8142435 /* BasePretzel.cpp */,
+				0D558F28A05943ADBE911C88 /* PretzelButton.cpp */,
+				B0D082F5F7B349BB93EEE198 /* PretzelGlobal.cpp */,
+				95276285AB0C4B679FA97113 /* PretzelGui.cpp */,
+				97AED188ABC740CF8E7570F1 /* PretzelLabel.cpp */,
+				0365D0EAC0CB4A00B45C957A /* PretzelRow.cpp */,
+				DCF3D73FB07E4210B5971241 /* PretzelSaveLoad.cpp */,
+				2811460F71EA441CA1C513F7 /* PretzelSlider.cpp */,
+				F15B2C017B7A4E04952F6090 /* PretzelToggle.cpp */,
+				30D9A04C8EE04702BD042D5E /* BasePretzel.h */,
+				67D9DFD031C8475C984A4F2D /* PretzelButton.h */,
+				26BCB91EB78F417F85711FAB /* PretzelGlobal.h */,
+				FA18EEA92C954E30895A1F1B /* PretzelGui.h */,
+				C97A60D2686B4930B2A6E70B /* PretzelLabel.h */,
+				A48A117320E346AB9ACAE51E /* PretzelRow.h */,
+				C2B33947FD0343EF99132E54 /* PretzelSaveLoad.h */,
+				23E45F32AED144A48DDA6851 /* PretzelSlider.h */,
+				36B1AF6C3B0545F4A6B34115 /* PretzelToggle.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
 		};
-		B6B36AFAD1A4462A99A640E1 /* PretzelGUI */ = {
+		9BBAC6DBBF324CB7927FEB03 /* PretzelGUI */ = {
 			isa = PBXGroup;
 			children = (
-				050C575896BE48788274F710 /* src */,
+				6D6402D439D24B53A8F4104C /* src */,
 			);
 			name = PretzelGUI;
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 		01B97315FEAEA392516A2CEA /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
-				B6B36AFAD1A4462A99A640E1 /* PretzelGUI */,
+				9BBAC6DBBF324CB7927FEB03 /* PretzelGUI */,
 			);
 			name = Blocks;
 			sourceTree = "<group>";
@@ -192,8 +192,8 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				B86C5099831E481B8C536AFE /* Resources.h */,
-				3A29409FEC104469B021DFE5 /* BasicSample_Prefix.pch */,
+				A540AD37ADCF4C738DB204DF /* Resources.h */,
+				4DB49A5028284B0C8F5F96A8 /* BasicSample_Prefix.pch */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -201,8 +201,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				04727A2D7EAD40ADAF98019E /* CinderApp.icns */,
-				76C53B099A6B4E9BB60FB7CC /* Info.plist */,
+				20EB6CBEB90042868ED17FF2 /* CinderApp.icns */,
+				AA4F9A4D51FC44F0B98D45E8 /* Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C95EDF66D912432D9CAFF58E /* CinderApp.icns in Resources */,
+				DBE2D2C044774A68B94DE7FB /* CinderApp.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,16 +277,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9208978880E743AD9A9FC574 /* BasicSampleApp.cpp in Sources */,
-				3D08CB7547CD4920B0BA3830 /* BasePretzel.cpp in Sources */,
-				CEB2130A37334835935EC3AC /* PretzelButton.cpp in Sources */,
-				6EF8ADD06E344F1F927BF812 /* PretzelGlobal.cpp in Sources */,
-				443EB0E5DA2846E89B9528B4 /* PretzelGui.cpp in Sources */,
-				F89D505AC2EE402AA28C0706 /* PretzelLabel.cpp in Sources */,
-				727B1AC67ED94307859650F3 /* PretzelRow.cpp in Sources */,
-				3FB4633E86ED41B998AB4CC6 /* PretzelSaveLoad.cpp in Sources */,
-				A2463C1814FC419492AC8049 /* PretzelSlider.cpp in Sources */,
-				F93B0F775DE74F0E839586F1 /* PretzelToggle.cpp in Sources */,
+				DFDC411B66674C0DAF0FC1E8 /* BasicSampleApp.cpp in Sources */,
+				D45E7644843E4258A5DCA6F1 /* BasePretzel.cpp in Sources */,
+				AE415FD7D4994138859CC2EF /* PretzelButton.cpp in Sources */,
+				2FD1C1A100C54962B1415711 /* PretzelGlobal.cpp in Sources */,
+				064227E692464D4ABC7A878B /* PretzelGui.cpp in Sources */,
+				815C849FAABB4523AB5E0809 /* PretzelLabel.cpp in Sources */,
+				9A614D4314DA4338B24FA2B0 /* PretzelRow.cpp in Sources */,
+				F699614FC4DC4F34980FCC94 /* PretzelSaveLoad.cpp in Sources */,
+				595BCA59710947F98DB030B9 /* PretzelSlider.cpp in Sources */,
+				FF0DA3BDE3914C08BAFA2EBA /* PretzelToggle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +356,7 @@
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = (
 					"\"$(CINDER_PATH)/include\" ../include",
-					../blocks/PretzelGUI/src,
+					../../../src,
 				);
 			};
 			name = Debug;
@@ -376,7 +376,7 @@
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = (
 					"\"$(CINDER_PATH)/include\" ../include",
-					../blocks/PretzelGUI/src,
+					../../../src,
 				);
 			};
 			name = Release;

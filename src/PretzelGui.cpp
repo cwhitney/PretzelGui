@@ -80,11 +80,11 @@ namespace Pretzel{
 		bDrawMinimized = doMinimize;
 	}
 
-	void PretzelGui::saveSettings(ci::fs::path &settingsPath){
+	void PretzelGui::saveSettings(ci::fs::path settingsPath){
 		mGlobal->saveSettings(settingsPath);
 	}
 
-	void PretzelGui::loadSettings(ci::fs::path &settingsPath){
+	void PretzelGui::loadSettings(ci::fs::path settingsPath){
 		mGlobal->loadSettings(settingsPath);
 	}
 
