@@ -7,8 +7,9 @@
 /* TODO:
  - make textfield clip and scroll text
  - accept int and float variables
- - lose focus after not editing for a while?
+ - allow to move cursor position with mouse or arrow keys
  - allow copypaste
+ - lose focus after not editing for a while?
  - fire signals on start and end editing, like iOS
 */
 

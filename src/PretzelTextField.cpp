@@ -51,7 +51,7 @@ namespace Pretzel{
             if (keyCode == KeyEvent::KEY_ESCAPE || keyCode == KeyEvent::KEY_RETURN){
                 bEditing = false;
             }
-            else if (keyCode == KeyEvent::KEY_BACKSPACE){
+            else if (keyCode == KeyEvent::KEY_BACKSPACE && !mVariable->empty()){
                 mVariable->pop_back();
             }
             else if (keyCode > 31 && keyCode < 127){ //printable characters
