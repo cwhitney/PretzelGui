@@ -71,4 +71,10 @@ namespace Pretzel{
 			(*it)->mouseMoved(pos);
 		}
 	}
+	void BasePretzel::keyDown(const char &key, const int &keyCode){
+		for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
+			(*it)->keyDown(key, keyCode);
+		}
+	}
+
 }

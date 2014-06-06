@@ -34,6 +34,7 @@ namespace Pretzel{
 		virtual void mouseDragged(const ci::Vec2i &pos);
 		virtual void mouseUp(const ci::Vec2i &pos);
 		virtual void mouseMoved(const ci::Vec2i &pos);
+		virtual void keyDown(const char &key, const int &keyCode);
 
 	protected:
 		virtual void updateChildrenBounds();
