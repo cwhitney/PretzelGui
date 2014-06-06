@@ -18,6 +18,7 @@ namespace Pretzel{
 	PretzelGui::PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height) : PretzelRow(NULL, width, height){ init(title); }
 
 	void PretzelGui::init(std::string title){
+		bVisible = true;
 		bDragging = false;
 		bResizing = false;
 		bDrawMinimized = false;
@@ -80,6 +81,18 @@ namespace Pretzel{
 		bDrawMinimized = doMinimize;
 	}
 
+	void PretzelGui::setVisible(bool visible){
+		bVisible = visible;
+	}
+
+	void PretzelGui::toggleVisible(){
+		bVisible = !bVisible;
+	}
+
+	bool PretzelGui::isVisible(){
+		return bVisible;
+	}
+
 	void PretzelGui::saveSettings(ci::fs::path settingsPath){
 		mGlobal->saveSettings(settingsPath);
 	}
@@ -90,6 +103,7 @@ namespace Pretzel{
 
 	// ---------------------------------------------------------
 	void PretzelGui::onMouseDown(ci::app::MouseEvent &event){
+		if (!bVisible) return;
 
 		if (mDefaultLabel->getBounds().contains(event.getPos() - mPos)){
 
@@ -116,6 +130,8 @@ namespace Pretzel{
 	}
 
 	void PretzelGui::onMouseDragged(ci::app::MouseEvent &event){
+		if (!bVisible) return;
+
 		if (bDragging){
 			mPos = event.getPos() - mMouseOffset;
 		}
@@ -129,6 +145,8 @@ namespace Pretzel{
 	}
 
 	void PretzelGui::onMouseUp(ci::app::MouseEvent &event){
+		if (!bVisible) return;
+
 		if (bDragging){
 			bDragging = false;
 		}
@@ -141,11 +159,14 @@ namespace Pretzel{
 	}
 
 	void PretzelGui::onMouseMoved(ci::app::MouseEvent &event){
+		if (!bVisible) return;
+		
 		mouseMoved(event.getPos() - mPos);
 	}
 
 	// ---------------------------------------------------------
 	void PretzelGui::draw(){
+		if (!bVisible) return;
 
 		// grab some gl settings
 		glPushAttrib(GL_ALL_ATTRIB_BITS);
