@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>FB245361-B2DC-4BB8-A149-F21C7B8D70AE</string>
+	<string>AC645C43-D446-4FA4-95B2-547E530590F4</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BasicSample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>6B6FCED1-AE1E-4039-81C2-7896441BF202</key>
-		<string>ssh://github.com/cwhitney/PretzelGui.git</string>
+		<key>6A3F34B2-B2E3-4D26-A60D-2AE93AA3EC39</key>
+		<string>https://github.com/araid/PretzelGui.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>samples/BasicSample/xcode/BasicSample.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>6B6FCED1-AE1E-4039-81C2-7896441BF202</key>
+		<key>6A3F34B2-B2E3-4D26-A60D-2AE93AA3EC39</key>
 		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/cwhitney/PretzelGui.git</string>
+	<string>https://github.com/araid/PretzelGui.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6B6FCED1-AE1E-4039-81C2-7896441BF202</string>
+	<string>6A3F34B2-B2E3-4D26-A60D-2AE93AA3EC39</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>6B6FCED1-AE1E-4039-81C2-7896441BF202</string>
+			<string>6A3F34B2-B2E3-4D26-A60D-2AE93AA3EC39</string>
 			<key>IDESourceControlWCCName</key>
-			<string>PretzelGui</string>
+			<string>PretzelGui_adria</string>
 		</dict>
 	</array>
 </dict>

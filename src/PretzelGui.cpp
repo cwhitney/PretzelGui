@@ -44,6 +44,7 @@ namespace Pretzel{
 		mMouseDragCallBack = window->getSignalMouseDrag().connect(std::bind(&PretzelGui::onMouseDragged, this, std::placeholders::_1));
 		mMouseEndCallBack = window->getSignalMouseUp().connect(std::bind(&PretzelGui::onMouseUp, this, std::placeholders::_1));
 		mMouseMovedCallBack = window->getSignalMouseMove().connect(std::bind(&PretzelGui::onMouseMoved, this, std::placeholders::_1));
+		mKeyDownCallback = window->getSignalKeyDown().connect(std::bind(&PretzelGui::onKeyDown, this, std::placeholders::_1));
 
 		mPos.set(10, 10);
 
@@ -164,6 +165,11 @@ namespace Pretzel{
 		mouseMoved(event.getPos() - mPos);
 	}
 
+	void PretzelGui::onKeyDown(ci::app::KeyEvent &event){
+		//if (!bVisible) return;
+		keyDown(event.getChar(), event.getCode());
+	}
+
 	// ---------------------------------------------------------
 	void PretzelGui::draw(){
 		if (!bVisible) return;
@@ -238,5 +244,9 @@ namespace Pretzel{
 
 	void PretzelGui::addToggle(std::string label, bool *value){
 		new PretzelToggle(this, label, value);
+	}
+
+	void PretzelGui::addTextField(std::string label, std::string *variable, bool editable){
+		new PretzelTextField(this, label, variable, editable);
 	}
 }
