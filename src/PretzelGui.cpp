@@ -17,6 +17,22 @@ namespace Pretzel{
 	PretzelGui::PretzelGui(std::string title, int width, int height) : PretzelRow(NULL, width, height){ init(title); }
 	PretzelGui::PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height) : PretzelRow(NULL, width, height){ init(title); }
 
+    PretzelGui::~PretzelGui(){
+        while( mWidgetList.size() ){
+            BasePretzel *w = mWidgetList.back();
+            
+            if( w->type == PretzelGlobal::WidgetType::BUTTON ){
+                ((PretzelButton*)w)->mConnection.disconnect();
+            }
+            mWidgetList.pop_back();
+            delete w;
+        }
+        
+        delete mDefaultLabel;
+        
+        disconnectSignals();
+    }
+    
 	void PretzelGui::init(std::string title){
 		bVisible = true;
 		bDragging = false;
@@ -247,26 +263,26 @@ namespace Pretzel{
 
 	// --------------------------------------------------
 	void PretzelGui::addLabel(std::string labelText){
-		new PretzelLabel(this, labelText);
+        mWidgetList.push_back( new PretzelLabel(this, labelText) );
 	}
 
 	void PretzelGui::addSlider(std::string label, float *variable, float min, float max){
-		new PretzelSlider(this, label, variable, min, max);
+        mWidgetList.push_back( new PretzelSlider(this, label, variable, min, max) );
 	}
 
 	void PretzelGui::addSlider(std::string label, int *variable, int min, int max){
-		new PretzelSlider(this, label, variable, min, max);
+		mWidgetList.push_back( new PretzelSlider(this, label, variable, min, max) );
 	}
 
 	void PretzelGui::addSaveLoad() {
-		new PretzelSaveLoad(this);
+		mWidgetList.push_back( new PretzelSaveLoad(this) );
 	}
 
 	void PretzelGui::addToggle(std::string label, bool *value){
-		new PretzelToggle(this, label, value);
+		mWidgetList.push_back( new PretzelToggle(this, label, value) );
 	}
 
 	void PretzelGui::addTextField(std::string label, std::string *variable, bool editable){
-		new PretzelTextField(this, label, variable, editable);
+		mWidgetList.push_back( new PretzelTextField(this, label, variable, editable) );
 	}
 }

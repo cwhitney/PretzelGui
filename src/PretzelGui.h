@@ -30,7 +30,8 @@ namespace Pretzel{
 		PretzelGui(std::string title = "");
 		PretzelGui(std::string title, int width, int height);
 		PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height);
-
+        ~PretzelGui();
+        
 		void draw();
 		void setSize(ci::Vec2i size);
 		void setPos(const ci::Vec2i &pos);
@@ -53,7 +54,9 @@ namespace Pretzel{
 		template<typename T, typename Y>
 		inline void addButton(std::string labelText, T callback, Y *callbackObject){
 			PretzelButton *newButton = new PretzelButton(this, labelText);
-			newButton->signalOnPress.connect(std::bind(callback, callbackObject));
+			newButton->mConnection = newButton->signalOnPress.connect(std::bind(callback, callbackObject));
+            
+            mWidgetList.push_back( newButton );
 		}
 
 	private:
@@ -78,6 +81,8 @@ namespace Pretzel{
 
 		ci::Surface32f  mSkin;
 		ci::gl::Texture mTex;
+        
+        std::vector<BasePretzel*>    mWidgetList;
 
 		PretzelLabel	*mDefaultLabel;
 		bool			bVisible;

@@ -18,7 +18,13 @@ namespace Pretzel{
 		mBounds.set(0, 0, 0, 0);
 
 		mGlobal = Pretzel::PretzelGlobal::getInstance();
+        
+        type = PretzelGlobal::WidgetType::UNINITALIZED;
 	}
+    
+    BasePretzel::~BasePretzel(){
+        console() << "CLEAN UP. Offset is :: " << mOffset << endl;
+    }
 
 	void BasePretzel::registerPretzel(BasePretzel *Pretzel){
 		mPretzelChildren.push_back(Pretzel);

@@ -51,6 +51,16 @@ namespace Pretzel {
 			out << std::fixed << std::setprecision(n) << num;
 			return out.str();
 		}
+        
+        enum WidgetType {
+            UNINITALIZED = 0,
+            BUTTON,
+            LABEL,
+            SAVELOAD,
+            SLIDER,
+            TEXTFIELD,
+            TOGGLE
+        };
 
 	private:
 		enum PretzelTypes {

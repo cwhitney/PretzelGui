@@ -17,6 +17,8 @@ namespace Pretzel{
 		virtual void mouseMoved(const ci::Vec2i &pos);
 
 		boost::signals2::signal<void(void)>	signalOnPress;
+        
+        boost::signals2::scoped_connection  mConnection;
 	private:
 		std::string		mLabelText;
 		ci::Rectf		mButtonBounds;

@@ -70,7 +70,7 @@ void BasicSampleApp::setup() {
 	ci::gl::enableAlphaBlending();
 }
 void BasicSampleApp::onButtonPress(){
-	//gui->setSize(Vec2f(200, 400));
+//	gui->setSize(Vec2f(200, 400));
 	mCol = ColorA(Rand::randFloat(), Rand::randFloat(), Rand::randFloat(), mOpacity);
 }
 
@@ -93,8 +93,8 @@ void BasicSampleApp::draw() {
 		gl::drawSolidCircle(getWindowCenter() + Vec2f(xShift, 0), mRadius);
 	}
 	gl::drawString("< " + mBubble, getWindowCenter() + Vec2f(xShift + mRadius + 10, -10), mCol, Font("Arial", 24));
-
-	gui->draw();
+    
+    gui->draw();
 }
 
 void BasicSampleApp::keyDown(KeyEvent event) {

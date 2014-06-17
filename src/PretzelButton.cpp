@@ -14,6 +14,8 @@ namespace Pretzel{
 		bHover = false;
 		mLabelText = labelText;
 		parent->registerPretzel(this);
+        
+        type = PretzelGlobal::WidgetType::BUTTON;
 	}
 
 	void PretzelButton::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds) {
