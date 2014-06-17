@@ -38,13 +38,7 @@ namespace Pretzel{
 		mGlobal->P_HIGHLIGHT_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 480)));
 		mGlobal->P_SLIDER_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 500)));
 
-		ci::app::WindowRef window = cinder::app::getWindow();
-
-		mMouseBeganCallBack = window->getSignalMouseDown().connect(std::bind(&PretzelGui::onMouseDown, this, std::placeholders::_1));
-		mMouseDragCallBack = window->getSignalMouseDrag().connect(std::bind(&PretzelGui::onMouseDragged, this, std::placeholders::_1));
-		mMouseEndCallBack = window->getSignalMouseUp().connect(std::bind(&PretzelGui::onMouseUp, this, std::placeholders::_1));
-		mMouseMovedCallBack = window->getSignalMouseMove().connect(std::bind(&PretzelGui::onMouseMoved, this, std::placeholders::_1));
-		mKeyDownCallback = window->getSignalKeyDown().connect(std::bind(&PretzelGui::onKeyDown, this, std::placeholders::_1));
+		connectSignals();
 
 		mPos.set(10, 10);
 
@@ -84,15 +78,41 @@ namespace Pretzel{
 
 	void PretzelGui::setVisible(bool visible){
 		bVisible = visible;
+        if( bVisible ){ connectSignals();       }
+        else{           disconnectSignals();    }
 	}
 
 	void PretzelGui::toggleVisible(){
 		bVisible = !bVisible;
+        
+        if( bVisible ){ connectSignals();       }
+        else{           disconnectSignals();    }
 	}
 
 	bool PretzelGui::isVisible(){
 		return bVisible;
 	}
+    
+    void PretzelGui::connectSignals(){
+        if( !mMouseBeganCallBack.connected() ){
+            ci::app::WindowRef window = cinder::app::getWindow();
+            mMouseBeganCallBack = window->getSignalMouseDown().connect(std::bind(&PretzelGui::onMouseDown, this, std::placeholders::_1));
+            mMouseDragCallBack = window->getSignalMouseDrag().connect(std::bind(&PretzelGui::onMouseDragged, this, std::placeholders::_1));
+            mMouseEndCallBack = window->getSignalMouseUp().connect(std::bind(&PretzelGui::onMouseUp, this, std::placeholders::_1));
+            mMouseMovedCallBack = window->getSignalMouseMove().connect(std::bind(&PretzelGui::onMouseMoved, this, std::placeholders::_1));
+            mKeyDownCallback = window->getSignalKeyDown().connect(std::bind(&PretzelGui::onKeyDown, this, std::placeholders::_1));
+        }
+    }
+    
+    void PretzelGui::disconnectSignals(){
+        if( mMouseBeganCallBack.connected() ){
+            mMouseBeganCallBack.disconnect();
+            mMouseDragCallBack.disconnect();
+            mMouseEndCallBack.disconnect();
+            mMouseMovedCallBack.disconnect();
+            mKeyDownCallback.disconnect();
+        }
+    }
 
 	void PretzelGui::saveSettings(ci::fs::path settingsPath){
 		mGlobal->saveSettings(settingsPath);

@@ -58,6 +58,8 @@ namespace Pretzel{
 
 	private:
 		void init(std::string title = "");
+        void connectSignals();
+        void disconnectSignals();
 
 		// mouse events
 		boost::signals2::scoped_connection  mMouseBeganCallBack,
