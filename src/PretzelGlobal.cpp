@@ -86,13 +86,17 @@ namespace Pretzel {
 		addParamInternal(name, val, _BOOL);
 	}
 
+	void PretzelGlobal::addSaveParam(std::string name, std::string *val){
+		addParamInternal(name, val, _STRING);
+	}
+
 	void PretzelGlobal::addParamInternal(std::string name, void* value, PretzelTypes type){
 		PretzelParam p;
 		p.name = name;
 		p.value = value;
 		p.type = type;
 
-		mParamList.push_back( p );
+		mParamList.push_back(p);
 	}
 
 	void PretzelGlobal::saveSettings(fs::path settingsPath){
@@ -111,12 +115,12 @@ namespace Pretzel {
 			appPath /= "settings.json";
 		}
 
-		JsonTree pSettings = JsonTree::makeObject( "pretzelSettings" );
+		JsonTree pSettings = JsonTree::makeObject("pretzelSettings");
 		std::string tmp;
 		for (int i = 0; i < mParamList.size(); i++){
 			switch (mParamList[i].type){
 			case _FLOAT:
-				pSettings.pushBack( JsonTree(mParamList[i].name, to_string(*(float*)mParamList[i].value)) );
+				pSettings.pushBack(JsonTree(mParamList[i].name, to_string(*(float*)mParamList[i].value)));
 				break;
 			case _INT:
 				pSettings.pushBack(JsonTree(mParamList[i].name, to_string(*(int*)mParamList[i].value)));
@@ -124,6 +128,9 @@ namespace Pretzel {
 			case _BOOL:
 				tmp = ((*(bool*)mParamList[i].value) == true) ? "1" : "0";
 				pSettings.pushBack(JsonTree(mParamList[i].name, tmp));
+				break;
+			case _STRING:
+				pSettings.pushBack(JsonTree(mParamList[i].name, (*(std::string*)mParamList[i].value)));
 				break;
 			default:
 				break;
@@ -172,6 +179,12 @@ namespace Pretzel {
 					if (appSettings.hasChild(pName)){
 						bool bVal = appSettings.getChild(pName).getValue<float>();
 						*((bool*)mParamList[i].value) = bVal;
+					}
+					break;
+				case _STRING:
+					if (appSettings.hasChild(pName)){
+						std::string sVal = appSettings.getChild(pName).getValue<std::string>();
+						*((std::string*)mParamList[i].value) = sVal;
 					}
 					break;
 				default:

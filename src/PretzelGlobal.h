@@ -43,6 +43,7 @@ namespace Pretzel {
 		void addSaveParam(std::string name, float *val);
 		void addSaveParam(std::string name, int *val);
 		void addSaveParam(std::string name, bool *val);
+		void addSaveParam(std::string name, std::string *val);
 
 		template <typename T>
 		std::string to_string_with_precision(const T num, const int n = 2) {
@@ -56,6 +57,7 @@ namespace Pretzel {
 			_FLOAT,
 			_INT,
 			_BOOL,
+			_STRING
 		};
 
 		struct PretzelParam{

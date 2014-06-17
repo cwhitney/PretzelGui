@@ -14,6 +14,7 @@ public:
 	void setup();
 	void update();
 	void draw();
+	void keyDown(KeyEvent event);
 
 	Pretzel::PretzelGui    *gui;
 
@@ -21,6 +22,8 @@ public:
 	float		mOpacity;
 	int			xShift;
 	bool		bDrawOutline;
+	std::string mFps;
+	std::string mBubble;
 
 	ci::ColorA	mCol;
 
@@ -41,9 +44,10 @@ void BasicSampleApp::setup() {
 	xShift = 0;
 	bDrawOutline = false;
 	mCol = Color::white();
+	mBubble = "Hello, world!";
 
 	gui = new Pretzel::PretzelGui("Circle settings");
-
+	
 	// Passing floats will keep your sliders as floats
 	gui->addSlider("Opacity", &mOpacity, 0.0, 1.0);
 	gui->addSlider("Radius", &mRadius, 0, 100);
@@ -54,6 +58,11 @@ void BasicSampleApp::setup() {
 	gui->addLabel("Other Settings");
 	gui->addButton("Random Color", &BasicSampleApp::onButtonPress, this);
 	gui->addToggle("Draw outline", &bDrawOutline);
+
+	// Textfields can be editable or non-editable
+	gui->addTextField("FPS", &mFps, false);
+	gui->addTextField("Speech Bubble", &mBubble, true);
+
 	gui->addSaveLoad();
 
 //	gui->minimize();
@@ -67,7 +76,7 @@ void BasicSampleApp::onButtonPress(){
 
 
 void BasicSampleApp::update() {
-
+	mFps = toString((int)getAverageFps());
 }
 
 void BasicSampleApp::draw() {
@@ -83,8 +92,15 @@ void BasicSampleApp::draw() {
 	else{
 		gl::drawSolidCircle(getWindowCenter() + Vec2f(xShift, 0), mRadius);
 	}
+	gl::drawString("< " + mBubble, getWindowCenter() + Vec2f(xShift + mRadius + 10, -10), mCol, Font("Arial", 24));
 
 	gui->draw();
+}
+
+void BasicSampleApp::keyDown(KeyEvent event) {
+	if (event.getChar() == 'g'){
+		gui->toggleVisible();	// gui interaction will be disabled when invisible
+	}
 }
 
 CINDER_APP_NATIVE(BasicSampleApp, RendererGl)

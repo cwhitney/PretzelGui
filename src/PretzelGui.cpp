@@ -18,6 +18,7 @@ namespace Pretzel{
 	PretzelGui::PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height) : PretzelRow(NULL, width, height){ init(title); }
 
 	void PretzelGui::init(std::string title){
+		bVisible = true;
 		bDragging = false;
 		bResizing = false;
 		bDrawMinimized = false;
@@ -43,6 +44,7 @@ namespace Pretzel{
 		mMouseDragCallBack = window->getSignalMouseDrag().connect(std::bind(&PretzelGui::onMouseDragged, this, std::placeholders::_1));
 		mMouseEndCallBack = window->getSignalMouseUp().connect(std::bind(&PretzelGui::onMouseUp, this, std::placeholders::_1));
 		mMouseMovedCallBack = window->getSignalMouseMove().connect(std::bind(&PretzelGui::onMouseMoved, this, std::placeholders::_1));
+		mKeyDownCallback = window->getSignalKeyDown().connect(std::bind(&PretzelGui::onKeyDown, this, std::placeholders::_1));
 
 		mPos.set(10, 10);
 
@@ -80,6 +82,18 @@ namespace Pretzel{
 		bDrawMinimized = doMinimize;
 	}
 
+	void PretzelGui::setVisible(bool visible){
+		bVisible = visible;
+	}
+
+	void PretzelGui::toggleVisible(){
+		bVisible = !bVisible;
+	}
+
+	bool PretzelGui::isVisible(){
+		return bVisible;
+	}
+
 	void PretzelGui::saveSettings(ci::fs::path settingsPath){
 		mGlobal->saveSettings(settingsPath);
 	}
@@ -90,6 +104,7 @@ namespace Pretzel{
 
 	// ---------------------------------------------------------
 	void PretzelGui::onMouseDown(ci::app::MouseEvent &event){
+		if (!bVisible) return;
 
 		if (mDefaultLabel->getBounds().contains(event.getPos() - mPos)){
 
@@ -116,6 +131,8 @@ namespace Pretzel{
 	}
 
 	void PretzelGui::onMouseDragged(ci::app::MouseEvent &event){
+		if (!bVisible) return;
+
 		if (bDragging){
 			mPos = event.getPos() - mMouseOffset;
 		}
@@ -129,6 +146,8 @@ namespace Pretzel{
 	}
 
 	void PretzelGui::onMouseUp(ci::app::MouseEvent &event){
+		if (!bVisible) return;
+
 		if (bDragging){
 			bDragging = false;
 		}
@@ -141,11 +160,19 @@ namespace Pretzel{
 	}
 
 	void PretzelGui::onMouseMoved(ci::app::MouseEvent &event){
+		if (!bVisible) return;
+		
 		mouseMoved(event.getPos() - mPos);
+	}
+
+	void PretzelGui::onKeyDown(ci::app::KeyEvent &event){
+		//if (!bVisible) return;
+		keyDown(event.getChar(), event.getCode());
 	}
 
 	// ---------------------------------------------------------
 	void PretzelGui::draw(){
+		if (!bVisible) return;
 
 		// grab some gl settings
 		glPushAttrib(GL_ALL_ATTRIB_BITS);
@@ -217,5 +244,9 @@ namespace Pretzel{
 
 	void PretzelGui::addToggle(std::string label, bool *value){
 		new PretzelToggle(this, label, value);
+	}
+
+	void PretzelGui::addTextField(std::string label, std::string *variable, bool editable){
+		new PretzelTextField(this, label, variable, editable);
 	}
 }
