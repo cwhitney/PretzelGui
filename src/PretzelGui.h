@@ -33,6 +33,9 @@ namespace Pretzel{
 		void setSize(ci::Vec2i size);
 		void setPos(const ci::Vec2i &pos);
 		void minimize(bool doMinimize = true);
+		void setVisible(bool visible);
+		void toggleVisible();
+		bool isVisible();
 
 		void saveSettings(ci::fs::path settingsPath = ci::fs::path());
 		void loadSettings(ci::fs::path settingsPath = ci::fs::path());
@@ -70,6 +73,7 @@ namespace Pretzel{
 		ci::gl::Texture mTex;
 
 		PretzelLabel	*mDefaultLabel;
+		bool			bVisible;
 		bool			bDragging;
 		bool			bResizing;
 

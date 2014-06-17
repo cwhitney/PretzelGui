@@ -14,6 +14,7 @@ public:
 	void setup();
 	void update();
 	void draw();
+	void keyDown(KeyEvent event);
 
 	Pretzel::PretzelGui    *gui;
 
@@ -85,6 +86,12 @@ void BasicSampleApp::draw() {
 	}
 
 	gui->draw();
+}
+
+void BasicSampleApp::keyDown(KeyEvent event) {
+	if (event.getChar() == 'g'){
+		gui->toggleVisible();	// gui interaction will be disabled when invisible
+	}
 }
 
 CINDER_APP_NATIVE(BasicSampleApp, RendererGl)
