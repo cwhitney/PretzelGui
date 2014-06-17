@@ -75,6 +75,6 @@ namespace Pretzel {
 
 		// TEXT
 		void renderTextInternal(std::string text, ci::Vec2i pos, int align);
-		float	emHeight;
+		int	emHeight;
 	};
 }

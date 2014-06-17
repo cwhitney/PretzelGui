@@ -30,6 +30,7 @@ public:
 void BasicSampleApp::prepareSettings(Settings *settings) {
 	settings->setWindowSize(Vec2i(1024, 768));
 	settings->setFrameRate(60.0);
+    settings->enableHighDensityDisplay();
 }
 
 void BasicSampleApp::setup() {
@@ -51,7 +52,6 @@ void BasicSampleApp::setup() {
 	gui->addSlider("X Shift", &xShift, -100, 100);
 
 	gui->addLabel("Other Settings");
-	gui->addSaveLoad();
 	gui->addButton("Random Color", &BasicSampleApp::onButtonPress, this);
 	gui->addToggle("Draw outline", &bDrawOutline);
 	gui->addSaveLoad();

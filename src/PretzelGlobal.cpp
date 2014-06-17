@@ -35,8 +35,11 @@ namespace Pretzel {
 			ci::Font tmp("Arial", 12);
 #endif
 			guiFont = ci::gl::TextureFont::create(tmp);
-			emHeight = guiFont->measureString("M").y;
+			emHeight = floor( guiFont->measureString("M").y );
 		}
+#ifdef TARGET_OS_MAC
+        pos -= Vec2i(0, 2);
+#endif
 
 		ci::gl::TextureFont::DrawOptions opts;
 		opts.pixelSnap(true);
@@ -44,19 +47,16 @@ namespace Pretzel {
 		ci::Vec2f textSize = guiFont->measureString(text);
 
 		ci::gl::pushMatrices(); {
-			ci::gl::translate(pos);
-			ci::gl::translate(0, (int)emHeight);
-
 			ci::gl::color(P_TEXT_COLOR);
 
 			if (align == Pretzel_FONT_ALIGN_RIGHT){
-				guiFont->drawString(text, ci::Vec2i(-textSize.x, 0), opts);
+				guiFont->drawString(text, ci::Vec2i(-textSize.x, 0) + pos + Vec2i(0,emHeight), opts);
 			}
 			else if (align == Pretzel_FONT_ALIGN_CENTER){
-				guiFont->drawString(text, ci::Vec2i((int)textSize.x*-0.5, 0), opts);
+				guiFont->drawString(text, ci::Vec2i((int)textSize.x*-0.5, 0) + pos + Vec2i(0,emHeight), opts);
 			}
 			else{
-				guiFont->drawString(text, ci::Vec2i::zero(), opts);
+				guiFont->drawString(text, pos + Vec2i(0,emHeight), opts);
 			}
 		}ci::gl::popMatrices();
 	}
@@ -99,7 +99,11 @@ namespace Pretzel {
 		fs::path appPath = settingsPath;
 
 		if (appPath.string() == ""){
+#ifdef _WIN32
 			appPath = getAppPath() / "guiSettings";
+#else
+			appPath = getAppPath().parent_path() / "guiSettings";
+#endif
 			if (!fs::exists(appPath)){
 				console() << appPath << " does not exist" << endl;
 				fs::create_directory(appPath);
@@ -134,7 +138,12 @@ namespace Pretzel {
 	void PretzelGlobal::loadSettings(fs::path settingsPath){
 		fs::path loadPath = settingsPath;
 		if (loadPath.string() == ""){
+			
+#ifdef _WIN32
 			loadPath = getAppPath() / "guiSettings" / "settings.json";
+#else
+            loadPath = getAppPath().parent_path() / "guiSettings" / "settings.json";
+#endif
 		}
 
 		if (!fs::exists(loadPath)){
