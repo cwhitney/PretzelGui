@@ -238,6 +238,9 @@ namespace Pretzel{
 		}
 		else{
 			gl::pushMatrices(); {
+                glEnable( GL_SCISSOR_TEST);
+                glScissor(mPos.x + mBounds.x1,  getWindowHeight() - mBounds.y2 - mPos.y, mBounds.getWidth(), mBounds.getHeight() );
+                
 				gl::translate(mPos);
 				PretzelRow::draw();
 
@@ -249,9 +252,11 @@ namespace Pretzel{
 
 				gl::color(mGlobal->P_GUI_BORDER);
 				gl::drawStrokedRect(mBounds);
+                
+                glDisable(GL_SCISSOR_TEST);
 			}gl::popMatrices();
 		}
-
+        
 		// -----------------------------------------------------------
 		// reset those gl settings
 		glEnable(GL_MULTISAMPLE);
