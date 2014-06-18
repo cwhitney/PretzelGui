@@ -252,9 +252,6 @@ namespace Pretzel{
                 
                 glScissor( tPos.x, winH - tBounds.y2 - tPos.y, tBounds.getWidth(), tBounds.getHeight());
                 
-                gl::color(Color(1,0,0));
-                gl::drawSolidRect( Rectf(-10000, -1000, 20000, 10000) );
-                
 				gl::translate(mPos);
 				PretzelRow::draw();
                 
