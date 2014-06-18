@@ -251,7 +251,8 @@ namespace Pretzel{
 				gl::drawSolidTriangle(mResizeRect.getLowerLeft(), mResizeRect.getUpperRight(), mResizeRect.getLowerRight());
 
 				gl::color(mGlobal->P_GUI_BORDER);
-				gl::drawStrokedRect(mBounds);
+                gl::drawLine( mResizeRect.getUpperRight() - Vec2f(mBounds.getWidth(), 0), mResizeRect.getUpperRight() );
+				gl::drawStrokedRect( Rectf(mBounds.x1+1, mBounds.y1, mBounds.x2, mBounds.y2-1) );
                 
                 glDisable(GL_SCISSOR_TEST);
 			}gl::popMatrices();
