@@ -5,6 +5,19 @@ using namespace ci::app;
 using namespace std;
 
 namespace Pretzel{
+
+    // =========================================================================================================================================
+    PSlide::PSlide(){}
+    void PSlide::setup(float *value, float min, float max, ci::Vec2f sliderLeft, ci::Vec2f sliderRight ){
+        mValue = value;
+        mMin = min;
+        mMax = max;
+        mSliderLeft = sliderLeft;
+        mSliderRight = sliderRight;
+    }
+
+    // =========================================================================================================================================
+    
 	PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, int *value, int minVal, int maxVal) : BasePretzel(){
 		mLabelText = labelText;
 
@@ -28,7 +41,10 @@ namespace Pretzel{
 		mSkinTexRect.set(0, 0, 13, 12);
 		mSkinDestRect = mSkinTexRect;
 		mSkinDestRect.offset(Vec2i(-7, -7));
-
+        
+//        PSlide newSlider;
+//        newSlider.setup(
+        
 		mGlobal->addSaveParam(labelText, value);
 
 		parent->registerPretzel(this);
@@ -177,4 +193,5 @@ namespace Pretzel{
 			}gl::popMatrices();
 		}gl::popMatrices();
 	}
+    // =========================================================================================================================================
 }
