@@ -40,6 +40,7 @@ namespace Pretzel {
 		bool			bIsDragging;
 		float			mSliderPct;
 		bool			bUseInteger;
+        bool            mHandHover;
 	};
 
 }

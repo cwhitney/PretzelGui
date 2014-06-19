@@ -15,10 +15,13 @@ namespace Pretzel{
 
 		virtual void mouseDown(const ci::Vec2i &pos);
 		virtual void mouseMoved(const ci::Vec2i &pos);
-
+        virtual void mouseUp(const ci::Vec2i &pos);
+        
 	private:
 		ci::fs::path	mSavePath;
 		ci::Rectf		mSaveRect, mLoadRect;
 		bool			bHoverSave, bHoverLoad;
+        
+        ci::Color       mSaveBg, mLoadBg;
 	};
 }

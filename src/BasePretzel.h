@@ -37,7 +37,7 @@ namespace Pretzel{
 		virtual void mouseMoved(const ci::Vec2i &pos);
 		virtual void keyDown(const char &key, const int &keyCode);
         
-        PretzelGlobal::WidgetType  type;
+        WidgetType  type;
 
 	protected:
 		virtual void updateChildrenBounds();

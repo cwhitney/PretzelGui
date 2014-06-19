@@ -19,7 +19,7 @@ namespace Pretzel{
 
 		mGlobal = Pretzel::PretzelGlobal::getInstance();
         
-        type = PretzelGlobal::WidgetType::UNINITALIZED;
+        type = WidgetType::UNINITALIZED;
 	}
     
     BasePretzel::~BasePretzel(){

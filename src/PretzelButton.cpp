@@ -15,7 +15,9 @@ namespace Pretzel{
 		mLabelText = labelText;
 		parent->registerPretzel(this);
         
-        type = PretzelGlobal::WidgetType::BUTTON;
+        mBgColor.set( mGlobal->P_TAB_COLOR );
+        
+        type = WidgetType::BUTTON;
 	}
 
 	void PretzelButton::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds) {
@@ -28,15 +30,26 @@ namespace Pretzel{
 
 	void PretzelButton::mouseDown(const ci::Vec2i &pos){
 		if (mBounds.contains(pos - mOffset)){
+            mBgColor.set( mGlobal->P_ACTIVE_COLOR );
 			signalOnPress();
 		}
+	}
+    
+    void PretzelButton::mouseUp(const ci::Vec2i &pos){
+		mBgColor.set( mGlobal->P_TAB_COLOR );
 	}
 
 	void PretzelButton::mouseMoved(const ci::Vec2i &pos){
 		if (mBounds.contains(pos - mOffset)){
 			bHover = true;
+            mBgColor.set( mGlobal->P_HOVER_COLOR );
+            mGlobal->setCursor( CursorType::HAND );
 		}
 		else{
+            if( bHover ){
+                mGlobal->setCursor( CursorType::ARROW );
+                mBgColor.set( mGlobal->P_TAB_COLOR );
+            }
 			bHover = false;
 		}
 	}
@@ -44,12 +57,13 @@ namespace Pretzel{
 	void PretzelButton::draw(){
 		gl::pushMatrices(); {
 			gl::translate(mOffset);
-			if (bHover){
-				gl::color(mGlobal->P_HOVER_COLOR);
-			}
-			else{
-				gl::color(mGlobal->P_TAB_COLOR);
-			}
+//			if (bHover){
+//				gl::color(mGlobal->P_HOVER_COLOR);
+//			}
+//			else{
+//				gl::color(mGlobal->P_TAB_COLOR);
+                gl::color( mBgColor );
+//			}
 			gl::drawSolidRect(mButtonBounds);
 
 			gl::color(mGlobal->P_HIGHLIGHT_COLOR);

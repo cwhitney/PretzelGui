@@ -12,11 +12,12 @@ namespace Pretzel{
 		mMax = maxVal;
 		mValueInt = value;
 
+        mHandHover = false;
 		bUseInteger = true;
 		bIsDragging = false;
 		mBounds.set(0, 0, 200, 30);
 		mHandlePos.set(15, 22);
-		mHandleHitbox.set(-5, -5, 5, 5);
+		mHandleHitbox.set(-5, -7, 5, 5);
 		mSliderPct = 0.0f;
 
 		// slider boundaries
@@ -26,7 +27,7 @@ namespace Pretzel{
 		// texture skin rect
 		mSkinTexRect.set(0, 0, 13, 12);
 		mSkinDestRect = mSkinTexRect;
-		mSkinDestRect.offset(Vec2i(-7, -6));
+		mSkinDestRect.offset(Vec2i(-7, -7));
 
 		mGlobal->addSaveParam(labelText, value);
 
@@ -43,9 +44,10 @@ namespace Pretzel{
 
 		bUseInteger = false;
 		bIsDragging = false;
+        mHandHover = false;
 		mBounds.set(0, 0, 200, 30);
 		mHandlePos.set(15, 22);
-		mHandleHitbox.set(-5, -5, 5, 5);
+		mHandleHitbox.set(-5, -7, 5, 5);
 		mSliderPct = 0.0f;
 
 		// slider boundaries
@@ -55,7 +57,7 @@ namespace Pretzel{
 		// texture skin rect
 		mSkinTexRect.set(0, 0, 13, 12);
 		mSkinDestRect = mSkinTexRect;
-		mSkinDestRect.offset(Vec2i(-7, -6));
+		mSkinDestRect.offset(Vec2i(-7, -7));
 
 		mGlobal->addSaveParam(labelText, value);
 
@@ -107,7 +109,24 @@ namespace Pretzel{
 	}
 
 	void PretzelSlider::mouseMoved(const ci::Vec2i &pos){
-
+        if (mBounds.contains(pos - mOffset)){
+			Vec2f localCoord = pos - mOffset;
+            
+			if (mHandleHitbox.contains(localCoord - mHandlePos)){
+                mHandHover = true;
+				mGlobal->setCursor(CursorType::HAND);
+			}else{
+                if( mHandHover ){
+                    mGlobal->setCursor(CursorType::ARROW);
+                }
+                mHandHover = false;
+            }
+		}else{
+            if( mHandHover ){
+                mGlobal->setCursor(CursorType::ARROW);
+            }
+            mHandHover = false;
+        }
 	}
 
 	void PretzelSlider::mouseDragged(const Vec2i &pos){

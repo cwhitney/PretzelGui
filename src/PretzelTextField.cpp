@@ -1,4 +1,8 @@
 #include "PretzelTextField.h"
+#include "cinder/app/App.h"
+#include "cinder/app/Window.h"
+#include "cinder/Utilities.h"
+//#include "NSCursor.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -39,8 +43,12 @@ namespace Pretzel{
 	void PretzelTextField::mouseMoved(const ci::Vec2i &pos){
 		if (bEditable && mTextFieldBounds.contains(pos - mOffset)){
 			bHover = true;
+            mGlobal->setCursor( CursorType::IBEAM );
 		}
 		else{
+            if( bHover ){
+                mGlobal->setCursor( CursorType::ARROW );
+            }
 			bHover = false;
 		}
 	}

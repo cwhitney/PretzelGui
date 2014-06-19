@@ -14,6 +14,7 @@ namespace Pretzel{
 		void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
 
 		virtual void mouseDown(const ci::Vec2i &pos);
+        virtual void mouseUp(const ci::Vec2i &pos);
 		virtual void mouseMoved(const ci::Vec2i &pos);
 
 		boost::signals2::signal<void(void)>	signalOnPress;
@@ -24,5 +25,6 @@ namespace Pretzel{
 		ci::Rectf		mButtonBounds;
 
 		bool			bHover;
+        ci::Color       mBgColor;
 	};
 }

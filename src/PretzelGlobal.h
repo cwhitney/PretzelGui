@@ -16,6 +16,29 @@
 
 namespace Pretzel {
 
+    enum CursorType {
+        ARROW = 0,
+        IBEAM,
+        HAND,
+        RESIZE_RL
+    };
+    
+    enum FontAlignment {
+		ALIGN_LEFT,
+		ALIGN_RIGHT,
+		ALIGN_CENTER
+	};
+    
+    enum WidgetType {
+        UNINITALIZED = 0,
+        BUTTON,
+        LABEL,
+        SAVELOAD,
+        SLIDER,
+        TEXTFIELD,
+        TOGGLE
+    };
+    
 	class PretzelGlobal {
 	public:
 		static PretzelGlobal* getInstance();
@@ -28,22 +51,23 @@ namespace Pretzel {
 		ci::ColorA P_HIGHLIGHT_COLOR;
 		ci::ColorA P_SLIDER_COLOR;
 		ci::ColorA P_HOVER_COLOR;
+        ci::ColorA P_ACTIVE_COLOR;
 
 		ci::gl::TextureFontRef guiFont;
 
 		ci::gl::TextureRef		mSkinTex;
 
-		void renderText(std::string text, ci::Vec2i pos = ci::Vec2i::zero());
-		void renderTextRight(std::string text, ci::Vec2i pos = ci::Vec2i::zero());
-		void renderTextCentered(std::string text, ci::Vec2i pos = ci::Vec2i::zero());
+		void renderText(const std::string text, ci::Vec2i pos = ci::Vec2i::zero());
+		void renderTextRight(const std::string text, ci::Vec2i pos = ci::Vec2i::zero());
+		void renderTextCentered(const std::string text, ci::Vec2i pos = ci::Vec2i::zero());
 
-		void saveSettings(ci::fs::path settingsPath = ci::fs::path() );
-		void loadSettings(ci::fs::path settingsPath = ci::fs::path() );
+		void saveSettings(const ci::fs::path settingsPath = ci::fs::path() );
+		void loadSettings(const ci::fs::path settingsPath = ci::fs::path() );
 
-		void addSaveParam(std::string name, float *val);
-		void addSaveParam(std::string name, int *val);
-		void addSaveParam(std::string name, bool *val);
-		void addSaveParam(std::string name, std::string *val);
+		void addSaveParam(const std::string name, float *val);
+		void addSaveParam(const std::string name, int *val);
+		void addSaveParam(const std::string name, bool *val);
+		void addSaveParam(const std::string name, std::string *val);
 
 		template <typename T>
 		std::string to_string_with_precision(const T num, const int n = 2) {
@@ -52,15 +76,7 @@ namespace Pretzel {
 			return out.str();
 		}
         
-        enum WidgetType {
-            UNINITALIZED = 0,
-            BUTTON,
-            LABEL,
-            SAVELOAD,
-            SLIDER,
-            TEXTFIELD,
-            TOGGLE
-        };
+        void setCursor( CursorType type );
 
 	private:
 		enum PretzelTypes {

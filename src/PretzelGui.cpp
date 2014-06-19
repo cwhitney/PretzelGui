@@ -21,7 +21,7 @@ namespace Pretzel{
         while( mWidgetList.size() ){
             BasePretzel *w = mWidgetList.back();
             
-            if( w->type == PretzelGlobal::WidgetType::BUTTON ){
+            if( w->type == WidgetType::BUTTON ){
                 ((PretzelButton*)w)->mConnection.disconnect();
             }
             mWidgetList.pop_back();
@@ -45,6 +45,7 @@ namespace Pretzel{
         
 		mGlobal->mSkinTex = gl::Texture::create(mSkin);
         
+        mGlobal->P_ACTIVE_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 340)));
 		mGlobal->P_HOVER_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 360)));
 		mGlobal->P_GUI_BORDER.set(mSkin.getPixel(ci::Vec2i(10, 380)));
 		mGlobal->P_BG_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 400)));
@@ -199,6 +200,14 @@ namespace Pretzel{
     
 	void PretzelGui::onMouseMoved(ci::app::MouseEvent &event){
 		if (!bVisible) return;
+        
+        if (mDefaultLabel->getBounds().contains(event.getPos() - mPos)){
+            mGlobal->setCursor( CursorType::HAND );
+        }else if (mResizeRect.contains(event.getPos() - mPos)){	// Hit in lower right corner for resize
+			mGlobal->setCursor( CursorType::RESIZE_RL );
+		}else{
+            mGlobal->setCursor( CursorType::ARROW );
+        }
 		
 		mouseMoved(event.getPos() - mPos);
 	}

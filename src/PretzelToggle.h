@@ -14,7 +14,8 @@ namespace Pretzel {
 		void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
 
 		virtual void mouseDown(const ci::Vec2i &pos);
-
+        virtual void mouseMoved(const ci::Vec2i &pos);
+        
 	private:
 		bool			*mValue;
 		std::string		mLabel;
@@ -23,6 +24,8 @@ namespace Pretzel {
 
 		ci::Area		mSkinTexRect;
 		ci::Rectf		mSkinDestRect;
+        
+        bool            bHover;
 	};
 
 }

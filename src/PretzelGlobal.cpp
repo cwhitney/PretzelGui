@@ -14,11 +14,6 @@ using namespace std;
 
 namespace Pretzel {
 	PretzelGlobal* PretzelGlobal::mInstance = NULL;
-	enum {
-		Pretzel_FONT_ALIGN_LEFT,
-		Pretzel_FONT_ALIGN_RIGHT,
-		Pretzel_FONT_ALIGN_CENTER
-	};
 
 	PretzelGlobal * PretzelGlobal::getInstance(){
 		if (!mInstance){
@@ -49,10 +44,10 @@ namespace Pretzel {
 		ci::gl::pushMatrices(); {
 			ci::gl::color(P_TEXT_COLOR);
 
-			if (align == Pretzel_FONT_ALIGN_RIGHT){
+			if (align == FontAlignment::ALIGN_RIGHT){
 				guiFont->drawString(text, ci::Vec2i(-textSize.x, 0) + pos + Vec2i(0,emHeight), opts);
 			}
-			else if (align == Pretzel_FONT_ALIGN_CENTER){
+			else if (align == FontAlignment::ALIGN_CENTER){
 				guiFont->drawString(text, ci::Vec2i((int)textSize.x*-0.5, 0) + pos + Vec2i(0,emHeight), opts);
 			}
 			else{
@@ -62,16 +57,44 @@ namespace Pretzel {
 	}
 
 	void PretzelGlobal::renderText(std::string text, ci::Vec2i pos) {
-		renderTextInternal(text, pos, Pretzel_FONT_ALIGN_LEFT);
+		renderTextInternal(text, pos, FontAlignment::ALIGN_LEFT);
 	}
 
 	void PretzelGlobal::renderTextRight(std::string text, ci::Vec2i pos) {
-		renderTextInternal(text, pos, Pretzel_FONT_ALIGN_RIGHT);
+		renderTextInternal(text, pos, FontAlignment::ALIGN_RIGHT);
 	}
 
 	void PretzelGlobal::renderTextCentered(std::string text, ci::Vec2i pos) {
-		renderTextInternal(text, pos, Pretzel_FONT_ALIGN_CENTER);
+		renderTextInternal(text, pos, FontAlignment::ALIGN_CENTER);
 	}
+    
+    void PretzelGlobal::setCursor( CursorType type ){
+        
+#if defined( CINDER_MAC )
+        switch(type){
+            case CursorType::ARROW :
+                [[NSCursor arrowCursor] set];
+                break;
+            case CursorType::IBEAM :
+                [[NSCursor IBeamCursor] set];
+                break;
+            case CursorType::HAND :
+                [[NSCursor pointingHandCursor] set];
+                break;
+            case CursorType::RESIZE_RL :
+                [[NSCursor resizeLeftRightCursor] set];
+                break;
+            default:
+                break;
+        }
+//        + (NSCursor *)operationNotAllowedCursor NS_AVAILABLE_MAC(10_5);
+//        + (NSCursor *)dragLinkCursor NS_AVAILABLE_MAC(10_6);
+//        + (NSCursor *)dragCopyCursor NS_AVAILABLE_MAC(10_6);
+//        + (NSCursor *)contextualMenuCursor NS_AVAILABLE_MAC(10_6);
+//        + (NSCursor *)IBeamCursorForVerticalLayout NS_AVAILABLE_MAC(10_7);
+#endif
+    }
+
 
 	// SAVING ----------------------------------------------
 	void PretzelGlobal::addSaveParam(std::string name, float *val){
