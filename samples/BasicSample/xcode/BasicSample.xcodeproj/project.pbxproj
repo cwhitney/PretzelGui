@@ -59,7 +59,7 @@
 		A48A117320E346AB9ACAE51E /* PretzelRow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelRow.h; path = ../../../src/PretzelRow.h; sourceTree = "<group>"; };
 		A540AD37ADCF4C738DB204DF /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 		AA4F9A4D51FC44F0B98D45E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0D082F5F7B349BB93EEE198 /* PretzelGlobal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = PretzelGlobal.cpp; path = ../../../src/PretzelGlobal.cpp; sourceTree = "<group>"; };
+		B0D082F5F7B349BB93EEE198 /* PretzelGlobal.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; name = PretzelGlobal.cpp; path = ../../../src/PretzelGlobal.cpp; sourceTree = "<group>"; };
 		B8D2F8248960400CB8142435 /* BasePretzel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = BasePretzel.cpp; path = ../../../src/BasePretzel.cpp; sourceTree = "<group>"; };
 		C2B33947FD0343EF99132E54 /* PretzelSaveLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelSaveLoad.h; path = ../../../src/PretzelSaveLoad.h; sourceTree = "<group>"; };
 		C97A60D2686B4930B2A6E70B /* PretzelLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelLabel.h; path = ../../../src/PretzelLabel.h; sourceTree = "<group>"; };
