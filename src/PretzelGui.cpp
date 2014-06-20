@@ -253,10 +253,11 @@ namespace Pretzel{
                 Rectf tBounds = mBounds;
                 Vec2f tPos = mPos;
                 float winH = getWindowHeight();
+                
                 if( ci::app::App::get()->getSettings().isHighDensityDisplayEnabled() ){
-                    tBounds *= 2.0;
-                    winH *= 2.0;
-                    tPos *= 2.0;
+                    tBounds *= getWindowContentScale();
+                    winH *= getWindowContentScale();
+                    tPos *= getWindowContentScale();
                 }
                 
                 glScissor( tPos.x, winH - tBounds.y2 - tPos.y, tBounds.getWidth(), tBounds.getHeight());

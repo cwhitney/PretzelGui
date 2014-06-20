@@ -7,29 +7,48 @@
 
 namespace Pretzel {
     
-    class PSlide {
+    // -----------------------------------------------------------------------------------------------------
+    template<typename T>
+    class PSliderT {
       public:
-        PSlide();
-        void setup(float *value, float min, float max, const ci::Vec2f sliderLeft, const ci::Vec2f sliderRight );
+        PSliderT(){};
+        
+        void setup(const std::string label, T *value, const T min, const T max, const ci::Vec2<T> sliderLeft, const ci::Vec2<T> sliderRight );
         
         virtual void draw();
-        
 		virtual void mouseDown(const ci::Vec2i &pos);
 		virtual void mouseDragged(const ci::Vec2i &pos);
 		virtual void mouseUp(const ci::Vec2i &pos);
 		virtual void mouseMoved(const ci::Vec2i &pos);
+        
+        void updateBounds(const ci::Vec2<T> sliderLeft, const ci::Vec2<T> sliderRight);
+        
+        const std::string getLabel(){ return mLabelText; }
+        const T getValue(){ return *mValue; }
+        
       private:
-        float			*mValue;
-        float           mMin, mMax;
-        ci::Vec2f		mHandlePos;
+        void updateValue(const T val);
+            
+        T               *mValue;
+        T               mMin, mMax;
+        ci::Vec2<T>		mHandlePos;
 		ci::Rectf		mHandleHitbox;
 		ci::Area		mSkinTexRect;
 		ci::Rectf		mSkinDestRect;
         
-		ci::Vec2f		mSliderLeft, mSliderRight;
-
+		ci::Vec2<T>		mSliderLeft, mSliderRight;
+        float           mSliderPct;
+        bool            bIsDragging;
+        PretzelGlobal   *mGlobal;
+        bool            mHandHover;
+        std::string     mLabelText;
     };
     
+    // -----------------------------------------------------------------------------------------------------
+    typedef PSliderT<float>  PSliderf;
+    typedef PSliderT<int>    PSlideri;
+    
+    // -----------------------------------------------------------------------------------------------------
 	class PretzelSlider : public BasePretzel {
 	public:
 		PretzelSlider(BasePretzel *parent, std::string labelText, float *value, float min, float max);
@@ -45,27 +64,8 @@ namespace Pretzel {
 		void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
 
 	private:
-		void updateValue(float newVal);
-
-        std::vector<PSlide> mSliderList;
-        
-		std::string		mLabelText;
-		float			*mValue;
-		float			mMin, mMax;
-
-		int				*mValueInt;
-
-		ci::Vec2f		mHandlePos;
-		ci::Rectf		mHandleHitbox;
-		ci::Area		mSkinTexRect;
-		ci::Rectf		mSkinDestRect;
-
-		ci::Vec2f		mSliderLeft, mSliderRight;
-
-		bool			bIsDragging;
-		float			mSliderPct;
-		bool			bUseInteger;
-        bool            mHandHover;
+        std::vector<PSliderf> mSliderListf;
+        std::vector<PSlideri> mSliderListi;
 	};
-
+    // ------------------------------------------------------------------------------------------------------
 }
