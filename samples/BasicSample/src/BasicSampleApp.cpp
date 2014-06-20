@@ -40,7 +40,7 @@ void BasicSampleApp::setup() {
 	Rand::randomize();
 
 	mRadius = 25;
-	mOpacity = 0.5;
+	mOpacity = 0.75;
 	xShift = 0;
 	bDrawOutline = false;
 	mCol = Color::white();
@@ -64,16 +64,16 @@ void BasicSampleApp::setup() {
 	gui->addTextField("Speech Bubble", &mBubble, true);
 
 	gui->addSaveLoad();
-
-//	gui->minimize();
+    
+//  gui->loadSettings();    // load the last saved settings automatically
+    
+//	gui->minimize();        // start in a minimized mode (same as double-clicking the top bar)
 
 	ci::gl::enableAlphaBlending();
 }
 void BasicSampleApp::onButtonPress(){
-//	gui->setSize(Vec2f(200, 400));
 	mCol = ColorA(Rand::randFloat(), Rand::randFloat(), Rand::randFloat(), mOpacity);
 }
-
 
 void BasicSampleApp::update() {
 	mFps = toString((int)getAverageFps());
@@ -88,8 +88,7 @@ void BasicSampleApp::draw() {
 
 	if (bDrawOutline){
 		gl::drawStrokedCircle(getWindowCenter() + Vec2f(xShift,0), mRadius);
-	}
-	else{
+	}else {
 		gl::drawSolidCircle(getWindowCenter() + Vec2f(xShift, 0), mRadius);
 	}
 	gl::drawString("< " + mBubble, getWindowCenter() + Vec2f(xShift + mRadius + 10, -10), mCol, Font("Arial", 24));
