@@ -301,6 +301,10 @@ namespace Pretzel{
 		mWidgetList.push_back( new PretzelSlider(this, label, variable, min, max) );
 	}
     
+    void PretzelGui::addSlider(std::string label, ci::Vec2f *variable, ci::Vec2f min, ci::Vec2f max){
+		mWidgetList.push_back( new PretzelSlider(this, label, variable, min, max) );
+	}
+    
 	void PretzelGui::addSaveLoad() {
 		mWidgetList.push_back( new PretzelSaveLoad(this) );
 	}

@@ -42,6 +42,8 @@ namespace Pretzel {
         PretzelGlobal   *mGlobal;
         bool            mHandHover;
         std::string     mLabelText;
+        
+        float           mPosOffset;
     };
     
     // -----------------------------------------------------------------------------------------------------
@@ -53,6 +55,7 @@ namespace Pretzel {
 	public:
 		PretzelSlider(BasePretzel *parent, std::string labelText, float *value, float min, float max);
 		PretzelSlider(BasePretzel *parent, std::string labelText, int *value, int min, int max);
+        PretzelSlider(BasePretzel *parent, std::string labelText, ci::Vec2f *value, ci::Vec2f min, ci::Vec2f max);
 
 		virtual void draw();
 
@@ -64,8 +67,10 @@ namespace Pretzel {
 		void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
 
 	private:
-        std::vector<PSliderf> mSliderListf;
-        std::vector<PSlideri> mSliderListi;
+        std::vector<PSliderf>   mSliderListf;
+        std::vector<PSlideri>   mSliderListi;
+        
+        ci::Vec2f   mLineOffset;
 	};
     // ------------------------------------------------------------------------------------------------------
 }

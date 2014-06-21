@@ -107,30 +107,30 @@
     <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\PretzelTextField.cpp" />
+    <ClCompile Include="..\..\..\src\modules\PretzelTextField.cpp" />
     <ClCompile Include="..\src\BasicSampleApp.cpp" />
-    <ClCompile Include="..\..\..\src\BasePretzel.cpp" />
-    <ClCompile Include="..\..\..\src\PretzelButton.cpp" />
-    <ClCompile Include="..\..\..\src\PretzelGlobal.cpp" />
-    <ClCompile Include="..\..\..\src\PretzelGui.cpp" />
-    <ClCompile Include="..\..\..\src\PretzelLabel.cpp" />
-    <ClCompile Include="..\..\..\src\PretzelRow.cpp" />
-    <ClCompile Include="..\..\..\src\PretzelSaveLoad.cpp" />
-    <ClCompile Include="..\..\..\src\PretzelSlider.cpp" />
-    <ClCompile Include="..\..\..\src\PretzelToggle.cpp" />
+    <ClCompile Include="..\..\..\src\modules\BasePretzel.cpp" />
+    <ClCompile Include="..\..\..\src\modules\PretzelButton.cpp" />
+    <ClCompile Include="..\..\..\src\pretzel\PretzelGlobal.cpp" />
+    <ClCompile Include="..\..\..\src\pretzel\PretzelGui.cpp" />
+    <ClCompile Include="..\..\..\src\modules\PretzelLabel.cpp" />
+    <ClCompile Include="..\..\..\src\modules\PretzelRow.cpp" />
+    <ClCompile Include="..\..\..\src\modules\PretzelSaveLoad.cpp" />
+    <ClCompile Include="..\..\..\src\modules\PretzelSlider.cpp" />
+    <ClCompile Include="..\..\..\src\modules\PretzelToggle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\PretzelTextField.h" />
     <ClInclude Include="..\include\Resources.h" />
-    <ClInclude Include="..\..\..\src\BasePretzel.h" />
-    <ClInclude Include="..\..\..\src\PretzelButton.h" />
-    <ClInclude Include="..\..\..\src\PretzelGlobal.h" />
-    <ClInclude Include="..\..\..\src\PretzelGui.h" />
-    <ClInclude Include="..\..\..\src\PretzelLabel.h" />
-    <ClInclude Include="..\..\..\src\PretzelRow.h" />
-    <ClInclude Include="..\..\..\src\PretzelSaveLoad.h" />
-    <ClInclude Include="..\..\..\src\PretzelSlider.h" />
-    <ClInclude Include="..\..\..\src\PretzelToggle.h" />
+    <ClInclude Include="..\..\..\modules\src\BasePretzel.h" />
+    <ClInclude Include="..\..\..\modules\src\PretzelButton.h" />
+    <ClInclude Include="..\..\..\pretzel\src\PretzelGlobal.h" />
+    <ClInclude Include="..\..\..\pretzel\src\PretzelGui.h" />
+    <ClInclude Include="..\..\..\modules\src\PretzelLabel.h" />
+    <ClInclude Include="..\..\..\modules\src\PretzelRow.h" />
+    <ClInclude Include="..\..\..\modules\src\PretzelSaveLoad.h" />
+    <ClInclude Include="..\..\..\modules\src\PretzelSlider.h" />
+    <ClInclude Include="..\..\..\modules\src\PretzelToggle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

@@ -20,7 +20,9 @@ public:
 
 	float		mRadius;
 	float		mOpacity;
-	int			xShift;
+    
+    Vec2f       mPosition;
+    
 	bool		bDrawOutline;
 	std::string mFps;
 	std::string mBubble;
@@ -41,7 +43,7 @@ void BasicSampleApp::setup() {
 
 	mRadius = 25;
 	mOpacity = 0.75;
-	xShift = 0;
+	mPosition = getWindowCenter();
 	bDrawOutline = false;
 	mCol = Color::white();
 	mBubble = "Hello, world!";
@@ -52,8 +54,8 @@ void BasicSampleApp::setup() {
 	gui->addSlider("Opacity", &mOpacity, 0.0, 1.0);
 	gui->addSlider("Radius", &mRadius, 0, 100);
 
-	// Int sliders have the same signature
-	gui->addSlider("X Shift", &xShift, -100, 100);
+	// Or use int sliders if you have an irrational fear of rational numbers (that was a great math joke even though ints are rational)
+	gui->addSlider("Position", &mPosition, Vec2f(0,0), getWindowSize());
 
 	gui->addLabel("Other Settings");
 	gui->addButton("Random Color", &BasicSampleApp::onButtonPress, this);
@@ -87,11 +89,11 @@ void BasicSampleApp::draw() {
 	gl::color(mCol);
 
 	if (bDrawOutline){
-		gl::drawStrokedCircle(getWindowCenter() + Vec2f(xShift,0), mRadius);
+		gl::drawStrokedCircle(mPosition, mRadius);
 	}else {
-		gl::drawSolidCircle(getWindowCenter() + Vec2f(xShift, 0), mRadius);
+		gl::drawSolidCircle(mPosition, mRadius);
 	}
-	gl::drawString("< " + mBubble, getWindowCenter() + Vec2f(xShift + mRadius + 10, -10), mCol, Font("Arial", 24));
+	gl::drawString("< " + mBubble, mPosition + Vec2f(mRadius + 10, -10), mCol, Font("Arial", 24));
     
     gui->draw();
 }
