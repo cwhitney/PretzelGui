@@ -20,6 +20,7 @@ namespace Pretzel{
 	class BasePretzel {
 	public:
 		BasePretzel();
+        ~BasePretzel();
 
 		virtual void draw(){};
 		virtual void registerPretzel(BasePretzel *Pretzel);
@@ -34,6 +35,9 @@ namespace Pretzel{
 		virtual void mouseDragged(const ci::Vec2i &pos);
 		virtual void mouseUp(const ci::Vec2i &pos);
 		virtual void mouseMoved(const ci::Vec2i &pos);
+		virtual void keyDown(const char &key, const int &keyCode);
+        
+        WidgetType  type;
 
 	protected:
 		virtual void updateChildrenBounds();
@@ -41,7 +45,7 @@ namespace Pretzel{
 		ci::Vec2f                   mOffset;
 		ci::Rectf                   mBounds;
 
-		std::vector<BasePretzel*>     mPretzelChildren;
+		std::vector<BasePretzel*>   mPretzelChildren;
 		ci::Rectf                   mParentBounds;
 
 		Pretzel::PretzelGlobal			*mGlobal;

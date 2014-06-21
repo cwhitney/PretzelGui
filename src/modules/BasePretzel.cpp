@@ -18,7 +18,13 @@ namespace Pretzel{
 		mBounds.set(0, 0, 0, 0);
 
 		mGlobal = Pretzel::PretzelGlobal::getInstance();
+        
+        type = WidgetType::UNINITALIZED;
 	}
+    
+    BasePretzel::~BasePretzel(){
+        console() << "CLEAN UP. Offset is :: " << mOffset << endl;
+    }
 
 	void BasePretzel::registerPretzel(BasePretzel *Pretzel){
 		mPretzelChildren.push_back(Pretzel);
@@ -71,4 +77,10 @@ namespace Pretzel{
 			(*it)->mouseMoved(pos);
 		}
 	}
+	void BasePretzel::keyDown(const char &key, const int &keyCode){
+		for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
+			(*it)->keyDown(key, keyCode);
+		}
+	}
+
 }

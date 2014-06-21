@@ -7,6 +7,7 @@ using namespace std;
 namespace Pretzel{
 	PretzelToggle::PretzelToggle(BasePretzel *parent, std::string label, bool *value) : BasePretzel() {
 		mBounds.set(0, 0, 200, 23);
+        bHover = false;
 		mValue = value;
 		mLabel = label;
 
@@ -26,7 +27,7 @@ namespace Pretzel{
 
 	void PretzelToggle::draw() {
 		gl::pushMatrices(); {
-			gl::translate(mOffset);
+			gl::translate(mOffset + Vec2i(0,2));
 
 			// draw box
 			Rectf tmpRect = mCheckBoxRect;
@@ -39,7 +40,7 @@ namespace Pretzel{
 			gl::drawSolidRect(tmpRect);
 
 			// draw check
-			if (*mValue){
+			if(*mValue){
 				gl::color(ColorA(1, 1, 1, 1));
 				gl::draw(mGlobal->mSkinTex, mSkinTexRect, mSkinDestRect);
 			}
@@ -52,6 +53,18 @@ namespace Pretzel{
 		BasePretzel::updateBounds(offset, parentBounds);
 	}
 
+    void PretzelToggle::mouseMoved(const ci::Vec2i &pos){
+        if (mSkinDestRect.contains(pos - mOffset)){
+            bHover = true;
+            mGlobal->setCursor(CursorType::HAND);
+        }else{
+            if(bHover){
+                mGlobal->setCursor(CursorType::ARROW);
+            }
+            bHover = false;
+        }
+    }
+    
 	void PretzelToggle::mouseDown(const ci::Vec2i &pos){
 		if (mBounds.contains(pos - mOffset)){
 			*mValue = !(*mValue);

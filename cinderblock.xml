@@ -9,9 +9,19 @@
   	>
 	<supports os="macosx" />
 	<supports os="msw" />
+	
+	<headerPattern>src/pretzel/*.h</headerPattern>
+	<source>src/pretzel/PretzelGui.cpp</source>
+	
+	<platform os="macosx">
+		<source compileAs="mm">src/pretzel/PretzelGlobal.cpp</source>
+	</platform>
+	<platform os="msw">
+		<source>src/pretzel/PretzelGlobal.cpp</source>
+	</platform>
 
-	<sourcePattern>src/*.cpp</sourcePattern>
-	<headerPattern>src/*.h</headerPattern>
+	<sourcePattern>src/modules/*.cpp</sourcePattern>
+	<headerPattern>src/modules/*.h</headerPattern>
 
 	<includePath>src</includePath>
 	

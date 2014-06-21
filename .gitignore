@@ -26,6 +26,7 @@ apps/*
 *.pyc
 .svn/
 *.log
+test/
 
 # IDE-specific ignore patterns
 
