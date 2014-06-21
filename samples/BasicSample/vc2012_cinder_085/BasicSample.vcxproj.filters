@@ -1,0 +1,100 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Blocks">
+      <UniqueIdentifier>{E8FD5537-C08E-4A5E-A3E0-EEC60FFA55D9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\PretzelGUI">
+      <UniqueIdentifier>{02D7F595-7240-471A-B6EC-EF424C02BF3A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\PretzelGUI\src">
+      <UniqueIdentifier>{5F8225ED-9131-4ABF-AA6A-7F4E4530EE1C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\BasicSampleApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BasicSampleApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\src\BasePretzel.cpp">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PretzelButton.cpp">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PretzelGlobal.cpp">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PretzelGui.cpp">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PretzelLabel.cpp">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PretzelRow.cpp">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PretzelSaveLoad.cpp">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PretzelSlider.cpp">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PretzelToggle.cpp">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\src\BasePretzel.h">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PretzelButton.h">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PretzelGlobal.h">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PretzelGui.h">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PretzelLabel.h">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PretzelRow.h">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PretzelSaveLoad.h">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PretzelSlider.h">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PretzelToggle.h">
+      <Filter>Blocks\PretzelGUI\src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
