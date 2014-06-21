@@ -47,6 +47,7 @@ namespace Pretzel{
 		void addLabel(std::string labelText);
 		void addSlider(std::string label, float *variable, float min, float max);
 		void addSlider(std::string label, int *variable, int min, int max);
+        void addSlider(std::string label, ci::Vec2f *variable, ci::Vec2f min, ci::Vec2f max);
 		void addSaveLoad();
 		void addToggle(std::string label, bool *value);
 		void addTextField(std::string label, std::string *variable, bool editable = true);

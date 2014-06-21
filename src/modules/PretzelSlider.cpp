@@ -15,6 +15,7 @@ namespace Pretzel{
         mMax = max;
         mSliderLeft = sliderLeft;
         mSliderRight = sliderRight;
+        mPosOffset = 0;
         
         // texture skin rect
 		mSkinTexRect.set(0, 0, 13, 12);
@@ -28,13 +29,16 @@ namespace Pretzel{
         
         mGlobal = PretzelGlobal::getInstance();
         
-        updateValue( *mValue );
+        updateBounds( mSliderLeft, mSliderRight );
+//        updateValue( *mValue );
     }
     
     template<typename T>
     void PSliderT<T>::updateBounds(const ci::Vec2<T> sliderLeft, const ci::Vec2<T> sliderRight){
         mSliderLeft = sliderLeft;
         mSliderRight = sliderRight;
+        
+        mPosOffset = sliderLeft.y - 22;
         
         updateValue( *mValue );
     }
@@ -56,7 +60,9 @@ namespace Pretzel{
     
     template<typename T>
     void PSliderT<T>::mouseDown(const Vec2i &pos){
-        if (mHandleHitbox.contains(pos - mHandlePos)){
+        Vec2f localPos = pos - mHandlePos - Vec2f(0, mPosOffset);
+        
+        if( mHandleHitbox.contains(localPos) ){
             bIsDragging = true;
             mHandlePos.x = pos.x;
         }
@@ -64,7 +70,9 @@ namespace Pretzel{
     
     template<typename T>
     void PSliderT<T>::mouseMoved(const ci::Vec2i &pos){
-        if (mHandleHitbox.contains(pos - mHandlePos)){
+        Vec2f localPos = pos - mHandlePos - Vec2f(0, mPosOffset);
+        
+        if( mHandleHitbox.contains(localPos) ){
             mHandHover = true;
             mGlobal->setCursor(CursorType::HAND);
         }else{
@@ -92,13 +100,19 @@ namespace Pretzel{
     
     template<typename T>
     void PSliderT<T>::draw(){
-        gl::color(mGlobal->P_SLIDER_COLOR);
-        gl::drawLine(mSliderLeft, mSliderRight);
         
-        gl::color(ColorA(1, 1, 1, 1));
-        gl::pushMatrices(); {
-            gl::translate(mHandlePos);
-            gl::draw(mGlobal->mSkinTex, mSkinTexRect, mSkinDestRect);
+        gl::pushMatrices();{
+            gl::color(mGlobal->P_SLIDER_COLOR);
+            gl::drawLine(mSliderLeft, mSliderRight);
+            
+            gl::translate(0, mPosOffset);
+            
+            
+            gl::color(ColorA(1, 1, 1, 1));
+            gl::pushMatrices(); {
+                gl::translate(mHandlePos);
+                gl::draw(mGlobal->mSkinTex, mSkinTexRect, mSkinDestRect);
+            }gl::popMatrices();
         }gl::popMatrices();
     }
 
@@ -132,6 +146,28 @@ namespace Pretzel{
 
 		parent->registerPretzel(this);
 	}
+    
+    PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, Vec2f *value, Vec2f minVal, Vec2f maxVal) : BasePretzel(){
+		mLineOffset.set(0, 14);
+        mBounds.set(0, 0, 200, 30);
+        mBounds.include( mBounds.getLowerRight() + mLineOffset + Vec2f(0,5) );
+        
+        Vec2f slideL = mBounds.getUpperLeft() + Vec2f(30, 22);
+		Vec2f slideR = mBounds.getUpperRight() + Vec2f(-10, 22);
+        
+        PSliderf newSliderX;
+        newSliderX.setup(labelText, &(value->x), minVal.x, maxVal.x, slideL + mLineOffset * 0, slideR + mLineOffset * 0);
+        mSliderListf.push_back( newSliderX );
+        
+        PSliderf newSliderY;
+        newSliderY.setup(labelText, &(value->y), minVal.y, maxVal.y, slideL + mLineOffset * 1, slideR + mLineOffset * 1);
+        mSliderListf.push_back( newSliderY );
+
+		mGlobal->addSaveParam(labelText, value);
+        
+		parent->registerPretzel(this);
+	}
+
 
 	void PretzelSlider::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds){
 		BasePretzel::updateBounds(offset, parentBounds);
@@ -139,11 +175,17 @@ namespace Pretzel{
         Vec2f slideL = mBounds.getUpperLeft() + Vec2f(10, 22);
 		Vec2f slideR = mBounds.getUpperRight() + Vec2f(-10, 22);
         
-        for( auto it=mSliderListi.begin(); it!=mSliderListi.end(); ++it){
-            it->updateBounds(slideL, slideR);
+        if(mSliderListi.size() > 1 || mSliderListf.size() > 1){
+            slideL = mBounds.getUpperLeft() + Vec2f(30, 22);
+            slideR = mBounds.getUpperRight() + Vec2f(-10, 22);
         }
-        for( auto it=mSliderListf.begin(); it!=mSliderListf.end(); ++it){
-            it->updateBounds(slideL, slideR);
+        
+        for( int i=0; i<mSliderListi.size(); i++){
+            mSliderListi[i].updateBounds(slideL + mLineOffset*i, slideR + mLineOffset*i);
+        }
+
+        for( int i=0; i<mSliderListf.size(); i++){
+            mSliderListf[i].updateBounds(slideL + mLineOffset*i, slideR + mLineOffset*i);
         }
 	}
 
@@ -190,16 +232,36 @@ namespace Pretzel{
 		gl::pushMatrices(); {
 			gl::translate(mOffset);
 
-            for( auto it=mSliderListi.begin(); it!=mSliderListi.end(); ++it){
-                mGlobal->renderText(it->getLabel(), mBounds.getUpperLeft() + Vec2i(12, 1));
-                mGlobal->renderTextRight( to_string(it->getValue()), mBounds.getUpperRight() + Vec2i(-12, 1));
-                it->draw();
+            if( mSliderListf.size() > 1 ){
+                mGlobal->renderText(mSliderListf.front().getLabel(), mBounds.getUpperLeft() + Vec2i(12, 1));
+                
+                int i=0;
+                for( auto it=mSliderListf.begin(); it!=mSliderListf.end(); it++){
+//                    mGlobal->renderText( mGlobal->to_string_with_precision( it->getValue() ), mBounds.getUpperRight() + Vec2i(-12, 1));
+                    if(i==0) mGlobal->renderText("x", Vec2f(12, 0 + 13) );
+                    if(i==1) mGlobal->renderText("y", Vec2f(12, 15*i + 13) );
+                    if(i==2) mGlobal->renderText("z", Vec2f(12, 15*i + 13) );
+                    it->draw();
+                    ++i;
+                }
+            }else{
+                for( auto it=mSliderListf.begin(); it!=mSliderListf.end(); ++it){
+                    mGlobal->renderText(it->getLabel(), mBounds.getUpperLeft() + Vec2i(12, 1));
+                    mGlobal->renderTextRight( mGlobal->to_string_with_precision( it->getValue() ), mBounds.getUpperRight() + Vec2i(-12, 1));
+                    it->draw();
+                }
             }
-            for( auto it=mSliderListf.begin(); it!=mSliderListf.end(); ++it){
-                mGlobal->renderText(it->getLabel(), mBounds.getUpperLeft() + Vec2i(12, 1));
-                mGlobal->renderTextRight( mGlobal->to_string_with_precision( it->getValue() ), mBounds.getUpperRight() + Vec2i(-12, 1));
-                it->draw();
+            
+            if( mSliderListi.size() > 1 ){
+                
+            }else{
+                for( auto it=mSliderListi.begin(); it!=mSliderListi.end(); ++it){
+                    mGlobal->renderText(it->getLabel(), mBounds.getUpperLeft() + Vec2i(12, 1));
+                    mGlobal->renderTextRight( to_string(it->getValue()), mBounds.getUpperRight() + Vec2i(-12, 1));
+                    it->draw();
+                }
             }
+            
 		}gl::popMatrices();
 	}
     // =========================================================================================================================================

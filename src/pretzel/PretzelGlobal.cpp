@@ -112,6 +112,10 @@ namespace Pretzel {
 	void PretzelGlobal::addSaveParam(std::string name, std::string *val){
 		addParamInternal(name, val, _STRING);
 	}
+    
+    void PretzelGlobal::addSaveParam(std::string name, ci::Vec2f *val){
+		addParamInternal(name, val, _VEC2F);
+	}
 
 	void PretzelGlobal::addParamInternal(std::string name, void* value, PretzelTypes type){
 		PretzelParam p;
@@ -143,10 +147,10 @@ namespace Pretzel {
 		for (int i = 0; i < mParamList.size(); i++){
 			switch (mParamList[i].type){
 			case _FLOAT:
-				pSettings.pushBack(JsonTree(mParamList[i].name, to_string(*(float*)mParamList[i].value)));
+				pSettings.pushBack(JsonTree(mParamList[i].name, toString(*(float*)mParamList[i].value)));
 				break;
 			case _INT:
-				pSettings.pushBack(JsonTree(mParamList[i].name, to_string(*(int*)mParamList[i].value)));
+				pSettings.pushBack(JsonTree(mParamList[i].name, toString(*(int*)mParamList[i].value)));
 				break;
 			case _BOOL:
 				tmp = ((*(bool*)mParamList[i].value) == true) ? "1" : "0";
@@ -155,8 +159,17 @@ namespace Pretzel {
 			case _STRING:
 				pSettings.pushBack(JsonTree(mParamList[i].name, (*(std::string*)mParamList[i].value)));
 				break;
-			default:
-				break;
+            case _VEC2F:
+                    JsonTree tt("butt");
+                    tt.makeArray("shit");
+                    tt.pushBack( JsonTree("x", toString(((Vec2f*)mParamList[i].value)->x)) );
+                    tt.pushBack( JsonTree("y", toString(((Vec2f*)mParamList[i].value)->y)) );
+                    pSettings.pushBack( tt );
+//                    pSettings.pushBack( JsonTree(mParamList[i].name, tt) );
+//                pSettings.pushBack(JsonTree(mParamList[i].name, toString(mParamList[i].value) ));
+                break;
+//			default:
+//				break;
 			}
 		}
 
@@ -210,6 +223,12 @@ namespace Pretzel {
 						*((std::string*)mParamList[i].value) = sVal;
 					}
 					break;
+//                case _VEC2F:
+//                    if (appSettings.hasChild(pName)){
+//                        std::string sVal = appSettings.getChild(pName).getValue<std::string>();
+//                        *((std::string*)mParamList[i].value) = fromString(sVal);
+//                    }
+//                    break;
 				default:
 					console() << "Pretzel :: Can't load settings type " << endl;
 					break;
