@@ -41,15 +41,15 @@ namespace Pretzel{
 		Vec2f textSize = mGlobal->guiFont->measureString(mMessage);
 		Rectf textRect(0, 0, textSize.x, textSize.y);
 		textRect.y1 = 4;
-		textRect.y2 = mBounds.getHeight();
+		textRect.y2 = mBounds.getHeight()-1;
 		textRect.x1 -= 5;
 		textRect.x2 += 5;
 
 		gl::pushMatrices(); {
 			gl::translate(mOffset);
 
-			gl::color(mGlobal->P_OUTLINE_COLOR);
-			gl::drawLine(mBounds.getLowerLeft(), mBounds.getLowerRight());
+//			gl::color(mGlobal->P_OUTLINE_COLOR);
+//			gl::drawLine(mBounds.getLowerLeft(), mBounds.getLowerRight());
 
 			// draw light background
 			gl::color(mGlobal->P_TAB_COLOR);
@@ -60,7 +60,7 @@ namespace Pretzel{
 
 				// draw dark background
 				gl::color(mGlobal->P_BG_COLOR);
-				gl::drawSolidRect(textRect);
+				gl::drawSolidRect(textRect );
 
 				// draw text
 				mGlobal->renderText(mMessage, mBounds.getUpperLeft() + Vec2f(0, 4));

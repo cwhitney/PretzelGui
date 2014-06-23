@@ -258,23 +258,19 @@ namespace Pretzel{
             if( mSliderListf.size() > 1 ){
                 mGlobal->renderText(mSliderListf.front().getLabel(), mBounds.getUpperLeft() + Vec2i(12, 1));
                 
-                vector<string> stringVals;
-                std::string sValues = "(";
+                std::string sValues = "";
                 int i=0;
                 for( auto it=mSliderListf.begin(); it!=mSliderListf.end(); it++){
-//                    mGlobal->renderText( mGlobal->to_string_with_precision( it->getValue() ), mBounds.getUpperRight() + Vec2i(-12, 1));
                     if(i==0) mGlobal->renderText("x", Vec2f(12, 0 + 13) );
                     if(i==1) mGlobal->renderText("y", Vec2f(12, 15*i + 13) );
                     if(i==2) mGlobal->renderText("z", Vec2f(12, 15*i + 13) );
                     it->draw();
                     
                     sValues += mGlobal->to_string_with_precision( it->getValue() ) + ", ";
-                    
-//                    stringVals.push_back( mGlobal->to_string_with_precision( it->getValue() ) );
                     ++i;
                 }
                 sValues = sValues.substr(0, sValues.length()-2);
-                sValues += ")";
+//                sValues += ")";
                 mGlobal->renderTextRight( sValues, mBounds.getUpperRight() + Vec2i(-12, 1));
                                     
             }else{

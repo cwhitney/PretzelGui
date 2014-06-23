@@ -58,7 +58,6 @@ void BasicSampleApp::setup() {
 
     // Sliders can take ints, float, Vec2, and Vec3
 	gui->addSlider("Position", &mPosition, Vec2f(0,0), getWindowSize());
-    gui->addSlider("rVec3", &mVec3, Vec3f::zero(), Vec3f(-1000,1000,1000));
     
 	gui->addLabel("Other Settings");
 	gui->addButton("Random Color", &BasicSampleApp::onButtonPress, this);
