@@ -56,6 +56,7 @@ namespace Pretzel {
 		PretzelSlider(BasePretzel *parent, std::string labelText, float *value, float min, float max);
 		PretzelSlider(BasePretzel *parent, std::string labelText, int *value, int min, int max);
         PretzelSlider(BasePretzel *parent, std::string labelText, ci::Vec2f *value, ci::Vec2f min, ci::Vec2f max);
+        PretzelSlider(BasePretzel *parent, std::string labelText, ci::Vec3f *value, ci::Vec3f min, ci::Vec3f max);
 
 		virtual void draw();
 

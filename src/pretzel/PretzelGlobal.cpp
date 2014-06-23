@@ -116,6 +116,10 @@ namespace Pretzel {
     void PretzelGlobal::addSaveParam(std::string name, ci::Vec2f *val){
 		addParamInternal(name, val, _VEC2F);
 	}
+    
+    void PretzelGlobal::addSaveParam(std::string name, ci::Vec3f *val){
+		addParamInternal(name, val, _VEC3F);
+	}
 
 	void PretzelGlobal::addParamInternal(std::string name, void* value, PretzelTypes type){
 		PretzelParam p;
@@ -166,6 +170,14 @@ namespace Pretzel {
                     tt.pushBack( JsonTree("y", toString(((Vec2f*)mParamList[i].value)->y)) );
                     pSettings.pushBack( tt );
                     break;
+                }case _VEC3F:{
+                    JsonTree tt;
+                    tt = tt.makeArray(mParamList[i].name);
+                    tt.pushBack( JsonTree("x", toString(((Vec3f*)mParamList[i].value)->x)) );
+                    tt.pushBack( JsonTree("y", toString(((Vec3f*)mParamList[i].value)->y)) );
+                    tt.pushBack( JsonTree("z", toString(((Vec3f*)mParamList[i].value)->z)) );
+                    pSettings.pushBack( tt );
+                    break;
                 }default: {
                     break;
                 }
@@ -175,6 +187,8 @@ namespace Pretzel {
 		JsonTree root;
 		root.pushBack(pSettings);
 		root.write(appPath, JsonTree::WriteOptions());
+        
+        signalOnSettingsSave();
 	}
 
 	void PretzelGlobal::loadSettings(fs::path settingsPath){
@@ -230,12 +244,22 @@ namespace Pretzel {
                         *((Vec2f*)mParamList[i].value) = p;
                     }
                     break;
+                case _VEC3F:
+                    if (appSettings.hasChild(pName)){
+                        Vec3f p;
+                        p.x = appSettings.getChild(pName).getChild("x").getValue<float>();
+                        p.y = appSettings.getChild(pName).getChild("y").getValue<float>();
+                        p.z = appSettings.getChild(pName).getChild("z").getValue<float>();
+                        *((Vec3f*)mParamList[i].value) = p;
+                    }
+                    break;
 				default:
 					console() << "Pretzel :: Can't load settings type " << endl;
 					break;
 				}
 			}
 		}
+        signalOnSettingsLoad();
 	}
 
 

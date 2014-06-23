@@ -42,8 +42,6 @@ namespace Pretzel{
 		if (base != NULL){	// if it's not a root node, ie. the base PretzelGui
 			base->registerPretzel(this);
 		}
-
-		//    mBgColor = Color( Rand::randFloat(1.0), Rand::randFloat(1.0), Rand::randFloat(1.0) );
 	}
 
 	// ---------------------------------------------------------------

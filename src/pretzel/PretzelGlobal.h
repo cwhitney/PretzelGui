@@ -13,6 +13,7 @@
 #include "cinder/gl/Texture.h"
 #include "cinder/gl/TextureFont.h"
 #include "cinder/Json.h"
+#include <boost/signals2.hpp>
 
 namespace Pretzel {
 
@@ -53,9 +54,11 @@ namespace Pretzel {
 		ci::ColorA P_HOVER_COLOR;
         ci::ColorA P_ACTIVE_COLOR;
 
-		ci::gl::TextureFontRef guiFont;
-
+		ci::gl::TextureFontRef  guiFont;
 		ci::gl::TextureRef		mSkinTex;
+        
+        boost::signals2::signal<void(void)>	signalOnSettingsSave;
+        boost::signals2::signal<void(void)>	signalOnSettingsLoad;
 
 		void renderText(const std::string text, ci::Vec2i pos = ci::Vec2i::zero());
 		void renderTextRight(const std::string text, ci::Vec2i pos = ci::Vec2i::zero());
@@ -69,6 +72,7 @@ namespace Pretzel {
 		void addSaveParam(const std::string name, bool *val);
 		void addSaveParam(const std::string name, std::string *val);
         void addSaveParam(const std::string name, ci::Vec2f *val);
+        void addSaveParam(const std::string name, ci::Vec3f *val);
 
 		template <typename T>
 		std::string to_string_with_precision(const T num, const int n = 2) {
@@ -85,7 +89,8 @@ namespace Pretzel {
 			_INT,
 			_BOOL,
 			_STRING,
-            _VEC2F
+            _VEC2F,
+            _VEC3F
 		};
 
 		struct PretzelParam{

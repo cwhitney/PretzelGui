@@ -16,7 +16,6 @@
 #include "BasePretzel.h"
 #include "PretzelRow.h"
 
-//
 #include "PretzelLabel.h"
 #include "PretzelSlider.h"
 #include "PretzelSaveLoad.h"
@@ -48,10 +47,11 @@ namespace Pretzel{
 		void addSlider(std::string label, float *variable, float min, float max);
 		void addSlider(std::string label, int *variable, int min, int max);
         void addSlider(std::string label, ci::Vec2f *variable, ci::Vec2f min, ci::Vec2f max);
-		void addSaveLoad();
+        void addSlider(std::string label, ci::Vec3f *variable, ci::Vec3f min, ci::Vec3f max);
+        void addSaveLoad();
 		void addToggle(std::string label, bool *value);
 		void addTextField(std::string label, std::string *variable, bool editable = true);
-
+        
 		template<typename T, typename Y>
 		inline void addButton(std::string labelText, T callback, Y *callbackObject){
 			PretzelButton *newButton = new PretzelButton(this, labelText);
@@ -64,6 +64,7 @@ namespace Pretzel{
 		void init(std::string title = "");
         void connectSignals();
         void disconnectSignals();
+        void onSettingsLoaded();
 
 		// mouse events
 		boost::signals2::scoped_connection  mMouseBeganCallBack,

@@ -22,12 +22,14 @@ public:
 	float		mOpacity;
     
     Vec2f       mPosition;
+    Vec3f       mVec3;
     
 	bool		bDrawOutline;
 	std::string mFps;
 	std::string mBubble;
 
 	ci::ColorA	mCol;
+    
 
 	void onButtonPress();
 };
@@ -54,9 +56,10 @@ void BasicSampleApp::setup() {
 	gui->addSlider("Opacity", &mOpacity, 0.0, 1.0);
 	gui->addSlider("Radius", &mRadius, 0, 100);
 
-	// Or use int sliders if you have an irrational fear of rational numbers (that was a great math joke even though ints are rational)
+    // Sliders can take ints, float, Vec2, and Vec3
 	gui->addSlider("Position", &mPosition, Vec2f(0,0), getWindowSize());
-
+    gui->addSlider("rVec3", &mVec3, Vec3f::zero(), Vec3f(-1000,1000,1000));
+    
 	gui->addLabel("Other Settings");
 	gui->addButton("Random Color", &BasicSampleApp::onButtonPress, this);
 	gui->addToggle("Draw outline", &bDrawOutline);
@@ -67,7 +70,7 @@ void BasicSampleApp::setup() {
 
 	gui->addSaveLoad();
     
-//  gui->loadSettings();    // load the last saved settings automatically
+    gui->loadSettings();    // load the last saved settings automatically
     
 //	gui->minimize();        // start in a minimized mode (same as double-clicking the top bar)
 

@@ -33,6 +33,7 @@ namespace Pretzel{
         disconnectSignals();
     }
     
+    // Initialize the gui with a title
 	void PretzelGui::init(std::string title){
 		bVisible = true;
 		bDragging = false;
@@ -56,6 +57,7 @@ namespace Pretzel{
 		mGlobal->P_SLIDER_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 500)));
         
 		connectSignals();
+        mGlobal->signalOnSettingsLoad.connect( std::bind(&PretzelGui::onSettingsLoaded, this) );
         
 		mPos.set(10, 10);
         
@@ -71,14 +73,13 @@ namespace Pretzel{
 		mDefaultLabel = new PretzelLabel(this, title);
 	}
     
+    // Set the xy dimensions of the gui
 	void PretzelGui::setSize(Vec2i size){
 		int minWidth = 150;
 		int minHeight = 150;
         
 		mBounds.x2 = max(size.x, minWidth);
 		mBounds.y2 = max(size.y, minHeight);
-        
-        //        updateBounds(Vec2f::zero(), mBounds);
         
 		updateChildrenBounds();
         
@@ -87,20 +88,24 @@ namespace Pretzel{
 		mResizeRect.set(ul.x, ul.y, lr.x, lr.y);
 	}
     
+    // Set the xy position of the gui
 	void PretzelGui::setPos(const Vec2i &pos){
 		mPos.set(pos);
 	}
     
+    // Programatically minimize the gui. Same as double-clicking the top bar
 	void PretzelGui::minimize(bool doMinimize){
 		bDrawMinimized = doMinimize;
 	}
     
+    // Renders the gui visible/invisible and connects/disconnects all listener signals
 	void PretzelGui::setVisible(bool visible){
 		bVisible = visible;
         if( bVisible ){ connectSignals();       }
         else{           disconnectSignals();    }
 	}
     
+    // Toggles the gui visible/invisible and connects/disconnects all listener signals
 	void PretzelGui::toggleVisible(){
 		bVisible = !bVisible;
         
@@ -133,12 +138,17 @@ namespace Pretzel{
         }
     }
     
+    void PretzelGui::onSettingsLoaded() {
+        updateChildrenBounds();
+    }
+    
 	void PretzelGui::saveSettings(ci::fs::path settingsPath){
 		mGlobal->saveSettings(settingsPath);
 	}
     
 	void PretzelGui::loadSettings(ci::fs::path settingsPath){
 		mGlobal->loadSettings(settingsPath);
+        updateChildrenBounds();
 	}
     
 	// ---------------------------------------------------------
@@ -232,8 +242,6 @@ namespace Pretzel{
 		glGetBooleanv(GL_DEPTH_TEST, &bDepthtestEnable);
 		gl::disableDepthRead();
         
-        
-        
 		// -----------------------------------------------------------
 		gl::enableAlphaBlending();
 		gl::color(Color(1, 1, 1));
@@ -302,6 +310,10 @@ namespace Pretzel{
 	}
     
     void PretzelGui::addSlider(std::string label, ci::Vec2f *variable, ci::Vec2f min, ci::Vec2f max){
+		mWidgetList.push_back( new PretzelSlider(this, label, variable, min, max) );
+	}
+    
+    void PretzelGui::addSlider(std::string label, ci::Vec3f *variable, ci::Vec3f min, ci::Vec3f max){
 		mWidgetList.push_back( new PretzelSlider(this, label, variable, min, max) );
 	}
     

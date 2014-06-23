@@ -30,7 +30,6 @@ namespace Pretzel{
         mGlobal = PretzelGlobal::getInstance();
         
         updateBounds( mSliderLeft, mSliderRight );
-//        updateValue( *mValue );
     }
     
     template<typename T>
@@ -167,7 +166,31 @@ namespace Pretzel{
         
 		parent->registerPretzel(this);
 	}
-
+    
+    PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, Vec3f *value, Vec3f minVal, Vec3f maxVal) : BasePretzel(){
+		mLineOffset.set(0, 14);
+        mBounds.set(0, 0, 200, 30);
+        mBounds.include( mBounds.getLowerRight() + mLineOffset*2 + Vec2f(0,5) );
+        
+        Vec2f slideL = mBounds.getUpperLeft() + Vec2f(30, 22);
+		Vec2f slideR = mBounds.getUpperRight() + Vec2f(-10, 22);
+        
+        PSliderf newSliderX;
+        newSliderX.setup(labelText, &(value->x), minVal.x, maxVal.x, slideL + mLineOffset * 0, slideR + mLineOffset * 0);
+        mSliderListf.push_back( newSliderX );
+        
+        PSliderf newSliderY;
+        newSliderY.setup(labelText, &(value->y), minVal.y, maxVal.y, slideL + mLineOffset * 1, slideR + mLineOffset * 1);
+        mSliderListf.push_back( newSliderY );
+        
+        PSliderf newSliderZ;
+        newSliderY.setup(labelText, &(value->z), minVal.z, maxVal.z, slideL + mLineOffset * 2, slideR + mLineOffset * 1);
+        mSliderListf.push_back( newSliderY );
+        
+		mGlobal->addSaveParam(labelText, value);
+        
+		parent->registerPretzel(this);
+	}
 
 	void PretzelSlider::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds){
 		BasePretzel::updateBounds(offset, parentBounds);
@@ -235,6 +258,8 @@ namespace Pretzel{
             if( mSliderListf.size() > 1 ){
                 mGlobal->renderText(mSliderListf.front().getLabel(), mBounds.getUpperLeft() + Vec2i(12, 1));
                 
+                vector<string> stringVals;
+                std::string sValues = "(";
                 int i=0;
                 for( auto it=mSliderListf.begin(); it!=mSliderListf.end(); it++){
 //                    mGlobal->renderText( mGlobal->to_string_with_precision( it->getValue() ), mBounds.getUpperRight() + Vec2i(-12, 1));
@@ -242,8 +267,16 @@ namespace Pretzel{
                     if(i==1) mGlobal->renderText("y", Vec2f(12, 15*i + 13) );
                     if(i==2) mGlobal->renderText("z", Vec2f(12, 15*i + 13) );
                     it->draw();
+                    
+                    sValues += mGlobal->to_string_with_precision( it->getValue() ) + ", ";
+                    
+//                    stringVals.push_back( mGlobal->to_string_with_precision( it->getValue() ) );
                     ++i;
                 }
+                sValues = sValues.substr(0, sValues.length()-2);
+                sValues += ")";
+                mGlobal->renderTextRight( sValues, mBounds.getUpperRight() + Vec2i(-12, 1));
+                                    
             }else{
                 for( auto it=mSliderListf.begin(); it!=mSliderListf.end(); ++it){
                     mGlobal->renderText(it->getLabel(), mBounds.getUpperLeft() + Vec2i(12, 1));
