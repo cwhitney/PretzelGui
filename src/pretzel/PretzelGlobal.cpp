@@ -146,30 +146,29 @@ namespace Pretzel {
 		std::string tmp;
 		for (int i = 0; i < mParamList.size(); i++){
 			switch (mParamList[i].type){
-			case _FLOAT:
-				pSettings.pushBack(JsonTree(mParamList[i].name, toString(*(float*)mParamList[i].value)));
-				break;
-			case _INT:
-				pSettings.pushBack(JsonTree(mParamList[i].name, toString(*(int*)mParamList[i].value)));
-				break;
-			case _BOOL:
-				tmp = ((*(bool*)mParamList[i].value) == true) ? "1" : "0";
-				pSettings.pushBack(JsonTree(mParamList[i].name, tmp));
-				break;
-			case _STRING:
-				pSettings.pushBack(JsonTree(mParamList[i].name, (*(std::string*)mParamList[i].value)));
-				break;
-            case _VEC2F:
-                    JsonTree tt("butt");
-                    tt.makeArray("shit");
+                case _FLOAT:{
+                    pSettings.pushBack(JsonTree(mParamList[i].name, toString(*(float*)mParamList[i].value)));
+                    break;
+                }case _INT:{
+                    pSettings.pushBack(JsonTree(mParamList[i].name, toString(*(int*)mParamList[i].value)));
+                    break;
+                }case _BOOL:{
+                    tmp = ((*(bool*)mParamList[i].value) == true) ? "1" : "0";
+                    pSettings.pushBack(JsonTree(mParamList[i].name, tmp));
+                    break;
+                }case _STRING:{
+                    pSettings.pushBack(JsonTree(mParamList[i].name, (*(std::string*)mParamList[i].value)));
+                    break;
+                }case _VEC2F:{
+                    JsonTree tt;
+                    tt = tt.makeArray(mParamList[i].name);
                     tt.pushBack( JsonTree("x", toString(((Vec2f*)mParamList[i].value)->x)) );
                     tt.pushBack( JsonTree("y", toString(((Vec2f*)mParamList[i].value)->y)) );
                     pSettings.pushBack( tt );
-//                    pSettings.pushBack( JsonTree(mParamList[i].name, tt) );
-//                pSettings.pushBack(JsonTree(mParamList[i].name, toString(mParamList[i].value) ));
-                break;
-//			default:
-//				break;
+                    break;
+                }default: {
+                    break;
+                }
 			}
 		}
 
@@ -223,12 +222,14 @@ namespace Pretzel {
 						*((std::string*)mParamList[i].value) = sVal;
 					}
 					break;
-//                case _VEC2F:
-//                    if (appSettings.hasChild(pName)){
-//                        std::string sVal = appSettings.getChild(pName).getValue<std::string>();
-//                        *((std::string*)mParamList[i].value) = fromString(sVal);
-//                    }
-//                    break;
+                case _VEC2F:
+                    if (appSettings.hasChild(pName)){
+                        Vec2f p;
+                        p.x = appSettings.getChild(pName).getChild("x").getValue<float>();
+                        p.y = appSettings.getChild(pName).getChild("y").getValue<float>();
+                        *((Vec2f*)mParamList[i].value) = p;
+                    }
+                    break;
 				default:
 					console() << "Pretzel :: Can't load settings type " << endl;
 					break;
