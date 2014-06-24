@@ -95,9 +95,9 @@ namespace Pretzel{
 			
 			// cursor line
 			if (bEditing && (app::getElapsedSeconds() - (long)app::getElapsedSeconds()) < 0.5 ){
-				float x = mTextFieldBounds.getUpperLeft().x + mInputSize.x + 6;
+				float x = mTextFieldBounds.getUpperLeft().x + mInputSize.x + 4;
 				gl::color(mGlobal->P_TEXT_COLOR);
-				gl::drawLine(Vec2i(x, mTextFieldBounds.y1 + 2), Vec2i(x, mTextFieldBounds.y2 - 3));
+				gl::drawLine(Vec2i(x, mTextFieldBounds.y1 + 2), Vec2i(x, mTextFieldBounds.y2 - 2));
 			}
 		}gl::popMatrices();
 	}
