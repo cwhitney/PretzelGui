@@ -13,9 +13,9 @@ using namespace ci::app;
 using namespace std;
 
 namespace Pretzel{
-	PretzelGui::PretzelGui(std::string title) : PretzelRow(NULL, 200, 500) { init(title); }
-	PretzelGui::PretzelGui(std::string title, int width, int height) : PretzelRow(NULL, width, height){ init(title); }
-    //	PretzelGui::PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height) : PretzelRow(NULL, width, height){ init(title); }
+	PretzelGui::PretzelGui(std::string title) : ScrollPane(NULL, 200, 500) { init(title); }
+	PretzelGui::PretzelGui(std::string title, int width, int height) : ScrollPane(NULL, width, height){ init(title); }
+    //	PretzelGui::PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height) : ScrollPane(NULL, width, height){ init(title); }
     
     PretzelGui::~PretzelGui(){
         while( mWidgetList.size() ){
@@ -257,21 +257,21 @@ namespace Pretzel{
 		}
 		else{
 			gl::pushMatrices(); {
-                glEnable(GL_SCISSOR_TEST);
-                Rectf tBounds = mBounds;
-                Vec2f tPos = mPos;
-                float winH = getWindowHeight();
+//                glEnable(GL_SCISSOR_TEST);
+//                Rectf tBounds = mBounds;
+//                Vec2f tPos = mPos;
+//                float winH = getWindowHeight();
                 
-                if( ci::app::App::get()->getSettings().isHighDensityDisplayEnabled() ){
-                    tBounds *= getWindowContentScale();
-                    winH *= getWindowContentScale();
-                    tPos *= getWindowContentScale();
-                }
+//                if( ci::app::App::get()->getSettings().isHighDensityDisplayEnabled() ){
+//                    tBounds *= getWindowContentScale();
+//                    winH *= getWindowContentScale();
+//                    tPos *= getWindowContentScale();
+//                }
                 
-                glScissor( tPos.x, winH - tBounds.y2 - tPos.y, tBounds.getWidth(), tBounds.getHeight());
+//                glScissor( tPos.x, winH - tBounds.y2 - tPos.y, tBounds.getWidth(), tBounds.getHeight());
                 
 				gl::translate(mPos);
-				PretzelRow::draw();
+				ScrollPane::draw();
                 
 				gl::color(mGlobal->P_TAB_COLOR);
 				gl::drawSolidRect(Rectf(mBounds.getLowerLeft() - Vec2i(0, 10), mBounds.getLowerRight()));
@@ -283,7 +283,7 @@ namespace Pretzel{
                 gl::drawLine( mResizeRect.getUpperRight() - Vec2f(mBounds.getWidth(), 0), mResizeRect.getUpperRight() );
 				gl::drawStrokedRect( Rectf(mBounds.x1, mBounds.y1, mBounds.x2, mBounds.y2) );
                 
-                glDisable(GL_SCISSOR_TEST);
+//                glDisable(GL_SCISSOR_TEST);
 			}gl::popMatrices();
 		}
         

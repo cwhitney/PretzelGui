@@ -14,6 +14,7 @@
 
 #include "PretzelGlobal.h"
 #include "BasePretzel.h"
+#include "ScrollPane.h"
 #include "PretzelRow.h"
 
 #include "PretzelLabel.h"
@@ -24,11 +25,11 @@
 #include "PretzelTextField.h"
 
 namespace Pretzel{
-	class PretzelGui : public PretzelRow {
+	class PretzelGui : public ScrollPane {
 	public:
 		PretzelGui(std::string title = "");
 		PretzelGui(std::string title, int width, int height);
-		PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height);
+//		PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height);
         ~PretzelGui();
         
 		void draw();

@@ -25,6 +25,7 @@ namespace Pretzel {
         
         const std::string getLabel(){ return mLabelText; }
         const T getValue(){ return *mValue; }
+        const float getNormalized(){ return (float)(mHandlePos.x - mSliderLeft.x) / (float)(mSliderRight.x - mSliderLeft.x); }
         
       private:
         void updateValue(const T val);

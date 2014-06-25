@@ -17,21 +17,21 @@ namespace Pretzel{
 		initPretzel(base, width, height);
 	}
 
-	PretzelRow::PretzelRow(BasePretzel *base, PretzelFillStyle width, int height) {
-		initPretzel(base, getWindowWidth(), height);
-		bFillWidth = true;
-	}
-
-	PretzelRow::PretzelRow(BasePretzel *base, int width, PretzelFillStyle height) {
-		initPretzel(base, width, getWindowHeight());
-		bFillHeight = true;
-	}
-
-	PretzelRow::PretzelRow(BasePretzel *base, PretzelFillStyle width, PretzelFillStyle height) {
-		initPretzel(base, getWindowWidth(), getWindowHeight());
-		bFillWidth = true;
-		bFillHeight = true;
-	}
+//	PretzelRow::PretzelRow(BasePretzel *base, PretzelFillStyle width, int height) {
+//		initPretzel(base, getWindowWidth(), height);
+//		bFillWidth = true;
+//	}
+//
+//	PretzelRow::PretzelRow(BasePretzel *base, int width, PretzelFillStyle height) {
+//		initPretzel(base, width, getWindowHeight());
+//		bFillHeight = true;
+//	}
+//
+//	PretzelRow::PretzelRow(BasePretzel *base, PretzelFillStyle width, PretzelFillStyle height) {
+//		initPretzel(base, getWindowWidth(), getWindowHeight());
+//		bFillWidth = true;
+//		bFillHeight = true;
+//	}
 
 	void PretzelRow::initPretzel(BasePretzel *base, int width, int height) {
 		bFillWidth = false;

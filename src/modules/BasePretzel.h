@@ -42,7 +42,11 @@ namespace Pretzel{
 	protected:
 		virtual void updateChildrenBounds();
 
+        // The offset from the 0,0 top-left of the GUI
 		ci::Vec2f                   mOffset;
+        
+        // The offset from the 0,0 top-left of the screen
+        ci::Vec2f                   mGlobalOffset;
 		ci::Rectf                   mBounds;
 
 		std::vector<BasePretzel*>   mPretzelChildren;

@@ -17,9 +17,9 @@ namespace Pretzel{
 	class PretzelRow : public BasePretzel {
 	public:
 		PretzelRow(BasePretzel *base, int width, int height);
-		PretzelRow(BasePretzel *base, PretzelFillStyle width, int height);
-		PretzelRow(BasePretzel *base, int width, PretzelFillStyle height);
-		PretzelRow(BasePretzel *base, PretzelFillStyle width, PretzelFillStyle height);
+//		PretzelRow(BasePretzel *base, PretzelFillStyle width, int height);
+//		PretzelRow(BasePretzel *base, int width, PretzelFillStyle height);
+//		PretzelRow(BasePretzel *base, PretzelFillStyle width, PretzelFillStyle height);
 
 		void draw();
 
