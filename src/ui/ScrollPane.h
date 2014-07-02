@@ -20,7 +20,8 @@ namespace Pretzel {
         ScrollPane(BasePretzel *base, int width, int height);
         virtual void draw();
         
-      private:
-        
+      protected:
+        void updateChildrenBounds();
+        float mChildrenHeight;
     };
 }

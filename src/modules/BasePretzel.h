@@ -42,16 +42,18 @@ namespace Pretzel{
 	protected:
 		virtual void updateChildrenBounds();
 
-        // The offset from the 0,0 top-left of the GUI
+        // The offset from the app-wide 0,0 to the topLeft of the main gui window
+        ci::Vec2f                   mGlobalOffset;
+        
+        // The offset from the 0,0 top-left of the main gui window to this particular module
 		ci::Vec2f                   mOffset;
         
-        // The offset from the 0,0 top-left of the screen
-        ci::Vec2f                   mGlobalOffset;
+        // The containing bounds of this item where the upper-left of mBounds = mGlobalOffset + mOffset
 		ci::Rectf                   mBounds;
 
 		std::vector<BasePretzel*>   mPretzelChildren;
 		ci::Rectf                   mParentBounds;
 
-		Pretzel::PretzelGlobal			*mGlobal;
+		Pretzel::PretzelGlobal		*mGlobal;
 	};
 }

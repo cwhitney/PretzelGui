@@ -17,22 +17,6 @@ namespace Pretzel{
 		initPretzel(base, width, height);
 	}
 
-//	PretzelRow::PretzelRow(BasePretzel *base, PretzelFillStyle width, int height) {
-//		initPretzel(base, getWindowWidth(), height);
-//		bFillWidth = true;
-//	}
-//
-//	PretzelRow::PretzelRow(BasePretzel *base, int width, PretzelFillStyle height) {
-//		initPretzel(base, width, getWindowHeight());
-//		bFillHeight = true;
-//	}
-//
-//	PretzelRow::PretzelRow(BasePretzel *base, PretzelFillStyle width, PretzelFillStyle height) {
-//		initPretzel(base, getWindowWidth(), getWindowHeight());
-//		bFillWidth = true;
-//		bFillHeight = true;
-//	}
-
 	void PretzelRow::initPretzel(BasePretzel *base, int width, int height) {
 		bFillWidth = false;
 		bFillHeight = false;
@@ -45,10 +29,12 @@ namespace Pretzel{
 	}
 
 	// ---------------------------------------------------------------
-	void PretzelRow::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds){
-		mOffset.set(offset);
-		mParentBounds = parentBounds;
-	}
+//	void PretzelRow::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds){
+//		mOffset.set(offset);
+//		mParentBounds = parentBounds;
+//        
+//        console() << "Update row bounds" << endl;
+//	}
 
 	void PretzelRow::updateChildrenBounds() {
 		Vec2f newOffset(0, 0);

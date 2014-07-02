@@ -59,7 +59,8 @@ namespace Pretzel{
 		connectSignals();
         mGlobal->signalOnSettingsLoad.connect( std::bind(&PretzelGui::onSettingsLoaded, this) );
         
-		mPos.set(10, 10);
+		mGlobalOffset.set(10, 10);
+        mGlobal->setGlobalPos( mGlobalOffset );
         
 		Vec2i ul = mBounds.getSize() - Vec2i(10, 10);
 		Vec2i lr = mBounds.getSize();
@@ -90,7 +91,8 @@ namespace Pretzel{
     
     // Set the xy position of the gui
 	void PretzelGui::setPos(const Vec2i &pos){
-		mPos.set(pos);
+		mGlobalOffset.set(pos);
+        mGlobal->setGlobalPos( pos );
 	}
     
     // Programatically minimize the gui. Same as double-clicking the top bar
@@ -155,27 +157,27 @@ namespace Pretzel{
 	void PretzelGui::onMouseDown(ci::app::MouseEvent &event){
 		if (!bVisible) return;
         
-		if (mDefaultLabel->getBounds().contains(event.getPos() - mPos)){
+		if (mDefaultLabel->getBounds().contains(event.getPos() - mGlobalOffset)){
             
 			if (getElapsedSeconds() - mLastClickTime < 0.25){	// Double click title bar, minimize
 				bDrawMinimized = !bDrawMinimized;
 			}
 			else{												// Single click title bar, drag
 				bDragging = true;
-				mMouseOffset = event.getPos() - mPos;
+				mMouseOffset = event.getPos() - mGlobalOffset;
 			}
 			mLastClickTime = getElapsedSeconds();
 		}
 		else if (bDrawMinimized){								// We are minimized, don't go further
 			return;
 		}
-		else if (mResizeRect.contains(event.getPos() - mPos)){	// Hit in lower right corner for resize
+		else if (mResizeRect.contains(event.getPos() - mGlobalOffset)){	// Hit in lower right corner for resize
 			bResizing = true;
 			mResizeStartSize = mBounds.getSize();
-			mMouseOffset = event.getPos() - mPos;
+			mMouseOffset = event.getPos() - mGlobalOffset;
 		}
 		else{
-			mouseDown(event.getPos() - mPos);					// Propagate to children
+			mouseDown(event.getPos() - mGlobalOffset);					// Propagate to children
 		}
 	}
     
@@ -183,14 +185,14 @@ namespace Pretzel{
 		if (!bVisible) return;
         
 		if (bDragging){
-			mPos = event.getPos() - mMouseOffset;
+			mGlobalOffset = event.getPos() - mMouseOffset;
 		}
 		else if (bResizing){
-			Vec2i newSize = mResizeStartSize + event.getPos() - mPos - mMouseOffset;
+			Vec2i newSize = mResizeStartSize + event.getPos() - mGlobalOffset - mMouseOffset;
 			setSize(newSize);
 		}
 		else{
-			mouseDragged(event.getPos() - mPos);
+			mouseDragged(event.getPos() - mGlobalOffset);
 		}
 	}
     
@@ -204,22 +206,22 @@ namespace Pretzel{
 			bResizing = false;
 		}
 		else{
-			mouseUp(event.getPos() - mPos);
+			mouseUp(event.getPos() - mGlobalOffset);
 		}
 	}
     
 	void PretzelGui::onMouseMoved(ci::app::MouseEvent &event){
 		if (!bVisible) return;
         
-        if (mDefaultLabel->getBounds().contains(event.getPos() - mPos)){
+        if (mDefaultLabel->getBounds().contains(event.getPos() - mGlobalOffset)){
             mGlobal->setCursor( CursorType::HAND );
-        }else if (mResizeRect.contains(event.getPos() - mPos)){	// Hit in lower right corner for resize
+        }else if (mResizeRect.contains(event.getPos() - mGlobalOffset)){	// Hit in lower right corner for resize
 			mGlobal->setCursor( CursorType::RESIZE_RL );
 		}else{
             mGlobal->setCursor( CursorType::ARROW );
         }
 		
-		mouseMoved(event.getPos() - mPos);
+		mouseMoved(event.getPos() - mGlobalOffset);
 	}
     
 	void PretzelGui::onKeyDown(ci::app::KeyEvent &event){
@@ -248,7 +250,7 @@ namespace Pretzel{
         
 		if (bDrawMinimized){
 			gl::pushMatrices(); {
-				gl::translate(mPos);
+				gl::translate(mGlobalOffset);
 				mDefaultLabel->draw();
                 
 				gl::color(mGlobal->P_GUI_BORDER);
@@ -259,7 +261,7 @@ namespace Pretzel{
 			gl::pushMatrices(); {
 //                glEnable(GL_SCISSOR_TEST);
 //                Rectf tBounds = mBounds;
-//                Vec2f tPos = mPos;
+//                Vec2f tPos = mGlobalOffset;
 //                float winH = getWindowHeight();
                 
 //                if( ci::app::App::get()->getSettings().isHighDensityDisplayEnabled() ){
@@ -270,7 +272,7 @@ namespace Pretzel{
                 
 //                glScissor( tPos.x, winH - tBounds.y2 - tPos.y, tBounds.getWidth(), tBounds.getHeight());
                 
-				gl::translate(mPos);
+				gl::translate(mGlobalOffset);
 				ScrollPane::draw();
                 
 				gl::color(mGlobal->P_TAB_COLOR);

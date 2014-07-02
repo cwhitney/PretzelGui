@@ -37,6 +37,8 @@ namespace Pretzel{
 		mParentBounds = parentBounds;
 
 		mBounds.x2 = parentBounds.getWidth();
+        
+        mGlobalOffset.set( mGlobal->getGlobalPos() );
 	}
 
 	// -------------------------------------------------------------

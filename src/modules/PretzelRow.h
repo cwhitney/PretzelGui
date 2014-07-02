@@ -23,7 +23,7 @@ namespace Pretzel{
 
 		void draw();
 
-		virtual void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
+//		virtual void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
 
 	protected:
 		void updateChildrenBounds();

@@ -82,6 +82,9 @@ namespace Pretzel {
 		}
         
         void setCursor( CursorType type );
+        
+        void setGlobalPos( const ci::Vec2f &pos ){ mGlobalPos.set(pos); };
+        const ci::Vec2f getGlobalPos(){ return mGlobalPos; }
 
 	private:
 		enum PretzelTypes {
@@ -98,6 +101,8 @@ namespace Pretzel {
 			void* value;
 			PretzelTypes type;
 		};
+            
+        ci::Vec2f   mGlobalPos;
 
 		// PRIVATE CONSTRUCTOR + COPY
 		PretzelGlobal(){};

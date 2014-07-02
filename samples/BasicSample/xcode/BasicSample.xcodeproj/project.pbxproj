@@ -210,8 +210,8 @@
 		9A9526A290154EA39F5E24A6 /* pretzel */ = {
 			isa = PBXGroup;
 			children = (
-				94B51D318E154F58837E9ED5 /* PretzelGlobal.h */,
 				04F640A22F8E4ABCACD33F5F /* PretzelGui.h */,
+				94B51D318E154F58837E9ED5 /* PretzelGlobal.h */,
 				57E1607480C0484E974EE43A /* PretzelGui.cpp */,
 				0C7F401EA2154907AE354EA4 /* PretzelGlobal.cpp */,
 			);
