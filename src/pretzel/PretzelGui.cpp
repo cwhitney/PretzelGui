@@ -158,36 +158,32 @@ namespace Pretzel{
 	void PretzelGui::onMouseDown(ci::app::MouseEvent &event){
 		if (!bVisible) return;
         
-//        ScrollPane::onMouseDown(event);
-        
 		if (mDefaultLabel->getBounds().contains(event.getPos() - mGlobalOffset)){
             
-			if (getElapsedSeconds() - mLastClickTime < 0.25){	// Double click title bar, minimize
+			if (getElapsedSeconds() - mLastClickTime < 0.25){               // Double click title bar, minimize
 				bDrawMinimized = !bDrawMinimized;
 			}
-			else{												// Single click title bar, drag
+			else{                                                           // Single click title bar, drag
 				bDragging = true;
 				mMouseOffset = event.getPos() - mGlobalOffset;
 			}
 			mLastClickTime = getElapsedSeconds();
 		}
-		else if (bDrawMinimized){								// We are minimized, don't go further
+		else if (bDrawMinimized){                                           // We are minimized, don't go further
 			return;
 		}
-		else if (mResizeRect.contains(event.getPos() - mGlobalOffset)){	// Hit in lower right corner for resize
+		else if (mResizeRect.contains(event.getPos() - mGlobalOffset)){     // Hit in lower right corner for resize
 			bResizing = true;
 			mResizeStartSize = mBounds.getSize();
 			mMouseOffset = event.getPos() - mGlobalOffset;
 		}
 		else{
-			mouseDown(event.getPos() - mGlobalOffset);					// Propagate to children
+			mouseDown(event.getPos() - mGlobalOffset);                      // Propagate to children
 		}
 	}
     
 	void PretzelGui::onMouseDragged(ci::app::MouseEvent &event){
 		if (!bVisible) return;
-        
-//        ScrollPane::onMouseDragged(event);
         
 		if (bDragging){
 			mGlobalOffset = event.getPos() - mMouseOffset;
@@ -204,8 +200,6 @@ namespace Pretzel{
 	void PretzelGui::onMouseUp(ci::app::MouseEvent &event){
 		if (!bVisible) return;
         
-//        ScrollPane::onMouseUp(event);
-        
 		if (bDragging){
 			bDragging = false;
 		}
@@ -219,8 +213,6 @@ namespace Pretzel{
     
 	void PretzelGui::onMouseMoved(ci::app::MouseEvent &event){
 		if (!bVisible) return;
-        
-//        ScrollPane::onMouseMoved(event);
         
         if (mDefaultLabel->getBounds().contains(event.getPos() - mGlobalOffset)){
             mGlobal->setCursor( CursorType::HAND );

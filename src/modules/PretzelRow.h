@@ -17,13 +17,7 @@ namespace Pretzel{
 	class PretzelRow : public BasePretzel {
 	public:
 		PretzelRow(BasePretzel *base, int width, int height);
-//		PretzelRow(BasePretzel *base, PretzelFillStyle width, int height);
-//		PretzelRow(BasePretzel *base, int width, PretzelFillStyle height);
-//		PretzelRow(BasePretzel *base, PretzelFillStyle width, PretzelFillStyle height);
-
 		void draw();
-
-//		virtual void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
 
 	protected:
 		void updateChildrenBounds();
@@ -31,6 +25,6 @@ namespace Pretzel{
 	private:
 		void initPretzel(BasePretzel *base, int width, int height);
 
-		bool        bFillWidth, bFillHeight;
+		bool bFillWidth, bFillHeight;
 	};
 }

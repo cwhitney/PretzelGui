@@ -28,14 +28,7 @@ namespace Pretzel{
 		}
 	}
 
-	// ---------------------------------------------------------------
-//	void PretzelRow::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds){
-//		mOffset.set(offset);
-//		mParentBounds = parentBounds;
-//        
-//        console() << "Update row bounds" << endl;
-//	}
-
+    // ---------------------------------------------------------------
 	void PretzelRow::updateChildrenBounds() {
         BasePretzel::updateChildrenBounds();
         

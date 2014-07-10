@@ -81,8 +81,6 @@ namespace Pretzel{
 		virtual void onMouseMoved(ci::app::MouseEvent &event);
 		virtual void onKeyDown(ci::app::KeyEvent &event);
 
-//		ci::Vec2i		mPos;
-
 		ci::Surface32f  mSkin;
 		ci::gl::Texture mTex;
         
