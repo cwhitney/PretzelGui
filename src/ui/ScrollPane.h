@@ -20,8 +20,25 @@ namespace Pretzel {
         ScrollPane(BasePretzel *base, int width, int height);
         virtual void draw();
         
+        virtual void mouseDown(const ci::Vec2i &pos);
+		virtual void mouseDragged(const ci::Vec2i &pos);
+		virtual void mouseUp(const ci::Vec2i &pos);
+		virtual void mouseMoved(const ci::Vec2i &pos);
+        
       protected:
         void updateChildrenBounds();
-        float mChildrenHeight;
+        
+        float       mScrolledPct;
+        ci::Vec2f   mScrolledHandleAmt;
+        ci::Vec2f   mScrolledFrameAmt;
+        
+        float       mChildrenHeight;
+        bool        bCanScroll;
+        
+        ci::Rectf   mScrollHandle;
+        ci::Vec2i   mStartDragOffset;
+        
+        bool        bDragging;
+        bool        bHover;
     };
 }

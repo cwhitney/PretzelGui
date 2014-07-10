@@ -5,3 +5,5 @@
 
 
 
+
+#define PRETZEL_GUI_SKIN		CINDER_RESOURCE( ../../../resources/, default_skin.png, 128, IMAGE )

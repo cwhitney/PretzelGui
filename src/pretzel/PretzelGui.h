@@ -11,6 +11,7 @@
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/Texture.h"
 #include "cinder/ImageIo.h"
+#include "Resources.h"
 
 #include "PretzelGlobal.h"
 #include "BasePretzel.h"
@@ -99,5 +100,6 @@ namespace Pretzel{
 
 		double			mLastClickTime;
 		bool			bDrawMinimized;
+        bool            bChangedCursor;
 	};
 }

@@ -37,6 +37,8 @@ namespace Pretzel{
 //	}
 
 	void PretzelRow::updateChildrenBounds() {
+        BasePretzel::updateChildrenBounds();
+        
 		Vec2f newOffset(0, 0);
 
 		for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){

@@ -39,7 +39,8 @@ namespace Pretzel{
 		bDragging = false;
 		bResizing = false;
 		bDrawMinimized = false;
-		mSkin = Surface32f(loadImage(ci::app::loadAsset("default_skin.png")));
+        bChangedCursor = false;
+		mSkin = Surface32f(loadImage(ci::app::loadResource( PRETZEL_GUI_SKIN )));
 		mTex = gl::Texture(mSkin);
         
 		mLastClickTime = 0.0;
@@ -157,6 +158,8 @@ namespace Pretzel{
 	void PretzelGui::onMouseDown(ci::app::MouseEvent &event){
 		if (!bVisible) return;
         
+//        ScrollPane::onMouseDown(event);
+        
 		if (mDefaultLabel->getBounds().contains(event.getPos() - mGlobalOffset)){
             
 			if (getElapsedSeconds() - mLastClickTime < 0.25){	// Double click title bar, minimize
@@ -184,6 +187,8 @@ namespace Pretzel{
 	void PretzelGui::onMouseDragged(ci::app::MouseEvent &event){
 		if (!bVisible) return;
         
+//        ScrollPane::onMouseDragged(event);
+        
 		if (bDragging){
 			mGlobalOffset = event.getPos() - mMouseOffset;
 		}
@@ -199,6 +204,8 @@ namespace Pretzel{
 	void PretzelGui::onMouseUp(ci::app::MouseEvent &event){
 		if (!bVisible) return;
         
+//        ScrollPane::onMouseUp(event);
+        
 		if (bDragging){
 			bDragging = false;
 		}
@@ -213,12 +220,17 @@ namespace Pretzel{
 	void PretzelGui::onMouseMoved(ci::app::MouseEvent &event){
 		if (!bVisible) return;
         
+//        ScrollPane::onMouseMoved(event);
+        
         if (mDefaultLabel->getBounds().contains(event.getPos() - mGlobalOffset)){
             mGlobal->setCursor( CursorType::HAND );
+            bChangedCursor = true;
         }else if (mResizeRect.contains(event.getPos() - mGlobalOffset)){	// Hit in lower right corner for resize
 			mGlobal->setCursor( CursorType::RESIZE_RL );
-		}else{
+            bChangedCursor = true;
+		}else if(bChangedCursor){
             mGlobal->setCursor( CursorType::ARROW );
+            bChangedCursor = false;
         }
 		
 		mouseMoved(event.getPos() - mGlobalOffset);

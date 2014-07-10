@@ -27,9 +27,6 @@
 
 	<includePath>src</includePath>
 	
-	<resource
-		name="PRETZEL_GUI_SKIN"
-		type="IMAGE"
-		>resources/default_skin.png</resource>
+	<asset>assets/default_skin.png</asset>
   </block>
 </cinder>
