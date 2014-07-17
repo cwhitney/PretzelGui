@@ -11,9 +11,11 @@
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/Texture.h"
 #include "cinder/ImageIo.h"
+#include "Resources.h"
 
 #include "PretzelGlobal.h"
 #include "BasePretzel.h"
+#include "ScrollPane.h"
 #include "PretzelRow.h"
 
 #include "PretzelLabel.h"
@@ -24,11 +26,11 @@
 #include "PretzelTextField.h"
 
 namespace Pretzel{
-	class PretzelGui : public PretzelRow {
+	class PretzelGui : public ScrollPane {
 	public:
 		PretzelGui(std::string title = "");
 		PretzelGui(std::string title, int width, int height);
-		PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height);
+//		PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height);
         ~PretzelGui();
         
 		void draw();
@@ -79,8 +81,6 @@ namespace Pretzel{
 		virtual void onMouseMoved(ci::app::MouseEvent &event);
 		virtual void onKeyDown(ci::app::KeyEvent &event);
 
-		ci::Vec2i		mPos;
-
 		ci::Surface32f  mSkin;
 		ci::gl::Texture mTex;
         
@@ -98,5 +98,6 @@ namespace Pretzel{
 
 		double			mLastClickTime;
 		bool			bDrawMinimized;
+        bool            bChangedCursor;
 	};
 }
