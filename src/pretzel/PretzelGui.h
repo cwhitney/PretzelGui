@@ -24,6 +24,7 @@
 #include "PretzelButton.h"
 #include "PretzelToggle.h"
 #include "PretzelTextField.h"
+#include "PretzelColorPicker.h"
 
 namespace Pretzel{
 	class PretzelGui : public ScrollPane {
@@ -53,6 +54,9 @@ namespace Pretzel{
         void addSaveLoad();
 		void addToggle(std::string label, bool *value);
 		void addTextField(std::string label, std::string *variable, bool editable = true);
+        
+        void addColorPicker(std::string label, ci::Color *color);
+        void addColorPicker(std::string label, ci::ColorA *color);
         
 		template<typename T, typename Y>
 		inline void addButton(std::string labelText, T callback, Y *callbackObject){

@@ -12,9 +12,12 @@
 #include "BasePretzel.h"
 
 namespace Pretzel {
+    
+    template<typename T>
 	class PretzelColorPicker : public BasePretzel {
 	public:
-		PretzelColorPicker(BasePretzel *parent, std::string label, ci::Color *value);
+		PretzelColorPicker(BasePretzel *parent, std::string label, ci::Color    *value);
+		PretzelColorPicker(BasePretzel *parent, std::string label, ci::ColorA   *value);
         
 		virtual void draw();
 		void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
@@ -25,10 +28,15 @@ namespace Pretzel {
 //        virtual void mouseMoved(const ci::Vec2i &pos);
         
 	private:
-		bool			*mValue;
-		std::string		mLabel;
-        
-        bool            bHover;
+//        union {
+//            ci::Color c,
+//            ci::ColorA cc
+//        } colTypes;
+//        
+//		ci::ColorT<T>       *mColor;
+//		std::string         mLabel;
+//        
+//        bool                bHover;
 	};
     
 }

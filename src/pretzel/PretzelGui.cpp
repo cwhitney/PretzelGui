@@ -334,4 +334,12 @@ namespace Pretzel{
 	void PretzelGui::addTextField(std::string label, std::string *variable, bool editable){
 		mWidgetList.push_back( new PretzelTextField(this, label, variable, editable) );
 	}
+    
+    void PretzelGui::addColorPicker(std::string label, ci::Color *color){
+        mWidgetList.push_back( new PretzelColorPicker(this, label, color) );
+    }
+    
+    void PretzelGui::addColorPicker(std::string label, ci::ColorA *color){
+        mWidgetList.push_back( new PretzelColorPicker(this, label, color) );
+    }
 }

@@ -13,12 +13,22 @@ using namespace ci::app;
 using namespace std;
 
 namespace Pretzel{
+    
 	PretzelColorPicker::PretzelColorPicker(BasePretzel *parent, std::string label, ci::Color *value) : BasePretzel() {
+        mBounds.set(0, 0, 200, 23);        
+		mLabel = label;
+        mColor = value;
+
+		parent->registerPretzel(this);
+    }
+    
+	PretzelColorPicker::PretzelColorPicker(BasePretzel *parent, std::string label, ci::ColorA *value) : BasePretzel() {
 		mBounds.set(0, 0, 200, 23);
 //        bHover = false;
-//		mValue = value;
-//		mLabel = label;
-//        
+
+		mLabel = label;
+        mColor = value;
+//
 //		int size = 11;
 //		mCheckBoxRect.set(0, 0, size, size);
 //		mCheckBoxRect.offset(Vec2i(11, 3));
@@ -36,7 +46,7 @@ namespace Pretzel{
 	void PretzelColorPicker::draw() {
 //		gl::pushMatrices(); {
 //			gl::translate(mOffset + Vec2i(0,2));
-//            
+//
 //			// draw box
 //			Rectf tmpRect = mCheckBoxRect;
 //            

@@ -29,7 +29,6 @@
 		CB3F55AD19787D6C00DA937A /* ScrollPane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB3F55AB19787D6C00DA937A /* ScrollPane.cpp */; };
 		CB83A0B86CA04D36B472FE40 /* PretzelButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 688F2C6CDBE54BD1838688B3 /* PretzelButton.cpp */; };
 		CB8DABA31961E9AE00A894A2 /* PretzelColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB8DABA11961E9AE00A894A2 /* PretzelColorPicker.cpp */; };
-		CBD570211959D8DB00B8A12D /* ScrollPane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBD5701F1959D8DB00B8A12D /* ScrollPane.cpp */; };
 		E7153E700465435A844562CA /* PretzelLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FA5960C73944718BE655A26 /* PretzelLabel.cpp */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +69,6 @@
 		CB3F55AC19787D6C00DA937A /* ScrollPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollPane.h; path = ../../../src/ui/ScrollPane.h; sourceTree = "<group>"; };
 		CB8DABA11961E9AE00A894A2 /* PretzelColorPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PretzelColorPicker.cpp; path = ../../../src/modules/PretzelColorPicker.cpp; sourceTree = "<group>"; };
 		CB8DABA21961E9AE00A894A2 /* PretzelColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PretzelColorPicker.h; path = ../../../src/modules/PretzelColorPicker.h; sourceTree = "<group>"; };
-		CBD5701F1959D8DB00B8A12D /* ScrollPane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScrollPane.cpp; path = ../../../src/ui/ScrollPane.cpp; sourceTree = "<group>"; };
 		D41725A19BC04A07A558B7A1 /* PretzelToggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelToggle.h; path = ../../../src/modules/PretzelToggle.h; sourceTree = "<group>"; };
 		E3332D4169DE44DDA361417C /* PretzelSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelSlider.h; path = ../../../src/modules/PretzelSlider.h; sourceTree = "<group>"; };
 		F3FBD49CC73F492992EC615A /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
@@ -337,9 +335,8 @@
 			files = (
 				393E08320FDF4C52B71F3502 /* BasicSampleApp.cpp in Sources */,
 				32E4E1F026074705AC2D35CF /* PretzelGui.cpp in Sources */,
-				CBD570211959D8DB00B8A12D /* ScrollPane.cpp in Sources */,
-				A59EE5EF1EDE4A7388442367 /* PretzelGlobal.cpp in Sources */,
 				CB3F55AD19787D6C00DA937A /* ScrollPane.cpp in Sources */,
+				A59EE5EF1EDE4A7388442367 /* PretzelGlobal.cpp in Sources */,
 				4781983271FA4380B5B1A1FA /* BasePretzel.cpp in Sources */,
 				CB83A0B86CA04D36B472FE40 /* PretzelButton.cpp in Sources */,
 				E7153E700465435A844562CA /* PretzelLabel.cpp in Sources */,
