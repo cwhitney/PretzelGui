@@ -26,20 +26,7 @@ namespace Pretzel{
     }
 
 	void BasePretzel::registerPretzel(BasePretzel *child){
-//        console() << "Register a child " << endl;
-        
-//        if( child->type == COLOR_PICKER ){
-//            console() << "BP " << ((child->getParent() == NULL) ? "no" : "yes") << endl;
-//        }
-        
-//        BasePretzel *bp = this;
-        
         child->setParent( this );
-        
-//        if( child->type == COLOR_PICKER ){
-//            console() << "BP " << ((child->getParent() == NULL) ? "no" : "yes")<< endl;
-//            console() << "BP this? " << ((child->getParent() == this) ? "no" : "yes")<< endl;
-//        }
         
 		mPretzelChildren.push_back(child);
 		updateChildrenBounds();
@@ -57,12 +44,11 @@ namespace Pretzel{
 
 	// -------------------------------------------------------------
     BasePretzel* BasePretzel::getParent(){
-        return this->mParent;
+        return mParent;
     };
     
     void BasePretzel::setParent( BasePretzel *parent ){
         mParent = parent;
-        this->mParent = parent;
     }
     
 	ci::Rectf BasePretzel::getBounds() {

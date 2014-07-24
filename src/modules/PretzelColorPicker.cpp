@@ -17,6 +17,7 @@ namespace Pretzel{
 	PretzelColorPicker::PretzelColorPicker(BasePretzel *parent, std::string label, ci::Color *value)
         : bUseAlpha(false),
           bExpanded(false),
+          bHover(false),
           mArrowRotation(0),
           BasePretzel()
     {
@@ -33,6 +34,7 @@ namespace Pretzel{
 	PretzelColorPicker::PretzelColorPicker(BasePretzel *parent, std::string label, ci::ColorA *value)
         : bUseAlpha(true),
           bExpanded(false),
+          bHover(false),
           mArrowRotation(0),
           BasePretzel()
     {
@@ -58,8 +60,8 @@ namespace Pretzel{
         mSwatchTex = gl::Texture::create( mSwatchSurf );
         
         // set rects
-        mCollapsedRect.set(0, 0, 200, 23);
-        mExpandedRect.set(0, 0, 200, 150+23);
+        mCollapsedRect.set(0, 0, mBounds.getWidth(), 23);
+        mExpandedRect.set(0, 0, mBounds.getWidth(), 150+23);
         
         int boxW = 36, boxH = 19;
         mColorPickRect = Rectf( mBounds.x2 - boxW, 0, mBounds.x2, boxH );
@@ -116,13 +118,29 @@ namespace Pretzel{
                 ColorA tt = mSwatchSurf.getPixel(pxPos);
                 mColor->set( tt.r, tt.g, tt.b );
             }
-            
         }
     }
     
     void PretzelColorPicker::mouseUp(const ci::Vec2i &pos){
         if(bDragging){
             bDragging = false;
+        }
+    }
+    
+    void PretzelColorPicker::mouseMoved(const ci::Vec2i &pos){
+        
+        if( mCollapsedRect.contains(pos-mOffset) ){
+            bHover = true;
+            mGlobal->setCursor( CursorType::HAND );
+        }else if( bExpanded && mColorSwatchRect.contains(pos-mOffset)){
+            bHover = true;
+            mGlobal->setCursor( CursorType::HAND );
+        }
+        else{
+            if(bHover){
+                bHover = false;
+                mGlobal->setCursor( CursorType::ARROW );
+            }
         }
     }
     
@@ -136,6 +154,9 @@ namespace Pretzel{
         int swatchSize = 150;
         mColorSwatchRect = Rectf(mColorPickRect.x2 - swatchSize, mColorPickRect.y2, mColorPickRect.x2, mColorPickRect.y2 + swatchSize);
         mColorSwatchRect.offset( Vec2f(-1,1) );
+        
+        mCollapsedRect.set(0, 0, mBounds.getWidth(), 23);
+        mExpandedRect.set(0, 0, mBounds.getWidth(), 150+23);
     }
     
     void PretzelColorPicker::expand() {
