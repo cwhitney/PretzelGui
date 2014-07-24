@@ -13,21 +13,35 @@ using namespace ci::app;
 using namespace std;
 
 namespace Pretzel{
-	BasePretzel::BasePretzel() {
+	BasePretzel::BasePretzel() : mParent(NULL) {
 		mOffset.set(0, 0);
 		mBounds.set(0, 0, 0, 0);
 
 		mGlobal = Pretzel::PretzelGlobal::getInstance();
-        
         type = WidgetType::UNINITALIZED;
 	}
     
     BasePretzel::~BasePretzel(){
-        console() << "CLEAN UP. Offset is :: " << mOffset << endl;
+//        console() << "CLEAN UP. Offset is :: " << mOffset << endl;
     }
 
-	void BasePretzel::registerPretzel(BasePretzel *Pretzel){
-		mPretzelChildren.push_back(Pretzel);
+	void BasePretzel::registerPretzel(BasePretzel *child){
+//        console() << "Register a child " << endl;
+        
+//        if( child->type == COLOR_PICKER ){
+//            console() << "BP " << ((child->getParent() == NULL) ? "no" : "yes") << endl;
+//        }
+        
+//        BasePretzel *bp = this;
+        
+        child->setParent( this );
+        
+//        if( child->type == COLOR_PICKER ){
+//            console() << "BP " << ((child->getParent() == NULL) ? "no" : "yes")<< endl;
+//            console() << "BP this? " << ((child->getParent() == this) ? "no" : "yes")<< endl;
+//        }
+        
+		mPretzelChildren.push_back(child);
 		updateChildrenBounds();
 	}
 
@@ -42,6 +56,15 @@ namespace Pretzel{
 	}
 
 	// -------------------------------------------------------------
+    BasePretzel* BasePretzel::getParent(){
+        return this->mParent;
+    };
+    
+    void BasePretzel::setParent( BasePretzel *parent ){
+        mParent = parent;
+        this->mParent = parent;
+    }
+    
 	ci::Rectf BasePretzel::getBounds() {
 		return mBounds;
 	}

@@ -62,7 +62,7 @@ void BasicSampleApp::setup() {
 	gui->addLabel("Other Settings");
 	gui->addButton("Random Color", &BasicSampleApp::onButtonPress, this);
 	gui->addToggle("Draw outline", &bDrawOutline);
-    gui->addColorPicker("New color", &mCol);
+    gui->addColorPicker("Circle Color", &mCol);
 
 	// Textfields can be editable or non-editable
 	gui->addTextField("FPS", &mFps, false);

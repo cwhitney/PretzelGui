@@ -15,6 +15,8 @@
 #include "cinder/Json.h"
 #include <boost/signals2.hpp>
 
+#include "Resources.h"
+
 namespace Pretzel {
 
     enum CursorType {
@@ -37,7 +39,8 @@ namespace Pretzel {
         SAVELOAD,
         SLIDER,
         TEXTFIELD,
-        TOGGLE
+        TOGGLE,
+        COLOR_PICKER
     };
     
 	class PretzelGlobal {
@@ -55,6 +58,7 @@ namespace Pretzel {
         ci::ColorA P_ACTIVE_COLOR;
 
 		ci::gl::TextureFontRef  guiFont;
+        ci::Surface             mSkinSurf;
 		ci::gl::TextureRef		mSkinTex;
         
         boost::signals2::signal<void(void)>	signalOnSettingsSave;
@@ -73,6 +77,8 @@ namespace Pretzel {
 		void addSaveParam(const std::string name, std::string *val);
         void addSaveParam(const std::string name, ci::Vec2f *val);
         void addSaveParam(const std::string name, ci::Vec3f *val);
+        void addSaveParam(const std::string name, ci::Color *val);
+        void addSaveParam(const std::string name, ci::ColorA *val);
 
 		template <typename T>
 		std::string to_string_with_precision(const T num, const int n = 2) {
@@ -82,6 +88,7 @@ namespace Pretzel {
 		}
         
         void setCursor( CursorType type );
+        ci::gl::TextureRef  getTextureFromSkin( ci::Rectf rect );
         
         void setGlobalPos( const ci::Vec2f &pos ){ mGlobalPos.set(pos); };
         const ci::Vec2f getGlobalPos(){ return mGlobalPos; }
@@ -93,7 +100,9 @@ namespace Pretzel {
 			_BOOL,
 			_STRING,
             _VEC2F,
-            _VEC3F
+            _VEC3F,
+            _COLOR,
+            _COLORA
 		};
 
 		struct PretzelParam{

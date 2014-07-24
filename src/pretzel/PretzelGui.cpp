@@ -40,22 +40,18 @@ namespace Pretzel{
 		bResizing = false;
 		bDrawMinimized = false;
         bChangedCursor = false;
-		mSkin = Surface32f(loadImage(ci::app::loadResource( PRETZEL_GUI_SKIN )));
-		mTex = gl::Texture(mSkin);
         
 		mLastClickTime = 0.0;
         
-		mGlobal->mSkinTex = gl::Texture::create(mSkin);
-        
-        mGlobal->P_ACTIVE_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 340)));
-		mGlobal->P_HOVER_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 360)));
-		mGlobal->P_GUI_BORDER.set(mSkin.getPixel(ci::Vec2i(10, 380)));
-		mGlobal->P_BG_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 400)));
-		mGlobal->P_TAB_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 420)));
-		mGlobal->P_TEXT_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 440)));
-		mGlobal->P_OUTLINE_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 460)));
-		mGlobal->P_HIGHLIGHT_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 480)));
-		mGlobal->P_SLIDER_COLOR.set(mSkin.getPixel(ci::Vec2i(10, 500)));
+        mGlobal->P_ACTIVE_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::Vec2i(10, 340)));
+		mGlobal->P_HOVER_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::Vec2i(10, 360)));
+		mGlobal->P_GUI_BORDER.set(mGlobal->mSkinSurf.getPixel(ci::Vec2i(10, 380)));
+		mGlobal->P_BG_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::Vec2i(10, 400)));
+		mGlobal->P_TAB_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::Vec2i(10, 420)));
+		mGlobal->P_TEXT_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::Vec2i(10, 440)));
+		mGlobal->P_OUTLINE_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::Vec2i(10, 460)));
+		mGlobal->P_HIGHLIGHT_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::Vec2i(10, 480)));
+		mGlobal->P_SLIDER_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::Vec2i(10, 500)));
         
 		connectSignals();
         mGlobal->signalOnSettingsLoad.connect( std::bind(&PretzelGui::onSettingsLoaded, this) );
@@ -77,7 +73,7 @@ namespace Pretzel{
     
     // Set the xy dimensions of the gui
 	void PretzelGui::setSize(Vec2i size){
-		int minWidth = 150;
+		int minWidth = 180;
 		int minHeight = 150;
         
 		mBounds.x2 = max(size.x, minWidth);
@@ -263,19 +259,6 @@ namespace Pretzel{
 		}
 		else{
 			gl::pushMatrices(); {
-//                glEnable(GL_SCISSOR_TEST);
-//                Rectf tBounds = mBounds;
-//                Vec2f tPos = mGlobalOffset;
-//                float winH = getWindowHeight();
-                
-//                if( ci::app::App::get()->getSettings().isHighDensityDisplayEnabled() ){
-//                    tBounds *= getWindowContentScale();
-//                    winH *= getWindowContentScale();
-//                    tPos *= getWindowContentScale();
-//                }
-                
-//                glScissor( tPos.x, winH - tBounds.y2 - tPos.y, tBounds.getWidth(), tBounds.getHeight());
-                
 				gl::translate(mGlobalOffset);
 				ScrollPane::draw();
                 
@@ -288,8 +271,6 @@ namespace Pretzel{
 				gl::color(mGlobal->P_GUI_BORDER);
                 gl::drawLine( mResizeRect.getUpperRight() - Vec2f(mBounds.getWidth(), 0), mResizeRect.getUpperRight() );
 				gl::drawStrokedRect( Rectf(mBounds.x1, mBounds.y1, mBounds.x2, mBounds.y2) );
-                
-//                glDisable(GL_SCISSOR_TEST);
 			}gl::popMatrices();
 		}
         

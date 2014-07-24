@@ -34,7 +34,7 @@ namespace Pretzel{
         
 		Vec2f newOffset(0, 0);
 
-		for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
+		for (vector<BasePretzel*>::const_iterator it=mPretzelChildren.begin(); it!=mPretzelChildren.end(); ++it){
 			(*it)->updateBounds(newOffset, mBounds);
 			newOffset += Vec2f(0, (*it)->getHeight());
 		}

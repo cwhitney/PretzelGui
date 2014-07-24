@@ -13,17 +13,14 @@
 #include "PretzelGlobal.h"
 
 namespace Pretzel{
-	enum PretzelFillStyle {
-		FILL = 0
-	};
-
 	class BasePretzel {
+        
 	public:
 		BasePretzel();
-        ~BasePretzel();
+        virtual ~BasePretzel();
 
 		virtual void draw(){};
-		virtual void registerPretzel(BasePretzel *Pretzel);
+		virtual void registerPretzel(BasePretzel *child);
 
 		virtual void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
 
@@ -37,11 +34,16 @@ namespace Pretzel{
 		virtual void mouseMoved(const ci::Vec2i &pos);
 		virtual void keyDown(const char &key, const int &keyCode);
         
+        virtual void updateChildrenBounds();
+        
+        BasePretzel* getParent();
+        void setParent( BasePretzel *parent );
+        
         WidgetType  type;
 
 	protected:
-		virtual void updateChildrenBounds();
-
+        BasePretzel                 *mParent;
+        
         // The offset from the app-wide 0,0 to the topLeft of the main gui window
         ci::Vec2f                   mGlobalOffset;
         
@@ -53,6 +55,8 @@ namespace Pretzel{
 
 		std::vector<BasePretzel*>   mPretzelChildren;
 		ci::Rectf                   mParentBounds;
+        
+        
 
 		Pretzel::PretzelGlobal		*mGlobal;
 	};

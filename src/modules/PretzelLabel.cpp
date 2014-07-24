@@ -15,10 +15,6 @@ namespace Pretzel{
 		mGlobal = Pretzel::PretzelGlobal::getInstance();
 	}
 
-	void PretzelLabel::registerPretzel(BasePretzel *Pretzel){
-		console() << "You can't add a child to a label" << endl;
-	}
-
 	void PretzelLabel::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds){
 		BasePretzel::updateBounds(offset, parentBounds);
 

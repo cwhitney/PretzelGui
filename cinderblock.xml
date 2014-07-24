@@ -22,8 +22,8 @@
 
 	<sourcePattern>src/modules/*.cpp</sourcePattern>
 	<headerPattern>src/modules/*.h</headerPattern>
-	<sourcePattern>src/ui/*.cpp</sourcePattern>
-	<headerPattern>src/ui/*.h</headerPattern>
+	<sourcePattern>src/components/*.cpp</sourcePattern>
+	<headerPattern>src/components/*.h</headerPattern>
 
 	<includePath>src</includePath>
 	
@@ -31,5 +31,9 @@
 		name="PRETZEL_GUI_SKIN"
 		type="IMAGE"
 		>resources/default_skin.png</resource>
+	<resource
+		name="PRETZEL_COLOR"
+		type="IMAGE"
+		>resources/color-picker.png</resource>
   </block>
 </cinder>

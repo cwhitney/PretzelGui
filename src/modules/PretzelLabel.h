@@ -8,7 +8,6 @@ namespace Pretzel{
 	public:
 		PretzelLabel(BasePretzel *parent, std::string labelText);
 
-		virtual void registerPretzel(BasePretzel *Pretzel);
 		virtual void draw();
 
 		void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);

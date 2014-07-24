@@ -18,6 +18,9 @@ namespace Pretzel {
 	PretzelGlobal * PretzelGlobal::getInstance(){
 		if (!mInstance){
 			mInstance = new PretzelGlobal();
+            
+            mInstance->mSkinSurf = Surface(loadImage(ci::app::loadResource( PRETZEL_GUI_SKIN )));
+            mInstance->mSkinTex = gl::Texture::create(mInstance->mSkinSurf);
 		}
 		return mInstance;
 	}
@@ -67,6 +70,12 @@ namespace Pretzel {
 	void PretzelGlobal::renderTextCentered(std::string text, ci::Vec2i pos) {
 		renderTextInternal(text, pos, FontAlignment::ALIGN_CENTER);
 	}
+    
+    ci::gl::TextureRef PretzelGlobal::getTextureFromSkin( ci::Rectf rect ){
+        Surface srf( rect.getWidth(), rect.getHeight(), true);
+        srf.copyFrom( mSkinSurf, Area(rect.x1, rect.y1, rect.x2, rect.y2), Vec2f(-rect.x1, -rect.y1) );
+        return ci::gl::Texture::create( srf );
+    }
     
     void PretzelGlobal::setCursor( CursorType type ){
         
@@ -119,6 +128,14 @@ namespace Pretzel {
     
     void PretzelGlobal::addSaveParam(std::string name, ci::Vec3f *val){
 		addParamInternal(name, val, _VEC3F);
+	}
+    
+    void PretzelGlobal::addSaveParam(std::string name, ci::Color *val){
+		addParamInternal(name, val, _COLOR);
+	}
+    
+    void PretzelGlobal::addSaveParam(std::string name, ci::ColorA *val){
+		addParamInternal(name, val, _COLORA);
 	}
 
 	void PretzelGlobal::addParamInternal(std::string name, void* value, PretzelTypes type){
@@ -176,6 +193,23 @@ namespace Pretzel {
                     tt.pushBack( JsonTree("x", toString(((Vec3f*)mParamList[i].value)->x)) );
                     tt.pushBack( JsonTree("y", toString(((Vec3f*)mParamList[i].value)->y)) );
                     tt.pushBack( JsonTree("z", toString(((Vec3f*)mParamList[i].value)->z)) );
+                    pSettings.pushBack( tt );
+                    break;
+                }case _COLOR:{
+                    JsonTree tt;
+                    tt = tt.makeArray(mParamList[i].name);
+                    tt.pushBack( JsonTree("r", toString(((Color*)mParamList[i].value)->r)) );
+                    tt.pushBack( JsonTree("g", toString(((Color*)mParamList[i].value)->g)) );
+                    tt.pushBack( JsonTree("b", toString(((Color*)mParamList[i].value)->b)) );
+                    pSettings.pushBack( tt );
+                    break;
+                }case _COLORA:{
+                    JsonTree tt;
+                    tt = tt.makeArray(mParamList[i].name);
+                    tt.pushBack( JsonTree("r", toString(((ColorA*)mParamList[i].value)->r)) );
+                    tt.pushBack( JsonTree("g", toString(((ColorA*)mParamList[i].value)->g)) );
+                    tt.pushBack( JsonTree("b", toString(((ColorA*)mParamList[i].value)->b)) );
+                    tt.pushBack( JsonTree("a", toString(((ColorA*)mParamList[i].value)->a)) );
                     pSettings.pushBack( tt );
                     break;
                 }default: {
@@ -251,6 +285,25 @@ namespace Pretzel {
                         p.y = appSettings.getChild(pName).getChild("y").getValue<float>();
                         p.z = appSettings.getChild(pName).getChild("z").getValue<float>();
                         *((Vec3f*)mParamList[i].value) = p;
+                    }
+                    break;
+                case _COLOR:
+                    if (appSettings.hasChild(pName)){
+                        Color p;
+                        p.r = appSettings.getChild(pName).getChild("r").getValue<float>();
+                        p.g = appSettings.getChild(pName).getChild("g").getValue<float>();
+                        p.b = appSettings.getChild(pName).getChild("b").getValue<float>();
+                        *((Color*)mParamList[i].value) = p;
+                    }
+                    break;
+                case _COLORA:
+                    if (appSettings.hasChild(pName)){
+                        ColorA p;
+                        p.r = appSettings.getChild(pName).getChild("r").getValue<float>();
+                        p.g = appSettings.getChild(pName).getChild("g").getValue<float>();
+                        p.b = appSettings.getChild(pName).getChild("b").getValue<float>();
+                        p.a = appSettings.getChild(pName).getChild("a").getValue<float>();
+                        *((ColorA*)mParamList[i].value) = p;
                     }
                     break;
 				default:
