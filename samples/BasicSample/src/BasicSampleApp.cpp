@@ -51,10 +51,6 @@ void BasicSampleApp::setup() {
 	mBubble = "Hello, world!";
 
 	gui = new Pretzel::PretzelGui("Circle settings");
-	
-	// Passing floats will keep your sliders as floats
-	gui->addSlider("Opacity", &mOpacity, 0.0, 1.0);
-	gui->addSlider("Radius", &mRadius, 0, 100);
 
     // Sliders can take ints, float, Vec2, and Vec3
 	gui->addSlider("Position", &mPosition, Vec2f(0,0), getWindowSize());
@@ -63,6 +59,10 @@ void BasicSampleApp::setup() {
 	gui->addButton("Random Color", &BasicSampleApp::onButtonPress, this);
 	gui->addToggle("Draw outline", &bDrawOutline);
     gui->addColorPicker("Circle Color", &mCol);
+    
+    // Passing floats will keep your sliders as floats
+	gui->addSlider("Opacity", &mOpacity, 0.0, 1.0);
+	gui->addSlider("Radius", &mRadius, 0, 100);
 
 	// Textfields can be editable or non-editable
 	gui->addTextField("FPS", &mFps, false);
