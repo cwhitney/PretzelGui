@@ -94,7 +94,11 @@ namespace Pretzel{
     
     template<typename T>
 	void PSliderT<T>::mouseUp(const Vec2i &pos){
-		bIsDragging = false;
+        if( bIsDragging ){
+            bIsDragging = false;
+            mGlobal->setCursor(CursorType::ARROW);
+        }
+		
 	}
     
     template<typename T>
@@ -270,9 +274,7 @@ namespace Pretzel{
                     ++i;
                 }
                 sValues = sValues.substr(0, sValues.length()-2);
-//                sValues += ")";
                 mGlobal->renderTextRight( sValues, mBounds.getUpperRight() + Vec2i(-12, 1));
-                                    
             }else{
                 for( auto it=mSliderListf.begin(); it!=mSliderListf.end(); ++it){
                     mGlobal->renderText(it->getLabel(), mBounds.getUpperLeft() + Vec2i(12, 1));

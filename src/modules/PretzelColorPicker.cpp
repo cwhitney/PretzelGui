@@ -96,7 +96,7 @@ namespace Pretzel{
             expand();
         }else if(bExpanded && mCollapsedRect.contains( pos - mOffset )){
             contract();
-        }else if( mColorSwatchRect.contains(pos - mOffset)){
+        }else if( bExpanded && mColorSwatchRect.contains(pos - mOffset)){
             bDragging = true;
         }
     }
