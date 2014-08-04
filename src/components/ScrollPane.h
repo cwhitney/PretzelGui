@@ -10,8 +10,8 @@
 
 #include "cinder/app/AppNative.h"
 
-#include "PretzelRow.h"
-#include "BasePretzel.h"
+#include "components/PretzelRow.h"
+#include "components/BasePretzel.h"
 
 namespace Pretzel {
 

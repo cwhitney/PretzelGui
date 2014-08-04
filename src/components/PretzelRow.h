@@ -11,8 +11,8 @@
 #include "cinder/app/AppNative.h"
 #include "cinder/Rand.h"
 
-#include "PretzelGlobal.h"
-#include "BasePretzel.h"
+#include "pretzel/PretzelGlobal.h"
+#include "components/BasePretzel.h"
 namespace Pretzel{
 	class PretzelRow : public BasePretzel {
 	public:

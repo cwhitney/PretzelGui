@@ -1,9 +1,10 @@
 #pragma once
 
-#include "PretzelGlobal.h"
-#include "BasePretzel.h"
 #include "cinder/app/AppNative.h"
-#include "PretzelGlobal.h"
+
+#include "pretzel/PretzelGlobal.h"
+#include "pretzel/PretzelGlobal.h"
+#include "components/BasePretzel.h"
 
 namespace Pretzel {
 	class PretzelToggle : public BasePretzel {

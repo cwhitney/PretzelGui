@@ -21,6 +21,13 @@ namespace Pretzel {
             
             mInstance->mSkinSurf = Surface(loadImage(ci::app::loadResource( PRETZEL_GUI_SKIN )));
             mInstance->mSkinTex = gl::Texture::create(mInstance->mSkinSurf);
+
+#if defined( CINDER_MSW )
+		mInstance->mCursorArrow = ::LoadCursor(NULL, IDC_ARROW);
+		mInstance->mCursorIBeam = ::LoadCursor(NULL, IDC_IBEAM);
+		mInstance->mCursorHand = ::LoadCursor(NULL, IDC_HAND);
+		mInstance->mCursorResize = ::LoadCursor(NULL, IDC_SIZENWSE);
+#endif 
 		}
 		return mInstance;
 	}
@@ -78,7 +85,6 @@ namespace Pretzel {
     }
     
     void PretzelGlobal::setCursor( CursorType type ){
-        
 #if defined( CINDER_MAC )
         switch(type){
             case CursorType::ARROW :
@@ -102,6 +108,28 @@ namespace Pretzel {
 //        + (NSCursor *)contextualMenuCursor NS_AVAILABLE_MAC(10_6);
 //        + (NSCursor *)IBeamCursorForVerticalLayout NS_AVAILABLE_MAC(10_7);
 #endif
+
+#if defined( CINDER_MSW )
+		switch (type)
+		{
+			case CursorType::ARROW :
+				::SetCursor( mCursorArrow );
+				break;
+			case CursorType::IBEAM :
+                ::SetCursor( mCursorIBeam );
+                break;
+			case CursorType::HAND :
+                ::SetCursor( mCursorHand );
+                break;
+			case CursorType::RESIZE_RL :
+				::SetCursor( mCursorResize );
+                break;
+			default:
+				break;
+		}
+#endif 
+
+
     }
 
 

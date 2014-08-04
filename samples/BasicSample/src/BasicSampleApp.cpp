@@ -2,7 +2,7 @@
 #include "cinder/gl/gl.h"
 #include "cinder/Rand.h"
 
-#include "PretzelGui.h"
+#include "pretzel/PretzelGui.h"
 
 using namespace ci;
 using namespace ci::app;

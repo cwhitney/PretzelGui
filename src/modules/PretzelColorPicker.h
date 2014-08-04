@@ -13,7 +13,7 @@
 #include "cinder/Timeline.h"
 #include "cinder/ip/Fill.h"
 
-#include "BasePretzel.h"
+#include "components/BasePretzel.h"
 
 namespace Pretzel {
     
