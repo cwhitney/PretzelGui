@@ -13,6 +13,7 @@
 #include "cinder/gl/Texture.h"
 #include "cinder/gl/TextureFont.h"
 #include "cinder/Json.h"
+#include "cinder/ImageIo.h"
 #include <boost/signals2.hpp>
 
 #include "Resources.h"
@@ -110,6 +111,10 @@ namespace Pretzel {
 			void* value;
 			PretzelTypes type;
 		};
+
+#if defined( CINDER_MSW )
+		HCURSOR mCursorArrow, mCursorIBeam, mCursorHand, mCursorResize;
+#endif 
             
         ci::Vec2f   mGlobalPos;
 

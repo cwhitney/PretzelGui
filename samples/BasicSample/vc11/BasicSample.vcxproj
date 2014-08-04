@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -11,7 +10,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4660A67F-F8C8-406C-AFFB-61B50B6E5584}</ProjectGuid>
+    <ProjectGuid>{65F16A08-051B-478C-A4D3-21FD9F44EC35}</ProjectGuid>
     <RootNamespace>BasicSample</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
@@ -50,7 +49,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;..\..\..\..\..\\include;..\..\..\..\..\\boost;..\..\..\src\pretzel;..\..\..\src\modules</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;"..\..\..\..\..\\include";"..\..\..\..\..\\boost";..\..\..\src</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NOMINMAX;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -65,7 +64,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>cinder_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\..\..\..\lib;..\..\..\..\..\lib\msw</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>"..\..\..\..\..\\lib";"..\..\..\..\..\\lib\msw"</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -91,8 +90,8 @@
       <AdditionalIncludeDirectories>"..\..\..\..\..\\include";..\include</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>cinder-$(PlatformToolset).lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>"..\..\..\..\..\\lib\msw\$(PlatformTarget)"</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cinder.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>"..\..\..\..\..\\lib";"..\..\..\..\..\\lib\msw"</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
@@ -108,29 +107,33 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\BasicSampleApp.cpp" />
-    <ClCompile Include="..\..\..\src\modules\BasePretzel.cpp" />
-    <ClCompile Include="..\..\..\src\modules\PretzelButton.cpp" />
-    <ClCompile Include="..\..\..\src\pretzel\PretzelGlobal.cpp" />
     <ClCompile Include="..\..\..\src\pretzel\PretzelGui.cpp" />
+    <ClCompile Include="..\..\..\src\pretzel\PretzelGlobal.cpp" />
+    <ClCompile Include="..\..\..\src\modules\PretzelButton.cpp" />
+    <ClCompile Include="..\..\..\src\modules\PretzelColorPicker.cpp" />
     <ClCompile Include="..\..\..\src\modules\PretzelLabel.cpp" />
-    <ClCompile Include="..\..\..\src\modules\PretzelRow.cpp" />
     <ClCompile Include="..\..\..\src\modules\PretzelSaveLoad.cpp" />
     <ClCompile Include="..\..\..\src\modules\PretzelSlider.cpp" />
-    <ClCompile Include="..\..\..\src\modules\PretzelToggle.cpp" />
     <ClCompile Include="..\..\..\src\modules\PretzelTextField.cpp" />
+    <ClCompile Include="..\..\..\src\modules\PretzelToggle.cpp" />
+    <ClCompile Include="..\..\..\src\components\BasePretzel.cpp" />
+    <ClCompile Include="..\..\..\src\components\PretzelRow.cpp" />
+    <ClCompile Include="..\..\..\src\components\ScrollPane.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h" />
-    <ClInclude Include="..\..\..\src\modules\BasePretzel.h" />
-    <ClInclude Include="..\..\..\src\modules\PretzelButton.h" />
     <ClInclude Include="..\..\..\src\pretzel\PretzelGlobal.h" />
     <ClInclude Include="..\..\..\src\pretzel\PretzelGui.h" />
+    <ClInclude Include="..\..\..\src\modules\PretzelButton.h" />
+    <ClInclude Include="..\..\..\src\modules\PretzelColorPicker.h" />
     <ClInclude Include="..\..\..\src\modules\PretzelLabel.h" />
-    <ClInclude Include="..\..\..\src\modules\PretzelRow.h" />
     <ClInclude Include="..\..\..\src\modules\PretzelSaveLoad.h" />
     <ClInclude Include="..\..\..\src\modules\PretzelSlider.h" />
-    <ClInclude Include="..\..\..\src\modules\PretzelToggle.h" />
     <ClInclude Include="..\..\..\src\modules\PretzelTextField.h" />
+    <ClInclude Include="..\..\..\src\modules\PretzelToggle.h" />
+    <ClInclude Include="..\..\..\src\components\BasePretzel.h" />
+    <ClInclude Include="..\..\..\src\components\PretzelRow.h" />
+    <ClInclude Include="..\..\..\src\components\ScrollPane.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

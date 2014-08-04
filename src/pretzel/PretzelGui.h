@@ -13,18 +13,19 @@
 #include "cinder/ImageIo.h"
 #include "Resources.h"
 
-#include "PretzelGlobal.h"
-#include "BasePretzel.h"
-#include "ScrollPane.h"
-#include "PretzelRow.h"
+#include "pretzel/PretzelGlobal.h"
 
-#include "PretzelLabel.h"
-#include "PretzelSlider.h"
-#include "PretzelSaveLoad.h"
-#include "PretzelButton.h"
-#include "PretzelToggle.h"
-#include "PretzelTextField.h"
-#include "PretzelColorPicker.h"
+#include "components/BasePretzel.h"
+#include "components/ScrollPane.h"
+#include "components/PretzelRow.h"
+
+#include "modules/PretzelLabel.h"
+#include "modules/PretzelSlider.h"
+#include "modules/PretzelSaveLoad.h"
+#include "modules/PretzelButton.h"
+#include "modules/PretzelToggle.h"
+#include "modules/PretzelTextField.h"
+#include "modules/PretzelColorPicker.h"
 
 namespace Pretzel{
 	class PretzelGui : public ScrollPane {

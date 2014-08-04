@@ -1,7 +1,7 @@
 #pragma once
 
-#include "PretzelGlobal.h"
-#include "BasePretzel.h"
+#include "pretzel/PretzelGlobal.h"
+#include "components/BasePretzel.h"
 #include "cinder/app/AppNative.h"
 
 namespace Pretzel{

@@ -1,0 +1,127 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Blocks">
+      <UniqueIdentifier>{30C53486-2CD1-45E8-9F14-714B59D3D491}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\PretzelGUI">
+      <UniqueIdentifier>{ABF56140-9D13-4FB1-A191-44639E15873F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\PretzelGUI\src">
+      <UniqueIdentifier>{45A60D29-1248-468B-A5C5-B4C42997525D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\PretzelGUI\src\pretzel">
+      <UniqueIdentifier>{1BEF6D8D-B9D6-40A4-BEAC-8E0613AA928B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\PretzelGUI\src\modules">
+      <UniqueIdentifier>{480C0EA7-6004-466A-8C78-0547AC6BE53F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\PretzelGUI\src\components">
+      <UniqueIdentifier>{AB4D4887-7820-4171-8154-5A11EB36BC4C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\BasicSampleApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BasicSampleApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\pretzel\PretzelGlobal.h">
+      <Filter>Blocks\PretzelGUI\src\pretzel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\pretzel\PretzelGui.h">
+      <Filter>Blocks\PretzelGUI\src\pretzel</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\src\pretzel\PretzelGui.cpp">
+      <Filter>Blocks\PretzelGUI\src\pretzel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\pretzel\PretzelGlobal.cpp">
+      <Filter>Blocks\PretzelGUI\src\pretzel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\modules\PretzelButton.cpp">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\modules\PretzelColorPicker.cpp">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\modules\PretzelLabel.cpp">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\modules\PretzelSaveLoad.cpp">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\modules\PretzelSlider.cpp">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\modules\PretzelTextField.cpp">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\modules\PretzelToggle.cpp">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\src\modules\PretzelButton.h">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\modules\PretzelColorPicker.h">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\modules\PretzelLabel.h">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\modules\PretzelSaveLoad.h">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\modules\PretzelSlider.h">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\modules\PretzelTextField.h">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\modules\PretzelToggle.h">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\src\components\BasePretzel.cpp">
+      <Filter>Blocks\PretzelGUI\src\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\components\PretzelRow.cpp">
+      <Filter>Blocks\PretzelGUI\src\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\components\ScrollPane.cpp">
+      <Filter>Blocks\PretzelGUI\src\components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\src\components\BasePretzel.h">
+      <Filter>Blocks\PretzelGUI\src\components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\components\PretzelRow.h">
+      <Filter>Blocks\PretzelGUI\src\components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\components\ScrollPane.h">
+      <Filter>Blocks\PretzelGUI\src\components</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

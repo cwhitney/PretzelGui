@@ -10,7 +10,7 @@
 
 #include "cinder/app/AppNative.h"
 #include <boost/algorithm/string.hpp>
-#include "PretzelGlobal.h"
+#include "pretzel/PretzelGlobal.h"
 
 namespace Pretzel{
 	class BasePretzel {
