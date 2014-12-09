@@ -65,9 +65,9 @@ namespace Pretzel {
         boost::signals2::signal<void(void)>	signalOnSettingsSave;
         boost::signals2::signal<void(void)>	signalOnSettingsLoad;
 
-		void renderText(const std::string text, ci::Vec2i pos = ci::Vec2i::zero());
-		void renderTextRight(const std::string text, ci::Vec2i pos = ci::Vec2i::zero());
-		void renderTextCentered(const std::string text, ci::Vec2i pos = ci::Vec2i::zero());
+		void renderText(const std::string text, ci::vec2 pos = ci::vec2(0,0));
+		void renderTextRight(const std::string text, ci::vec2 pos = ci::vec2(0,0));
+		void renderTextCentered(const std::string text, ci::vec2 pos = ci::vec2(0,0));
 
 		void saveSettings(const ci::fs::path settingsPath = ci::fs::path() );
 		void loadSettings(const ci::fs::path settingsPath = ci::fs::path() );
@@ -76,8 +76,8 @@ namespace Pretzel {
 		void addSaveParam(const std::string name, int *val);
 		void addSaveParam(const std::string name, bool *val);
 		void addSaveParam(const std::string name, std::string *val);
-        void addSaveParam(const std::string name, ci::Vec2f *val);
-        void addSaveParam(const std::string name, ci::Vec3f *val);
+        void addSaveParam(const std::string name, ci::vec2 *val);
+        void addSaveParam(const std::string name, ci::vec3 *val);
         void addSaveParam(const std::string name, ci::Color *val);
         void addSaveParam(const std::string name, ci::ColorA *val);
 
@@ -91,20 +91,21 @@ namespace Pretzel {
         void setCursor( CursorType type );
         ci::gl::TextureRef  getTextureFromSkin( ci::Rectf rect );
         
-        void setGlobalPos( const ci::Vec2f &pos ){ mGlobalPos.set(pos); };
-        const ci::Vec2f getGlobalPos(){ return mGlobalPos; }
+        void setGlobalPos( const ci::vec2 &pos ){ mGlobalPos = pos; };
+        const ci::vec2 getGlobalPos(){ return mGlobalPos; };
 
 	private:
-		enum PretzelTypes {
+		
+        enum PretzelTypes {
 			_FLOAT,
 			_INT,
 			_BOOL,
 			_STRING,
-            _VEC2F,
-            _VEC3F,
+            _VEC2,
+            _VEC3,
             _COLOR,
             _COLORA
-		};
+        };
 
 		struct PretzelParam{
 			std::string name;
@@ -116,7 +117,7 @@ namespace Pretzel {
 		HCURSOR mCursorArrow, mCursorIBeam, mCursorHand, mCursorResize;
 #endif 
             
-        ci::Vec2f   mGlobalPos;
+        ci::vec2   mGlobalPos;
 
 		// PRIVATE CONSTRUCTOR + COPY
 		PretzelGlobal(){};
@@ -128,7 +129,8 @@ namespace Pretzel {
 		std::vector<PretzelParam>	mParamList;
 
 		// TEXT
-		void renderTextInternal(std::string text, ci::Vec2i pos, int align);
+        void renderTextInternal(std::string text, ci::vec2 pos, int align);
 		int	emHeight;
-	};
+    };
+                                
 }

@@ -14,7 +14,7 @@ using namespace std;
 
 namespace Pretzel{
 	BasePretzel::BasePretzel() : mParent(NULL) {
-		mOffset.set(0, 0);
+		mOffset = vec2(0, 0);
 		mBounds.set(0, 0, 0, 0);
 
 		mGlobal = Pretzel::PretzelGlobal::getInstance();
@@ -33,13 +33,13 @@ namespace Pretzel{
 	}
 
 	// -------------------------------------------------------
-	void BasePretzel::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds){
-		mOffset.set(offset);
+	void BasePretzel::updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds){
+		mOffset = vec2(offset);
 		mParentBounds = parentBounds;
 
 		mBounds.x2 = parentBounds.getWidth();
         
-        mGlobalOffset.set( mGlobal->getGlobalPos() );
+        mGlobalOffset = vec2( mGlobal->getGlobalPos() );
 	}
 
 	// -------------------------------------------------------------
@@ -68,22 +68,22 @@ namespace Pretzel{
 	}
 
 	// -------------------------------------------------------------------
-	void BasePretzel::mouseDown(const ci::Vec2i &pos){
+	void BasePretzel::mouseDown(const ci::vec2 &pos){
 		for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
 			(*it)->mouseDown(pos);
 		}
 	}
-	void BasePretzel::mouseDragged(const ci::Vec2i &pos){
+	void BasePretzel::mouseDragged(const ci::vec2 &pos){
 		for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
 			(*it)->mouseDragged(pos);
 		}
 	}
-	void BasePretzel::mouseUp(const ci::Vec2i &pos){
+	void BasePretzel::mouseUp(const ci::vec2 &pos){
 		for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
 			(*it)->mouseUp(pos);
 		}
 	}
-	void BasePretzel::mouseMoved(const ci::Vec2i &pos){
+	void BasePretzel::mouseMoved(const ci::vec2 &pos){
 		for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
 			(*it)->mouseMoved(pos);
 		}

@@ -10,7 +10,7 @@ namespace Pretzel{
 
 		virtual void draw();
 
-		void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
+		void updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds);
 
 	private:
 		std::string		mMessage;

@@ -15,27 +15,27 @@ namespace Pretzel{
 		mGlobal = Pretzel::PretzelGlobal::getInstance();
 	}
 
-	void PretzelLabel::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds){
+	void PretzelLabel::updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds){
 		BasePretzel::updateBounds(offset, parentBounds);
 
-		Vec2f textSize = mGlobal->guiFont->measureString(mMessage);
-		Rectf textRect(0, 0, textSize.x, textSize.y);
+		vec2 textSize = mGlobal->guiFont->measureString(mMessage);
+		RectT<float> textRect(0, 0, textSize.x, textSize.y);
 		textRect.y2 = mBounds.getHeight();
 		textRect.x1 += -5 + 15;
 		textRect.x2 += 5 + 15;
 
 		mOutlinePath.clear();
-		mOutlinePath.moveTo(mBounds.getLowerLeft() + Vec2f(0, -1));
-		mOutlinePath.lineTo(textRect.getLowerLeft() + Vec2f(0, -1));
-		mOutlinePath.lineTo(Vec2f(textRect.getUpperLeft().x, 3));
-		mOutlinePath.lineTo(Vec2f(textRect.getUpperRight().x, 3));
-		mOutlinePath.lineTo(textRect.getLowerRight() + Vec2f(0, -1));
-		mOutlinePath.lineTo(mBounds.getLowerRight() + Vec2f(0, -1));
+		mOutlinePath.moveTo(mBounds.getLowerLeft() + vec2(0, -1));
+		mOutlinePath.lineTo(textRect.getLowerLeft() + vec2(0, -1));
+		mOutlinePath.lineTo(vec2(textRect.getUpperLeft().x, 3));
+		mOutlinePath.lineTo(vec2(textRect.getUpperRight().x, 3));
+		mOutlinePath.lineTo(textRect.getLowerRight() + vec2(0, -1));
+		mOutlinePath.lineTo(mBounds.getLowerRight() + vec2(0, -1));
 	}
 
 	void PretzelLabel::draw(){
-		Vec2f textSize = mGlobal->guiFont->measureString(mMessage);
-		Rectf textRect(0, 0, textSize.x, textSize.y);
+		vec2 textSize = mGlobal->guiFont->measureString(mMessage);
+		RectT<float> textRect(0, 0, textSize.x, textSize.y);
 		textRect.y1 = 4;
 		textRect.y2 = mBounds.getHeight()-1;
 		textRect.x1 -= 5;
@@ -59,7 +59,7 @@ namespace Pretzel{
 				gl::drawSolidRect(textRect );
 
 				// draw text
-				mGlobal->renderText(mMessage, mBounds.getUpperLeft() + Vec2f(0, 4));
+				mGlobal->renderText(mMessage, mBounds.getUpperLeft() + vec2(0, 4));
 			}gl::popMatrices();
 
 			// draw highlight line
