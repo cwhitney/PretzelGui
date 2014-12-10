@@ -233,7 +233,7 @@ namespace Pretzel{
 		if (!bVisible) return;
         
         
-        
+        gl::disableDepthRead();
 		// -----------------------------------------------------------
 		gl::enableAlphaBlending();
 		gl::color(Color(1, 1, 1));
@@ -263,6 +263,7 @@ namespace Pretzel{
 				gl::drawStrokedRect( Rectf(mBounds.x1, mBounds.y1, mBounds.x2, mBounds.y2) );
 			}gl::popMatrices();
 		}
+        gl::enableDepthRead();
 
 	}
     
