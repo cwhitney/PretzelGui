@@ -24,14 +24,14 @@ namespace Pretzel{
 		parent->registerPretzel(this);
 	}
 
-	void PretzelTextField::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds) {
+	void PretzelTextField::updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds) {
 		BasePretzel::updateBounds(offset, parentBounds);
 
 		// this could be cleaner
 		mTextFieldBounds = Rectf(mLabelSize.x + 25, mBounds.y1 + 5, mBounds.x2 - 10, mBounds.y2 - 5);
 	}
 
-	void PretzelTextField::mouseDown(const ci::Vec2i &pos){
+	void PretzelTextField::mouseDown(const ci::vec2 &pos){
 		if (bEditable && mTextFieldBounds.contains(pos - mOffset)){
             bEditing = true;
 		}
@@ -40,7 +40,7 @@ namespace Pretzel{
         }
 	}
 
-	void PretzelTextField::mouseMoved(const ci::Vec2i &pos){
+	void PretzelTextField::mouseMoved(const ci::vec2 &pos){
 		if (bEditable && mTextFieldBounds.contains(pos - mOffset)){
 			bHover = true;
             mGlobal->setCursor( CursorType::IBEAM );
@@ -85,19 +85,19 @@ namespace Pretzel{
 			gl::drawSolidRect(mTextFieldBounds);
 
 			gl::color(mGlobal->P_HIGHLIGHT_COLOR);
-			gl::drawLine(mTextFieldBounds.getLowerLeft() + Vec2f(0, 1), mTextFieldBounds.getLowerRight() + Vec2f(0, 1));
+			gl::drawLine(mTextFieldBounds.getLowerLeft() + vec2(0, 1), mTextFieldBounds.getLowerRight() + vec2(0, 1));
             
             gl::color(mGlobal->P_OUTLINE_COLOR);
 			gl::drawStrokedRect(mTextFieldBounds);
 
-            mGlobal->renderText(mLabelText, mBounds.getUpperLeft() + Vec2i(12, 5));
-            mGlobal->renderText(*mVariable, mTextFieldBounds.getUpperLeft() + Vec2i(2, 0));
+            mGlobal->renderText(mLabelText, mBounds.getUpperLeft() + vec2(12, 5));
+            mGlobal->renderText(*mVariable, mTextFieldBounds.getUpperLeft() + vec2(2, 0));
 			
 			// cursor line
 			if (bEditing && (app::getElapsedSeconds() - (long)app::getElapsedSeconds()) < 0.5 ){
 				float x = mTextFieldBounds.getUpperLeft().x + mInputSize.x + 4;
 				gl::color(mGlobal->P_TEXT_COLOR);
-				gl::drawLine(Vec2i(x, mTextFieldBounds.y1 + 2), Vec2i(x, mTextFieldBounds.y2 - 2));
+				gl::drawLine(vec2(x, mTextFieldBounds.y1 + 2), vec2(x, mTextFieldBounds.y2 - 2));
 			}
 		}gl::popMatrices();
 	}

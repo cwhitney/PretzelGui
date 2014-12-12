@@ -19,18 +19,18 @@ namespace Pretzel{
 		PretzelTextField(BasePretzel *parent, std::string labelText, std::string *variable, bool editable = true);
 
 		virtual void draw();
-		void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
+		void updateBounds(const ci::vec2 &offset, const ci::RectT<float> &parentBounds);
 
-		virtual void mouseDown(const ci::Vec2i &pos);
-		virtual void mouseMoved(const ci::Vec2i &pos);
+		virtual void mouseDown(const ci::vec2 &pos);
+		virtual void mouseMoved(const ci::vec2 &pos);
         virtual void keyDown(const char &key, const int &keyCode);
         
 	private:
         std::string		mLabelText;
 		std::string		*mVariable;
 		ci::Rectf		mTextFieldBounds;
-		ci::Vec2f		mLabelSize;
-		ci::Vec2f		mInputSize;
+		ci::vec2		mLabelSize;
+		ci::vec2		mInputSize;
 
 		bool			bHover;
 		bool            bEditable;
