@@ -22,7 +22,7 @@
 		<key>A079D5FF0867D7EDD41D1486252A18E9A065AC41</key>
 		<string>../../../../..</string>
 		<key>AD4B458D0D225ED63FAE0155615993B7D3ECE020</key>
-		<string>../../../../../../..</string>
+		<string>../../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/indefinit/PretzelGui.git</string>
@@ -38,7 +38,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>AD4B458D0D225ED63FAE0155615993B7D3ECE020</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
