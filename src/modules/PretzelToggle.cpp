@@ -68,6 +68,7 @@ namespace Pretzel{
 	void PretzelToggle::mouseDown(const ci::Vec2i &pos){
 		if (mBounds.contains(pos - mOffset)){
 			*mValue = !(*mValue);
+            onChange();
 		}
 	}
 }

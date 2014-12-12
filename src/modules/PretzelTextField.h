@@ -26,7 +26,6 @@ namespace Pretzel{
         virtual void keyDown(const char &key, const int &keyCode);
         
 	private:
-        std::string		mLabelText;
 		std::string		*mVariable;
 		ci::Rectf		mTextFieldBounds;
 		ci::Vec2f		mLabelSize;

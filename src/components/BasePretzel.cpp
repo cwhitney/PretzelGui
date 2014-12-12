@@ -16,6 +16,7 @@ namespace Pretzel{
 	BasePretzel::BasePretzel() : mParent(NULL) {
 		mOffset.set(0, 0);
 		mBounds.set(0, 0, 0, 0);
+        mLabel = "";
 
 		mGlobal = Pretzel::PretzelGlobal::getInstance();
         type = WidgetType::UNINITALIZED;
@@ -62,6 +63,10 @@ namespace Pretzel{
 	float BasePretzel::getHeight() {
 		return mBounds.getHeight();
 	}
+    
+    std::string BasePretzel::getName(){
+        return mLabel;
+    }
 
 	void BasePretzel::updateChildrenBounds() {
 

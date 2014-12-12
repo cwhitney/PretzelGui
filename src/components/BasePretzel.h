@@ -27,6 +27,7 @@ namespace Pretzel{
 		virtual ci::Rectf getBounds();
 		virtual float getWidth();
 		virtual float getHeight();
+        std::string getName();
 
 		virtual void mouseDown(const ci::Vec2i &pos);
 		virtual void mouseDragged(const ci::Vec2i &pos);
@@ -40,9 +41,11 @@ namespace Pretzel{
         void setParent( BasePretzel *parent );
         
         WidgetType  type;
+        
 
 	protected:
         BasePretzel                 *mParent;
+        std::string                 mLabel;
         
         // The offset from the app-wide 0,0 to the topLeft of the main gui window
         ci::Vec2f                   mGlobalOffset;

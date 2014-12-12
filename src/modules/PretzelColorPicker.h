@@ -19,8 +19,8 @@ namespace Pretzel {
     
 	class PretzelColorPicker : public BasePretzel {
 	public:
-		PretzelColorPicker(BasePretzel *parent, std::string label, ci::Color    *value);
-		PretzelColorPicker(BasePretzel *parent, std::string label, ci::ColorA   *value);
+		PretzelColorPicker(BasePretzel *parent, std::string label, ci::Color    *value, bool startExpanded=false);
+		PretzelColorPicker(BasePretzel *parent, std::string label, ci::ColorA   *value, bool startExpanded=false);
         
 		virtual void draw();
 		void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);

@@ -23,13 +23,13 @@ namespace Pretzel {
         
         void updateBounds(const ci::Vec2<T> sliderLeft, const ci::Vec2<T> sliderRight);
         
-        const std::string getLabel(){ return mLabelText; }
+        const std::string getLabel(){ return mLabel; }
         const T getValue(){ return *mValue; }
         const float getNormalized(){ return (float)(mHandlePos.x - mSliderLeft.x) / (float)(mSliderRight.x - mSliderLeft.x); }
         
       private:
         void updateValue(const T val);
-            
+        std::string     mLabel;
         T               *mValue;
         T               mMin, mMax;
         ci::Vec2<T>		mHandlePos;
@@ -42,7 +42,6 @@ namespace Pretzel {
         bool            bIsDragging;
         PretzelGlobal   *mGlobal;
         bool            mHandHover;
-        std::string     mLabelText;
         
         float           mPosOffset;
     };

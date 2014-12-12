@@ -12,7 +12,7 @@ namespace Pretzel{
 		mButtonBounds.y2--;
 
 		bHover = false;
-		mLabelText = labelText;
+		mLabel = labelText;
 		parent->registerPretzel(this);
         
         mBgColor.set( mGlobal->P_TAB_COLOR );
@@ -71,7 +71,7 @@ namespace Pretzel{
 
 			gl::color(mGlobal->P_OUTLINE_COLOR);
 			gl::drawStrokedRect(mButtonBounds);
-			mGlobal->renderTextCentered(mLabelText, Vec2f(mButtonBounds.getCenter().x, 5));
+			mGlobal->renderTextCentered(mLabel, Vec2f(mButtonBounds.getCenter().x, 5));
 		}gl::popMatrices();
 	}
 }

@@ -56,8 +56,8 @@ namespace Pretzel{
 		void addToggle(std::string label, bool *value);
 		void addTextField(std::string label, std::string *variable, bool editable = true);
         
-        void addColorPicker(std::string label, ci::Color *color);
-        void addColorPicker(std::string label, ci::ColorA *color);
+        void addColorPicker(std::string label, ci::Color *color, bool startExpanded=false);
+        void addColorPicker(std::string label, ci::ColorA *color, bool startExpanded=false);
         
 		template<typename T, typename Y>
 		inline void addButton(std::string labelText, T callback, Y *callbackObject){
@@ -66,6 +66,8 @@ namespace Pretzel{
             
             mWidgetList.push_back( newButton );
 		}
+        
+        BasePretzel* getControlByLabel( std::string label );
 
 	private:
 		void init(std::string title = "");

@@ -13,7 +13,6 @@ namespace Pretzel{
 		void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
 
 	private:
-		std::string		mMessage;
 		ci::Path2d		mOutlinePath;
 	};
 }

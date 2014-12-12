@@ -17,9 +17,10 @@ namespace Pretzel {
 		virtual void mouseDown(const ci::Vec2i &pos);
         virtual void mouseMoved(const ci::Vec2i &pos);
         
+        ci::signals::signal<void(void)> onChange;
+        
 	private:
 		bool			*mValue;
-		std::string		mLabel;
 
 		ci::Rectf		mCheckBoxRect;
 

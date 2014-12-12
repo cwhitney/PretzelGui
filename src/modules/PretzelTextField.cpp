@@ -15,9 +15,9 @@ namespace Pretzel{
 		bEditable = editable;
 		bHover = false;
 		bEditing = false;
-		mLabelText = labelText;
+		mLabel = labelText;
         mVariable = variable;
-		mLabelSize = mGlobal->guiFont->measureString(mLabelText);
+		mLabelSize = mGlobal->guiFont->measureString(mLabel);
 		mInputSize = mGlobal->guiFont->measureString(*variable);
 		
 		if(bEditable) mGlobal->addSaveParam(labelText, variable);
@@ -55,7 +55,11 @@ namespace Pretzel{
     
     // Mayus and character combinations not working yet
     void PretzelTextField::keyDown(const char &key, const int &keyCode){
+        
+        
         if (bEditing){
+            console() << "key down " << endl;
+            
             if (keyCode == KeyEvent::KEY_ESCAPE || keyCode == KeyEvent::KEY_RETURN){
                 bEditing = false;
             }
@@ -90,7 +94,7 @@ namespace Pretzel{
             gl::color(mGlobal->P_OUTLINE_COLOR);
 			gl::drawStrokedRect(mTextFieldBounds);
 
-            mGlobal->renderText(mLabelText, mBounds.getUpperLeft() + Vec2i(12, 5));
+            mGlobal->renderText(mLabel, mBounds.getUpperLeft() + Vec2i(12, 5));
             mGlobal->renderText(*mVariable, mTextFieldBounds.getUpperLeft() + Vec2i(2, 0));
 			
 			// cursor line

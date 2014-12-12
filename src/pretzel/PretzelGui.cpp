@@ -283,6 +283,17 @@ namespace Pretzel{
 		glPopAttrib();
 	}
     
+    // --------------------------------------------------
+    BasePretzel* PretzelGui::getControlByLabel( std::string label ){
+        for( auto it=mWidgetList.begin(); it!=mWidgetList.end(); it++){
+            if( (*it)->getName() == label ){
+                return (*it);
+            }
+        }
+        
+        return NULL;
+    }
+    
 	// --------------------------------------------------
 	void PretzelGui::addLabel(std::string labelText){
         mWidgetList.push_back( new PretzelLabel(this, labelText) );
@@ -316,11 +327,11 @@ namespace Pretzel{
 		mWidgetList.push_back( new PretzelTextField(this, label, variable, editable) );
 	}
     
-    void PretzelGui::addColorPicker(std::string label, ci::Color *color){
-        mWidgetList.push_back( new PretzelColorPicker(this, label, color) );
+    void PretzelGui::addColorPicker(std::string label, ci::Color *color, bool startExpanded){
+        mWidgetList.push_back( new PretzelColorPicker(this, label, color, startExpanded) );
     }
     
-    void PretzelGui::addColorPicker(std::string label, ci::ColorA *color){
-        mWidgetList.push_back( new PretzelColorPicker(this, label, color) );
+    void PretzelGui::addColorPicker(std::string label, ci::ColorA *color, bool startExpanded){
+        mWidgetList.push_back( new PretzelColorPicker(this, label, color, startExpanded) );
     }
 }

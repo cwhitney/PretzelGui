@@ -6,7 +6,7 @@ using namespace std;
 
 namespace Pretzel{
 	PretzelLabel::PretzelLabel(BasePretzel *parent, std::string labelText) : BasePretzel(){
-		mMessage = labelText;
+		mLabel = labelText;
 		//boost::to_upper(mMessage);
 
 		mBounds.set(0, 0, 200, 23);
@@ -18,7 +18,7 @@ namespace Pretzel{
 	void PretzelLabel::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds){
 		BasePretzel::updateBounds(offset, parentBounds);
 
-		Vec2f textSize = mGlobal->guiFont->measureString(mMessage);
+		Vec2f textSize = mGlobal->guiFont->measureString(mLabel);
 		Rectf textRect(0, 0, textSize.x, textSize.y);
 		textRect.y2 = mBounds.getHeight();
 		textRect.x1 += -5 + 15;
@@ -34,7 +34,7 @@ namespace Pretzel{
 	}
 
 	void PretzelLabel::draw(){
-		Vec2f textSize = mGlobal->guiFont->measureString(mMessage);
+		Vec2f textSize = mGlobal->guiFont->measureString(mLabel);
 		Rectf textRect(0, 0, textSize.x, textSize.y);
 		textRect.y1 = 4;
 		textRect.y2 = mBounds.getHeight()-1;
@@ -59,7 +59,7 @@ namespace Pretzel{
 				gl::drawSolidRect(textRect );
 
 				// draw text
-				mGlobal->renderText(mMessage, mBounds.getUpperLeft() + Vec2f(0, 4));
+				mGlobal->renderText(mLabel, mBounds.getUpperLeft() + Vec2f(0, 4));
 			}gl::popMatrices();
 
 			// draw highlight line

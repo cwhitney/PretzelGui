@@ -14,7 +14,7 @@ using namespace std;
 
 namespace Pretzel{
     
-	PretzelColorPicker::PretzelColorPicker(BasePretzel *parent, std::string label, ci::Color *value)
+	PretzelColorPicker::PretzelColorPicker(BasePretzel *parent, std::string label, ci::Color *value, bool startExpanded)
         : bUseAlpha(false),
           bExpanded(false),
           bHover(false),
@@ -29,9 +29,11 @@ namespace Pretzel{
         setup();
         mGlobal->addSaveParam(label, value);
         parent->registerPretzel(this);
+        
+        if( startExpanded ){    expand();   }
     }
     
-	PretzelColorPicker::PretzelColorPicker(BasePretzel *parent, std::string label, ci::ColorA *value)
+	PretzelColorPicker::PretzelColorPicker(BasePretzel *parent, std::string label, ci::ColorA *value, bool startExpanded)
         : bUseAlpha(true),
           bExpanded(false),
           bHover(false),
@@ -46,6 +48,8 @@ namespace Pretzel{
         setup();
         mGlobal->addSaveParam(label, value);
 		parent->registerPretzel(this);
+        
+        if( startExpanded ){    expand();   }
 	}
     
     void PretzelColorPicker::setup(){
