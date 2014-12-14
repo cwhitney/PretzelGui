@@ -56,8 +56,8 @@ namespace Pretzel{
         mArrowTex = mGlobal->getTextureFromSkin( Rectf(28, 0, 42, 12) );
         mCrosshairTex =mGlobal->getTextureFromSkin( Rectf(43, 0, 52, 9) );
         
-        mSwatchSurf = loadImage( loadResource(PRETZEL_COLOR) );
-        mSwatchTex = gl::Texture::create( mSwatchSurf );
+        mSwatchSurf = Surface::create(loadImage( loadResource(PRETZEL_COLOR) ));
+        mSwatchTex = gl::Texture::create( *mSwatchSurf );
         
         // set rects
         mCollapsedRect.set(0, 0, mBounds.getWidth(), 23);
@@ -111,11 +111,11 @@ namespace Pretzel{
             
             mCrosshairPos = n;
             
-            vec2 pxPos = vec2(mSwatchSurf.getSize()) * n;
+            vec2 pxPos = vec2(mSwatchSurf->getSize()) * n;
             if( bUseAlpha ){
-                mColorA->set( mSwatchSurf.getPixel( pxPos ) );
+                mColorA->set( mSwatchSurf->getPixel( pxPos ) );
             }else{
-                ColorA tt = mSwatchSurf.getPixel(pxPos);
+                ColorA tt = mSwatchSurf->getPixel(pxPos);
                 mColor->set( tt.r, tt.g, tt.b );
             }
         }
