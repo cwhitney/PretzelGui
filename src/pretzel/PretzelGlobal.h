@@ -59,7 +59,7 @@ namespace Pretzel {
         ci::ColorA P_ACTIVE_COLOR;
 
 		ci::gl::TextureFontRef  guiFont;
-        ci::Surface             mSkinSurf;
+        ci::SurfaceRef          mSkinSurf;
 		ci::gl::TextureRef		mSkinTex;
         
         boost::signals2::signal<void(void)>	signalOnSettingsSave;

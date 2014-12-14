@@ -48,7 +48,7 @@ namespace Pretzel {
         
         ci::gl::TextureRef  mArrowTex;
         ci::gl::TextureRef  mCrosshairTex;
-        ci::Surface         mSwatchSurf;
+        ci::SurfaceRef      mSwatchSurf;
         ci::gl::TextureRef  mSwatchTex;
         ci::gl::TextureRef  mCheckerPat;
         
