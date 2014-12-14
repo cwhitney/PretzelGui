@@ -19,8 +19,8 @@ namespace Pretzel {
 		if (!mInstance){
 			mInstance = new PretzelGlobal();
             
-            mInstance->mSkinSurf = Surface(loadImage(ci::app::loadResource( PRETZEL_GUI_SKIN )));
-            mInstance->mSkinTex = gl::Texture::create(mInstance->mSkinSurf);
+            mInstance->mSkinSurf = Surface::create(loadImage(ci::app::loadResource( PRETZEL_GUI_SKIN )));
+            mInstance->mSkinTex = gl::Texture::create(*mInstance->mSkinSurf);
 
 #if defined( CINDER_MSW )
 		mInstance->mCursorArrow = ::LoadCursor(NULL, IDC_ARROW);
@@ -79,9 +79,9 @@ namespace Pretzel {
 	}
     
     ci::gl::TextureRef PretzelGlobal::getTextureFromSkin( ci::Rectf rect ){
-        Surface srf( rect.getWidth(), rect.getHeight(), true);
-        srf.copyFrom( mSkinSurf, Area(rect.x1, rect.y1, rect.x2, rect.y2), vec2(-rect.x1, -rect.y1) );
-        return ci::gl::Texture::create( srf );
+        SurfaceRef srf = Surface::create( rect.getWidth(), rect.getHeight(), true);
+        srf->copyFrom( *mSkinSurf, Area(rect.x1, rect.y1, rect.x2, rect.y2), vec2(-rect.x1, -rect.y1) );
+        return ci::gl::Texture::create( *srf );
     }
     
     void PretzelGlobal::setCursor( CursorType type ){

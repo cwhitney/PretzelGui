@@ -42,15 +42,15 @@ namespace Pretzel{
         
 		mLastClickTime = 0.0;
         
-        mGlobal->P_ACTIVE_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 340)));
-		mGlobal->P_HOVER_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 360)));
-		mGlobal->P_GUI_BORDER.set(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 380)));
-		mGlobal->P_BG_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 400)));
-		mGlobal->P_TAB_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 420)));
-		mGlobal->P_TEXT_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 440)));
-		mGlobal->P_OUTLINE_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 460)));
-		mGlobal->P_HIGHLIGHT_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 480)));
-		mGlobal->P_SLIDER_COLOR.set(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 500)));
+        mGlobal->P_ACTIVE_COLOR.set(mGlobal->mSkinSurf->getPixel(ci::vec2(10, 340)));
+		mGlobal->P_HOVER_COLOR.set(mGlobal->mSkinSurf->getPixel(ci::vec2(10, 360)));
+		mGlobal->P_GUI_BORDER.set(mGlobal->mSkinSurf->getPixel(ci::vec2(10, 380)));
+		mGlobal->P_BG_COLOR.set(mGlobal->mSkinSurf->getPixel(ci::vec2(10, 400)));
+		mGlobal->P_TAB_COLOR.set(mGlobal->mSkinSurf->getPixel(ci::vec2(10, 420)));
+		mGlobal->P_TEXT_COLOR.set(mGlobal->mSkinSurf->getPixel(ci::vec2(10, 440)));
+		mGlobal->P_OUTLINE_COLOR.set(mGlobal->mSkinSurf->getPixel(ci::vec2(10, 460)));
+		mGlobal->P_HIGHLIGHT_COLOR.set(mGlobal->mSkinSurf->getPixel(ci::vec2(10, 480)));
+		mGlobal->P_SLIDER_COLOR.set(mGlobal->mSkinSurf->getPixel(ci::vec2(10, 500)));
         
 		connectSignals();
         mGlobal->signalOnSettingsLoad.connect( std::bind(&PretzelGui::onSettingsLoaded, this) );
