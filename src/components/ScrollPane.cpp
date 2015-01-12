@@ -17,6 +17,7 @@ namespace Pretzel {
     ScrollPane::ScrollPane(BasePretzel *base, int width, int height) : PretzelRow(base, width, height) {
         bCanScroll = false;
         bHover = false;
+		bDragging = false;
         mScrollHandle = Rectf(mBounds.x2-10, 0, mBounds.x2, 50);
         mScrolledPct = 0.0;
         mScrolledHandleAmt.set(0,0);
