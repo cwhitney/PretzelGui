@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "cinder/app/AppNative.h"
+#include "cinder/app/App.h"
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
 #include "cinder/ImageIo.h"
@@ -75,7 +75,7 @@ namespace Pretzel{
         void onSettingsLoaded();
 
 		// mouse events
-		boost::signals2::scoped_connection  mMouseBeganCallBack,
+        ci::signals::Connection  mMouseBeganCallBack,
 			mMouseDragCallBack,
 			mMouseEndCallBack,
 			mMouseMovedCallBack,

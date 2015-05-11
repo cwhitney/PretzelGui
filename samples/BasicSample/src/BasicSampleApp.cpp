@@ -1,4 +1,4 @@
-#include "cinder/app/AppNative.h"
+#include "cinder/app/App.h"
 
 #if CINDER_VERSION >= 807
     #include "cinder/app/RendererGl.h"
@@ -13,9 +13,9 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class BasicSampleApp : public AppNative {
+class BasicSampleApp : public App {
 public:
-    void prepareSettings(Settings *settings) override;
+    static void prepareSettings(Settings *settings);
     void setup() override;
     void mouseDown( MouseEvent event ) override;
     void update() override;
@@ -42,7 +42,7 @@ public:
 void BasicSampleApp::prepareSettings(Settings *settings) {
     settings->setWindowSize(vec2(1024, 768));
     settings->setFrameRate(60.0);
-    settings->enableHighDensityDisplay();
+    settings->setHighDensityDisplayEnabled();
 }
 
 
@@ -121,5 +121,5 @@ void BasicSampleApp::draw()
     gui->draw();
 }
 
-CINDER_APP_NATIVE( BasicSampleApp, RendererGl )
+CINDER_APP( BasicSampleApp, RendererGl, BasicSampleApp::prepareSettings )
 

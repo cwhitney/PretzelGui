@@ -113,10 +113,10 @@ namespace Pretzel{
             
             vec2 pxPos = vec2(mSwatchSurf.getSize()) * n;
             if( bUseAlpha ){
-                mColorA->set( mSwatchSurf.getPixel( pxPos ) );
+                *mColorA = mSwatchSurf.getPixel( pxPos );
             }else{
                 ColorA tt = mSwatchSurf.getPixel(pxPos);
-                mColor->set( tt.r, tt.g, tt.b );
+                *mColor = Color( tt.r, tt.g, tt.b );
             }
         }
     }

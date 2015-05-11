@@ -35,11 +35,11 @@ namespace Pretzel{
 	void PretzelSaveLoad::mouseDown(const ci::vec2 &pos){
 		if (mSaveRect.contains(pos - mOffset)){
 			mGlobal->saveSettings();
-            mSaveBg.set( mGlobal->P_ACTIVE_COLOR );
+            mSaveBg = mGlobal->P_ACTIVE_COLOR;
 		}
 		else if (mLoadRect.contains(pos - mOffset)){
 			mGlobal->loadSettings();
-            mLoadBg.set( mGlobal->P_ACTIVE_COLOR );
+            mLoadBg = mGlobal->P_ACTIVE_COLOR;
 		}
 	}
 
@@ -48,30 +48,30 @@ namespace Pretzel{
 			bHoverSave = true;
 			bHoverLoad = false;
             mGlobal->setCursor( CursorType::HAND );
-            mSaveBg.set( mGlobal->P_HOVER_COLOR );
-            mLoadBg.set( mGlobal->P_TAB_COLOR );
+            mSaveBg = mGlobal->P_HOVER_COLOR;
+            mLoadBg = mGlobal->P_TAB_COLOR;
 		}
 		else if (mLoadRect.contains(pos - mOffset)){
 			bHoverSave = false;
 			bHoverLoad = true;
             mGlobal->setCursor( CursorType::HAND );
-            mLoadBg.set( mGlobal->P_HOVER_COLOR );
-            mSaveBg.set( mGlobal->P_TAB_COLOR );
+            mLoadBg = mGlobal->P_HOVER_COLOR;
+            mSaveBg = mGlobal->P_TAB_COLOR;
 		}
 		else{
             if( bHoverSave || bHoverLoad ){
                 mGlobal->setCursor( CursorType::ARROW );
             }
-            mSaveBg.set( mGlobal->P_TAB_COLOR );
-            mLoadBg.set( mGlobal->P_TAB_COLOR );
+            mSaveBg = mGlobal->P_TAB_COLOR;
+            mLoadBg = mGlobal->P_TAB_COLOR;
 			bHoverSave = false;
 			bHoverLoad = false;
 		}
 	}
     
     void PretzelSaveLoad::mouseUp(const ci::vec2 &pos){
-        mSaveBg.set( mGlobal->P_TAB_COLOR );
-        mLoadBg.set( mGlobal->P_TAB_COLOR );
+        mSaveBg = mGlobal->P_TAB_COLOR;
+        mLoadBg = mGlobal->P_TAB_COLOR;
     }
 
 	void PretzelSaveLoad::draw() {
