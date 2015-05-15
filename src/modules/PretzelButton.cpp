@@ -15,7 +15,7 @@ namespace Pretzel{
 		mLabelText = labelText;
 		parent->registerPretzel(this);
         
-        mBgColor.set( mGlobal->P_TAB_COLOR );
+        mBgColor = mGlobal->P_TAB_COLOR;
         
         type = WidgetType::BUTTON;
 	}
@@ -30,25 +30,25 @@ namespace Pretzel{
 
 	void PretzelButton::mouseDown(const ci::vec2 &pos){
 		if (mBounds.contains(pos - mOffset)){
-            mBgColor.set( mGlobal->P_ACTIVE_COLOR );
+            mBgColor = mGlobal->P_ACTIVE_COLOR;
 			signalOnPress();
 		}
 	}
     
     void PretzelButton::mouseUp(const ci::vec2 &pos){
-		mBgColor.set( mGlobal->P_TAB_COLOR );
+		mBgColor = mGlobal->P_TAB_COLOR;
 	}
 
 	void PretzelButton::mouseMoved(const ci::vec2 &pos){
 		if (mBounds.contains(pos - mOffset)){
 			bHover = true;
-            mBgColor.set( mGlobal->P_HOVER_COLOR );
+            mBgColor = mGlobal->P_HOVER_COLOR;
             mGlobal->setCursor( CursorType::HAND );
 		}
 		else{
             if( bHover ){
                 mGlobal->setCursor( CursorType::ARROW );
-                mBgColor.set( mGlobal->P_TAB_COLOR );
+                mBgColor = mGlobal->P_TAB_COLOR;
             }
 			bHover = false;
 		}

@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "cinder/app/AppNative.h"
+#include "cinder/app/App.h"
 #include <boost/algorithm/string.hpp>
 #include "pretzel/PretzelGlobal.h"
 

@@ -2,7 +2,7 @@
 
 #include "pretzel/PretzelGlobal.h"
 #include "components/BasePretzel.h"
-#include "cinder/app/AppNative.h"
+#include "cinder/app/App.h"
 
 /* TODO:
  - make textfield clip and scroll text

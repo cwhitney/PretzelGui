@@ -113,7 +113,7 @@ namespace Pretzel {
         vec2 tPos = mOffset + mGlobalOffset;
         float winH = getWindowHeight();
 
-        if( ci::app::App::get()->getSettings().isHighDensityDisplayEnabled() ){
+        if ( ci::app::App::get()->isHighDensityDisplayEnabled()) {
             tBounds *= getWindowContentScale();
             winH *= getWindowContentScale();
             tPos *= getWindowContentScale();

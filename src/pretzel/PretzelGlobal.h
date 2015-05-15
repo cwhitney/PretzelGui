@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "cinder/app/AppNative.h"
+#include "cinder/app/App.h"
 #include "cinder/gl/Gl.h"
 #include "cinder/gl/Texture.h"
 #include "cinder/gl/TextureFont.h"
