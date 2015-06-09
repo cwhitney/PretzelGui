@@ -3,14 +3,14 @@
 
 A GUI built from the ground up for [Cinder](http://libcinder.org) for PC and OSX. Currently untested on linux.
 
-Tested for version of Cinder 0.8.5+
+This version is for 0.9.0, the glNext branch of Cinder.
 
 This is very much alpha software and apis are subject to change. Pull requests and bug fixes welcomed.
 
 ----
 The MIT License (MIT)
 
-Copyright (c) 2014 Charlie Whitney
+Copyright (c) 2015 Charlie Whitney
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
