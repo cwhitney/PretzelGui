@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "cinder/app/AppNative.h"
+#include "cinder/app/App.h"
 
 #include "components/PretzelRow.h"
 #include "components/BasePretzel.h"
@@ -20,23 +20,23 @@ namespace Pretzel {
         ScrollPane(BasePretzel *base, int width, int height);
         virtual void draw();
         
-        virtual void mouseDown(const ci::Vec2i &pos);
-		virtual void mouseDragged(const ci::Vec2i &pos);
-		virtual void mouseUp(const ci::Vec2i &pos);
-		virtual void mouseMoved(const ci::Vec2i &pos);
+        virtual void mouseDown(const ci::vec2 &pos);
+		virtual void mouseDragged(const ci::vec2 &pos);
+		virtual void mouseUp(const ci::vec2 &pos);
+		virtual void mouseMoved(const ci::vec2 &pos);
         
       protected:
         void updateChildrenBounds();
         
         float       mScrolledPct;
-        ci::Vec2f   mScrolledHandleAmt;
-        ci::Vec2f   mScrolledFrameAmt;
+        ci::vec2   mScrolledHandleAmt;
+        ci::vec2   mScrolledFrameAmt;
         
         float       mChildrenHeight;
         bool        bCanScroll;
         
         ci::Rectf   mScrollHandle;
-        ci::Vec2i   mStartDragOffset;
+        ci::vec2   mStartDragOffset;
         
         bool        bDragging;
         bool        bHover;

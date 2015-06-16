@@ -16,6 +16,8 @@
 		0CC87C0650104ECB9F05D37F /* default_skin.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D1F405AE25C48C8BD189A91 /* default_skin.png */; };
 		12382769AD3841BA93E3BB7F /* PretzelGlobal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D4A18C0209849BBB5E941DD /* PretzelGlobal.cpp */; };
 		2118133C6D7C44C5B5E7DED6 /* PretzelGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A2406480D1D4C9486B5B86E /* PretzelGui.cpp */; };
+		269618061A37B5B400665126 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269618051A37B5B400665126 /* CoreMedia.framework */; };
+		269618081A37B5BF00665126 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269618071A37B5BF00665126 /* AVFoundation.framework */; };
 		26D8F74E53AC4D379B427E81 /* PretzelSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76E4087221664773B872A44B /* PretzelSlider.cpp */; };
 		33455E1464A54995AA424C73 /* PretzelLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF650A20DBC94898BB109BC2 /* PretzelLabel.cpp */; };
 		40A027935C804665B23C06FB /* PretzelColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5AEA534CF4A4F9E9FFA7D /* PretzelColorPicker.cpp */; };
@@ -44,6 +46,8 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		12E4F1CB8685482A81931C7C /* PretzelToggle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = PretzelToggle.cpp; path = ../../../src/modules/PretzelToggle.cpp; sourceTree = "<group>"; };
 		25E7BF4B913C4FBC9482F7E2 /* PretzelGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelGlobal.h; path = ../../../src/pretzel/PretzelGlobal.h; sourceTree = "<group>"; };
+		269618051A37B5B400665126 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		269618071A37B5BF00665126 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		35AA434D85C54EA5A2FC712B /* PretzelGui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelGui.h; path = ../../../src/pretzel/PretzelGui.h; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269618081A37B5BF00665126 /* AVFoundation.framework in Frameworks */,
+				269618061A37B5B400665126 /* CoreMedia.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */,
 				5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */,
@@ -179,6 +185,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				269618071A37B5BF00665126 /* AVFoundation.framework */,
+				269618051A37B5B400665126 /* CoreMedia.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -345,6 +353,7 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
@@ -360,6 +369,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder_d.a\"";
 				PRODUCT_NAME = BasicSample;
 				SYMROOT = ./build;
@@ -370,6 +380,7 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -382,6 +393,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder.a\"";
 				PRODUCT_NAME = BasicSample;
 				STRIP_INSTALLED_PRODUCT = YES;
@@ -394,14 +406,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = i386;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				CINDER_PATH = ../../../../..;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../../src";
 			};
@@ -411,14 +423,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = i386;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				CINDER_PATH = ../../../../..;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../../src";
 			};

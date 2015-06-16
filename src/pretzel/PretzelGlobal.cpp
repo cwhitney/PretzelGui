@@ -12,6 +12,11 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+#if defined( CINDER_MAC )
+#import <AppKit/AppKit.h>
+#endif
+
+
 namespace Pretzel {
 	PretzelGlobal* PretzelGlobal::mInstance = NULL;
 
@@ -32,7 +37,7 @@ namespace Pretzel {
 		return mInstance;
 	}
 
-	void PretzelGlobal::renderTextInternal(std::string text, ci::Vec2i pos, int align){
+	void PretzelGlobal::renderTextInternal(std::string text, ci::vec2 pos, int align){
 		if (!guiFont){
 #ifdef _WIN32
 			ci::Font tmp("Arial", 16);
@@ -43,49 +48,50 @@ namespace Pretzel {
 			emHeight = floor( guiFont->measureString("M").y );
 		}
 #ifdef TARGET_OS_MAC
-        pos -= Vec2i(0, 2);
+        pos -= vec2(0, 2);
 #endif
 
 		ci::gl::TextureFont::DrawOptions opts;
 		opts.pixelSnap(true);
 
-		ci::Vec2f textSize = guiFont->measureString(text);
+		ci::vec2 textSize = guiFont->measureString(text);
 
 		ci::gl::pushMatrices(); {
 			ci::gl::color(P_TEXT_COLOR);
 
 			if (align == FontAlignment::ALIGN_RIGHT){
-				guiFont->drawString(text, ci::Vec2i(-textSize.x, 0) + pos + Vec2i(0,emHeight), opts);
+                guiFont->drawString(text, ci::vec2(-textSize.x, 0) + pos + ci::vec2(0,emHeight), opts);
 			}
 			else if (align == FontAlignment::ALIGN_CENTER){
-				guiFont->drawString(text, ci::Vec2i((int)textSize.x*-0.5, 0) + pos + Vec2i(0,emHeight), opts);
+                guiFont->drawString(text, ci::vec2((int)textSize.x*-0.5, 0) + pos + ci::vec2(0,emHeight), opts);
 			}
 			else{
-				guiFont->drawString(text, pos + Vec2i(0,emHeight), opts);
+				guiFont->drawString(text, pos + vec2(0,emHeight), opts);
 			}
 		}ci::gl::popMatrices();
 	}
 
-	void PretzelGlobal::renderText(std::string text, ci::Vec2i pos) {
+	void PretzelGlobal::renderText(std::string text, ci::vec2 pos) {
 		renderTextInternal(text, pos, FontAlignment::ALIGN_LEFT);
 	}
 
-	void PretzelGlobal::renderTextRight(std::string text, ci::Vec2i pos) {
+	void PretzelGlobal::renderTextRight(std::string text, ci::vec2 pos) {
 		renderTextInternal(text, pos, FontAlignment::ALIGN_RIGHT);
 	}
 
-	void PretzelGlobal::renderTextCentered(std::string text, ci::Vec2i pos) {
+	void PretzelGlobal::renderTextCentered(std::string text, ci::vec2 pos) {
 		renderTextInternal(text, pos, FontAlignment::ALIGN_CENTER);
 	}
     
     ci::gl::TextureRef PretzelGlobal::getTextureFromSkin( ci::Rectf rect ){
         Surface srf( rect.getWidth(), rect.getHeight(), true);
-        srf.copyFrom( mSkinSurf, Area(rect.x1, rect.y1, rect.x2, rect.y2), Vec2f(-rect.x1, -rect.y1) );
+        srf.copyFrom( mSkinSurf, Area(rect.x1, rect.y1, rect.x2, rect.y2), vec2(-rect.x1, -rect.y1) );
         return ci::gl::Texture::create( srf );
     }
     
     void PretzelGlobal::setCursor( CursorType type ){
 #if defined( CINDER_MAC )
+        
         switch(type){
             case CursorType::ARROW :
                 [[NSCursor arrowCursor] set];
@@ -150,12 +156,12 @@ namespace Pretzel {
 		addParamInternal(name, val, _STRING);
 	}
     
-    void PretzelGlobal::addSaveParam(std::string name, ci::Vec2f *val){
-		addParamInternal(name, val, _VEC2F);
+    void PretzelGlobal::addSaveParam(std::string name, ci::vec2 *val){
+		addParamInternal(name, val, _VEC2);
 	}
     
-    void PretzelGlobal::addSaveParam(std::string name, ci::Vec3f *val){
-		addParamInternal(name, val, _VEC3F);
+    void PretzelGlobal::addSaveParam(std::string name, ci::vec3 *val){
+		addParamInternal(name, val, _VEC3);
 	}
     
     void PretzelGlobal::addSaveParam(std::string name, ci::Color *val){
@@ -208,19 +214,19 @@ namespace Pretzel {
                 }case _STRING:{
                     pSettings.pushBack(JsonTree(mParamList[i].name, (*(std::string*)mParamList[i].value)));
                     break;
-                }case _VEC2F:{
+                }case _VEC2:{
                     JsonTree tt;
                     tt = tt.makeArray(mParamList[i].name);
-                    tt.pushBack( JsonTree("x", toString(((Vec2f*)mParamList[i].value)->x)) );
-                    tt.pushBack( JsonTree("y", toString(((Vec2f*)mParamList[i].value)->y)) );
+                    tt.pushBack( JsonTree("x", toString(((vec2*)mParamList[i].value)->x)) );
+                    tt.pushBack( JsonTree("y", toString(((vec2*)mParamList[i].value)->y)) );
                     pSettings.pushBack( tt );
                     break;
-                }case _VEC3F:{
+                }case _VEC3:{
                     JsonTree tt;
                     tt = tt.makeArray(mParamList[i].name);
-                    tt.pushBack( JsonTree("x", toString(((Vec3f*)mParamList[i].value)->x)) );
-                    tt.pushBack( JsonTree("y", toString(((Vec3f*)mParamList[i].value)->y)) );
-                    tt.pushBack( JsonTree("z", toString(((Vec3f*)mParamList[i].value)->z)) );
+                    tt.pushBack( JsonTree("x", toString(((vec3*)mParamList[i].value)->x)) );
+                    tt.pushBack( JsonTree("y", toString(((vec3*)mParamList[i].value)->y)) );
+                    tt.pushBack( JsonTree("z", toString(((vec3*)mParamList[i].value)->z)) );
                     pSettings.pushBack( tt );
                     break;
                 }case _COLOR:{
@@ -298,21 +304,21 @@ namespace Pretzel {
 						*((std::string*)mParamList[i].value) = sVal;
 					}
 					break;
-                case _VEC2F:
+                case _VEC2:
                     if (appSettings.hasChild(pName)){
-                        Vec2f p;
+                        vec2 p;
                         p.x = appSettings.getChild(pName).getChild("x").getValue<float>();
                         p.y = appSettings.getChild(pName).getChild("y").getValue<float>();
-                        *((Vec2f*)mParamList[i].value) = p;
+                        *((vec2*)mParamList[i].value) = p;
                     }
                     break;
-                case _VEC3F:
+                case _VEC3:
                     if (appSettings.hasChild(pName)){
-                        Vec3f p;
+                        vec3 p;
                         p.x = appSettings.getChild(pName).getChild("x").getValue<float>();
                         p.y = appSettings.getChild(pName).getChild("y").getValue<float>();
                         p.z = appSettings.getChild(pName).getChild("z").getValue<float>();
-                        *((Vec3f*)mParamList[i].value) = p;
+                        *((vec3*)mParamList[i].value) = p;
                     }
                     break;
                 case _COLOR:

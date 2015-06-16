@@ -13,12 +13,12 @@ namespace Pretzel{
 
 		int size = 11;
 		mCheckBoxRect.set(0, 0, size, size);
-		mCheckBoxRect.offset(Vec2i(11, 3));
+		mCheckBoxRect.offset(vec2(11, 3));
 
 		// texture skin rect
 		mSkinTexRect.set(14, 0, 27, 11);
 		mSkinDestRect.set(0, 0, mSkinTexRect.getWidth(), mSkinTexRect.getHeight());
-		mSkinDestRect.offset(Vec2i(12, 2));
+		mSkinDestRect.offset(vec2(12, 2));
 
 		mGlobal->addSaveParam(label, value);
 
@@ -27,15 +27,15 @@ namespace Pretzel{
 
 	void PretzelToggle::draw() {
 		gl::pushMatrices(); {
-			gl::translate(mOffset + Vec2i(0,2));
+			gl::translate(mOffset + vec2(0,2));
 
 			// draw box
-			Rectf tmpRect = mCheckBoxRect;
+			RectT<float> tmpRect = mCheckBoxRect;
 
 			gl::color(mGlobal->P_SLIDER_COLOR);
 			gl::drawSolidRect(tmpRect);
 
-			tmpRect.inflate(Vec2i(-2, -2));
+			tmpRect.inflate(vec2(-2, -2));
 			gl::color(mGlobal->P_BG_COLOR);
 			gl::drawSolidRect(tmpRect);
 
@@ -44,16 +44,16 @@ namespace Pretzel{
 				gl::color(ColorA(1, 1, 1, 1));
 				gl::draw(mGlobal->mSkinTex, mSkinTexRect, mSkinDestRect);
 			}
-			mGlobal->renderText(mLabel, Vec2i(27, 1));
+			mGlobal->renderText(mLabel, vec2(27, 1));
 
 		}gl::popMatrices();
 	}
 
-	void PretzelToggle::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds){
+	void PretzelToggle::updateBounds(const ci::vec2 &offset, const ci::RectT<float> &parentBounds){
 		BasePretzel::updateBounds(offset, parentBounds);
 	}
 
-    void PretzelToggle::mouseMoved(const ci::Vec2i &pos){
+    void PretzelToggle::mouseMoved(const ci::vec2 &pos){
         if (mSkinDestRect.contains(pos - mOffset)){
             bHover = true;
             mGlobal->setCursor(CursorType::HAND);
@@ -65,7 +65,7 @@ namespace Pretzel{
         }
     }
     
-	void PretzelToggle::mouseDown(const ci::Vec2i &pos){
+	void PretzelToggle::mouseDown(const ci::vec2 &pos){
 		if (mBounds.contains(pos - mOffset)){
 			*mValue = !(*mValue);
 		}

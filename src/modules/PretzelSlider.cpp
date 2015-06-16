@@ -8,7 +8,7 @@ namespace Pretzel{
 
     // =========================================================================================================================================    
     template<typename T>
-    void PSliderT<T>::setup(const std::string label, T *value, const T min, const T max, ci::Vec2<T> sliderLeft, ci::Vec2<T> sliderRight ){
+    void PSliderT<T>::setup(const std::string label, T *value, const T min, const T max, ci::vec2 sliderLeft, ci::vec2 sliderRight ){
         mLabelText = label;
         mValue = value;
         mMin = min;
@@ -20,10 +20,10 @@ namespace Pretzel{
         // texture skin rect
 		mSkinTexRect.set(0, 0, 13, 12);
 		mSkinDestRect = mSkinTexRect;
-		mSkinDestRect.offset(Vec2i(-7, -7));
+		mSkinDestRect.offset(vec2(-7, -7));
         
         bIsDragging = false;
-        mHandlePos.set(15, 22);
+        mHandlePos = vec2(15, 22);
         mHandleHitbox.set(-5, -7, 5, 5);
         mSliderPct = 0.0f;
         
@@ -33,7 +33,7 @@ namespace Pretzel{
     }
     
     template<typename T>
-    void PSliderT<T>::updateBounds(const ci::Vec2<T> sliderLeft, const ci::Vec2<T> sliderRight){
+    void PSliderT<T>::updateBounds(const ci::vec2 sliderLeft, const ci::vec2 sliderRight){
         mSliderLeft = sliderLeft;
         mSliderRight = sliderRight;
         
@@ -58,8 +58,8 @@ namespace Pretzel{
 	}
     
     template<typename T>
-    void PSliderT<T>::mouseDown(const Vec2i &pos){
-        Vec2f localPos = pos - mHandlePos - Vec2f(0, mPosOffset);
+    void PSliderT<T>::mouseDown(const vec2 &pos){
+        vec2 localPos = pos - mHandlePos - ci::vec2(0, mPosOffset);
         
         if( mHandleHitbox.contains(localPos) ){
             bIsDragging = true;
@@ -68,8 +68,8 @@ namespace Pretzel{
 	}
     
     template<typename T>
-    void PSliderT<T>::mouseMoved(const ci::Vec2i &pos){
-        Vec2f localPos = pos - mHandlePos - Vec2f(0, mPosOffset);
+    void PSliderT<T>::mouseMoved(const ci::vec2 &pos){
+        vec2 localPos = pos - mHandlePos - ci::vec2(0, mPosOffset);
         
         if( mHandleHitbox.contains(localPos) ){
             mHandHover = true;
@@ -83,7 +83,7 @@ namespace Pretzel{
 	}
     
     template<typename T>
-	void PSliderT<T>::mouseDragged(const Vec2i &pos){
+	void PSliderT<T>::mouseDragged(const vec2 &pos){
 		if (bIsDragging){
 			mHandlePos.x = ci::math<float>::clamp(pos.x, mSliderLeft.x, mSliderRight.x);
 			mSliderPct = lmap<float>(mHandlePos.x, mSliderLeft.x, mSliderRight.x, 0.0, 1.0);
@@ -93,7 +93,7 @@ namespace Pretzel{
 	}
     
     template<typename T>
-	void PSliderT<T>::mouseUp(const Vec2i &pos){
+	void PSliderT<T>::mouseUp(const vec2 &pos){
         if( bIsDragging ){
             bIsDragging = false;
             mGlobal->setCursor(CursorType::ARROW);
@@ -123,8 +123,8 @@ namespace Pretzel{
 	PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, int *value, int minVal, int maxVal) : BasePretzel(){
         mBounds.set(0, 0, 200, 30);
         
-        Vec2f slideL = mBounds.getUpperLeft() + Vec2f(10, 22);
-		Vec2f slideR = mBounds.getUpperRight() + Vec2f(-10, 22);
+        vec2 slideL = mBounds.getUpperLeft() + vec2(10, 22);
+		vec2 slideR = mBounds.getUpperRight() + vec2(-10, 22);
         
         PSlideri newSlider;
         newSlider.setup(labelText, value, minVal, maxVal, slideL, slideR);
@@ -138,8 +138,8 @@ namespace Pretzel{
 	PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, float *value, float minVal, float maxVal) : BasePretzel(){
 		mBounds.set(0, 0, 200, 30);
 
-        Vec2f slideL = mBounds.getUpperLeft() + Vec2f(10, 22);
-		Vec2f slideR = mBounds.getUpperRight() + Vec2f(-10, 22);
+        vec2 slideL = mBounds.getUpperLeft() + vec2(10, 22);
+		vec2 slideR = mBounds.getUpperRight() + vec2(-10, 22);
         
         PSliderf newSlider;
         newSlider.setup(labelText, value, minVal, maxVal, slideL, slideR);
@@ -150,20 +150,20 @@ namespace Pretzel{
 		parent->registerPretzel(this);
 	}
     
-    PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, Vec2f *value, Vec2f minVal, Vec2f maxVal) : BasePretzel(){
-		mLineOffset.set(0, 14);
+    PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, vec2 *value, vec2 minVal, vec2 maxVal) : BasePretzel(){
+		mLineOffset = vec2(0, 14);
         mBounds.set(0, 0, 200, 30);
-        mBounds.include( mBounds.getLowerRight() + mLineOffset + Vec2f(0,5) );
+        mBounds.include( mBounds.getLowerRight() + mLineOffset + vec2(0,5) );
         
-        Vec2f slideL = mBounds.getUpperLeft() + Vec2f(30, 22);
-		Vec2f slideR = mBounds.getUpperRight() + Vec2f(-10, 22);
+        vec2 slideL = mBounds.getUpperLeft() + vec2(30, 22);
+		vec2 slideR = mBounds.getUpperRight() + vec2(-10, 22);
         
         PSliderf newSliderX;
-        newSliderX.setup(labelText, &(value->x), minVal.x, maxVal.x, slideL + mLineOffset * 0, slideR + mLineOffset * 0);
+        newSliderX.setup(labelText, &(value->x), minVal.x, maxVal.x, slideL, slideR);
         mSliderListf.push_back( newSliderX );
         
         PSliderf newSliderY;
-        newSliderY.setup(labelText, &(value->y), minVal.y, maxVal.y, slideL + mLineOffset * 1, slideR + mLineOffset * 1);
+        newSliderY.setup(labelText, &(value->y), minVal.y, maxVal.y, slideL + mLineOffset, slideR + mLineOffset);
         mSliderListf.push_back( newSliderY );
 
 		mGlobal->addSaveParam(labelText, value);
@@ -171,24 +171,24 @@ namespace Pretzel{
 		parent->registerPretzel(this);
 	}
     
-    PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, Vec3f *value, Vec3f minVal, Vec3f maxVal) : BasePretzel(){
-		mLineOffset.set(0, 14);
+    PretzelSlider::PretzelSlider(BasePretzel *parent, std::string labelText, vec3 *value, vec3 minVal, vec3 maxVal) : BasePretzel(){
+		mLineOffset = vec2(0, 14);
         mBounds.set(0, 0, 200, 30);
-        mBounds.include( mBounds.getLowerRight() + mLineOffset*2 + Vec2f(0,5) );
+        mBounds.include( mBounds.getLowerRight() + mLineOffset * 2.f + vec2(0,5) );
         
-        Vec2f slideL = mBounds.getUpperLeft() + Vec2f(30, 22);
-		Vec2f slideR = mBounds.getUpperRight() + Vec2f(-10, 22);
+        vec2 slideL = mBounds.getUpperLeft() + vec2(30, 22);
+		vec2 slideR = mBounds.getUpperRight() + vec2(-10, 22);
         
         PSliderf newSliderX;
-        newSliderX.setup(labelText, &(value->x), minVal.x, maxVal.x, slideL + mLineOffset * 0, slideR + mLineOffset * 0);
+        newSliderX.setup(labelText, &(value->x), minVal.x, maxVal.x, slideL, slideR);
         mSliderListf.push_back( newSliderX );
         
         PSliderf newSliderY;
-        newSliderY.setup(labelText, &(value->y), minVal.y, maxVal.y, slideL + mLineOffset * 1, slideR + mLineOffset * 1);
+        newSliderY.setup(labelText, &(value->y), minVal.y, maxVal.y, slideL + mLineOffset, slideR + mLineOffset);
         mSliderListf.push_back( newSliderY );
         
         PSliderf newSliderZ;
-        newSliderY.setup(labelText, &(value->z), minVal.z, maxVal.z, slideL + mLineOffset * 2, slideR + mLineOffset * 1);
+        newSliderY.setup(labelText, &(value->z), minVal.z, maxVal.z, slideL + mLineOffset * 2.f, slideR + mLineOffset * 1.f);
         mSliderListf.push_back( newSliderY );
         
 		mGlobal->addSaveParam(labelText, value);
@@ -196,27 +196,27 @@ namespace Pretzel{
 		parent->registerPretzel(this);
 	}
 
-	void PretzelSlider::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds){
+	void PretzelSlider::updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds){
 		BasePretzel::updateBounds(offset, parentBounds);
 
-        Vec2f slideL = mBounds.getUpperLeft() + Vec2f(10, 22);
-		Vec2f slideR = mBounds.getUpperRight() + Vec2f(-10, 22);
+        vec2 slideL = mBounds.getUpperLeft() + vec2(10, 22);
+		vec2 slideR = mBounds.getUpperRight() + vec2(-10, 22);
         
         if(mSliderListi.size() > 1 || mSliderListf.size() > 1){
-            slideL = mBounds.getUpperLeft() + Vec2f(30, 22);
-            slideR = mBounds.getUpperRight() + Vec2f(-10, 22);
+            slideL = mBounds.getUpperLeft() + vec2(30, 22);
+            slideR = mBounds.getUpperRight() + vec2(-10, 22);
         }
         
         for( int i=0; i<mSliderListi.size(); i++){
-            mSliderListi[i].updateBounds(slideL + mLineOffset*i, slideR + mLineOffset*i);
+            mSliderListi[i].updateBounds(slideL + mLineOffset* float(i), slideR + mLineOffset* float(i));
         }
 
         for( int i=0; i<mSliderListf.size(); i++){
-            mSliderListf[i].updateBounds(slideL + mLineOffset*i, slideR + mLineOffset*i);
+            mSliderListf[i].updateBounds(slideL + mLineOffset*float(i), slideR + mLineOffset*float(i));
         }
 	}
 
-	void PretzelSlider::mouseDown(const Vec2i &pos){
+	void PretzelSlider::mouseDown(const vec2 &pos){
 		if (mBounds.contains(pos - mOffset)){
             for( auto it=mSliderListi.begin(); it!=mSliderListi.end(); ++it){
                 it->mouseDown( pos - mOffset );
@@ -227,7 +227,7 @@ namespace Pretzel{
         }
 	}
 
-	void PretzelSlider::mouseMoved(const ci::Vec2i &pos){
+	void PretzelSlider::mouseMoved(const ci::vec2 &pos){
         if (mBounds.contains(pos - mOffset)){
             for( auto it=mSliderListi.begin(); it!=mSliderListi.end(); ++it){
                 it->mouseMoved( pos - mOffset );
@@ -238,7 +238,7 @@ namespace Pretzel{
         }
 	}
 
-	void PretzelSlider::mouseDragged(const Vec2i &pos){
+	void PretzelSlider::mouseDragged(const vec2 &pos){
         for( auto it=mSliderListi.begin(); it!=mSliderListi.end(); ++it){
             it->mouseDragged( pos - mOffset );
         }
@@ -246,7 +246,7 @@ namespace Pretzel{
             it->mouseDragged( pos - mOffset );
         }
 	}
-	void PretzelSlider::mouseUp(const Vec2i &pos){
+	void PretzelSlider::mouseUp(const vec2 &pos){
         for( auto it=mSliderListi.begin(); it!=mSliderListi.end(); ++it){
             it->mouseUp( pos - mOffset );
         }
@@ -260,25 +260,25 @@ namespace Pretzel{
 			gl::translate(mOffset);
 
             if( mSliderListf.size() > 1 ){
-                mGlobal->renderText(mSliderListf.front().getLabel(), mBounds.getUpperLeft() + Vec2i(12, 1));
+                mGlobal->renderText(mSliderListf.front().getLabel(), mBounds.getUpperLeft() + vec2(12, 1));
                 
                 std::string sValues = "";
                 int i=0;
                 for( auto it=mSliderListf.begin(); it!=mSliderListf.end(); it++){
-                    if(i==0) mGlobal->renderText("x", Vec2f(12, 0 + 13) );
-                    if(i==1) mGlobal->renderText("y", Vec2f(12, 15*i + 13) );
-                    if(i==2) mGlobal->renderText("z", Vec2f(12, 15*i + 13) );
+                    if(i==0) mGlobal->renderText("x", vec2(12, 0 + 13) );
+                    if(i==1) mGlobal->renderText("y", vec2(12, 15*i + 13) );
+                    if(i==2) mGlobal->renderText("z", vec2(12, 15*i + 13) );
                     it->draw();
                     
                     sValues += mGlobal->to_string_with_precision( it->getValue() ) + ", ";
                     ++i;
                 }
                 sValues = sValues.substr(0, sValues.length()-2);
-                mGlobal->renderTextRight( sValues, mBounds.getUpperRight() + Vec2i(-12, 1));
+                mGlobal->renderTextRight( sValues, mBounds.getUpperRight() + vec2(-12, 1));
             }else{
                 for( auto it=mSliderListf.begin(); it!=mSliderListf.end(); ++it){
-                    mGlobal->renderText(it->getLabel(), mBounds.getUpperLeft() + Vec2i(12, 1));
-                    mGlobal->renderTextRight( mGlobal->to_string_with_precision( it->getValue() ), mBounds.getUpperRight() + Vec2i(-12, 1));
+                    mGlobal->renderText(it->getLabel(), mBounds.getUpperLeft() + vec2(12, 1));
+                    mGlobal->renderTextRight( mGlobal->to_string_with_precision( it->getValue() ), mBounds.getUpperRight() + vec2(-12, 1));
                     it->draw();
                 }
             }
@@ -287,8 +287,8 @@ namespace Pretzel{
                 
             }else{
                 for( auto it=mSliderListi.begin(); it!=mSliderListi.end(); ++it){
-                    mGlobal->renderText(it->getLabel(), mBounds.getUpperLeft() + Vec2i(12, 1));
-                    mGlobal->renderTextRight( to_string(it->getValue()), mBounds.getUpperRight() + Vec2i(-12, 1));
+                    mGlobal->renderText(it->getLabel(), mBounds.getUpperLeft() + vec2(12, 1));
+                    mGlobal->renderTextRight( to_string(it->getValue()), mBounds.getUpperRight() + vec2(-12, 1));
                     it->draw();
                 }
             }

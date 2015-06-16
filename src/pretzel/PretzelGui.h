@@ -8,7 +8,8 @@
 
 #pragma once
 
-#include "cinder/app/AppNative.h"
+#include "cinder/app/App.h"
+#include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
 #include "cinder/ImageIo.h"
 #include "Resources.h"
@@ -28,16 +29,21 @@
 #include "modules/PretzelColorPicker.h"
 
 namespace Pretzel{
+    class PretzelGui;
+    typedef std::shared_ptr<PretzelGui> PretzelGuiRef;
+    
 	class PretzelGui : public ScrollPane {
-        
-	public:
+	  public:
 		PretzelGui(std::string title = "");
 		PretzelGui(std::string title, int width, int height);
         ~PretzelGui();
         
+        static PretzelGuiRef create(std::string title = ""){ return std::make_shared<PretzelGui>(title); }
+        static PretzelGuiRef create(std::string title, int width, int height){ return std::make_shared<PretzelGui>(title, width,height); }
+        
 		void draw();
-		void setSize(ci::Vec2i size);
-		void setPos(const ci::Vec2i &pos);
+		void setSize(ci::vec2 size);
+		void setPos(const ci::vec2 &pos);
 		void minimize(bool doMinimize = true);
 		void setVisible(bool visible);
 		void toggleVisible();
@@ -50,8 +56,8 @@ namespace Pretzel{
 		void addLabel(std::string labelText);
 		void addSlider(std::string label, float *variable, float min, float max);
 		void addSlider(std::string label, int *variable, int min, int max);
-        void addSlider(std::string label, ci::Vec2f *variable, ci::Vec2f min, ci::Vec2f max);
-        void addSlider(std::string label, ci::Vec3f *variable, ci::Vec3f min, ci::Vec3f max);
+        void addSlider(std::string label, ci::vec2 *variable, ci::vec2 min, ci::vec2 max);
+        void addSlider(std::string label, ci::vec3 *variable, ci::vec3 min, ci::vec3 max);
         void addSaveLoad();
 		void addToggle(std::string label, bool *value);
 		void addTextField(std::string label, std::string *variable, bool editable = true);
@@ -67,14 +73,14 @@ namespace Pretzel{
             mWidgetList.push_back( newButton );
 		}
 
-	private:
+	  private:
 		void init(std::string title = "");
         void connectSignals();
         void disconnectSignals();
         void onSettingsLoaded();
 
 		// mouse events
-		boost::signals2::scoped_connection  mMouseBeganCallBack,
+        ci::signals::Connection  mMouseBeganCallBack,
 			mMouseDragCallBack,
 			mMouseEndCallBack,
 			mMouseMovedCallBack,
@@ -93,8 +99,8 @@ namespace Pretzel{
 		bool			bDragging;
 		bool			bResizing;
 
-		ci::Vec2f		mMouseOffset;
-		ci::Vec2f		mResizeStartSize;
+		ci::vec2		mMouseOffset;
+		ci::vec2		mResizeStartSize;
 
 		ci::Rectf		mResizeRect;
 

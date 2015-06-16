@@ -65,11 +65,11 @@ namespace Pretzel{
         
         int boxW = 36, boxH = 19;
         mColorPickRect = Rectf( mBounds.x2 - boxW, 0, mBounds.x2, boxH );
-        mColorPickRect.offset( Vec2i(-10, -1) );
+        mColorPickRect.offset( vec2(-10, -1) );
         
         int swatchSize = 150;
         mColorSwatchRect = Rectf(mColorPickRect.x2 - swatchSize, mColorPickRect.y2, mColorPickRect.x2, mColorPickRect.y2 + swatchSize);
-        mColorSwatchRect.offset( Vec2f(-1,1) );
+        mColorSwatchRect.offset( vec2(-1,1) );
         
         Surface checkerSurf( mColorPickRect.getWidth(), mColorPickRect.getHeight(), false);
         ip::fill(&checkerSurf, Color(1,1,1) );
@@ -81,7 +81,7 @@ namespace Pretzel{
             int i = ((k/4)%2) * 4;
             for( ; i<mColorPickRect.getWidth(); i+=8){
                 Rectf tmp(0,0,4,4);
-                tmp.offset( Vec2f(i, k) );
+                tmp.offset( vec2(i, k) );
                 ip::fill(&checkerSurf, Color::gray(198.0/255.0), Area(tmp));
             }
         }
@@ -91,7 +91,7 @@ namespace Pretzel{
         mCrosshairPos = mColorSwatchRect.getUpperLeft();
     }
     
-    void PretzelColorPicker::mouseDown(const ci::Vec2i &pos){
+    void PretzelColorPicker::mouseDown(const ci::vec2 &pos){
         if( !bExpanded && mCollapsedRect.contains( pos - mOffset ) ){
             expand();
         }else if(bExpanded && mCollapsedRect.contains( pos - mOffset )){
@@ -101,33 +101,33 @@ namespace Pretzel{
         }
     }
     
-    void PretzelColorPicker::mouseDragged(const ci::Vec2i &pos){
+    void PretzelColorPicker::mouseDragged(const ci::vec2 &pos){
         if( bDragging ){
-            Vec2f localPos = pos - mOffset;;
+            vec2 localPos = pos - mOffset;;
             
-            Vec2f n;
+            vec2 n;
             n.x = ci::math<float>::clamp( (localPos.x - mColorSwatchRect.x1) / mColorSwatchRect.getWidth(), 0.0, 1.0);
             n.y = ci::math<float>::clamp( (localPos.y - mColorSwatchRect.y1) / mColorSwatchRect.getHeight(), 0.0, 1.0);
             
             mCrosshairPos = n;
             
-            Vec2i pxPos = Vec2f(mSwatchSurf.getSize()) * n;
+            vec2 pxPos = vec2(mSwatchSurf.getSize()) * n;
             if( bUseAlpha ){
-                mColorA->set( mSwatchSurf.getPixel( pxPos ) );
+                *mColorA = mSwatchSurf.getPixel( pxPos );
             }else{
                 ColorA tt = mSwatchSurf.getPixel(pxPos);
-                mColor->set( tt.r, tt.g, tt.b );
+                *mColor = Color( tt.r, tt.g, tt.b );
             }
         }
     }
     
-    void PretzelColorPicker::mouseUp(const ci::Vec2i &pos){
+    void PretzelColorPicker::mouseUp(const ci::vec2 &pos){
         if(bDragging){
             bDragging = false;
         }
     }
     
-    void PretzelColorPicker::mouseMoved(const ci::Vec2i &pos){
+    void PretzelColorPicker::mouseMoved(const ci::vec2 &pos){
         
         if( mCollapsedRect.contains(pos-mOffset) ){
             bHover = true;
@@ -144,16 +144,16 @@ namespace Pretzel{
         }
     }
     
-    void PretzelColorPicker::updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds){
+    void PretzelColorPicker::updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds){
         BasePretzel::updateBounds(offset, parentBounds);
         
         int boxW = 36, boxH = 19;
         mColorPickRect = Rectf( mBounds.x2 - boxW, 0, mBounds.x2, boxH );
-        mColorPickRect.offset( Vec2i(-10, -1) );
+        mColorPickRect.offset( vec2(-10, -1) );
         
         int swatchSize = 150;
         mColorSwatchRect = Rectf(mColorPickRect.x2 - swatchSize, mColorPickRect.y2, mColorPickRect.x2, mColorPickRect.y2 + swatchSize);
-        mColorSwatchRect.offset( Vec2f(-1,1) );
+        mColorSwatchRect.offset( vec2(-1,1) );
         
         mCollapsedRect.set(0, 0, mBounds.getWidth(), 23);
         mExpandedRect.set(0, 0, mBounds.getWidth(), 150+23);
@@ -185,14 +185,14 @@ namespace Pretzel{
     
 	void PretzelColorPicker::draw() {
 		gl::pushMatrices(); {
-			gl::translate(mOffset + Vec2i(0,2));
+			gl::translate(mOffset + vec2(0,2));
             
             // TOP ------------------------------------------------------------
             
             gl::color(1,1,1,1);
             if( mArrowTex ){
                 gl::pushMatrices();{
-                    gl::translate( Vec2i(14, 8) );
+                    gl::translate( vec2(14, 8) );
                     gl::rotate( mArrowRotation );
                     gl::translate( floor(mArrowTex->getWidth() * -0.5), floor(mArrowTex->getHeight() * -0.5) );
                     gl::draw( mArrowTex );
@@ -211,12 +211,14 @@ namespace Pretzel{
             gl::color( mGlobal->P_OUTLINE_COLOR );
             gl::drawStrokedRect(mColorPickRect);
 
-			mGlobal->renderText(mLabel, Vec2i(25, 1));
+			mGlobal->renderText(mLabel, vec2(25, 1));
             
             // BOTTOM ------------------------------------------------------------
             if(bExpanded){
                 gl::draw(mSwatchTex, mColorSwatchRect);
-                gl::draw(mCrosshairTex, mColorSwatchRect.getUpperLeft() + mCrosshairPos * mColorSwatchRect.getSize() - (mCrosshairTex->getSize()*0.5) );
+                gl::draw(mCrosshairTex,
+                         mColorSwatchRect.getUpperLeft() + (mCrosshairPos * mColorSwatchRect.getSize()) -
+                         ( vec2(mCrosshairTex->getSize()) * 0.5f ) ); //* 0.5f
             }
             
 		}gl::popMatrices();

@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "cinder/app/AppNative.h"
+#include "cinder/app/App.h"
 #include "cinder/gl/Texture.h"
 #include "cinder/Timeline.h"
 #include "cinder/ip/Fill.h"
@@ -23,12 +23,12 @@ namespace Pretzel {
 		PretzelColorPicker(BasePretzel *parent, std::string label, ci::ColorA   *value);
         
 		virtual void draw();
-		void updateBounds(const ci::Vec2f &offset, const ci::Rectf &parentBounds);
+		void updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds);
         
-		virtual void mouseDown(const ci::Vec2i &pos);
-        virtual void mouseDragged(const ci::Vec2i &pos);
-        virtual void mouseUp(const ci::Vec2i &pos);
-        virtual void mouseMoved(const ci::Vec2i &pos);
+		virtual void mouseDown(const ci::vec2 &pos);
+        virtual void mouseDragged(const ci::vec2 &pos);
+        virtual void mouseUp(const ci::vec2 &pos);
+        virtual void mouseMoved(const ci::vec2 &pos);
         
 	private:
         void setup();
@@ -52,7 +52,7 @@ namespace Pretzel {
         ci::gl::TextureRef  mSwatchTex;
         ci::gl::TextureRef  mCheckerPat;
         
-        ci::Vec2f           mCrosshairPos;
+        ci::vec2           mCrosshairPos;
         
         bool                bHover;
         bool                bUseAlpha;
