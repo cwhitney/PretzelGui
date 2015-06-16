@@ -29,12 +29,17 @@
 #include "modules/PretzelColorPicker.h"
 
 namespace Pretzel{
+    class PretzelGui;
+    typedef std::shared_ptr<PretzelGui> PretzelGuiRef;
+    
 	class PretzelGui : public ScrollPane {
-        
-	public:
+	  public:
 		PretzelGui(std::string title = "");
 		PretzelGui(std::string title, int width, int height);
         ~PretzelGui();
+        
+        static PretzelGuiRef create(std::string title = ""){ return std::make_shared<PretzelGui>(title); }
+        static PretzelGuiRef create(std::string title, int width, int height){ return std::make_shared<PretzelGui>(title, width,height); }
         
 		void draw();
 		void setSize(ci::vec2 size);
@@ -68,7 +73,7 @@ namespace Pretzel{
             mWidgetList.push_back( newButton );
 		}
 
-	private:
+	  private:
 		void init(std::string title = "");
         void connectSignals();
         void disconnectSignals();

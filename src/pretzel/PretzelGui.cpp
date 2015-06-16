@@ -231,42 +231,42 @@ namespace Pretzel{
 	}
     
 	// ---------------------------------------------------------
-	void PretzelGui::draw(){
+	void PretzelGui::draw()
+    {
 		if (!bVisible) return;
-        
-        
-        gl::disableDepthRead();
-		// -----------------------------------------------------------
-		gl::enableAlphaBlending();
-		gl::color(Color(1, 1, 1));
-        
-		if (bDrawMinimized){
-			gl::pushMatrices(); {
-				gl::translate(mGlobalOffset);
-				mDefaultLabel->draw();
-                
-				gl::color(mGlobal->P_GUI_BORDER);
-				gl::drawStrokedRect(mDefaultLabel->getBounds());
-			}gl::popMatrices();
-		}
-		else{
-			gl::pushMatrices(); {
-				gl::translate(mGlobalOffset);
-				ScrollPane::draw();
-                
-				gl::color(mGlobal->P_TAB_COLOR);
-				gl::drawSolidRect(Rectf(mBounds.getLowerLeft() - vec2(0, 10), mBounds.getLowerRight()));
-                
-				gl::color(mGlobal->P_BG_COLOR);
-				gl::drawSolidTriangle(mResizeRect.getLowerLeft(), mResizeRect.getUpperRight(), mResizeRect.getLowerRight());
-                
-				gl::color(mGlobal->P_GUI_BORDER);
-                gl::drawLine( mResizeRect.getUpperRight() - vec2(mBounds.getWidth(), 0), mResizeRect.getUpperRight() );
-				gl::drawStrokedRect( Rectf(mBounds.x1, mBounds.y1, mBounds.x2, mBounds.y2) );
-			}gl::popMatrices();
-		}
-        gl::enableDepthRead();
 
+        gl::ScopedGlslProg( gl::getStockShader(ci::gl::ShaderDef().color() ) );
+        gl::ScopedDepth( false );
+        gl::ScopedBlendAlpha();
+      
+        // -----------------------------------------------------------
+        gl::color(Color(1, 1, 1));
+        
+        if (bDrawMinimized){
+            gl::pushMatrices(); {
+                gl::translate(mGlobalOffset);
+                mDefaultLabel->draw();
+                
+                gl::color(mGlobal->P_GUI_BORDER);
+                gl::drawStrokedRect(mDefaultLabel->getBounds());
+            }gl::popMatrices();
+        }
+        else{
+            gl::pushMatrices(); {
+                gl::translate(mGlobalOffset);
+                ScrollPane::draw();
+                
+                gl::color(mGlobal->P_TAB_COLOR);
+                gl::drawSolidRect(Rectf(mBounds.getLowerLeft() - vec2(0, 10), mBounds.getLowerRight()));
+                
+                gl::color(mGlobal->P_BG_COLOR);
+                gl::drawSolidTriangle(mResizeRect.getLowerLeft(), mResizeRect.getUpperRight(), mResizeRect.getLowerRight());
+                
+                gl::color(mGlobal->P_GUI_BORDER);
+                gl::drawLine( mResizeRect.getUpperRight() - vec2(mBounds.getWidth(), 0), mResizeRect.getUpperRight() );
+                gl::drawStrokedRect( Rectf(mBounds.x1, mBounds.y1, mBounds.x2, mBounds.y2) );
+            }gl::popMatrices();
+        }
 	}
     
 	// --------------------------------------------------

@@ -12,6 +12,11 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+#if defined( CINDER_MAC )
+#import <AppKit/AppKit.h>
+#endif
+
+
 namespace Pretzel {
 	PretzelGlobal* PretzelGlobal::mInstance = NULL;
 
@@ -86,6 +91,7 @@ namespace Pretzel {
     
     void PretzelGlobal::setCursor( CursorType type ){
 #if defined( CINDER_MAC )
+        
         switch(type){
             case CursorType::ARROW :
                 [[NSCursor arrowCursor] set];
