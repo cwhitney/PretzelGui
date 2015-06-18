@@ -7,7 +7,6 @@ using namespace std;
 namespace Pretzel{
 	PretzelLabel::PretzelLabel(BasePretzel *parent, std::string labelText) : BasePretzel(){
 		mMessage = labelText;
-		//boost::to_upper(mMessage);
 
 		mBounds.set(0, 0, 200, 23);
 		parent->registerPretzel(this);

@@ -3,7 +3,6 @@
 #include "pretzel/PretzelGlobal.h"
 #include "components/BasePretzel.h"
 #include "cinder/app/App.h"
-#include <boost/signals2.hpp>
 
 namespace Pretzel{
 	class PretzelButton : public BasePretzel{
@@ -17,9 +16,8 @@ namespace Pretzel{
         virtual void mouseUp(const ci::vec2 &pos);
 		virtual void mouseMoved(const ci::vec2 &pos);
 
-		boost::signals2::signal<void(void)>	signalOnPress;
-        
-        boost::signals2::scoped_connection  mConnection;
+		ci::signals::Signal<void(void)>	signalOnPress;
+		ci::signals::ScopedConnection  mConnection;
 	private:
 		std::string		mLabelText;
 		ci::Rectf		mButtonBounds;

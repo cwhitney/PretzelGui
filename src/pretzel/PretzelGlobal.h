@@ -14,7 +14,12 @@
 #include "cinder/gl/TextureFont.h"
 #include "cinder/Json.h"
 #include "cinder/ImageIo.h"
-#include <boost/signals2.hpp>
+
+#if defined( CINDER_MAC )
+#import <AppKit/AppKit.h>
+#elif defined( CINDER_APP_MSW )
+#include <Windows.h>
+#endif
 
 #include "Resources.h"
 
@@ -62,8 +67,8 @@ namespace Pretzel {
         ci::Surface             mSkinSurf;
 		ci::gl::TextureRef		mSkinTex;
         
-        boost::signals2::signal<void(void)>	signalOnSettingsSave;
-        boost::signals2::signal<void(void)>	signalOnSettingsLoad;
+        ci::signals::Signal<void(void)>	signalOnSettingsSave;
+		ci::signals::Signal<void(void)>	signalOnSettingsLoad;
 
 		void renderText(const std::string text, ci::vec2 pos = ci::vec2(0,0));
 		void renderTextRight(const std::string text, ci::vec2 pos = ci::vec2(0,0));
