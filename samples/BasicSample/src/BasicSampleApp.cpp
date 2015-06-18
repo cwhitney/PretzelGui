@@ -1,9 +1,5 @@
 #include "cinder/app/App.h"
-
-#if CINDER_VERSION >= 807
-    #include "cinder/app/RendererGl.h"
-#endif
-
+#include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 #include "cinder/Rand.h"
 
@@ -22,7 +18,7 @@ public:
     void draw() override;
     void keyDown(KeyEvent event) override;
     
-    Pretzel::PretzelGui *gui;
+    Pretzel::PretzelGuiRef gui;
     float mRadius;
     float mOpacity;
     
@@ -38,14 +34,6 @@ public:
     
 };
 
-
-void BasicSampleApp::prepareSettings(Settings *settings) {
-    settings->setWindowSize(vec2(1024, 768));
-    settings->setFrameRate(60.0);
-    settings->setHighDensityDisplayEnabled();
-}
-
-
 void BasicSampleApp::setup()
 {
     Rand::randomize();
@@ -57,9 +45,9 @@ void BasicSampleApp::setup()
     mCol = Color::white();
     mBubble = "Hello, world!";
     
-    gui = new Pretzel::PretzelGui("Circle settings");
+    gui = Pretzel::PretzelGui::create("Circle settings");
     
-    // Sliders can take ints, float, Vec2, and Vec3
+    // Sliders can take ints, float, vec2, and vec3
     gui->addSlider("Position", &mPosition, vec2(0,0), getWindowSize());
     gui->addLabel("Other Settings");
     gui->addButton("Random Color", &BasicSampleApp::onButtonPress, this);
@@ -121,5 +109,8 @@ void BasicSampleApp::draw()
     gui->draw();
 }
 
-CINDER_APP( BasicSampleApp, RendererGl, BasicSampleApp::prepareSettings )
-
+CINDER_APP(BasicSampleApp, RendererGl, [](App::Settings* settings){
+	settings->prepareWindow(Window::Format().size(1024, 768).title("PrezelGui :: BasicSample"));
+	settings->setFrameRate(60.0f);
+	settings->setHighDensityDisplayEnabled();
+})
