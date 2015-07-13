@@ -185,11 +185,8 @@ namespace Pretzel {
 		fs::path appPath = settingsPath;
 
 		if (appPath.string() == ""){
-#ifdef _WIN32
 			appPath = getAppPath() / "guiSettings";
-#else
-			appPath = getAppPath().parent_path() / "guiSettings";
-#endif
+
 			if (!fs::exists(appPath)){
 				console() << appPath << " does not exist" << endl;
 				fs::create_directory(appPath);
@@ -263,11 +260,9 @@ namespace Pretzel {
 		fs::path loadPath = settingsPath;
 		if (loadPath.string() == ""){
 			
-#ifdef _WIN32
-			loadPath = getAppPath() / "guiSettings" / "settings.json";
-#else
-            loadPath = getAppPath().parent_path() / "guiSettings" / "settings.json";
-#endif
+
+        loadPath = getAppPath() / "guiSettings" / "settings.json";
+
 		}
 
 		if (!fs::exists(loadPath)){
