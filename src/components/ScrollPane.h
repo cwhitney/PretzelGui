@@ -29,16 +29,16 @@ namespace Pretzel {
         void updateChildrenBounds();
         
         float       mScrolledPct;
-        ci::vec2   mScrolledHandleAmt;
-        ci::vec2   mScrolledFrameAmt;
+        ci::vec2    mScrolledHandleAmt;
+        ci::vec2    mScrolledFrameAmt;
         
         float       mChildrenHeight;
-        bool        bCanScroll;
         
         ci::Rectf   mScrollHandle;
-        ci::vec2   mStartDragOffset;
+        ci::vec2    mStartDragOffset;
         
         bool        bDragging;
         bool        bHover;
+        bool        bCanScroll;
     };
 }

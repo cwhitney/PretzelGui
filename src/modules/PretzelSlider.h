@@ -11,7 +11,12 @@ namespace Pretzel {
     template<typename T>
     class PSliderT {
       public:
-        PSliderT(){};
+        PSliderT() :
+            mSliderPct(0.0),
+            bIsDragging(false),
+            mHandHover(false),
+            mPosOffset(0.0)
+        {};
         
         void setup(const std::string label, T *value, const T min, const T max, const ci::vec2 sliderLeft, const ci::vec2 sliderRight );
         

@@ -8,7 +8,7 @@ namespace Pretzel{
 
     // =========================================================================================================================================    
     template<typename T>
-    void PSliderT<T>::setup(const std::string label, T *value, const T min, const T max, ci::vec2 sliderLeft, ci::vec2 sliderRight ){
+    void PSliderT<T>::setup(const std::string label, T *value, const T min, const T max, ci::vec2 sliderLeft, ci::vec2 sliderRight ) {
         mLabelText = label;
         mValue = value;
         mMin = min;
