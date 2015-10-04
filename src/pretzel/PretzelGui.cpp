@@ -235,9 +235,9 @@ namespace Pretzel{
     {
 		if (!bVisible) return;
 
-		auto sba = gl::ScopedBlendAlpha();
-        auto sgp = gl::ScopedGlslProg( gl::getStockShader(ci::gl::ShaderDef().color() ) );
-        auto sd  = gl::ScopedDepth( false );
+		gl::ScopedBlendAlpha();
+        gl::ScopedGlslProg( gl::getStockShader(ci::gl::ShaderDef().color() ) );
+        gl::ScopedDepth( false );
         
       
         // -----------------------------------------------------------
