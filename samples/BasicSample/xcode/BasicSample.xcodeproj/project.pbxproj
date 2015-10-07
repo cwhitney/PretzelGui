@@ -33,6 +33,7 @@
 		B5B1A6A5B4E74B2E8F48CAA3 /* BasePretzel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF5EB86B88F341758DB12143 /* BasePretzel.cpp */; };
 		BBD67D99EB894B14A1725D7A /* PretzelRow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA37DB80280246EEB6ECD22F /* PretzelRow.cpp */; };
 		C8C08E8BE096407B8BD3F130 /* ScrollPane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79AA26ECD54045C8B5511AF0 /* ScrollPane.cpp */; };
+		D7385DE01BC0D046005A3CEF /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7385DDF1BC0D046005A3CEF /* IOKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		B573E2176B0A422486392874 /* BasicSample_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = BasicSample_Prefix.pch; sourceTree = "<group>"; };
 		BA37DB80280246EEB6ECD22F /* PretzelRow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = PretzelRow.cpp; path = ../../../src/components/PretzelRow.cpp; sourceTree = "<group>"; };
 		BDA94D59492A4948B6B240F4 /* PretzelTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelTextField.h; path = ../../../src/modules/PretzelTextField.h; sourceTree = "<group>"; };
+		D7385DDF1BC0D046005A3CEF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		DF5EB86B88F341758DB12143 /* BasePretzel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = BasePretzel.cpp; path = ../../../src/components/BasePretzel.cpp; sourceTree = "<group>"; };
 		DF650A20DBC94898BB109BC2 /* PretzelLabel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = PretzelLabel.cpp; path = ../../../src/modules/PretzelLabel.cpp; sourceTree = "<group>"; };
 		E34A0291F62D4335ACF5CDCD /* PretzelTextField.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = PretzelTextField.cpp; path = ../../../src/modules/PretzelTextField.cpp; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7385DE01BC0D046005A3CEF /* IOKit.framework in Frameworks */,
 				269618081A37B5BF00665126 /* AVFoundation.framework in Frameworks */,
 				269618061A37B5B400665126 /* CoreMedia.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
@@ -185,6 +188,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7385DDF1BC0D046005A3CEF /* IOKit.framework */,
 				269618071A37B5BF00665126 /* AVFoundation.framework */,
 				269618051A37B5B400665126 /* CoreMedia.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
