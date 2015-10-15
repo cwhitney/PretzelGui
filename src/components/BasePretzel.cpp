@@ -12,12 +12,12 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-namespace Pretzel{
+namespace pretzel{
 	BasePretzel::BasePretzel() : mParent(NULL) {
 		mOffset = vec2(0, 0);
 		mBounds.set(0, 0, 0, 0);
 
-		mGlobal = Pretzel::PretzelGlobal::getInstance();
+		mGlobal = pretzel::PretzelGlobal::getInstance();
         type = WidgetType::UNINITALIZED;
 	}
     

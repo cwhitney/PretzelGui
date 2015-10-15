@@ -11,7 +11,7 @@
 #include "cinder/app/App.h"
 #include "pretzel/PretzelGlobal.h"
 
-namespace Pretzel{
+namespace pretzel{
 	class BasePretzel {
         
 	public:
@@ -57,6 +57,6 @@ namespace Pretzel{
         
         
 
-		Pretzel::PretzelGlobal		*mGlobal;
+		pretzel::PretzelGlobal		*mGlobal;
 	};
 }

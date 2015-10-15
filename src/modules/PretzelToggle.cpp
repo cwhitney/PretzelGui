@@ -4,7 +4,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-namespace Pretzel{
+namespace pretzel{
 	PretzelToggle::PretzelToggle(BasePretzel *parent, std::string label, bool *value) : BasePretzel() {
 		mBounds.set(0, 0, 200, 23);
         bHover = false;

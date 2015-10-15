@@ -5,7 +5,7 @@
 #include "pretzel/PretzelGlobal.h"
 #include "components/BasePretzel.h"
 
-namespace Pretzel {
+namespace pretzel {
     
     // -----------------------------------------------------------------------------------------------------
     template<typename T>

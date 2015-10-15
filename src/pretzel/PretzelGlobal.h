@@ -17,13 +17,13 @@
 
 #if defined( CINDER_MAC )
 #import <AppKit/AppKit.h>
-#elif defined( CINDER_APP_MSW )
+#elif defined( CINDER_MSW )
 #include <Windows.h>
 #endif
 
 #include "Resources.h"
 
-namespace Pretzel {
+namespace pretzel {
 
     enum CursorType {
         ARROW = 0,

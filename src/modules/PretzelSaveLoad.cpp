@@ -4,7 +4,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-namespace Pretzel{
+namespace pretzel{
 	PretzelSaveLoad::PretzelSaveLoad(BasePretzel *parent) : BasePretzel() {
 		mBounds.set(0, 0, 200, 23);
 		parent->registerPretzel(this);

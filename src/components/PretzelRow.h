@@ -13,7 +13,7 @@
 
 #include "pretzel/PretzelGlobal.h"
 #include "components/BasePretzel.h"
-namespace Pretzel{
+namespace pretzel{
 	class PretzelRow : public BasePretzel {
 	public:
 		PretzelRow(BasePretzel *base, int width, int height);

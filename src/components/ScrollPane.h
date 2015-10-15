@@ -13,7 +13,7 @@
 #include "components/PretzelRow.h"
 #include "components/BasePretzel.h"
 
-namespace Pretzel {
+namespace pretzel {
 
     class ScrollPane : public PretzelRow {
       public:

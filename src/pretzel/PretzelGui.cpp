@@ -12,7 +12,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-namespace Pretzel{
+namespace pretzel{
 	PretzelGui::PretzelGui(std::string title) : ScrollPane(NULL, 200, 500) { init(title); }
 	PretzelGui::PretzelGui(std::string title, int width, int height) : ScrollPane(NULL, width, height){ init(title); }
     //	PretzelGui::PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height) : ScrollPane(NULL, width, height){ init(title); }
@@ -235,9 +235,9 @@ namespace Pretzel{
     {
 		if (!bVisible) return;
 
-		auto sba = gl::ScopedBlendAlpha();
-        auto sgp = gl::ScopedGlslProg( gl::getStockShader(ci::gl::ShaderDef().color() ) );
-        auto sd  = gl::ScopedDepth( false );
+		gl::ScopedBlendAlpha();
+        gl::ScopedGlslProg sgp( gl::getStockShader(ci::gl::ShaderDef().color() ) );
+        gl::ScopedDepth sd( false );
         
       
         // -----------------------------------------------------------

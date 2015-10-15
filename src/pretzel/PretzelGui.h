@@ -28,7 +28,7 @@
 #include "modules/PretzelTextField.h"
 #include "modules/PretzelColorPicker.h"
 
-namespace Pretzel{
+namespace pretzel{
     class PretzelGui;
     typedef std::shared_ptr<PretzelGui> PretzelGuiRef;
     

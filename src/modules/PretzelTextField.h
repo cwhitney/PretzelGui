@@ -13,7 +13,7 @@
  - fire signals on start and end editing, like iOS
 */
 
-namespace Pretzel{
+namespace pretzel{
 	class PretzelTextField : public BasePretzel{
 	public:
 		PretzelTextField(BasePretzel *parent, std::string labelText, std::string *variable, bool editable = true);

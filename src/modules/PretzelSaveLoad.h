@@ -4,7 +4,7 @@
 #include "components/BasePretzel.h"
 #include "cinder/app/App.h"
 
-namespace Pretzel{
+namespace pretzel{
 	class PretzelSaveLoad : public BasePretzel {
 	public:
 		PretzelSaveLoad(BasePretzel *parent);

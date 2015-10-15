@@ -4,14 +4,14 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-namespace Pretzel{
+namespace pretzel{
 	PretzelLabel::PretzelLabel(BasePretzel *parent, std::string labelText) : BasePretzel(){
 		mMessage = labelText;
 
 		mBounds.set(0, 0, 200, 23);
 		parent->registerPretzel(this);
 
-		mGlobal = Pretzel::PretzelGlobal::getInstance();
+		mGlobal = pretzel::PretzelGlobal::getInstance();
 	}
 
 	void PretzelLabel::updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds){

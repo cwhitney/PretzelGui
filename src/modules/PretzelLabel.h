@@ -3,7 +3,7 @@
 #include "pretzel/PretzelGlobal.h"
 #include "components/BasePretzel.h"
 #include "cinder/app/App.h"
-namespace Pretzel{
+namespace pretzel{
 	class PretzelLabel : public BasePretzel {
 	public:
 		PretzelLabel(BasePretzel *parent, std::string labelText);

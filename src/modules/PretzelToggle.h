@@ -6,7 +6,7 @@
 #include "pretzel/PretzelGlobal.h"
 #include "components/BasePretzel.h"
 
-namespace Pretzel {
+namespace pretzel {
 	class PretzelToggle : public BasePretzel {
 	public:
 		PretzelToggle(BasePretzel *parent, std::string label, bool *value);

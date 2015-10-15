@@ -16,7 +16,7 @@ using namespace std;
 #import <AppKit/AppKit.h>
 #endif
 
-namespace Pretzel {
+namespace pretzel {
 	PretzelGlobal* PretzelGlobal::mInstance = NULL;
 
 	PretzelGlobal * PretzelGlobal::getInstance(){
@@ -38,7 +38,7 @@ namespace Pretzel {
 
 	void PretzelGlobal::renderTextInternal(std::string text, ci::vec2 pos, int align){
 		if (!guiFont){
-#ifdef _WIN32
+#if defined( CINDER_MSW )
 			ci::Font tmp("Arial", 16);
 #else
 			ci::Font tmp("Arial", 12);
@@ -46,7 +46,7 @@ namespace Pretzel {
 			guiFont = ci::gl::TextureFont::create(tmp);
 			emHeight = floor( guiFont->measureString("M").y );
 		}
-#ifdef TARGET_OS_MAC
+#if defined( CINDER_MAC )
         pos -= vec2(0, 2);
 #endif
 

@@ -12,7 +12,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-namespace Pretzel{
+namespace pretzel{
 	PretzelRow::PretzelRow(BasePretzel *base, int width, int height) : BasePretzel() {
 		initPretzel(base, width, height);
 	}

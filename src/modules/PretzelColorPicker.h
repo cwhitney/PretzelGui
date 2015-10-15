@@ -15,7 +15,7 @@
 
 #include "components/BasePretzel.h"
 
-namespace Pretzel {
+namespace pretzel {
     
 	class PretzelColorPicker : public BasePretzel {
 	public:

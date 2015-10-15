@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		006D720419952D00008149E2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006D720219952D00008149E2 /* AVFoundation.framework */; };
+		006D720519952D00008149E2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006D720319952D00008149E2 /* CoreMedia.framework */; };
+		0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0091D8F80E81B9330029341E /* OpenGL.framework */; };
+		00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784AF0FF439BC000DE1D7 /* Accelerate.framework */; };
+		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
+		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
+		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
+		00B9955A1B128DF400A5C623 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995581B128DF400A5C623 /* IOKit.framework */; };
+		00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995591B128DF400A5C623 /* IOSurface.framework */; };
+		12C20B4270E54E5EA4491958 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5169E4C3AB884FB287E33069 /* CinderApp.icns */; };
+		18234155A7384E52B4E8977E /* PretzelSaveLoad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E38368EA86F243C6B00826BC /* PretzelSaveLoad.cpp */; };
+		1CFE6DE1640A494CBA70AEA9 /* PretzelGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0550210FB9BC4D3483188B54 /* PretzelGui.cpp */; };
+		4E4188204253481088ACE6BA /* PretzelToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C128077E71B4E048DAC498F /* PretzelToggle.cpp */; };
+		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
+		65E5742959FA477F8EE2C2C9 /* PretzelButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D10960C35240A8B5C10D56 /* PretzelButton.cpp */; };
+		6FA0443B35A043EFA31D9544 /* color-picker.png in Resources */ = {isa = PBXBuildFile; fileRef = C6A80DC377D3446DA59BF690 /* color-picker.png */; };
+		76BE2FD510AB4CDABE1B755F /* BasePretzel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D2DA894044CC82EFE6F4 /* BasePretzel.cpp */; };
+		87BCFC993552484189E9834C /* ScrollPane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0668BB1E14A342948717B397 /* ScrollPane.cpp */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C3FD1F0AB68242A186EEF7A4 /* default_skin.png in Resources */ = {isa = PBXBuildFile; fileRef = EF781F1FE2B64FB18A0237DB /* default_skin.png */; };
+		C6125ADE05984A96823BA986 /* PretzelSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8DE0C276F504B0C83F33ED7 /* PretzelSlider.cpp */; };
+		CFF9C3F856CB4A0089C2F100 /* MultiGuiSampleApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6558D94930E64D83A04ABAB0 /* MultiGuiSampleApp.cpp */; };
+		D54CF6D899204834BECAFA88 /* PretzelGlobal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEFCBC30B017466490F91276 /* PretzelGlobal.cpp */; };
+		D71B45D6599C45B485C9B469 /* PretzelRow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11C8E973002F4BE59BD9A48E /* PretzelRow.cpp */; };
+		DF13118B59C04388A0C6D01D /* PretzelLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2C6D86A8F4FCF82997E45 /* PretzelLabel.cpp */; };
+		FA0B9304CFB64E67AEB0E232 /* PretzelColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19E939C2AA1C4D5389994ADE /* PretzelColorPicker.cpp */; };
+		FDC266C5332745C592464CD0 /* PretzelTextField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1596CC5212304C5FAC9DB3A1 /* PretzelTextField.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		006D720219952D00008149E2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		006D720319952D00008149E2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		0091D8F80E81B9330029341E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		00B784AF0FF439BC000DE1D7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		00B784B10FF439BC000DE1D7 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		00B995581B128DF400A5C623 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		00B995591B128DF400A5C623 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
+		04D10960C35240A8B5C10D56 /* PretzelButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = PretzelButton.cpp; path = ../../../src/modules/PretzelButton.cpp; sourceTree = "<group>"; };
+		0550210FB9BC4D3483188B54 /* PretzelGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = PretzelGui.cpp; path = ../../../src/pretzel/PretzelGui.cpp; sourceTree = "<group>"; };
+		0668BB1E14A342948717B397 /* ScrollPane.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = ScrollPane.cpp; path = ../../../src/components/ScrollPane.cpp; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		11C8E973002F4BE59BD9A48E /* PretzelRow.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = PretzelRow.cpp; path = ../../../src/components/PretzelRow.cpp; sourceTree = "<group>"; };
+		1596CC5212304C5FAC9DB3A1 /* PretzelTextField.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = PretzelTextField.cpp; path = ../../../src/modules/PretzelTextField.cpp; sourceTree = "<group>"; };
+		19E939C2AA1C4D5389994ADE /* PretzelColorPicker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = PretzelColorPicker.cpp; path = ../../../src/modules/PretzelColorPicker.cpp; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2E575707048D4A34AB3B9387 /* MultiGuiSample_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = MultiGuiSample_Prefix.pch; sourceTree = "<group>"; };
+		32892806FD604CCEB12B5988 /* BasePretzel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BasePretzel.h; path = ../../../src/components/BasePretzel.h; sourceTree = "<group>"; };
+		32A5EE722F51409B977C89F1 /* PretzelTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelTextField.h; path = ../../../src/modules/PretzelTextField.h; sourceTree = "<group>"; };
+		365A3EAD9A3A4373A481A738 /* ScrollPane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ScrollPane.h; path = ../../../src/components/ScrollPane.h; sourceTree = "<group>"; };
+		369C4ED7F0E14EF1A9484C72 /* PretzelColorPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelColorPicker.h; path = ../../../src/modules/PretzelColorPicker.h; sourceTree = "<group>"; };
+		4288BEBF8FFC4948BD23B8BD /* PretzelButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelButton.h; path = ../../../src/modules/PretzelButton.h; sourceTree = "<group>"; };
+		4AC2C6D86A8F4FCF82997E45 /* PretzelLabel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = PretzelLabel.cpp; path = ../../../src/modules/PretzelLabel.cpp; sourceTree = "<group>"; };
+		4C128077E71B4E048DAC498F /* PretzelToggle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = PretzelToggle.cpp; path = ../../../src/modules/PretzelToggle.cpp; sourceTree = "<group>"; };
+		4E847048E855442AB239A65D /* PretzelSaveLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelSaveLoad.h; path = ../../../src/modules/PretzelSaveLoad.h; sourceTree = "<group>"; };
+		5169E4C3AB884FB287E33069 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
+		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		57C74DE924F94DD4A2DBB0EE /* PretzelGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelGlobal.h; path = ../../../src/pretzel/PretzelGlobal.h; sourceTree = "<group>"; };
+		5BC4659421D249B3B146491B /* PretzelGui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelGui.h; path = ../../../src/pretzel/PretzelGui.h; sourceTree = "<group>"; };
+		6558D94930E64D83A04ABAB0 /* MultiGuiSampleApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = MultiGuiSampleApp.cpp; path = ../src/MultiGuiSampleApp.cpp; sourceTree = "<group>"; };
+		82FD6AC402E548E2828BA26A /* PretzelLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelLabel.h; path = ../../../src/modules/PretzelLabel.h; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* MultiGuiSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiGuiSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9067AE55FAA84426BF71EAE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CD8772D28494A3EBFA15793 /* PretzelSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelSlider.h; path = ../../../src/modules/PretzelSlider.h; sourceTree = "<group>"; };
+		A4915049E5FD4386BB7786FC /* PretzelRow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelRow.h; path = ../../../src/components/PretzelRow.h; sourceTree = "<group>"; };
+		B8DE0C276F504B0C83F33ED7 /* PretzelSlider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = PretzelSlider.cpp; path = ../../../src/modules/PretzelSlider.cpp; sourceTree = "<group>"; };
+		C61F39FEDD084BE6AEB987B1 /* PretzelToggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelToggle.h; path = ../../../src/modules/PretzelToggle.h; sourceTree = "<group>"; };
+		C6A80DC377D3446DA59BF690 /* color-picker.png */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; name = "color-picker.png"; path = "../../../resources/color-picker.png"; sourceTree = "<group>"; };
+		CEFCBC30B017466490F91276 /* PretzelGlobal.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = PretzelGlobal.cpp; path = ../../../src/pretzel/PretzelGlobal.cpp; sourceTree = "<group>"; };
+		D4C6D2DA894044CC82EFE6F4 /* BasePretzel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = BasePretzel.cpp; path = ../../../src/components/BasePretzel.cpp; sourceTree = "<group>"; };
+		E38368EA86F243C6B00826BC /* PretzelSaveLoad.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = PretzelSaveLoad.cpp; path = ../../../src/modules/PretzelSaveLoad.cpp; sourceTree = "<group>"; };
+		EF781F1FE2B64FB18A0237DB /* default_skin.png */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; name = default_skin.png; path = ../../../resources/default_skin.png; sourceTree = "<group>"; };
+		F5FC9469CE0A459995A5460C /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				006D720419952D00008149E2 /* AVFoundation.framework in Frameworks */,
+				006D720519952D00008149E2 /* CoreMedia.framework in Frameworks */,
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */,
+				5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */,
+				00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */,
+				00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */,
+				00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */,
+				00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */,
+				00B9955A1B128DF400A5C623 /* IOKit.framework in Frameworks */,
+				00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01B97315FEAEA392516A2CEA /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				68AAFA664EEC47EFA40A6AAD /* PretzelGUI */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
+		080E96DDFE201D6D7F000001 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				6558D94930E64D83A04ABAB0 /* MultiGuiSampleApp.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				006D720219952D00008149E2 /* AVFoundation.framework */,
+				006D720319952D00008149E2 /* CoreMedia.framework */,
+				00B784AF0FF439BC000DE1D7 /* Accelerate.framework */,
+				00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */,
+				00B784B10FF439BC000DE1D7 /* AudioUnit.framework */,
+				00B784B20FF439BC000DE1D7 /* CoreAudio.framework */,
+				5323E6B10EAFCA74003A9687 /* CoreVideo.framework */,
+				0091D8F80E81B9330029341E /* OpenGL.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				00B995581B128DF400A5C623 /* IOKit.framework */,
+				00B995591B128DF400A5C623 /* IOSurface.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* MultiGuiSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* MultiGuiSample */ = {
+			isa = PBXGroup;
+			children = (
+				01B97315FEAEA392516A2CEA /* Blocks */,
+				29B97315FDCFA39411CA2CEA /* Headers */,
+				080E96DDFE201D6D7F000001 /* Source */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = MultiGuiSample;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				F5FC9469CE0A459995A5460C /* Resources.h */,
+				2E575707048D4A34AB3B9387 /* MultiGuiSample_Prefix.pch */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5169E4C3AB884FB287E33069 /* CinderApp.icns */,
+				9067AE55FAA84426BF71EAE5 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68AAFA664EEC47EFA40A6AAD /* PretzelGUI */ = {
+			isa = PBXGroup;
+			children = (
+				D6936C54F1CA45B0B4B336DD /* src */,
+				97DDF5FDE53D43699C4B734F /* resources */,
+			);
+			name = PretzelGUI;
+			sourceTree = "<group>";
+		};
+		8791DE3B06F746E2B153A27D /* components */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6D2DA894044CC82EFE6F4 /* BasePretzel.cpp */,
+				11C8E973002F4BE59BD9A48E /* PretzelRow.cpp */,
+				0668BB1E14A342948717B397 /* ScrollPane.cpp */,
+				32892806FD604CCEB12B5988 /* BasePretzel.h */,
+				A4915049E5FD4386BB7786FC /* PretzelRow.h */,
+				365A3EAD9A3A4373A481A738 /* ScrollPane.h */,
+			);
+			name = components;
+			sourceTree = "<group>";
+		};
+		97DDF5FDE53D43699C4B734F /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				EF781F1FE2B64FB18A0237DB /* default_skin.png */,
+				C6A80DC377D3446DA59BF690 /* color-picker.png */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		AA51D7BD549743B0BBBAA4C6 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				04D10960C35240A8B5C10D56 /* PretzelButton.cpp */,
+				19E939C2AA1C4D5389994ADE /* PretzelColorPicker.cpp */,
+				4AC2C6D86A8F4FCF82997E45 /* PretzelLabel.cpp */,
+				E38368EA86F243C6B00826BC /* PretzelSaveLoad.cpp */,
+				B8DE0C276F504B0C83F33ED7 /* PretzelSlider.cpp */,
+				1596CC5212304C5FAC9DB3A1 /* PretzelTextField.cpp */,
+				4C128077E71B4E048DAC498F /* PretzelToggle.cpp */,
+				4288BEBF8FFC4948BD23B8BD /* PretzelButton.h */,
+				369C4ED7F0E14EF1A9484C72 /* PretzelColorPicker.h */,
+				82FD6AC402E548E2828BA26A /* PretzelLabel.h */,
+				4E847048E855442AB239A65D /* PretzelSaveLoad.h */,
+				9CD8772D28494A3EBFA15793 /* PretzelSlider.h */,
+				32A5EE722F51409B977C89F1 /* PretzelTextField.h */,
+				C61F39FEDD084BE6AEB987B1 /* PretzelToggle.h */,
+			);
+			name = modules;
+			sourceTree = "<group>";
+		};
+		D6936C54F1CA45B0B4B336DD /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E67E7B1FF40A4182AC4A4F5F /* pretzel */,
+				8791DE3B06F746E2B153A27D /* components */,
+				AA51D7BD549743B0BBBAA4C6 /* modules */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		E67E7B1FF40A4182AC4A4F5F /* pretzel */ = {
+			isa = PBXGroup;
+			children = (
+				57C74DE924F94DD4A2DBB0EE /* PretzelGlobal.h */,
+				5BC4659421D249B3B146491B /* PretzelGui.h */,
+				0550210FB9BC4D3483188B54 /* PretzelGui.cpp */,
+				CEFCBC30B017466490F91276 /* PretzelGlobal.cpp */,
+			);
+			name = pretzel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* MultiGuiSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "MultiGuiSample" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MultiGuiSample;
+			productInstallPath = "$(HOME)/Applications";
+			productName = MultiGuiSample;
+			productReference = 8D1107320486CEB800E47090 /* MultiGuiSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MultiGuiSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* MultiGuiSample */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* MultiGuiSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12C20B4270E54E5EA4491958 /* CinderApp.icns in Resources */,
+				C3FD1F0AB68242A186EEF7A4 /* default_skin.png in Resources */,
+				6FA0443B35A043EFA31D9544 /* color-picker.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFF9C3F856CB4A0089C2F100 /* MultiGuiSampleApp.cpp in Sources */,
+				1CFE6DE1640A494CBA70AEA9 /* PretzelGui.cpp in Sources */,
+				76BE2FD510AB4CDABE1B755F /* BasePretzel.cpp in Sources */,
+				D71B45D6599C45B485C9B469 /* PretzelRow.cpp in Sources */,
+				87BCFC993552484189E9834C /* ScrollPane.cpp in Sources */,
+				65E5742959FA477F8EE2C2C9 /* PretzelButton.cpp in Sources */,
+				FA0B9304CFB64E67AEB0E232 /* PretzelColorPicker.cpp in Sources */,
+				DF13118B59C04388A0C6D01D /* PretzelLabel.cpp in Sources */,
+				18234155A7384E52B4E8977E /* PretzelSaveLoad.cpp in Sources */,
+				C6125ADE05984A96823BA986 /* PretzelSlider.cpp in Sources */,
+				FDC266C5332745C592464CD0 /* PretzelTextField.cpp in Sources */,
+				4E4188204253481088ACE6BA /* PretzelToggle.cpp in Sources */,
+				D54CF6D899204834BECAFA88 /* PretzelGlobal.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MultiGuiSample_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder_d.a\"";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = MultiGuiSample;
+				SYMROOT = ./build;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_FAST_MATH = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MultiGuiSample_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"NDEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder.a\"";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = MultiGuiSample;
+				STRIP_INSTALLED_PRODUCT = YES;
+				SYMROOT = ./build;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CINDER_PATH = ../../../../..;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				ENABLE_TESTABILITY = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../../src";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CINDER_PATH = ../../../../..;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../../src";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "MultiGuiSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MultiGuiSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
