@@ -238,7 +238,6 @@ namespace pretzel{
 		gl::ScopedBlendAlpha();
         gl::ScopedGlslProg sgp( gl::getStockShader(ci::gl::ShaderDef().color() ) );
         gl::ScopedDepth sd( false );
-        
       
         // -----------------------------------------------------------
         gl::color(Color(1, 1, 1));
