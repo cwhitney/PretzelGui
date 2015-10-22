@@ -33,6 +33,7 @@ namespace pretzel {
         ci::vec2    mScrolledFrameAmt;
         
         float       mChildrenHeight;
+        float       mBotScrollPadding;
         
         ci::Rectf   mScrollHandle;
         ci::vec2    mStartDragOffset;

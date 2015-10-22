@@ -83,12 +83,14 @@ namespace pretzel{
         ci::signals::Connection  mMouseBeganCallBack,
 			mMouseDragCallBack,
 			mMouseEndCallBack,
+            mMouseWheelCallBack,
 			mMouseMovedCallBack,
 			mKeyDownCallback;
 
 		virtual void onMouseDown(ci::app::MouseEvent &event);
 		virtual void onMouseDragged(ci::app::MouseEvent &event);
 		virtual void onMouseUp(ci::app::MouseEvent &event);
+        virtual void onMouseWheel(ci::app::MouseEvent &event);
 		virtual void onMouseMoved(ci::app::MouseEvent &event);
 		virtual void onKeyDown(ci::app::KeyEvent &event);
         

@@ -18,7 +18,7 @@ public:
     void draw() override;
     void keyDown(KeyEvent event) override;
     
-    Pretzel::PretzelGuiRef gui;
+    pretzel::PretzelGuiRef gui;
     float mRadius;
     float mOpacity;
     
@@ -45,7 +45,7 @@ void BasicSampleApp::setup()
     mCol = Color::white();
     mBubble = "Hello, world!";
     
-    gui = Pretzel::PretzelGui::create("Circle settings");
+    gui = pretzel::PretzelGui::create("Circle settings");
     
     // Sliders can take ints, float, vec2, and vec3
     gui->addSlider("Position", &mPosition, vec2(0,0), getWindowSize());

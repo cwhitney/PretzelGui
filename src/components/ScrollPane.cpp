@@ -14,17 +14,21 @@ using namespace std;
 
 namespace pretzel {
 
-    ScrollPane::ScrollPane(BasePretzel *base, int width, int height) : PretzelRow(base, width, height) {
-        bCanScroll = false;
-        bHover = false;
-		bDragging = false;
+    ScrollPane::ScrollPane(BasePretzel *base, int width, int height)
+        : PretzelRow(base, width, height),
+        mBotScrollPadding(10),
+        bCanScroll(false),
+        bHover(false),
+        bDragging(false),
+        mScrolledPct(0.0),
+        mScrolledHandleAmt(0, 0),
+        mScrolledFrameAmt(0, 0)
+    {
         mScrollHandle = Rectf(mBounds.x2-10, 0, mBounds.x2, 50);
-        mScrolledPct = 0.0;
-        mScrolledHandleAmt = vec2(0,0);
-        mScrolledFrameAmt = vec2(0,0);
     }
     
-    void ScrollPane::updateChildrenBounds() {
+    void ScrollPane::updateChildrenBounds()
+    {
         PretzelRow::updateChildrenBounds();
         
         // RESIZE CHILDREN
@@ -42,7 +46,7 @@ namespace pretzel {
         mScrollHandle.x2 = mBounds.x2;
         
         if( bCanScroll ){
-            int rectMaxY = mBounds.y2 - mScrollHandle.getHeight() - 10; // -10 for bottom bar
+            int rectMaxY = mBounds.y2 - mScrollHandle.getHeight() - mBotScrollPadding;
             mScrolledHandleAmt = vec2(0, rectMaxY*mScrolledPct);
             
             float scrollableHeight = mChildrenHeight - mBounds.getHeight() + 20; // to accomodate for bottom resize bar
@@ -56,7 +60,8 @@ namespace pretzel {
         }
 	}
     
-    void ScrollPane::mouseDown(const ci::vec2 &pos){
+    void ScrollPane::mouseDown(const ci::vec2 &pos)
+    {
         if(bCanScroll){
             if( mScrollHandle.contains( pos ) ){
                 bDragging = true;
@@ -67,12 +72,13 @@ namespace pretzel {
         PretzelRow::mouseDown( pos - mScrolledFrameAmt );
     }
     
-    void ScrollPane::mouseDragged(const ci::vec2 &pos){
+    void ScrollPane::mouseDragged(const ci::vec2 &pos)
+    {
         if( bDragging ){
             vec2 localPos = pos + mStartDragOffset;
             
             int rectMinY = 0;
-            int rectMaxY = mBounds.y2 - mScrollHandle.getHeight() - 10; // -10 for bottom bar
+            int rectMaxY = mBounds.y2 - mScrollHandle.getHeight() - mBotScrollPadding;
             
             mScrolledPct = ci::math<float>::clamp((float)(localPos.y - rectMinY) / (float)rectMaxY, 0.0, 1.0);
             mScrolledHandleAmt = vec2(0, rectMaxY*mScrolledPct);
@@ -87,12 +93,14 @@ namespace pretzel {
         }
     }
     
-    void ScrollPane::mouseUp(const ci::vec2 &pos){
+    void ScrollPane::mouseUp(const ci::vec2 &pos)
+    {
         bDragging = false;
         PretzelRow::mouseUp( pos - mScrolledFrameAmt );
     }
     
-    void ScrollPane::mouseMoved(const ci::vec2 &pos){
+    void ScrollPane::mouseMoved(const ci::vec2 &pos)
+    {
         if(bCanScroll){
             if( mScrollHandle.contains(pos) ){
                 mGlobal->setCursor(CursorType::HAND);
@@ -108,7 +116,8 @@ namespace pretzel {
         PretzelRow::mouseMoved( pos - mScrolledFrameAmt );
     }
 
-    void ScrollPane::draw(){
+    void ScrollPane::draw()
+    {
         glEnable(GL_SCISSOR_TEST);
         Rectf tBounds = mBounds;
         vec2 tPos = mOffset + mGlobalOffset;

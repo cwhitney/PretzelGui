@@ -12,10 +12,11 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-namespace pretzel{
+namespace pretzel
+{
 	PretzelGui::PretzelGui(std::string title) : ScrollPane(NULL, 200, 500) { init(title); }
 	PretzelGui::PretzelGui(std::string title, int width, int height) : ScrollPane(NULL, width, height){ init(title); }
-    //	PretzelGui::PretzelGui(std::string title, PretzelFillStyle width, PretzelFillStyle height) : ScrollPane(NULL, width, height){ init(title); }
+
     PretzelGui::~PretzelGui(){
         while( mWidgetList.size() ){
             BasePretzel *w = mWidgetList.back();
@@ -125,6 +126,7 @@ namespace pretzel{
             mMouseEndCallBack = window->getSignalMouseUp().connect(std::bind(&PretzelGui::onMouseUp, this, std::placeholders::_1));
             mMouseMovedCallBack = window->getSignalMouseMove().connect(std::bind(&PretzelGui::onMouseMoved, this, std::placeholders::_1));
             mKeyDownCallback = window->getSignalKeyDown().connect(std::bind(&PretzelGui::onKeyDown, this, std::placeholders::_1));
+            mMouseWheelCallBack = window->getSignalMouseWheel().connect(std::bind(&PretzelGui::onMouseWheel, this, std::placeholders::_1));
         }
     }
     
@@ -135,6 +137,7 @@ namespace pretzel{
             mMouseEndCallBack.disconnect();
             mMouseMovedCallBack.disconnect();
             mKeyDownCallback.disconnect();
+            mMouseWheelCallBack.disconnect();
         }
     }
     
@@ -224,6 +227,32 @@ namespace pretzel{
 		
 		mouseMoved((vec2) event.getPos() - mGlobalOffset);
 	}
+    
+    void PretzelGui::onMouseWheel(ci::app::MouseEvent &event)
+    {
+        float scrollAmt = event.getWheelIncrement();
+        
+        if( mBounds.contains( event.getPos() ) ){
+            int rectMinY = 0;
+            int rectMaxY = mBounds.y2 - mScrollHandle.getHeight() - mBotScrollPadding;
+            
+            float curY = math<float>::clamp(mScrollHandle.y1, rectMinY, rectMaxY);
+            
+//            mScrolledPct = ci::math<float>::clamp((float)(localPos.y - rectMinY) / (float)rectMaxY, 0.0, 1.0);
+//            mScrolledHandleAmt = vec2(0, rectMaxY*mScrolledPct);
+            
+//            float scrollableHeight = mChildrenHeight - mBounds.getHeight() + 20; // to accomodate for bottom resize bar
+//            mScrolledFrameAmt = vec2( 0, scrollableHeight * -mScrolledPct );
+            
+            mScrolledPct = lmap(curY, (float)rectMinY, (float)rectMaxY, 0.0f, 1.0f);
+            
+            float scrollableHeight = mChildrenHeight - mBounds.getHeight() + 20; // to accomodate for bottom resize bar
+            mScrolledFrameAmt = vec2( 0, scrollableHeight * -mScrolledPct );
+            
+            mScrollHandle = Rectf(mBounds.x2-10, 0, mBounds.x2, 50);
+            mScrollHandle.offset( vec2(0, curY - scrollAmt) );
+        }
+    }
     
 	void PretzelGui::onKeyDown(ci::app::KeyEvent &event){
 		//if (!bVisible) return;
