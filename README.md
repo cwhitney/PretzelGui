@@ -3,7 +3,7 @@
 
 A GUI built from the ground up for [Cinder](http://libcinder.org) for PC and OSX. Currently untested on linux.
 
-This version is for 0.9.0, the glNext branch of Cinder.
+For use with Cinder 0.9.0
 
 This is very much alpha software and apis are subject to change. Pull requests and bug fixes welcomed.
 
