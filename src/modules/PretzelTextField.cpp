@@ -82,13 +82,13 @@ namespace pretzel{
 			else{
 				gl::color(mGlobal->P_BG_COLOR);
 			}
-			gl::drawSolidRect(mTextFieldBounds);
+			pretzel()->drawSolidRect(mTextFieldBounds);
 
 			gl::color(mGlobal->P_HIGHLIGHT_COLOR);
-			gl::drawLine(mTextFieldBounds.getLowerLeft() + vec2(0, 1), mTextFieldBounds.getLowerRight() + vec2(0, 1));
+			pretzel()->drawLine(mTextFieldBounds.getLowerLeft() + vec2(0, 1), mTextFieldBounds.getLowerRight() + vec2(0, 1));
             
             gl::color(mGlobal->P_OUTLINE_COLOR);
-			gl::drawStrokedRect(mTextFieldBounds);
+            pretzel()->drawStrokedRect(mTextFieldBounds);
 
             mGlobal->renderText(mLabelText, mBounds.getUpperLeft() + vec2(12, 5));
             mGlobal->renderText(*mVariable, mTextFieldBounds.getUpperLeft() + vec2(2, 0));
@@ -97,7 +97,7 @@ namespace pretzel{
 			if (bEditing && (app::getElapsedSeconds() - (long)app::getElapsedSeconds()) < 0.5 ){
 				float x = mTextFieldBounds.getUpperLeft().x + mInputSize.x + 4;
 				gl::color(mGlobal->P_TEXT_COLOR);
-				gl::drawLine(vec2(x, mTextFieldBounds.y1 + 2), vec2(x, mTextFieldBounds.y2 - 2));
+				pretzel()->drawLine(vec2(x, mTextFieldBounds.y1 + 2), vec2(x, mTextFieldBounds.y2 - 2));
 			}
 		}gl::popMatrices();
 	}

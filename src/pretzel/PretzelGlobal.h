@@ -98,8 +98,13 @@ namespace pretzel {
         
         void setGlobalPos( const ci::vec2 &pos ){ mGlobalPos = pos; };
         const ci::vec2 getGlobalPos(){ return mGlobalPos; };
+        
+        void drawSolidRect( ci::Rectf rect );
+        void drawStrokedRect( ci::Rectf rect );
+        void drawLine( ci::vec2 start, ci::vec2 end );
 
 	private:
+        void setup();
 		
         enum PretzelTypes {
 			_FLOAT,
@@ -136,6 +141,11 @@ namespace pretzel {
 		// TEXT
         void renderTextInternal(std::string text, ci::vec2 pos, int align);
 		int	emHeight;
+        
+        // DRAWING
+        ci::gl::BatchRef mSolidRectBatch, mStrokedRectBatch, mLineBatch;
     };
-                                
+    
+    // pretzel namespace
+    inline pretzel::PretzelGlobal*	pretzel()	{ return PretzelGlobal::getInstance(); }
 }

@@ -209,7 +209,7 @@ namespace pretzel{
             
             // outline
             gl::color( mGlobal->P_OUTLINE_COLOR );
-            gl::drawStrokedRect(mColorPickRect);
+            pretzel()->drawStrokedRect(mColorPickRect);
 
 			mGlobal->renderText(mLabel, vec2(25, 1));
             

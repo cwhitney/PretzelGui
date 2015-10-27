@@ -230,27 +230,20 @@ namespace pretzel
     
     void PretzelGui::onMouseWheel(ci::app::MouseEvent &event)
     {
-        float scrollAmt = event.getWheelIncrement();
+        float scrollAmt = event.getWheelIncrement() * 2.0;
         
         if( mBounds.contains( event.getPos() ) ){
             int rectMinY = 0;
             int rectMaxY = mBounds.y2 - mScrollHandle.getHeight() - mBotScrollPadding;
             
             float curY = math<float>::clamp(mScrollHandle.y1, rectMinY, rectMaxY);
-            
-//            mScrolledPct = ci::math<float>::clamp((float)(localPos.y - rectMinY) / (float)rectMaxY, 0.0, 1.0);
-//            mScrolledHandleAmt = vec2(0, rectMaxY*mScrolledPct);
-            
-//            float scrollableHeight = mChildrenHeight - mBounds.getHeight() + 20; // to accomodate for bottom resize bar
-//            mScrolledFrameAmt = vec2( 0, scrollableHeight * -mScrolledPct );
-            
             mScrolledPct = lmap(curY, (float)rectMinY, (float)rectMaxY, 0.0f, 1.0f);
             
             float scrollableHeight = mChildrenHeight - mBounds.getHeight() + 20; // to accomodate for bottom resize bar
             mScrolledFrameAmt = vec2( 0, scrollableHeight * -mScrolledPct );
             
             mScrollHandle = Rectf(mBounds.x2-10, 0, mBounds.x2, 50);
-            mScrollHandle.offset( vec2(0, curY - scrollAmt) );
+            mScrollHandle.offset( vec2(0, glm::clamp(curY - scrollAmt, (float)rectMinY, (float)rectMaxY)) );
         }
     }
     
@@ -277,7 +270,7 @@ namespace pretzel
                 mDefaultLabel->draw();
                 
                 gl::color(mGlobal->P_GUI_BORDER);
-                gl::drawStrokedRect(mDefaultLabel->getBounds());
+                pretzel()->drawStrokedRect(mDefaultLabel->getBounds());
             }gl::popMatrices();
         }
         else{
@@ -286,14 +279,14 @@ namespace pretzel
                 ScrollPane::draw();
                 
                 gl::color(mGlobal->P_TAB_COLOR);
-                gl::drawSolidRect(Rectf(mBounds.getLowerLeft() - vec2(0, 10), mBounds.getLowerRight()));
+                pretzel()->drawSolidRect(Rectf(mBounds.getLowerLeft() - vec2(0, 10), mBounds.getLowerRight()));
                 
                 gl::color(mGlobal->P_BG_COLOR);
                 gl::drawSolidTriangle(mResizeRect.getLowerLeft(), mResizeRect.getUpperRight(), mResizeRect.getLowerRight());
                 
                 gl::color(mGlobal->P_GUI_BORDER);
-                gl::drawLine( mResizeRect.getUpperRight() - vec2(mBounds.getWidth(), 0), mResizeRect.getUpperRight() );
-                gl::drawStrokedRect( Rectf(mBounds.x1, mBounds.y1, mBounds.x2, mBounds.y2) );
+                pretzel()->drawLine( mResizeRect.getUpperRight() - vec2(mBounds.getWidth(), 0), mResizeRect.getUpperRight() );
+                pretzel()->drawStrokedRect( Rectf(mBounds.x1, mBounds.y1, mBounds.x2, mBounds.y2) );
             }gl::popMatrices();
         }
 	}

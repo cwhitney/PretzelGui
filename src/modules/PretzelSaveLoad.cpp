@@ -81,25 +81,25 @@ namespace pretzel{
 			// SAVE
 //			gl::color((bHoverSave) ? mGlobal->P_HOVER_COLOR : mGlobal->P_TAB_COLOR);
             gl::color( mSaveBg );
-			gl::drawSolidRect(mSaveRect);
+			pretzel()->drawSolidRect(mSaveRect);
 
 			gl::color(mGlobal->P_HIGHLIGHT_COLOR);
-			gl::drawLine(mSaveRect.getUpperLeft() + vec2(0, 1), mSaveRect.getUpperRight() + vec2(0, 1));
+			pretzel()->drawLine(mSaveRect.getUpperLeft() + vec2(0, 1), mSaveRect.getUpperRight() + vec2(0, 1));
 
 			gl::color(mGlobal->P_OUTLINE_COLOR);
-			gl::drawStrokedRect(mSaveRect);
+			pretzel()->drawStrokedRect(mSaveRect);
 			mGlobal->renderTextCentered("Save", vec2(mSaveRect.getCenter().x, 2));
 
 			// LOAD
 //			gl::color((bHoverLoad) ? mGlobal->P_HOVER_COLOR : mGlobal->P_TAB_COLOR);
             gl::color( mLoadBg );
-			gl::drawSolidRect(mLoadRect);
+			pretzel()->drawSolidRect(mLoadRect);
 
 			gl::color(mGlobal->P_HIGHLIGHT_COLOR);
-			gl::drawLine(mLoadRect.getUpperLeft() + vec2(0, 1), mLoadRect.getUpperRight() + vec2(0, 1));
+			pretzel()->drawLine(mLoadRect.getUpperLeft() + vec2(0, 1), mLoadRect.getUpperRight() + vec2(0, 1));
 
 			gl::color(mGlobal->P_OUTLINE_COLOR);
-			gl::drawStrokedRect(mLoadRect);
+			pretzel()->drawStrokedRect(mLoadRect);
 			mGlobal->renderTextCentered("Load", vec2(mLoadRect.getCenter().x, 2));
 
 		}gl::popMatrices();

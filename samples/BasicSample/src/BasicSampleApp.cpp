@@ -2,6 +2,7 @@
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 #include "cinder/Rand.h"
+#include "cinder/CinderMath.h"
 
 #include "pretzel/PretzelGui.h"
 
@@ -31,7 +32,6 @@ public:
     
     ci::ColorA mCol;
     void onButtonPress();
-    
 };
 
 void BasicSampleApp::setup()
@@ -82,7 +82,8 @@ void BasicSampleApp::mouseDown( MouseEvent event )
 {
 }
 
-void BasicSampleApp::onButtonPress(){
+void BasicSampleApp::onButtonPress()
+{
     mCol = ColorA(Rand::randFloat(), Rand::randFloat(), Rand::randFloat(), mOpacity);
 }
 

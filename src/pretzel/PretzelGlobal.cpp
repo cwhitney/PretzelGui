@@ -22,9 +22,7 @@ namespace pretzel {
 	PretzelGlobal * PretzelGlobal::getInstance(){
 		if (!mInstance){
 			mInstance = new PretzelGlobal();
-            
-            mInstance->mSkinSurf = Surface(loadImage(ci::app::loadResource( PRETZEL_GUI_SKIN )));
-            mInstance->mSkinTex = gl::Texture::create(mInstance->mSkinSurf);
+            mInstance->setup();
 
 #if defined( CINDER_MSW )
 		mInstance->mCursorArrow = ::LoadCursor(NULL, IDC_ARROW);
@@ -35,6 +33,27 @@ namespace pretzel {
 		}
 		return mInstance;
 	}
+    
+    void PretzelGlobal::setup()
+    {
+        mSkinSurf = Surface(loadImage(ci::app::loadResource( PRETZEL_GUI_SKIN )));
+        mSkinTex = gl::Texture::create(mInstance->mSkinSurf);
+        
+        mSolidRectBatch = gl::Batch::create( geom::Rect( Rectf(0,0,1,1) ), gl::getStockShader( gl::ShaderDef().color() ) );
+        
+        gl::VertBatch vb(GL_LINE_STRIP);
+        vb.vertex(0,0);
+        vb.vertex(1,0);
+        vb.vertex(1,1);
+        vb.vertex(0,1);
+        vb.vertex(0,0);
+        mStrokedRectBatch = gl::Batch::create( vb, gl::getStockShader( gl::ShaderDef().color() ) );
+        
+        gl::VertBatch vl(GL_LINE_STRIP);
+        vl.vertex(0,0);
+        vl.vertex(1,0);
+        mLineBatch = gl::Batch::create( vl, gl::getStockShader( gl::ShaderDef().color() ) );
+    }
 
 	void PretzelGlobal::renderTextInternal(std::string text, ci::vec2 pos, int align){
 		if (!guiFont){
@@ -133,8 +152,6 @@ namespace pretzel {
 				break;
 		}
 #endif 
-
-
     }
 
 
@@ -340,5 +357,34 @@ namespace pretzel {
         signalOnSettingsLoad.emit();
 	}
 
+//    template<typename T>
+    void PretzelGlobal::drawSolidRect( ci::Rectf rect )
+    {
+        gl::pushMatrices();
+        gl::translate( rect.x1, rect.y1 );
+        gl::scale( rect.getWidth(), rect.getHeight() );
+        mSolidRectBatch->draw();
+        gl::popMatrices();
+    }
+    
+//    template<typename T>
+    void PretzelGlobal::drawStrokedRect( ci::Rectf rect )
+    {
+        gl::pushMatrices();
+        gl::translate( rect.x1, rect.y1 );
+        gl::scale( rect.getWidth(), rect.getHeight() );
+        mStrokedRectBatch->draw();
+        gl::popMatrices();
+    }
+    
+    void PretzelGlobal::drawLine( ci::vec2 start, ci::vec2 end )
+    {
+        gl::pushMatrices();
+        gl::translate(start);
+        gl::rotate( atan2( end.y-start.y, end.x-start.x ) );
+        gl::scale( vec2( glm::length(end - start) ) );
+        mLineBatch->draw();
+        gl::popMatrices();
+    }
 
 }

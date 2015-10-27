@@ -31,7 +31,7 @@
 namespace pretzel{
     class PretzelGui;
     typedef std::shared_ptr<PretzelGui> PretzelGuiRef;
-    
+        
 	class PretzelGui : public ScrollPane {
 	  public:
 		PretzelGui(std::string title = "");
