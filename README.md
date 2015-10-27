@@ -5,8 +5,6 @@ A GUI built from the ground up for [Cinder](http://libcinder.org) for PC and OSX
 
 For use with Cinder 0.9.0
 
-This is very much alpha software and apis are subject to change. Pull requests and bug fixes welcomed.
-
 ----
 The MIT License (MIT)
 
