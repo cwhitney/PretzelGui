@@ -7,6 +7,8 @@ using namespace std;
 namespace pretzel{
 	PretzelSaveLoad::PretzelSaveLoad(BasePretzel *parent) : BasePretzel() {
 		mBounds.set(0, 0, 200, 23);
+        type = WidgetType::SAVELOAD;
+        
 		parent->registerPretzel(this);
 		bHoverSave = false;
 		bHoverLoad = false;

@@ -58,6 +58,8 @@ namespace pretzel {
             mScrolledPct = 0.0;
             mScrollHandle = Rectf(mBounds.x2-10, 0, mBounds.x2, 50);
         }
+        
+        updateLabelPositions();
 	}
     
     void ScrollPane::mouseDown(const ci::vec2 &pos)
@@ -88,6 +90,8 @@ namespace pretzel {
             
             mScrollHandle = Rectf(mBounds.x2-10, 0, mBounds.x2, 50);
             mScrollHandle.offset( mScrolledHandleAmt );
+            
+            updateLabelPositions();
         }else{
             PretzelRow::mouseDragged( pos - mScrolledFrameAmt );
         }
@@ -114,6 +118,40 @@ namespace pretzel {
         }
         
         PretzelRow::mouseMoved( pos - mScrolledFrameAmt );
+    }
+    
+    void ScrollPane::mouseWheel(const float increment)
+    {
+        PretzelRow::mouseWheel(increment);
+        
+        int rectMinY = 0;
+        int rectMaxY = mBounds.y2 - mScrollHandle.getHeight() - mBotScrollPadding;
+        
+        float curY = math<float>::clamp(mScrollHandle.y1, rectMinY, rectMaxY);
+        mScrolledPct = lmap(curY, (float)rectMinY, (float)rectMaxY, 0.0f, 1.0f);
+        
+        float scrollableHeight = mChildrenHeight - mBounds.getHeight() + 20; // to accomodate for bottom resize bar
+        mScrolledFrameAmt = vec2( 0, scrollableHeight * -mScrolledPct );
+        
+        mScrollHandle = Rectf(mBounds.x2-10, 0, mBounds.x2, 50);
+        mScrollHandle.offset( vec2(0, glm::clamp(curY - increment, (float)rectMinY, (float)rectMaxY)) );
+        
+        updateLabelPositions();
+    }
+    
+    void ScrollPane::updateLabelPositions()
+    {
+        for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
+            if( (*it)->type == WidgetType::LABEL ){
+                PretzelLabel *pl = (PretzelLabel*)(*it);
+                if( -mScrolledFrameAmt.y > pl->getOffset().y ){
+                    pl->tmpExtraOffset.y = -mScrolledFrameAmt.y - pl->getOffset().y;
+                }else {
+                    pl->tmpExtraOffset.y = 0;
+                }
+                pl->tmpExtraOffset.x = 0.0;
+            }
+        }
     }
 
     void ScrollPane::draw()

@@ -45,8 +45,18 @@ namespace pretzel{
 		gl::color(mGlobal->P_BG_COLOR);
 		gl::drawSolidRect(mBounds);
 
+        // Draw anything that is not a label
 		for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
-			(*it)->draw();
+            if( (*it)->type != WidgetType::LABEL ){
+                (*it)->draw();
+            }
 		}
+        
+        // Draw only labels (need to be on top because of ScrollPane)
+        for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
+            if( (*it)->type == WidgetType::LABEL ){
+                (*it)->draw();
+            }
+        }
 	}
 }

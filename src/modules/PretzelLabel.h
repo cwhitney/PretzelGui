@@ -12,6 +12,8 @@ namespace pretzel{
 
 		void updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds);
 
+        ci::vec2    tmpExtraOffset;
+        
 	private:
 		std::string		mMessage;
 		ci::Path2d		mOutlinePath;

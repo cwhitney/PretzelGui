@@ -16,6 +16,7 @@ namespace pretzel{
         mSliderLeft = sliderLeft;
         mSliderRight = sliderRight;
         mPosOffset = 0;
+//        type = WidgetType::SLIDER;
         
         // texture skin rect
 		mSkinTexRect.set(0, 0, 13, 12);

@@ -18,7 +18,8 @@ namespace pretzel
 	PretzelGui::PretzelGui(std::string title, int width, int height) : ScrollPane(NULL, width, height){ init(title); }
 
     PretzelGui::~PretzelGui(){
-        while( mWidgetList.size() ){
+        while( mWidgetList.size() )
+        {
             BasePretzel *w = mWidgetList.back();
             
             if( w->type == WidgetType::BUTTON ){
@@ -34,7 +35,8 @@ namespace pretzel
     }
     
     // Initialize the gui with a title
-	void PretzelGui::init(std::string title){
+	void PretzelGui::init(std::string title)
+    {
 		bVisible = true;
 		bDragging = false;
 		bResizing = false;
@@ -230,20 +232,8 @@ namespace pretzel
     
     void PretzelGui::onMouseWheel(ci::app::MouseEvent &event)
     {
-        float scrollAmt = event.getWheelIncrement() * 2.0;
-        
         if( mBounds.contains( event.getPos() ) ){
-            int rectMinY = 0;
-            int rectMaxY = mBounds.y2 - mScrollHandle.getHeight() - mBotScrollPadding;
-            
-            float curY = math<float>::clamp(mScrollHandle.y1, rectMinY, rectMaxY);
-            mScrolledPct = lmap(curY, (float)rectMinY, (float)rectMaxY, 0.0f, 1.0f);
-            
-            float scrollableHeight = mChildrenHeight - mBounds.getHeight() + 20; // to accomodate for bottom resize bar
-            mScrolledFrameAmt = vec2( 0, scrollableHeight * -mScrolledPct );
-            
-            mScrollHandle = Rectf(mBounds.x2-10, 0, mBounds.x2, 50);
-            mScrollHandle.offset( vec2(0, glm::clamp(curY - scrollAmt, (float)rectMinY, (float)rectMaxY)) );
+            mouseWheel( event.getWheelIncrement() * 2.0 );
         }
     }
     

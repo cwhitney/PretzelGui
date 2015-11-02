@@ -109,7 +109,6 @@ namespace pretzel {
     
     void PretzelGlobal::setCursor( CursorType type ){
 #if defined( CINDER_MAC )
-        
         switch(type){
             case CursorType::ARROW :
                 [[NSCursor arrowCursor] set];
@@ -126,13 +125,7 @@ namespace pretzel {
             default:
                 break;
         }
-//        + (NSCursor *)operationNotAllowedCursor NS_AVAILABLE_MAC(10_5);
-//        + (NSCursor *)dragLinkCursor NS_AVAILABLE_MAC(10_6);
-//        + (NSCursor *)dragCopyCursor NS_AVAILABLE_MAC(10_6);
-//        + (NSCursor *)contextualMenuCursor NS_AVAILABLE_MAC(10_6);
-//        + (NSCursor *)IBeamCursorForVerticalLayout NS_AVAILABLE_MAC(10_7);
 #endif
-
 #if defined( CINDER_MSW )
 		switch (type)
 		{
@@ -204,7 +197,7 @@ namespace pretzel {
 			appPath = getAppPath() / "guiSettings";
 
 			if (!fs::exists(appPath)){
-				console() << appPath << " does not exist" << endl;
+				CI_LOG_W( "Pretzel :: " ) << appPath << " does not exist. Creating it.";
 				fs::create_directory(appPath);
 			}
 			appPath /= "settings.json";
@@ -279,7 +272,7 @@ namespace pretzel {
 		}
 
 		if (!fs::exists(loadPath)){
-			console() << loadPath << " does not exist" << endl;
+			CI_LOG_W("Pretzel :: Can't load ") << loadPath << " Path does not exist.";
 		}
 		else{
 			JsonTree loadTree(loadFile(loadPath));
@@ -349,7 +342,7 @@ namespace pretzel {
                     }
                     break;
 				default:
-					console() << "Pretzel :: Can't load settings type " << endl;
+					CI_LOG_W( "Pretzel :: Unrecognized settings type.");
 					break;
 				}
 			}

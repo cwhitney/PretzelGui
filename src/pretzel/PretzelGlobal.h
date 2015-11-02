@@ -14,6 +14,7 @@
 #include "cinder/gl/TextureFont.h"
 #include "cinder/Json.h"
 #include "cinder/ImageIo.h"
+#include "cinder/Log.h"
 
 #if defined( CINDER_MAC )
 //#import <AppKit/AppKit.h>

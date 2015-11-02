@@ -10,6 +10,7 @@ namespace pretzel{
         bHover = false;
 		mValue = value;
 		mLabel = label;
+        type = WidgetType::TOGGLE;
 
 		int size = 11;
 		mCheckBoxRect.set(0, 0, size, size);

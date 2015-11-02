@@ -28,11 +28,13 @@
 #include "modules/PretzelTextField.h"
 #include "modules/PretzelColorPicker.h"
 
-namespace pretzel{
+namespace pretzel
+{
     class PretzelGui;
     typedef std::shared_ptr<PretzelGui> PretzelGuiRef;
         
-	class PretzelGui : public ScrollPane {
+	class PretzelGui : public ScrollPane
+    {
 	  public:
 		PretzelGui(std::string title = "");
 		PretzelGui(std::string title, int width, int height);

@@ -12,6 +12,7 @@
 
 #include "components/PretzelRow.h"
 #include "components/BasePretzel.h"
+#include "modules/PretzelLabel.h"
 
 namespace pretzel {
 
@@ -24,9 +25,11 @@ namespace pretzel {
 		virtual void mouseDragged(const ci::vec2 &pos);
 		virtual void mouseUp(const ci::vec2 &pos);
 		virtual void mouseMoved(const ci::vec2 &pos);
+        virtual void mouseWheel(const float increment);
         
       protected:
         void updateChildrenBounds();
+        void updateLabelPositions();
         
         float       mScrolledPct;
         ci::vec2    mScrolledHandleAmt;

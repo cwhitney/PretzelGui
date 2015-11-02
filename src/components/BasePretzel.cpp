@@ -13,7 +13,8 @@ using namespace ci::app;
 using namespace std;
 
 namespace pretzel{
-	BasePretzel::BasePretzel() : mParent(NULL) {
+	BasePretzel::BasePretzel() : mParent(NULL)
+    {
 		mOffset = vec2(0, 0);
 		mBounds.set(0, 0, 0, 0);
 
@@ -33,7 +34,8 @@ namespace pretzel{
 	}
 
 	// -------------------------------------------------------
-	void BasePretzel::updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds){
+	void BasePretzel::updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds)
+    {
 		mOffset = vec2(offset);
 		mParentBounds = parentBounds;
 
@@ -43,11 +45,13 @@ namespace pretzel{
 	}
 
 	// -------------------------------------------------------------
-    BasePretzel* BasePretzel::getParent(){
+    BasePretzel* BasePretzel::getParent()
+    {
         return mParent;
     };
     
-    void BasePretzel::setParent( BasePretzel *parent ){
+    void BasePretzel::setParent( BasePretzel *parent )
+    {
         mParent = parent;
     }
     
@@ -88,10 +92,16 @@ namespace pretzel{
 			(*it)->mouseMoved(pos);
 		}
 	}
+    void BasePretzel::mouseWheel(const float increment){
+        for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
+            (*it)->mouseWheel(increment);
+        }
+    }
 	void BasePretzel::keyDown(const char &key, const int &keyCode){
 		for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
 			(*it)->keyDown(key, keyCode);
 		}
 	}
+    
 
 }

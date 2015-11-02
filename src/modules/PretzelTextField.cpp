@@ -19,6 +19,7 @@ namespace pretzel{
         mVariable = variable;
 		mLabelSize = mGlobal->guiFont->measureString(mLabelText);
 		mInputSize = mGlobal->guiFont->measureString(*variable);
+        type = WidgetType::TEXTFIELD;
 		
 		if(bEditable) mGlobal->addSaveParam(labelText, variable);
 		parent->registerPretzel(this);

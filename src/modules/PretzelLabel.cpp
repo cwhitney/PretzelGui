@@ -5,16 +5,19 @@ using namespace ci::app;
 using namespace std;
 
 namespace pretzel{
-	PretzelLabel::PretzelLabel(BasePretzel *parent, std::string labelText) : BasePretzel(){
+	PretzelLabel::PretzelLabel(BasePretzel *parent, std::string labelText) : BasePretzel(), tmpExtraOffset(0,0)
+    {
 		mMessage = labelText;
-
+        type = WidgetType::LABEL;
 		mBounds.set(0, 0, 200, 23);
+        
 		parent->registerPretzel(this);
 
 		mGlobal = pretzel::PretzelGlobal::getInstance();
 	}
 
-	void PretzelLabel::updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds){
+	void PretzelLabel::updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds)
+    {
 		BasePretzel::updateBounds(offset, parentBounds);
 
 		vec2 textSize = mGlobal->guiFont->measureString(mMessage);
@@ -32,7 +35,8 @@ namespace pretzel{
 		mOutlinePath.lineTo(mBounds.getLowerRight() + vec2(0, -1));
 	}
 
-	void PretzelLabel::draw(){
+	void PretzelLabel::draw()
+    {
 		vec2 textSize = mGlobal->guiFont->measureString(mMessage);
 		RectT<float> textRect(0, 0, textSize.x, textSize.y);
 		textRect.y1 = 4;
@@ -41,19 +45,17 @@ namespace pretzel{
 		textRect.x2 += 5;
 
 		gl::pushMatrices(); {
-			gl::translate(mOffset);
+			gl::translate(mOffset + tmpExtraOffset);
 
 			// draw light background
 			gl::color(mGlobal->P_TAB_COLOR);
             pretzel()->drawSolidRect(mBounds);
-//			gl::drawSolidRect(mBounds);
 
 			gl::pushMatrices(); {
 				gl::translate(15, 1);
 
 				// draw dark background
 				gl::color(mGlobal->P_BG_COLOR);
-//				gl::drawSolidRect(textRect );
                 pretzel()->drawSolidRect(textRect);
 
 				// draw text
