@@ -232,8 +232,8 @@ namespace pretzel
     
     void PretzelGui::onMouseWheel(ci::app::MouseEvent &event)
     {
-        if( mBounds.contains( event.getPos() ) ){
-            mouseWheel( event.getWheelIncrement() * 2.0 );
+        if( mBounds.contains( (vec2)event.getPos() - mGlobalOffset ) ){
+            mouseWheel( event.getWheelIncrement() * 4.0 );
         }
     }
     
