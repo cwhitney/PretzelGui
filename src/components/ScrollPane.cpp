@@ -145,11 +145,10 @@ namespace pretzel {
             if( (*it)->type == WidgetType::LABEL ){
                 PretzelLabel *pl = (PretzelLabel*)(*it);
                 if( -mScrolledFrameAmt.y > pl->getOffset().y ){
-                    pl->tmpExtraOffset.y = -mScrolledFrameAmt.y - pl->getOffset().y;
+                    pl->scrollPaneOffset.y = -mScrolledFrameAmt.y - pl->getOffset().y;
                 }else {
-                    pl->tmpExtraOffset.y = 0;
+                    pl->scrollPaneOffset.y = 0;
                 }
-                pl->tmpExtraOffset.x = 0.0;
             }
         }
     }

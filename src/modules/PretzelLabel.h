@@ -12,7 +12,7 @@ namespace pretzel{
 
 		void updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds);
 
-        ci::vec2    tmpExtraOffset;
+        ci::vec2    scrollPaneOffset;
         
 	private:
 		std::string		mMessage;

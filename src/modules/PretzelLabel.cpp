@@ -5,7 +5,7 @@ using namespace ci::app;
 using namespace std;
 
 namespace pretzel{
-	PretzelLabel::PretzelLabel(BasePretzel *parent, std::string labelText) : BasePretzel(), tmpExtraOffset(0,0)
+	PretzelLabel::PretzelLabel(BasePretzel *parent, std::string labelText) : BasePretzel(), scrollPaneOffset(0,0)
     {
 		mMessage = labelText;
         type = WidgetType::LABEL;
@@ -45,7 +45,7 @@ namespace pretzel{
 		textRect.x2 += 5;
 
 		gl::pushMatrices(); {
-			gl::translate(mOffset + tmpExtraOffset);
+			gl::translate(mOffset + scrollPaneOffset);
 
 			// draw light background
 			gl::color(mGlobal->P_TAB_COLOR);
