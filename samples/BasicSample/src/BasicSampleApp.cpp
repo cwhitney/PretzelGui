@@ -45,7 +45,7 @@ void BasicSampleApp::setup()
     mCol = Color::white();
     mBubble = "Hello, world!";
     
-    gui = pretzel::PretzelGui::create("Circle settings", 200, 500 );
+    gui = pretzel::PretzelGui::create("Circle settings");
     
     // Sliders can take ints, float, vec2, and vec3
     gui->addSlider("Position", &mPosition, vec2(0,0), getWindowSize());
@@ -61,18 +61,6 @@ void BasicSampleApp::setup()
     // Textfields can be editable or non-editable
     gui->addTextField("FPS", &mFps, false);
     gui->addTextField("Speech Bubble", &mBubble, true);
-    gui->addLabel("Filler section");
-    gui->addTextField("FPS", &mFps, false);
-    gui->addTextField("FPS", &mFps, false);
-    gui->addTextField("FPS", &mFps, false);
-    gui->addTextField("FPS", &mFps, false);
-    gui->addTextField("FPS", &mFps, false);
-    gui->addTextField("FPS", &mFps, false);
-    gui->addTextField("FPS", &mFps, false);
-    gui->addTextField("FPS", &mFps, false);
-    gui->addTextField("FPS", &mFps, false);
-    gui->addTextField("FPS", &mFps, false);
-    gui->addTextField("FPS", &mFps, false);
     
     gui->addSaveLoad();
     
