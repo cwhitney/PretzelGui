@@ -4,20 +4,23 @@
 #include "components/BasePretzel.h"
 #include "cinder/app/App.h"
 
-namespace pretzel{
-	class PretzelSaveLoad : public BasePretzel {
-	public:
+namespace pretzel
+{
+	class PretzelSaveLoad : public BasePretzel
+    {
+	  public:
 		PretzelSaveLoad(BasePretzel *parent);
 		PretzelSaveLoad(BasePretzel *parent, ci::fs::path savePath);
 
-		virtual void draw();
-		void updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds);
+      
+		void draw() override;
+		void updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds) override;
 
-		virtual void mouseDown(const ci::vec2 &pos);
-		virtual void mouseMoved(const ci::vec2 &pos);
-        virtual void mouseUp(const ci::vec2 &pos);
-        
-	private:
+		void mouseDown(const ci::vec2 &pos) override;
+		void mouseMoved(const ci::vec2 &pos) override;
+        void mouseUp(const ci::vec2 &pos) override;
+      private:  
+	  
 		ci::fs::path	mSavePath;
 		ci::Rectf		mSaveRect, mLoadRect;
 		bool			bHoverSave, bHoverLoad;

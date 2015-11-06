@@ -20,11 +20,8 @@ namespace pretzel{
 		void draw();
 
 	protected:
-		void updateChildrenBounds();
-
-	private:
+		void updateChildrenBounds() override;
 		void initPretzel(BasePretzel *base, int width, int height);
-
 		bool bFillWidth, bFillHeight;
 	};
 }

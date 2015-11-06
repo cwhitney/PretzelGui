@@ -18,19 +18,20 @@
 namespace pretzel {
     
 	class PretzelColorPicker : public BasePretzel {
-	public:
+	  public:
 		PretzelColorPicker(BasePretzel *parent, std::string label, ci::Color    *value);
 		PretzelColorPicker(BasePretzel *parent, std::string label, ci::ColorA   *value);
         
-		virtual void draw();
-		void updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds);
+      
+        void draw() override;
+		void updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds) override;
         
-		virtual void mouseDown(const ci::vec2 &pos);
-        virtual void mouseDragged(const ci::vec2 &pos);
-        virtual void mouseUp(const ci::vec2 &pos);
-        virtual void mouseMoved(const ci::vec2 &pos);
-        
-	private:
+		void mouseDown(const ci::vec2 &pos) override;
+        void mouseDragged(const ci::vec2 &pos) override;
+        void mouseUp(const ci::vec2 &pos) override;
+        void mouseMoved(const ci::vec2 &pos) override;
+      private: 
+	
         void setup();
         void expand();
         void contract();

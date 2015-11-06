@@ -21,14 +21,14 @@ namespace pretzel {
         ScrollPane(BasePretzel *base, int width, int height);
         virtual void draw();
         
-        virtual void mouseDown(const ci::vec2 &pos);
-		virtual void mouseDragged(const ci::vec2 &pos);
-		virtual void mouseUp(const ci::vec2 &pos);
-		virtual void mouseMoved(const ci::vec2 &pos);
-        virtual void mouseWheel(const float increment);
+        virtual void mouseDown(const ci::vec2 &pos) override;
+		virtual void mouseDragged(const ci::vec2 &pos) override;
+		virtual void mouseUp(const ci::vec2 &pos) override;
+		virtual void mouseMoved(const ci::vec2 &pos) override;
+        virtual void mouseWheel(const float increment) override;
         
       protected:
-        void updateChildrenBounds();
+        void updateChildrenBounds() override;
         void updateLabelPositions();
         
         float       mScrolledPct;

@@ -14,7 +14,6 @@ using namespace std;
 
 namespace pretzel
 {
-	PretzelGui::PretzelGui(std::string title) : ScrollPane(NULL, 200, 500) { init(title); }
 	PretzelGui::PretzelGui(std::string title, int width, int height) : ScrollPane(NULL, width, height){ init(title); }
 
     PretzelGui::~PretzelGui(){
@@ -30,8 +29,10 @@ namespace pretzel
         }
         
         delete mDefaultLabel;
-        
-        disconnectSignals();
+    }
+    
+    void PretzelGui::drawAll(){
+        PretzelRoot::getInstance()->draw();
     }
     
     // Initialize the gui with a title
@@ -55,7 +56,6 @@ namespace pretzel
 		mGlobal->P_HIGHLIGHT_COLOR = ColorA(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 480)));
 		mGlobal->P_SLIDER_COLOR = ColorA(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 500)));
         
-		connectSignals();
         mGlobal->signalOnSettingsLoad.connect( std::bind(&PretzelGui::onSettingsLoaded, this) );
         
 		mGlobalOffset = vec2(10, 10);
@@ -71,6 +71,8 @@ namespace pretzel
 			title = "Settings";
 		}
 		mDefaultLabel = new PretzelLabel(this, title);
+        
+        PretzelRoot::getInstance()->addChild(this);
 	}
     
     // Set the xy dimensions of the gui
@@ -102,46 +104,16 @@ namespace pretzel
     // Renders the gui visible/invisible and connects/disconnects all listener signals
 	void PretzelGui::setVisible(bool visible){
 		bVisible = visible;
-        if( bVisible ){ connectSignals();       }
-        else{           disconnectSignals();    }
 	}
     
     // Toggles the gui visible/invisible and connects/disconnects all listener signals
 	void PretzelGui::toggleVisible(){
 		bVisible = !bVisible;
-        
-        if( bVisible ){ connectSignals();       }
-        else{           disconnectSignals();    }
 	}
     
 	bool PretzelGui::isVisible(){
 		return bVisible;
 	}
-    
-    void PretzelGui::connectSignals(){
-        if( !mMouseBeganCallBack.isConnected() ){
-            ci::app::WindowRef window = cinder::app::getWindow();
-   
-            // uses default priority 0
-            mMouseBeganCallBack = window->getSignalMouseDown().connect(std::bind(&PretzelGui::onMouseDown, this, std::placeholders::_1));
-            mMouseDragCallBack = window->getSignalMouseDrag().connect(std::bind(&PretzelGui::onMouseDragged, this, std::placeholders::_1));
-            mMouseEndCallBack = window->getSignalMouseUp().connect(std::bind(&PretzelGui::onMouseUp, this, std::placeholders::_1));
-            mMouseMovedCallBack = window->getSignalMouseMove().connect(std::bind(&PretzelGui::onMouseMoved, this, std::placeholders::_1));
-            mKeyDownCallback = window->getSignalKeyDown().connect(std::bind(&PretzelGui::onKeyDown, this, std::placeholders::_1));
-            mMouseWheelCallBack = window->getSignalMouseWheel().connect(std::bind(&PretzelGui::onMouseWheel, this, std::placeholders::_1));
-        }
-    }
-    
-    void PretzelGui::disconnectSignals(){
-        if( mMouseBeganCallBack.isConnected() ){
-            mMouseBeganCallBack.disconnect();
-            mMouseDragCallBack.disconnect();
-            mMouseEndCallBack.disconnect();
-            mMouseMovedCallBack.disconnect();
-            mKeyDownCallback.disconnect();
-            mMouseWheelCallBack.disconnect();
-        }
-    }
     
     void PretzelGui::onSettingsLoaded() {
         updateChildrenBounds();
@@ -157,49 +129,49 @@ namespace pretzel
 	}
     
 	// ---------------------------------------------------------
-	void PretzelGui::onMouseDown(ci::app::MouseEvent &event){
+	void PretzelGui::mouseDown(const ci::vec2 &pos){
 		if (!bVisible) return;
         
-		if (mDefaultLabel->getBounds().contains((vec2) event.getPos() - mGlobalOffset)){
+		if (mDefaultLabel->getBounds().contains(pos - mGlobalOffset)){
             
 			if (getElapsedSeconds() - mLastClickTime < 0.25){               // Double click title bar, minimize
 				bDrawMinimized = !bDrawMinimized;
 			}
 			else{                                                           // Single click title bar, drag
 				bDragging = true;
-				mMouseOffset = ( (vec2) event.getPos() ) - mGlobalOffset;
+				mMouseOffset = pos - mGlobalOffset;
 			}
 			mLastClickTime = getElapsedSeconds();
 		}
 		else if (bDrawMinimized){                                           // We are minimized, don't go further
 			return;
 		}
-		else if (mResizeRect.contains((vec2) event.getPos() - mGlobalOffset)){     // Hit in lower right corner for resize
+		else if (mResizeRect.contains(pos - mGlobalOffset)){     // Hit in lower right corner for resize
 			bResizing = true;
 			mResizeStartSize = mBounds.getSize();
-			mMouseOffset = (vec2) event.getPos() - mGlobalOffset;
+			mMouseOffset = pos - mGlobalOffset;
 		}
 		else{
-			mouseDown((vec2) event.getPos() - mGlobalOffset);                      // Propagate to children
+			ScrollPane::mouseDown(pos - mGlobalOffset);                      // Propagate to children
 		}
 	}
     
-	void PretzelGui::onMouseDragged(ci::app::MouseEvent &event){
+	void PretzelGui::mouseDragged(const ci::vec2 &pos){
 		if (!bVisible) return;
         
 		if (bDragging){
-			mGlobalOffset = (vec2) event.getPos() - mMouseOffset;
+			mGlobalOffset = pos - mMouseOffset;
 		}
 		else if (bResizing){
-			vec2 newSize = mResizeStartSize + (vec2) event.getPos() - mGlobalOffset - mMouseOffset;
+			vec2 newSize = mResizeStartSize + pos - mGlobalOffset - mMouseOffset;
 			setSize(newSize);
 		}
 		else{
-			mouseDragged((vec2) event.getPos() - mGlobalOffset);
+			ScrollPane::mouseDragged(pos - mGlobalOffset);
 		}
 	}
     
-	void PretzelGui::onMouseUp(ci::app::MouseEvent &event){
+	void PretzelGui::mouseUp(const ci::vec2 &pos){
 		if (!bVisible) return;
         
 		if (bDragging){
@@ -209,37 +181,35 @@ namespace pretzel
 			bResizing = false;
 		}
 		else{
-			mouseUp((vec2) event.getPos() - mGlobalOffset);
+			ScrollPane::mouseUp(pos - mGlobalOffset);
 		}
 	}
     
-	void PretzelGui::onMouseMoved(ci::app::MouseEvent &event){
+	void PretzelGui::mouseMoved(const ci::vec2 &pos){
 		if (!bVisible) return;
         
-        if (mDefaultLabel->getBounds().contains((vec2) event.getPos() - mGlobalOffset)){
+        ScrollPane::mouseMoved(pos - mGlobalOffset);
+        
+        if (mDefaultLabel->getBounds().contains(pos - mGlobalOffset)){
             mGlobal->setCursor( CursorType::HAND );
             bChangedCursor = true;
-        }else if (mResizeRect.contains((vec2) event.getPos() - mGlobalOffset)){	// Hit in lower right corner for resize
+        }else if (mResizeRect.contains(pos - mGlobalOffset)){	// Hit in lower right corner for resize
 			mGlobal->setCursor( CursorType::RESIZE_RL );
             bChangedCursor = true;
 		}else if(bChangedCursor){
             mGlobal->setCursor( CursorType::ARROW );
             bChangedCursor = false;
         }
-		
-		mouseMoved((vec2) event.getPos() - mGlobalOffset);
 	}
     
-    void PretzelGui::onMouseWheel(ci::app::MouseEvent &event)
+    void PretzelGui::mouseWheel(const float increment)
     {
-        if( mBounds.contains( (vec2)event.getPos() - mGlobalOffset ) ){
-            mouseWheel( event.getWheelIncrement() * 4.0 );
-        }
+        ScrollPane::mouseWheel( increment * 4.0 );
     }
     
-	void PretzelGui::onKeyDown(ci::app::KeyEvent &event){
+	void PretzelGui::keyDown(const char &key, const int &keyCode){
 		//if (!bVisible) return;
-		keyDown(event.getChar(), event.getCode());
+		ScrollPane::keyDown(key, keyCode);
 	}
     
 	// ---------------------------------------------------------
@@ -247,6 +217,8 @@ namespace pretzel
     {
 		if (!bVisible) return;
 
+        ScrollPane::draw();
+        
 		gl::ScopedBlendAlpha();
         gl::ScopedGlslProg sgp( gl::getStockShader(ci::gl::ShaderDef().color() ) );
         gl::ScopedDepth sd( false );
@@ -282,43 +254,53 @@ namespace pretzel
 	}
     
 	// --------------------------------------------------
-	void PretzelGui::addLabel(std::string labelText){
+	PretzelLabel* PretzelGui::addLabel(std::string labelText){
         mWidgetList.push_back( new PretzelLabel(this, labelText) );
+        return (PretzelLabel*)mWidgetList.back();
 	}
     
-	void PretzelGui::addSlider(std::string label, float *variable, float min, float max){
+	PretzelSlider* PretzelGui::addSlider(std::string label, float *variable, float min, float max){
         mWidgetList.push_back( new PretzelSlider(this, label, variable, min, max) );
+        return (PretzelSlider*)mWidgetList.back();
 	}
     
-	void PretzelGui::addSlider(std::string label, int *variable, int min, int max){
+	PretzelSlider* PretzelGui::addSlider(std::string label, int *variable, int min, int max){
 		mWidgetList.push_back( new PretzelSlider(this, label, variable, min, max) );
+        return (PretzelSlider*)mWidgetList.back();
 	}
     
-    void PretzelGui::addSlider(std::string label, ci::vec2 *variable, ci::vec2 min, ci::vec2 max){
+    PretzelSlider* PretzelGui::addSlider(std::string label, ci::vec2 *variable, ci::vec2 min, ci::vec2 max){
 		mWidgetList.push_back( new PretzelSlider(this, label, variable, min, max) );
+        return (PretzelSlider*)mWidgetList.back();
 	}
     
-    void PretzelGui::addSlider(std::string label, ci::vec3 *variable, ci::vec3 min, ci::vec3 max){
+    PretzelSlider* PretzelGui::addSlider(std::string label, ci::vec3 *variable, ci::vec3 min, ci::vec3 max){
 		mWidgetList.push_back( new PretzelSlider(this, label, variable, min, max) );
+        return (PretzelSlider*)mWidgetList.back();
 	}
     
-	void PretzelGui::addSaveLoad() {
+	PretzelSaveLoad* PretzelGui::addSaveLoad() {
 		mWidgetList.push_back( new PretzelSaveLoad(this) );
+        return (PretzelSaveLoad*)mWidgetList.back();
 	}
     
-	void PretzelGui::addToggle(std::string label, bool *value){
+	PretzelToggle* PretzelGui::addToggle(std::string label, bool *value){
 		mWidgetList.push_back( new PretzelToggle(this, label, value) );
+        return (PretzelToggle*)mWidgetList.back();
 	}
     
-	void PretzelGui::addTextField(std::string label, std::string *variable, bool editable){
+	PretzelTextField* PretzelGui::addTextField(std::string label, std::string *variable, bool editable){
 		mWidgetList.push_back( new PretzelTextField(this, label, variable, editable) );
+        return (PretzelTextField*)mWidgetList.back();
 	}
     
-    void PretzelGui::addColorPicker(std::string label, ci::Color *color){
+    PretzelColorPicker* PretzelGui::addColorPicker(std::string label, ci::Color *color){
         mWidgetList.push_back( new PretzelColorPicker(this, label, color) );
+        return (PretzelColorPicker*)mWidgetList.back();
     }
     
-    void PretzelGui::addColorPicker(std::string label, ci::ColorA *color){
+    PretzelColorPicker* PretzelGui::addColorPicker(std::string label, ci::ColorA *color){
         mWidgetList.push_back( new PretzelColorPicker(this, label, color) );
+        return (PretzelColorPicker*)mWidgetList.back();
     }
 }

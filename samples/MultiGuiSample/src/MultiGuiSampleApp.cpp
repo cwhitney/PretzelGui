@@ -26,7 +26,7 @@ void MultiGuiSampleApp::setup()
     mGuiL->addSaveLoad();
     
     mGuiR = pretzel::PretzelGui::create("Right side", 300, 400);
-    mGuiR->setPos( vec2(200, 75) );
+    mGuiR->setPos( vec2(200, 10) );
     mGuiR->addColorPicker("Right side color", &mColRight);
     mGuiR->addSaveLoad();
     
@@ -51,8 +51,7 @@ void MultiGuiSampleApp::draw()
     gl::color( mColRight );
     gl::drawSolidRect( Rectf(getWindowWidth()*0.5,0,getWindowWidth(), getWindowHeight()) );
     
-    mGuiL->draw();
-    mGuiR->draw();
+    pretzel::PretzelGui::drawAll();
 }
 
 CINDER_APP( MultiGuiSampleApp, RendererGl, [&]( App::Settings *settings){

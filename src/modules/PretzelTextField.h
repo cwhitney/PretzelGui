@@ -15,17 +15,17 @@
 
 namespace pretzel{
 	class PretzelTextField : public BasePretzel{
-	public:
+	  public:
 		PretzelTextField(BasePretzel *parent, std::string labelText, std::string *variable, bool editable = true);
-
-		virtual void draw();
-		void updateBounds(const ci::vec2 &offset, const ci::RectT<float> &parentBounds);
-
-		virtual void mouseDown(const ci::vec2 &pos);
-		virtual void mouseMoved(const ci::vec2 &pos);
-        virtual void keyDown(const char &key, const int &keyCode);
         
-	private:
+	
+        void draw() override;
+        void updateBounds(const ci::vec2 &offset, const ci::RectT<float> &parentBounds) override;
+        
+        void mouseDown(const ci::vec2 &pos) override;
+        void mouseMoved(const ci::vec2 &pos) override;
+        void keyDown(const char &key, const int &keyCode) override;
+     private:   
         std::string		mLabelText;
 		std::string		*mVariable;
 		ci::Rectf		mTextFieldBounds;

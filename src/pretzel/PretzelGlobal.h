@@ -16,16 +16,14 @@
 #include "cinder/ImageIo.h"
 #include "cinder/Log.h"
 
-#if defined( CINDER_MAC )
-//#import <AppKit/AppKit.h>
-#elif defined( CINDER_MSW )
-#include <Windows.h>
+#if defined( CINDER_MSW )
+    #include <Windows.h>
 #endif
 
 #include "Resources.h"
 
-namespace pretzel {
-
+namespace pretzel
+{
     enum CursorType {
         ARROW = 0,
         IBEAM,
@@ -34,13 +32,15 @@ namespace pretzel {
     };
     
     enum FontAlignment {
-		ALIGN_LEFT,
+		ALIGN_LEFT = 0,
 		ALIGN_RIGHT,
 		ALIGN_CENTER
 	};
     
     enum WidgetType {
         UNINITALIZED = 0,
+        ROOT,
+        GUI,
         BUTTON,
         LABEL,
         SAVELOAD,
