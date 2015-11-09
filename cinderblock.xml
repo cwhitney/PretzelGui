@@ -14,33 +14,16 @@
 	<headerPattern>src/modules/*.h</headerPattern>
 	<headerPattern>src/components/*.h</headerPattern>
 	
+	<sourcePattern>src/components/*.cpp</sourcePattern>
+	<sourcePattern>src/modules/*.cpp</sourcePattern>
+	
+	
 	<platform os="macosx">
-		<source compileAs="mm">src/components/BasePretzel.cpp</source>
-		<source compileAs="mm">src/components/PretzelRow.cpp</source>
-		<source compileAs="mm">src/components/ScrollPane.cpp</source>
-		<source compileAs="mm">src/modules/PretzelButton.cpp</source>
-		<source compileAs="mm">src/modules/PretzelColorPicker.cpp</source>
-		<source compileAs="mm">src/modules/PretzelLabel.cpp</source>
-		<source compileAs="mm">src/modules/PretzelSaveLoad.cpp</source>
-		<source compileAs="mm">src/modules/PretzelSlider.cpp</source>
-		<source compileAs="mm">src/modules/PretzelTextField.cpp</source>
-		<source compileAs="mm">src/modules/PretzelToggle.cpp</source>
 		<source compileAs="mm">src/pretzel/PretzelGlobal.cpp</source>
-		<source compileAs="mm">src/pretzel/PretzelGui.cpp</source>
+		<source>src/pretzel/PretzelGui.cpp</source>
 	</platform>
 	<platform os="msw">
-		<source>src/components/BasePretzel.cpp</source>
-		<source>src/components/PretzelRow.cpp</source>
-		<source>src/components/ScrollPane.cpp</source>
-		<source>src/modules/PretzelButton.cpp</source>
-		<source>src/modules/PretzelColorPicker.cpp</source>
-		<source>src/modules/PretzelLabel.cpp</source>
-		<source>src/modules/PretzelSaveLoad.cpp</source>
-		<source>src/modules/PretzelSlider.cpp</source>
-		<source>src/modules/PretzelTextField.cpp</source>
-		<source>src/modules/PretzelToggle.cpp</source>
-		<source>src/pretzel/PretzelGlobal.cpp</source>
-		<source>src/pretzel/PretzelGui.cpp</source>
+		<sourcePattern>src/pretzel/*.cpp</sourcePattern>
 	</platform>
 
 	<includePath>src</includePath>
