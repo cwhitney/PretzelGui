@@ -193,7 +193,7 @@ namespace pretzel{
             if( mArrowTex ){
                 gl::pushMatrices();{
                     gl::translate( vec2(14, 8) );
-                    gl::rotate( mArrowRotation );
+                    gl::rotate( toRadians( mArrowRotation ) );
                     gl::translate( floor(mArrowTex->getWidth() * -0.5), floor(mArrowTex->getHeight() * -0.5) );
                     gl::draw( mArrowTex );
                 }gl::popMatrices();

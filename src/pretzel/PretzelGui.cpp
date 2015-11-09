@@ -75,6 +75,17 @@ namespace pretzel
         PretzelRoot::getInstance()->addChild(this);
 	}
     
+    ci::Rectf PretzelGui::getGlobalBounds()
+    {
+        if( bDrawMinimized ){
+            Rectf b = mDefaultLabel->getBounds();
+            b.offset( mGlobalOffset );
+            return b;
+        }
+        
+        return BasePretzel::getGlobalBounds();
+    }
+    
     // Set the xy dimensions of the gui
 	void PretzelGui::setSize(vec2 size){
 		float minWidth = 180.f;

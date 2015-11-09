@@ -85,6 +85,7 @@ void PretzelRoot::onMouseDown(ci::app::MouseEvent &event)
 {
     PretzelGui *pg;
     
+    // only click the top-most gui
     for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
         pg = *it;
         
@@ -94,6 +95,7 @@ void PretzelRoot::onMouseDown(ci::app::MouseEvent &event)
         }
     }
     
+    // If this gui isn't on top, do z sorting to bring it up
     if( pg != mGuiList[0] ){
         for( auto it = mGuiList.begin(); it!=mGuiList.end(); ){
             if( *it == pg ){
@@ -108,33 +110,69 @@ void PretzelRoot::onMouseDown(ci::app::MouseEvent &event)
 }
 void PretzelRoot::onMouseDragged(ci::app::MouseEvent &event)
 {
-    for( auto it=mGuiList.begin(); it!=mGuiList.end(); ++it){
-        (*it)->mouseDragged( event.getPos() );
-    }
+    mGuiList[0]->mouseDragged( event.getPos() );
+    
+//    for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
+//        PretzelGui *pg = *it;
+//        
+//        if( pg->getGlobalBounds().contains( event.getPos() ) ){
+//            (*it)->mouseDragged( event.getPos() );
+//            break;
+//        }
+//    }
 }
 void PretzelRoot::onMouseUp(ci::app::MouseEvent &event)
 {
-    for( auto it=mGuiList.begin(); it!=mGuiList.end(); ++it){
-        (*it)->mouseUp( event.getPos() );
-    }
+    mGuiList[0]->mouseUp( event.getPos() );
+    
+//    for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
+//        PretzelGui *pg = *it;
+//        
+//        if( pg->getGlobalBounds().contains( event.getPos() ) ){
+//            (*it)->mouseUp( event.getPos() );
+//            break;
+//        }
+//    }
 }
 void PretzelRoot::onMouseWheel(ci::app::MouseEvent &event)
 {
-    for( auto it=mGuiList.begin(); it!=mGuiList.end(); ++it){
-        (*it)->mouseWheel( event.getWheelIncrement() );
-    }
+    mGuiList[0]->mouseWheel( event.getWheelIncrement() );
+    
+//    for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
+//        PretzelGui *pg = *it;
+//        
+//        if( pg->getGlobalBounds().contains( event.getPos() ) ){
+//            (*it)->mouseWheel( event.getWheelIncrement() );
+//            break;
+//        }
+//    }
 }
 void PretzelRoot::onMouseMoved(ci::app::MouseEvent &event)
 {
-    for( auto it=mGuiList.begin(); it!=mGuiList.end(); ++it){
-        (*it)->mouseMoved( event.getPos() );
+//    for( auto it=mGuiList.begin(); it!=mGuiList.end(); ++it){
+//        (*it)->mouseMoved( event.getPos() );
+//    }
+    
+    for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
+        PretzelGui *pg = *it;
+        
+        if( pg->getGlobalBounds().contains( event.getPos() ) ){
+            (*it)->mouseMoved( event.getPos() );
+            break;
+        }
     }
 }
 void PretzelRoot::onKeyDown(ci::app::KeyEvent &event)
 {
-    for( auto it=mGuiList.begin(); it!=mGuiList.end(); ++it){
-        (*it)->keyDown( event.getChar(), event.getCode() );
-    }
+    mGuiList[0]->keyDown( event.getChar(), event.getCode() );
+    
+//    for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
+//        PretzelGui *pg = *it;
+//        
+//        if( pg->getGlobalBounds().contains( event.getPos() ) ){
+//            (*it)->keyDown( event.getChar(), event.getCode() );
+//        }
+//    }
 }
 
 

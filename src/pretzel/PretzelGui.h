@@ -59,6 +59,8 @@ namespace pretzel
 		void setVisible(bool visible);
 		void toggleVisible();
 		bool isVisible();
+        
+        ci::Rectf getGlobalBounds() override;
 
 		void saveSettings(ci::fs::path settingsPath = ci::fs::path());
 		void loadSettings(ci::fs::path settingsPath = ci::fs::path());

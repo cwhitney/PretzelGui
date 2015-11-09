@@ -26,11 +26,14 @@ void MultiGuiSampleApp::setup()
     mGuiL->addSaveLoad();
     
     mGuiR = pretzel::PretzelGui::create("Right side", 300, 400);
-    mGuiR->setPos( vec2(200, 10) );
+    mGuiR->setPos( vec2(200, 50) );
     mGuiR->addColorPicker("Right side color", &mColRight);
     mGuiR->addSaveLoad();
     
     mGuiL->loadSettings();
+    
+    mColLeft  = Color::hex( 0x00FFE5 );
+    mColRight = Color::hex( 0xFF8A72 );
 }
 
 void MultiGuiSampleApp::mouseDown( MouseEvent event )
