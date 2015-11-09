@@ -22,7 +22,7 @@ namespace pretzel{
 		virtual void registerPretzel(BasePretzel *child);
 		virtual void updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds);
 
-        ci::Rectf getBounds();
+        virtual ci::Rectf getBounds();
         virtual ci::Rectf getGlobalBounds();
 		float getWidth();
 		float getHeight();

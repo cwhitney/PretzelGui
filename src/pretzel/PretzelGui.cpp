@@ -75,6 +75,14 @@ namespace pretzel
         PretzelRoot::getInstance()->addChild(this);
 	}
     
+    ci::Rectf PretzelGui::getBounds(){
+        if( bDrawMinimized ){
+            return mDefaultLabel->getBounds();
+        }
+        
+        return ScrollPane::getBounds();
+    }
+    
     ci::Rectf PretzelGui::getGlobalBounds()
     {
         if( bDrawMinimized ){
@@ -83,7 +91,7 @@ namespace pretzel
             return b;
         }
         
-        return BasePretzel::getGlobalBounds();
+        return ScrollPane::getGlobalBounds();
     }
     
     // Set the xy dimensions of the gui
@@ -231,7 +239,7 @@ namespace pretzel
         ScrollPane::draw();
         
 		gl::ScopedBlendAlpha();
-        gl::ScopedGlslProg sgp( gl::getStockShader(ci::gl::ShaderDef().color() ) );
+        gl::ScopedGlslProg sgp( gl::getStockShader(ci::gl::ShaderDef().color()) );
         gl::ScopedDepth sd( false );
       
         // -----------------------------------------------------------
