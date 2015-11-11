@@ -155,7 +155,6 @@ namespace pretzel {
 
     void ScrollPane::draw()
     {
-        glEnable(GL_SCISSOR_TEST);
         Rectf tBounds = getBounds();
         vec2 tPos = mOffset + mGlobalOffset;
         float winH = getWindowHeight();
@@ -165,8 +164,8 @@ namespace pretzel {
             winH *= getWindowContentScale();
             tPos *= getWindowContentScale();
         }
-
-        glScissor( tPos.x, winH - tBounds.y2 - tPos.y, tBounds.getWidth(), tBounds.getHeight());
+        
+        gl::ScopedScissor scSc(tPos.x, winH - tBounds.y2 - tPos.y, tBounds.getWidth(), tBounds.getHeight());
         
         gl::color(mGlobal->P_BG_COLOR);
         gl::drawSolidRect( getBounds() );
@@ -191,7 +190,5 @@ namespace pretzel {
         }else{
             PretzelRow::draw();
         }
-        
-        glDisable(GL_SCISSOR_TEST);
     }
 }
