@@ -59,4 +59,5 @@ void MultiGuiSampleApp::draw()
 
 CINDER_APP( MultiGuiSampleApp, RendererGl, [&]( App::Settings *settings){
     settings->setWindowSize(1024, 768);
+    settings->setHighDensityDisplayEnabled();
 })
