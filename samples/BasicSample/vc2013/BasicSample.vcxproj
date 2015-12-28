@@ -107,6 +107,7 @@
     <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\components\PretzelRoot.cpp" />
     <ClCompile Include="..\src\BasicSampleApp.cpp" />
     <ClCompile Include="..\..\..\src\pretzel\PretzelGui.cpp" />
     <ClCompile Include="..\..\..\src\pretzel\PretzelGlobal.cpp" />
@@ -122,6 +123,7 @@
     <ClCompile Include="..\..\..\src\components\ScrollPane.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\src\components\PretzelRoot.h" />
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\..\..\src\pretzel\PretzelGlobal.h" />
     <ClInclude Include="..\..\..\src\pretzel\PretzelGui.h" />

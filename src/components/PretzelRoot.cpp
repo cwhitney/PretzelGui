@@ -18,13 +18,6 @@ PretzelRoot* PretzelRoot::getInstance(){
     if (!mInstance){
         mInstance = new PretzelRoot();
         mInstance->init();
-        
-#if defined( CINDER_MSW )
-        mInstance->mCursorArrow = ::LoadCursor(NULL, IDC_ARROW);
-        mInstance->mCursorIBeam = ::LoadCursor(NULL, IDC_IBEAM);
-        mInstance->mCursorHand = ::LoadCursor(NULL, IDC_HAND);
-        mInstance->mCursorResize = ::LoadCursor(NULL, IDC_SIZENWSE);
-#endif 
     }
     return mInstance;
 }
