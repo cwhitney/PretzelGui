@@ -18,7 +18,8 @@ namespace pretzel{
 		BasePretzel();
         ~BasePretzel();
 
-		virtual void draw(){};
+        virtual void update();
+        virtual void draw() {};
 		virtual void registerPretzel(BasePretzel *child);
 		virtual void updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds);
 

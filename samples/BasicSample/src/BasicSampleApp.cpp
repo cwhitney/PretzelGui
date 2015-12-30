@@ -113,5 +113,5 @@ void BasicSampleApp::draw()
 CINDER_APP(BasicSampleApp, RendererGl, [](App::Settings* settings){
 	settings->prepareWindow(Window::Format().size(1024, 768).title("PrezelGui :: BasicSample"));
 	settings->setFrameRate(60.0f);
-	settings->setHighDensityDisplayEnabled();
+//	settings->setHighDensityDisplayEnabled();
 })

@@ -10,7 +10,6 @@
 
 #include "cinder/app/App.h"
 
-//#include "components/BasePretzel.h"
 #include "pretzel/PretzelGlobal.h"
 #include "pretzel/PretzelGui.h"
 
@@ -24,6 +23,7 @@ namespace pretzel
         static PretzelRoot* getInstance();
         
         void addChild( PretzelGui *gui );
+        void update();
         void draw();
         
       protected:
@@ -48,12 +48,13 @@ namespace pretzel
         void onKeyDown(     ci::app::KeyEvent &event    );
         
         // mouse events
-        ci::signals::Connection  mMouseBeganCallBack,
-                                 mMouseDragCallBack,
-                                 mMouseEndCallBack,
-                                 mMouseWheelCallBack,
-                                 mMouseMovedCallBack,
-                                 mKeyDownCallback;
+        ci::signals::Connection mMouseBeganCallback,
+                                mMouseDragCallback,
+                                mMouseEndCallback,
+                                mMouseWheelCallback,
+                                mMouseMovedCallback,
+                                mKeyDownCallback,
+                                mUpdateCallback;
         
         // ----------
         std::deque<PretzelGui*>    mGuiList;
