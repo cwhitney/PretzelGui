@@ -125,6 +125,9 @@
     <ClInclude Include="..\..\..\src\components\PretzelRoot.h">
       <Filter>Blocks\PretzelGUI\src\components</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\modules\PretzelShaders.h">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc">

@@ -3,3 +3,4 @@
 1	ICON	"..\\resources\\cinder_app_icon.ico"
 PRETZEL_GUI_SKIN
 PRETZEL_COLOR
+PRETZEL_HSL_BAR

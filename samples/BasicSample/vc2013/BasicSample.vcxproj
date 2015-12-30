@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\components\PretzelRoot.h" />
+    <ClInclude Include="..\..\..\src\modules\PretzelShaders.h" />
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\..\..\src\pretzel\PretzelGlobal.h" />
     <ClInclude Include="..\..\..\src\pretzel\PretzelGui.h" />
