@@ -29,6 +29,7 @@
 		C3FD1F0AB68242A186EEF7A4 /* default_skin.png in Resources */ = {isa = PBXBuildFile; fileRef = EF781F1FE2B64FB18A0237DB /* default_skin.png */; };
 		C6125ADE05984A96823BA986 /* PretzelSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8DE0C276F504B0C83F33ED7 /* PretzelSlider.cpp */; };
 		CB58C3D41BED12D2006F650C /* PretzelRoot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB58C3D21BED12D2006F650C /* PretzelRoot.cpp */; };
+		CBAD23EF1C33623A00950E5C /* hslBar.png in Resources */ = {isa = PBXBuildFile; fileRef = CBAD23EE1C33623A00950E5C /* hslBar.png */; };
 		CFF9C3F856CB4A0089C2F100 /* MultiGuiSampleApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6558D94930E64D83A04ABAB0 /* MultiGuiSampleApp.cpp */; };
 		D54CF6D899204834BECAFA88 /* PretzelGlobal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEFCBC30B017466490F91276 /* PretzelGlobal.cpp */; };
 		D71B45D6599C45B485C9B469 /* PretzelRow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11C8E973002F4BE59BD9A48E /* PretzelRow.cpp */; };
@@ -80,6 +81,8 @@
 		C6A80DC377D3446DA59BF690 /* color-picker.png */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; name = "color-picker.png"; path = "../../../resources/color-picker.png"; sourceTree = "<group>"; };
 		CB58C3D21BED12D2006F650C /* PretzelRoot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PretzelRoot.cpp; path = ../../../src/components/PretzelRoot.cpp; sourceTree = "<group>"; };
 		CB58C3D31BED12D2006F650C /* PretzelRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PretzelRoot.h; path = ../../../src/components/PretzelRoot.h; sourceTree = "<group>"; };
+		CBAD23ED1C33620C00950E5C /* PretzelShaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelShaders.h; path = ../../../src/modules/PretzelShaders.h; sourceTree = "<group>"; };
+		CBAD23EE1C33623A00950E5C /* hslBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hslBar.png; path = ../assets/hslBar.png; sourceTree = "<group>"; };
 		CEFCBC30B017466490F91276 /* PretzelGlobal.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = PretzelGlobal.cpp; path = ../../../src/pretzel/PretzelGlobal.cpp; sourceTree = "<group>"; };
 		D4C6D2DA894044CC82EFE6F4 /* BasePretzel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = BasePretzel.cpp; path = ../../../src/components/BasePretzel.cpp; sourceTree = "<group>"; };
 		E38368EA86F243C6B00826BC /* PretzelSaveLoad.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = PretzelSaveLoad.cpp; path = ../../../src/modules/PretzelSaveLoad.cpp; sourceTree = "<group>"; };
@@ -227,6 +230,7 @@
 		97DDF5FDE53D43699C4B734F /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				CBAD23EE1C33623A00950E5C /* hslBar.png */,
 				EF781F1FE2B64FB18A0237DB /* default_skin.png */,
 				C6A80DC377D3446DA59BF690 /* color-picker.png */,
 			);
@@ -236,6 +240,7 @@
 		AA51D7BD549743B0BBBAA4C6 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				CBAD23ED1C33620C00950E5C /* PretzelShaders.h */,
 				04D10960C35240A8B5C10D56 /* PretzelButton.cpp */,
 				19E939C2AA1C4D5389994ADE /* PretzelColorPicker.cpp */,
 				4AC2C6D86A8F4FCF82997E45 /* PretzelLabel.cpp */,
@@ -328,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12C20B4270E54E5EA4491958 /* CinderApp.icns in Resources */,
+				CBAD23EF1C33623A00950E5C /* hslBar.png in Resources */,
 				C3FD1F0AB68242A186EEF7A4 /* default_skin.png in Resources */,
 				6FA0443B35A043EFA31D9544 /* color-picker.png in Resources */,
 			);

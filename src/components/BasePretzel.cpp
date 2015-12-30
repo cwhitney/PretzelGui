@@ -113,5 +113,12 @@ namespace pretzel
 		}
 	}
     
+    void BasePretzel::update()
+    {
+        for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
+            (*it)->update();
+        }
+    }
+    
 
 }

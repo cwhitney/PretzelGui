@@ -39,28 +39,32 @@ PretzelRoot::~PretzelRoot()
     disconnectSignals();
 }
 
-void PretzelRoot::connectSignals(){
-    if( !mMouseBeganCallBack.isConnected() ){
+void PretzelRoot::connectSignals()
+{
+    if( !mMouseBeganCallback.isConnected() ){
         ci::app::WindowRef window = cinder::app::getWindow();
         
         // uses default priority 0
-        mMouseBeganCallBack = window->getSignalMouseDown().connect(std::bind(&PretzelRoot::onMouseDown, this, std::placeholders::_1));
-        mMouseDragCallBack = window->getSignalMouseDrag().connect(std::bind(&PretzelRoot::onMouseDragged, this, std::placeholders::_1));
-        mMouseEndCallBack = window->getSignalMouseUp().connect(std::bind(&PretzelRoot::onMouseUp, this, std::placeholders::_1));
-        mMouseMovedCallBack = window->getSignalMouseMove().connect(std::bind(&PretzelRoot::onMouseMoved, this, std::placeholders::_1));
+        mMouseBeganCallback = window->getSignalMouseDown().connect(std::bind(&PretzelRoot::onMouseDown, this, std::placeholders::_1));
+        mMouseDragCallback = window->getSignalMouseDrag().connect(std::bind(&PretzelRoot::onMouseDragged, this, std::placeholders::_1));
+        mMouseEndCallback = window->getSignalMouseUp().connect(std::bind(&PretzelRoot::onMouseUp, this, std::placeholders::_1));
+        mMouseMovedCallback = window->getSignalMouseMove().connect(std::bind(&PretzelRoot::onMouseMoved, this, std::placeholders::_1));
         mKeyDownCallback = window->getSignalKeyDown().connect(std::bind(&PretzelRoot::onKeyDown, this, std::placeholders::_1));
-        mMouseWheelCallBack = window->getSignalMouseWheel().connect(std::bind(&PretzelRoot::onMouseWheel, this, std::placeholders::_1));
+        mMouseWheelCallback = window->getSignalMouseWheel().connect(std::bind(&PretzelRoot::onMouseWheel, this, std::placeholders::_1));
+        mUpdateCallback = ci::app::App::get()->getSignalUpdate().connect(std::bind(&PretzelRoot::update, this));
     }
 }
 
-void PretzelRoot::disconnectSignals(){
-    if( mMouseBeganCallBack.isConnected() ){
-        mMouseBeganCallBack.disconnect();
-        mMouseDragCallBack.disconnect();
-        mMouseEndCallBack.disconnect();
-        mMouseMovedCallBack.disconnect();
+void PretzelRoot::disconnectSignals()
+{
+    if( mMouseBeganCallback.isConnected() ){
+        mMouseBeganCallback.disconnect();
+        mMouseDragCallback.disconnect();
+        mMouseEndCallback.disconnect();
+        mMouseMovedCallback.disconnect();
         mKeyDownCallback.disconnect();
-        mMouseWheelCallBack.disconnect();
+        mMouseWheelCallback.disconnect();
+        mUpdateCallback.disconnect();
     }
 }
 
@@ -69,6 +73,13 @@ void PretzelRoot::addChild( PretzelGui *gui )
     mGuiList.push_front( gui );
 }
 
+
+void PretzelRoot::update()
+{
+    for( auto it = mGuiList.rbegin(); it!=mGuiList.rend(); ++it){
+        (*it)->update();
+    }
+}
 
 void PretzelRoot::draw()
 {
