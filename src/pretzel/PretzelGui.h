@@ -27,6 +27,11 @@
 #include "modules/PretzelButton.h"
 #include "modules/PretzelToggle.h"
 #include "modules/PretzelTextField.h"
+#include "modules/PretzelIntField.h"
+#include "modules/PretzelUIntField.h"
+#include "modules/PretzelHexField.h"
+#include "modules/PretzelFloatField.h"
+#include "modules/PretzelDoubleField.h"
 #include "modules/PretzelColorPicker.h"
 
 namespace pretzel
@@ -75,8 +80,12 @@ namespace pretzel
         PretzelSaveLoad*    addSaveLoad();
 		PretzelToggle*      addToggle(std::string label, bool *value);
 		PretzelTextField*   addTextField(std::string label, std::string *variable, bool editable = true);
-        
-        PretzelColorPicker* addColorPicker(std::string label, ci::Color *color);
+		PretzelIntField*    addIntField(std::string label, int &variable, bool editable = true);
+		PretzelUIntField*   addUIntField(std::string label, unsigned &variable, bool editable = true);
+		PretzelHexField*    addHexField(std::string label, unsigned &variable, bool editable = true);
+		PretzelFloatField*  addFloatField(std::string label, float &variable, bool editable = true);
+		PretzelDoubleField* addDoubleField(std::string label, double &variable, bool editable = true);
+		PretzelColorPicker* addColorPicker(std::string label, ci::Color *color);
         PretzelColorPicker* addColorPicker(std::string label, ci::ColorA *color);
         
 		template<typename T, typename Y>

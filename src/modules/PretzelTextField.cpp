@@ -63,12 +63,16 @@ namespace pretzel{
             else if (keyCode == KeyEvent::KEY_BACKSPACE && !mVariable->empty()){
                 mVariable->pop_back();
             }
-            else if (keyCode > 31 && keyCode < 127){ //printable characters
+            else if (isCharValid(keyCode)){ //printable characters
                 mVariable->push_back(key);
             }
 			mInputSize = mGlobal->guiFont->measureString(*mVariable);
         }
     }
+
+	bool PretzelTextField::isCharValid(int keyCode) const{
+		return (keyCode > 31 && keyCode < 127);
+	}
 
 	void PretzelTextField::draw(){
 		gl::pushMatrices(); {

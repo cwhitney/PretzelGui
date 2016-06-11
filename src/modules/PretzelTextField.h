@@ -25,7 +25,11 @@ namespace pretzel{
         void mouseDown(const ci::vec2 &pos) override;
         void mouseMoved(const ci::vec2 &pos) override;
         void keyDown(const char &key, const int &keyCode) override;
-     private:   
+
+	 protected:
+		 virtual bool isCharValid(int keyCode) const;
+
+     protected:   
         std::string		mLabelText;
 		std::string		*mVariable;
 		ci::Rectf		mTextFieldBounds;
