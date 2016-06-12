@@ -12,6 +12,12 @@ namespace pretzel{
 	protected:
 		bool isCharValid(int keyCode) const override;
 
+		void draw() override
+		{
+			mStr = std::to_string(mVar);
+			PretzelTextField::draw();
+		}
+
 	private:
 		std::string mStr;
 		float &mVar;

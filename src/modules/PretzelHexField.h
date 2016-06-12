@@ -13,6 +13,14 @@ namespace pretzel{
 	protected:
 		bool isCharValid(int keyCode) const override;
 
+
+		void draw() override
+		{
+			mStr = hex_to_string(mVar);
+			PretzelTextField::draw();
+		}
+
+
 	private:
 		std::string mStr;
 		unsigned &mVar;
