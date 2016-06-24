@@ -223,7 +223,7 @@ namespace pretzel
     
     void PretzelGui::mouseWheel(const float increment)
     {
-        ScrollPane::mouseWheel( increment * 4.0 );
+        ScrollPane::mouseWheel( increment * 4.0f );
     }
     
 	void PretzelGui::keyDown(const char &key, const int &keyCode){
@@ -312,7 +312,32 @@ namespace pretzel
 		mWidgetList.push_back( new PretzelTextField(this, label, variable, editable) );
         return (PretzelTextField*)mWidgetList.back();
 	}
-    
+
+	PretzelIntField* PretzelGui::addIntField(std::string label, int &variable, bool editable) {
+		mWidgetList.push_back(new PretzelIntField(this, label, variable, editable));
+		return (PretzelIntField*)mWidgetList.back();
+	}
+
+	PretzelUIntField* PretzelGui::addUIntField(std::string label, unsigned &variable, bool editable) {
+		mWidgetList.push_back(new PretzelUIntField(this, label, variable, editable));
+		return (PretzelUIntField*)mWidgetList.back();
+	}
+
+	PretzelHexField* PretzelGui::addHexField(std::string label, unsigned &variable, bool editable) {
+		mWidgetList.push_back(new PretzelHexField(this, label, variable, editable));
+		return (PretzelHexField*)mWidgetList.back();
+	}
+
+	PretzelFloatField* PretzelGui::addFloatField(std::string label, float &variable, bool editable) {
+		mWidgetList.push_back(new PretzelFloatField(this, label, variable, editable));
+		return (PretzelFloatField*)mWidgetList.back();
+	}
+
+	PretzelDoubleField* PretzelGui::addDoubleField(std::string label, double &variable, bool editable) {
+		mWidgetList.push_back(new PretzelDoubleField(this, label, variable, editable));
+		return (PretzelDoubleField*)mWidgetList.back();
+	}
+
     PretzelColorPicker* PretzelGui::addColorPicker(std::string label, ci::Color *color){
         mWidgetList.push_back( new PretzelColorPicker(this, label, color) );
         return (PretzelColorPicker*)mWidgetList.back();

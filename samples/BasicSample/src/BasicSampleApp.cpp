@@ -29,6 +29,12 @@ public:
     bool bDrawOutline;
     string mFps;
     string mBubble;
+
+	int i;
+	unsigned u;
+	unsigned h;
+	float f;
+	double pi;
     
     ci::ColorA mCol;
     void onButtonPress();
@@ -44,6 +50,11 @@ void BasicSampleApp::setup()
     bDrawOutline = false;
     mCol = Color::white();
     mBubble = "Hello, world!";
+	i = -1234;
+	u = 5678;
+	h = 0x9abc;
+	f = 3.14f;
+	pi = M_PI;
     
     gui = pretzel::PretzelGui::create("Circle settings");
     
@@ -61,7 +72,12 @@ void BasicSampleApp::setup()
     // Textfields can be editable or non-editable
     gui->addTextField("FPS", &mFps, false);
     gui->addTextField("Speech Bubble", &mBubble, true);
-    
+	gui->addIntField("int test", i, true);
+	gui->addUIntField("uint test", u, true)->setLimits(0, 100000);
+	gui->addHexField("hex test 0x", h, true);
+	gui->addFloatField("float test", f, true);
+	gui->addDoubleField("double test", pi, true)->setLimits(-4, 4);
+
     gui->addSaveLoad();
     
     gui->loadSettings();    // load the last saved settings automatically
@@ -106,7 +122,13 @@ void BasicSampleApp::draw()
         gl::drawSolidCircle(mPosition, mRadius);
     }
     gl::drawString("< " + mBubble, mPosition + vec2(mRadius + 10, -10), mCol, Font("Arial", 24));
-    
+	gl::drawString("< " + to_string(i), mPosition + vec2(mRadius + 10, 10), mCol, Font("Arial", 24));
+	gl::drawString("< " + to_string(u), mPosition + vec2(mRadius + 10, 30), mCol, Font("Arial", 24));
+
+	gl::drawString("< 0x" + pretzel::PretzelHexField::hex_to_string(h), mPosition + vec2(mRadius + 10, 50), mCol, Font("Arial", 24));
+	gl::drawString("< " + to_string(f), mPosition + vec2(mRadius + 10, 70), mCol, Font("Arial", 24));
+	gl::drawString("< " + to_string(pi), mPosition + vec2(mRadius + 10, 90), mCol, Font("Arial", 24));
+
     gui->draw();
 }
 
