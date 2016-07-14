@@ -1,6 +1,6 @@
 #include "PretzelFloatField.h"
 #include <limits>
-#include "cinder\CinderMath.h"
+#include "cinder/CinderMath.h"
 
 using namespace ci;
 using namespace ci::app;

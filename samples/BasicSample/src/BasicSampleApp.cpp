@@ -124,8 +124,6 @@ void BasicSampleApp::draw()
     gl::drawString("< " + mBubble, mPosition + vec2(mRadius + 10, -10), mCol, Font("Arial", 24));
 	gl::drawString("< " + to_string(i), mPosition + vec2(mRadius + 10, 10), mCol, Font("Arial", 24));
 	gl::drawString("< " + to_string(u), mPosition + vec2(mRadius + 10, 30), mCol, Font("Arial", 24));
-
-	gl::drawString("< 0x" + pretzel::PretzelHexField::hex_to_string(h), mPosition + vec2(mRadius + 10, 50), mCol, Font("Arial", 24));
 	gl::drawString("< " + to_string(f), mPosition + vec2(mRadius + 10, 70), mCol, Font("Arial", 24));
 	gl::drawString("< " + to_string(pi), mPosition + vec2(mRadius + 10, 90), mCol, Font("Arial", 24));
 

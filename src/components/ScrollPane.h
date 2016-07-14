@@ -19,7 +19,7 @@ namespace pretzel {
     class ScrollPane : public PretzelRow {
       public:
         ScrollPane(BasePretzel *base, int width, int height);
-        virtual void draw();
+        virtual void draw() override;
         
         virtual void mouseDown(const ci::vec2 &pos) override;
 		virtual void mouseDragged(const ci::vec2 &pos) override;

@@ -33,10 +33,6 @@
 		type="IMAGE"
 		>resources/default_skin.png</resource>
 	<resource
-		name="PRETZEL_COLOR"
-		type="IMAGE"
-		>resources/color-picker.png</resource>
-	<resource
 		name="PRETZEL_HSL_BAR"
 		type="IMAGE"
 		>resources/hslBar.png</resource>

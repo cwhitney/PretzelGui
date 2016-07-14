@@ -20,7 +20,15 @@ pretzel::PretzelHexField::PretzelHexField(BasePretzel *parent, string labelText,
 std::string pretzel::PretzelHexField::hex_to_string(unsigned u)
 {
 	char buf[32];
+#ifdef CINDER_MSW
 	_ultoa(u, buf, 16);
+#elif CINDER_OSX
+    ultoa(u, buf, 16);
+#endif
+    
+    
+    console() << "buff :: " << buf << endl;
+    
 	return string(buf);
 }
 
