@@ -28,6 +28,7 @@
 #include "modules/PretzelToggle.h"
 #include "modules/PretzelTextField.h"
 #include "modules/PretzelColorPicker.h"
+#include "modules/PretzelEnum.h"
 
 namespace pretzel
 {
@@ -75,6 +76,7 @@ namespace pretzel
         PretzelSaveLoad*    addSaveLoad();
 		PretzelToggle*      addToggle(std::string label, bool *value);
 		PretzelTextField*   addTextField(std::string label, std::string *variable, bool editable = true);
+        PretzelEnum*        addEnum(std::string label, std::vector<std::string> *strList, int *num);
         
         PretzelColorPicker* addColorPicker(std::string label, ci::Color *color);
         PretzelColorPicker* addColorPicker(std::string label, ci::ColorA *color);

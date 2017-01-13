@@ -47,7 +47,8 @@ namespace pretzel
         SLIDER,
         TEXTFIELD,
         TOGGLE,
-        COLOR_PICKER
+        COLOR_PICKER,
+        ENUM
     };
     
 	class PretzelGlobal {

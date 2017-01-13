@@ -28,6 +28,7 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C3FD1F0AB68242A186EEF7A4 /* default_skin.png in Resources */ = {isa = PBXBuildFile; fileRef = EF781F1FE2B64FB18A0237DB /* default_skin.png */; };
 		C6125ADE05984A96823BA986 /* PretzelSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8DE0C276F504B0C83F33ED7 /* PretzelSlider.cpp */; };
+		CB37B37B1E294A61009FC93A /* PretzelEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB37B3791E294A61009FC93A /* PretzelEnum.cpp */; };
 		CB58C3D41BED12D2006F650C /* PretzelRoot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB58C3D21BED12D2006F650C /* PretzelRoot.cpp */; };
 		CBAD23EF1C33623A00950E5C /* hslBar.png in Resources */ = {isa = PBXBuildFile; fileRef = CBAD23EE1C33623A00950E5C /* hslBar.png */; };
 		CFF9C3F856CB4A0089C2F100 /* MultiGuiSampleApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6558D94930E64D83A04ABAB0 /* MultiGuiSampleApp.cpp */; };
@@ -79,6 +80,8 @@
 		B8DE0C276F504B0C83F33ED7 /* PretzelSlider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; name = PretzelSlider.cpp; path = ../../../src/modules/PretzelSlider.cpp; sourceTree = "<group>"; };
 		C61F39FEDD084BE6AEB987B1 /* PretzelToggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelToggle.h; path = ../../../src/modules/PretzelToggle.h; sourceTree = "<group>"; };
 		C6A80DC377D3446DA59BF690 /* color-picker.png */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; name = "color-picker.png"; path = "../../../resources/color-picker.png"; sourceTree = "<group>"; };
+		CB37B3791E294A61009FC93A /* PretzelEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PretzelEnum.cpp; path = ../../../../../../../../sharkbox/03_Client_Work/2016/12_13_AVC_Flip/03_Research/SplitFlap_01/blocks/PretzelGUI/src/modules/PretzelEnum.cpp; sourceTree = "<group>"; };
+		CB37B37A1E294A61009FC93A /* PretzelEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PretzelEnum.h; path = ../../../../../../../../sharkbox/03_Client_Work/2016/12_13_AVC_Flip/03_Research/SplitFlap_01/blocks/PretzelGUI/src/modules/PretzelEnum.h; sourceTree = "<group>"; };
 		CB58C3D21BED12D2006F650C /* PretzelRoot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PretzelRoot.cpp; path = ../../../src/components/PretzelRoot.cpp; sourceTree = "<group>"; };
 		CB58C3D31BED12D2006F650C /* PretzelRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PretzelRoot.h; path = ../../../src/components/PretzelRoot.h; sourceTree = "<group>"; };
 		CBAD23ED1C33620C00950E5C /* PretzelShaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelShaders.h; path = ../../../src/modules/PretzelShaders.h; sourceTree = "<group>"; };
@@ -243,6 +246,7 @@
 				CBAD23ED1C33620C00950E5C /* PretzelShaders.h */,
 				04D10960C35240A8B5C10D56 /* PretzelButton.cpp */,
 				19E939C2AA1C4D5389994ADE /* PretzelColorPicker.cpp */,
+				CB37B3791E294A61009FC93A /* PretzelEnum.cpp */,
 				4AC2C6D86A8F4FCF82997E45 /* PretzelLabel.cpp */,
 				E38368EA86F243C6B00826BC /* PretzelSaveLoad.cpp */,
 				B8DE0C276F504B0C83F33ED7 /* PretzelSlider.cpp */,
@@ -250,6 +254,7 @@
 				4C128077E71B4E048DAC498F /* PretzelToggle.cpp */,
 				4288BEBF8FFC4948BD23B8BD /* PretzelButton.h */,
 				369C4ED7F0E14EF1A9484C72 /* PretzelColorPicker.h */,
+				CB37B37A1E294A61009FC93A /* PretzelEnum.h */,
 				82FD6AC402E548E2828BA26A /* PretzelLabel.h */,
 				4E847048E855442AB239A65D /* PretzelSaveLoad.h */,
 				9CD8772D28494A3EBFA15793 /* PretzelSlider.h */,
@@ -354,6 +359,7 @@
 				65E5742959FA477F8EE2C2C9 /* PretzelButton.cpp in Sources */,
 				CB58C3D41BED12D2006F650C /* PretzelRoot.cpp in Sources */,
 				FA0B9304CFB64E67AEB0E232 /* PretzelColorPicker.cpp in Sources */,
+				CB37B37B1E294A61009FC93A /* PretzelEnum.cpp in Sources */,
 				DF13118B59C04388A0C6D01D /* PretzelLabel.cpp in Sources */,
 				18234155A7384E52B4E8977E /* PretzelSaveLoad.cpp in Sources */,
 				C6125ADE05984A96823BA986 /* PretzelSlider.cpp in Sources */,

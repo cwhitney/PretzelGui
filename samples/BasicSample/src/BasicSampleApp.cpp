@@ -32,6 +32,9 @@ public:
     
     ci::ColorA mCol;
     void onButtonPress();
+    
+    std::vector<std::string>    mStringList;
+    int                         mStringChoice = 0;
 };
 
 void BasicSampleApp::setup()
@@ -44,6 +47,8 @@ void BasicSampleApp::setup()
     bDrawOutline = false;
     mCol = Color::white();
     mBubble = "Hello, world!";
+    
+    mStringList = {"one", "two", "three"};
     
     gui = pretzel::PretzelGui::create("Circle settings");
     
@@ -61,6 +66,8 @@ void BasicSampleApp::setup()
     // Textfields can be editable or non-editable
     gui->addTextField("FPS", &mFps, false);
     gui->addTextField("Speech Bubble", &mBubble, true);
+    
+    gui->addEnum("Choose", &mStringList, &mStringChoice);
     
     gui->addSaveLoad();
     

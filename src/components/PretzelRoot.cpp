@@ -140,16 +140,16 @@ void PretzelRoot::onMouseUp(ci::app::MouseEvent &event)
 }
 void PretzelRoot::onMouseWheel(ci::app::MouseEvent &event)
 {
-    mGuiList[0]->mouseWheel( event.getWheelIncrement() );
+    //    mGuiList[0]->mouseWheel( event.getWheelIncrement() );
     
-//    for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
-//        PretzelGui *pg = *it;
-//        
-//        if( pg->getGlobalBounds().contains( event.getPos() ) ){
-//            (*it)->mouseWheel( event.getWheelIncrement() );
-//            break;
-//        }
-//    }
+    for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
+        PretzelGui *pg = *it;
+        
+        if( pg->getGlobalBounds().contains( event.getPos() ) ){
+            (*it)->mouseWheel( event.getWheelIncrement() );
+            break;
+        }
+    }
 }
 void PretzelRoot::onMouseMoved(ci::app::MouseEvent &event)
 {

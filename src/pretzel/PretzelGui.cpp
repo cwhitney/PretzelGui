@@ -322,4 +322,9 @@ namespace pretzel
         mWidgetList.push_back( new PretzelColorPicker(this, label, color) );
         return (PretzelColorPicker*)mWidgetList.back();
     }
+    
+    PretzelEnum* PretzelGui::addEnum(std::string label, std::vector<std::string> *strList, int *num){
+        mWidgetList.push_back( new PretzelEnum(this, label, strList, num) );
+        return (PretzelEnum*)mWidgetList.back();
+    }
 }

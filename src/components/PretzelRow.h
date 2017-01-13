@@ -17,7 +17,7 @@ namespace pretzel{
 	class PretzelRow : public BasePretzel {
 	public:
 		PretzelRow(BasePretzel *base, int width, int height);
-		void draw();
+        void draw() override;
 
 	protected:
 		void updateChildrenBounds() override;
