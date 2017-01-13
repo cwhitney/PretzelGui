@@ -7,6 +7,10 @@ Made with the goal of creating a super simple to setup gui that looks nice.  Fea
 
 ![PretzelGui Screenshot](https://raw.githubusercontent.com/cwhitney/PretzelGui/master/ss.png)
 
+## Installation
+
+Download or check out this repoistory into your `Cinder/blocks` directory, then use [Tinderbox](https://libcinder.org/docs/guides/tinderbox/) to create a new project using the block.
+
 ----
 The MIT License (MIT)
 
