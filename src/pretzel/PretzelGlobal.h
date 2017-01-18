@@ -98,8 +98,8 @@ namespace pretzel
         void setCursor( CursorType type );
         ci::gl::TextureRef  getTextureFromSkin( ci::Rectf rect );
         
-        void setGlobalPos( const ci::vec2 &pos ){ mGlobalPos = pos; };
-        const ci::vec2 getGlobalPos(){ return mGlobalPos; };
+//        void setGlobalPos( const ci::vec2 &pos ){ mGlobalPos = pos; };
+        //const ci::vec2 getGlobalPos(){ return mGlobalPos; };
         
         void drawSolidRect( ci::Rectf rect );
         void drawStrokedRect( ci::Rectf rect );

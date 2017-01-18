@@ -11,6 +11,12 @@
 #include "cinder/app/App.h"
 #include "pretzel/PretzelGlobal.h"
 
+
+/**
+ * This is the base class for all gui visual elements including Modules and Rows.
+ *
+ */
+
 namespace pretzel{
 	class BasePretzel {
         
@@ -60,8 +66,6 @@ namespace pretzel{
 		std::vector<BasePretzel*>   mPretzelChildren;
 		ci::Rectf                   mParentBounds;
         
-        
-
-		PretzelGlobal		*mGlobal;
+		PretzelGlobal               *mGlobal;
 	};
 }

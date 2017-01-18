@@ -14,9 +14,16 @@ using namespace std;
 
 namespace pretzel
 {
-	PretzelGui::PretzelGui(std::string title, int width, int height) : ScrollPane(NULL, width, height){ init(title); }
+	PretzelGui::PretzelGui(std::string title, int width, int height, ci::app::WindowRef window) :
+        ScrollPane(nullptr, width, height),
+        mWindowRef(window)
+    {
+        init(title);
+    }
 
-    PretzelGui::~PretzelGui(){
+    PretzelGui::~PretzelGui()
+    {
+        //  Remove all modules, disconnect signals
         while( mWidgetList.size() )
         {
             BasePretzel *w = mWidgetList.back();
@@ -29,10 +36,6 @@ namespace pretzel
         }
         
         delete mDefaultLabel;
-    }
-    
-    void PretzelGui::drawAll(){
-        PretzelRoot::getInstance()->draw();
     }
     
     // Initialize the gui with a title
@@ -59,7 +62,7 @@ namespace pretzel
         mGlobal->signalOnSettingsLoad.connect( std::bind(&PretzelGui::onSettingsLoaded, this) );
         
 		mGlobalOffset = vec2(10, 10);
-        mGlobal->setGlobalPos( mGlobalOffset );
+//        mGlobal->setGlobalPos( mGlobalOffset );
         
 		vec2 ul = mBounds.getSize() - vec2(10, 10);
 		vec2 lr = mBounds.getSize();
@@ -72,8 +75,28 @@ namespace pretzel
 		}
 		mDefaultLabel = new PretzelLabel(this, title);
         
-        PretzelRoot::getInstance()->addChild(this);
+        auto pretzelRoot = PretzelRoot::getRootForWindow(mWindowRef);
+        pretzelRoot->addChild(this);
+        
+//        PretzelRoot::getInstance()->addChild(this);
 	}
+    
+    
+    void PretzelGui::drawAll()
+    {
+        //        for( int i=0; i<ci::app::getNumWindows(); i++){
+        //            auto win = ci::app::getWindowIndex(i);
+        //            auto pretzelRoot = PretzelRoot::getRootForWindow(win);
+        //            pretzelRoot->draw();
+        //        }
+        
+        auto pretzelRoot = PretzelRoot::getRootForWindow( ci::app::getWindow() );
+        pretzelRoot->draw();
+        
+        //        PretzelRoot::getInstance()->draw();
+        //        auto pretzelRoot = PretzelRoot::getRootForWindow(mWindowRef);
+        //        pretzelRoot->draw();
+    }
     
     ci::Rectf PretzelGui::getBounds(){
         if( bDrawMinimized ){
@@ -112,7 +135,7 @@ namespace pretzel
     // Set the xy position of the gui
 	void PretzelGui::setPos(const vec2 &pos){
 		mGlobalOffset = vec2(pos);
-        mGlobal->setGlobalPos( pos );
+//        mGlobal->setGlobalPos( pos );
 	}
     
     // Programatically minimize the gui. Same as double-clicking the top bar

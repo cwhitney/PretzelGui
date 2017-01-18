@@ -42,7 +42,7 @@ namespace pretzel
 
 		mBounds.x2 = parentBounds.getWidth();
         
-        mGlobalOffset = vec2( mGlobal->getGlobalPos() );
+//        mGlobalOffset = vec2( mGlobal->getGlobalPos() );
 	}
 
 	// -------------------------------------------------------------
@@ -80,12 +80,9 @@ namespace pretzel
 
 	// -------------------------------------------------------------------
 	void BasePretzel::mouseDown(const ci::vec2 &pos){
-//        bool b = true;
 		for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){
-//            if( (*it)->mouseDown(pos) == false){ b = false; }
             (*it)->mouseDown(pos);
 		}
-//        return b;
 	}
 	void BasePretzel::mouseDragged(const ci::vec2 &pos){
 		for (vector<BasePretzel*>::const_iterator it = mPretzelChildren.begin(); it != mPretzelChildren.end(); ++it){

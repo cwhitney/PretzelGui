@@ -17,10 +17,19 @@ namespace pretzel
 {
     class PretzelGui;
     
+    // ------------------------------------------------
+    class PWindowData {
+      public:
+        PWindowData() {};
+        std::deque<PretzelGui*>    mGuiList;
+    };
+    
+    // ------------------------------------------------
     class PretzelRoot
     {
       public:
-        static PretzelRoot* getInstance();
+//        static PretzelRoot* getInstance();
+        static PretzelRoot* getRootForWindow( ci::app::WindowRef window );
         
         void addChild( PretzelGui *gui );
         void update();
@@ -32,12 +41,15 @@ namespace pretzel
         PretzelRoot() {};
         PretzelRoot(PretzelRoot const&){};
         ~PretzelRoot();
-        static PretzelRoot		*mInstance;
         
-        void init();
+        static PretzelRoot                                  *mInstance;
+        static  std::map<ci::app::WindowRef, PretzelRoot*>  mRootsMap;
+        
+//        void init();
+        void init( ci::app::WindowRef win );
         
         // EVENTS ---------------------------
-        void connectSignals();
+        void connectSignals(ci::app::WindowRef window);
         void disconnectSignals();
         
         void onMouseDown(   ci::app::MouseEvent &event  );
@@ -57,6 +69,6 @@ namespace pretzel
                                 mUpdateCallback;
         
         // ----------
-        std::deque<PretzelGui*>    mGuiList;
+//        std::deque<PretzelGui*>    mGuiList;
     };
 }

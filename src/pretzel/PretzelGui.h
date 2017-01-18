@@ -10,7 +10,6 @@
 
 #include "cinder/app/App.h"
 #include "cinder/gl/gl.h"
-#include "cinder/gl/Texture.h"
 #include "cinder/ImageIo.h"
 #include "Resources.h"
 
@@ -38,12 +37,12 @@ namespace pretzel
 	class PretzelGui : public ScrollPane
     {
 	  public:
-		PretzelGui(std::string title, int width, int height);
+		PretzelGui(std::string title, int width, int height, ci::app::WindowRef window=ci::app::getWindow());
         ~PretzelGui();
         
         static PretzelGuiRef create(std::string title = ""){ return create(title, 200, 500); }
-        static PretzelGuiRef create(std::string title, int width, int height) { return std::make_shared<PretzelGui>(title, width, height); }
-        
+//        static PretzelGuiRef create(std::string title, int width, int height) { return std::make_shared<PretzelGui>(title, width, height); }
+        static PretzelGuiRef create(std::string title, int width, int height, ci::app::WindowRef window=ci::app::getWindow()) { return std::make_shared<PretzelGui>(title, width, height, window); }
         static void drawAll();
         
 		void draw() override;
@@ -94,6 +93,7 @@ namespace pretzel
         
         std::vector<BasePretzel*>    mWidgetList;
 
+        ci::app::WindowRef  mWindowRef;
 		PretzelLabel	*mDefaultLabel;
 		bool			bVisible;
 		bool			bDragging;

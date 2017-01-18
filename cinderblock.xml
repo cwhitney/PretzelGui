@@ -4,7 +4,7 @@
   	name="PretzelGUI" 
   	id="com.sharkbox.pretzel"
   	author="Charlie Whitney"
-  	summary="A gui alternative built from the ground up for Cinder 0.9.0"
+  	summary="A GUI built from the ground up for Cinder 0.9.x"
 	git="https://github.com/cwhitney/PretzelGui"
   	>
 	<supports os="macosx" />
