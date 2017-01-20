@@ -20,15 +20,12 @@ WindowSystem * WindowSystem::getInstance(){
 
 void WindowSystem::setup()
 {
-    //mSolidRectBatch = gl::Batch::create( geom::Rect( Rectf(0,0,1,1) ), gl::getStockShader( gl::ShaderDef().color() ) );
-    
     mStrokedRectVerts = gl::VertBatch(GL_LINE_STRIP);
     mStrokedRectVerts.vertex(0,0);
     mStrokedRectVerts.vertex(1,0);
     mStrokedRectVerts.vertex(1,1);
     mStrokedRectVerts.vertex(0,1);
     mStrokedRectVerts.vertex(0,0);
-    //mStrokedRectBatch = gl::Batch::create( vb, gl::getStockShader( gl::ShaderDef().color() ) );
     
     mLineVerts = gl::VertBatch(GL_LINE_STRIP);
     mLineVerts.vertex(0,0);
@@ -40,9 +37,11 @@ PWindowData* WindowSystem::getWindowData( ci::app::WindowRef window )
     PWindowData *data = window->getUserData<PWindowData>();
 
     if( data == nullptr ){
+        CI_LOG_I("Creating new window data");
+        
         auto winData = new PWindowData();
-            winData->mRoot = new PretzelRoot(); //std::make_shared<PretzelRoot>();
-            winData->mRoot->init(window);     // TODO get init back in
+            winData->mRoot = new PretzelRoot();
+            winData->mRoot->init(window);
 
         // Batches can't be shared across contexts, so each window needs it's own.
         winData->mSolidRectBatch    = gl::Batch::create( geom::Rect( Rectf(0,0,1,1) ), gl::getStockShader( gl::ShaderDef().color() ) );
@@ -52,11 +51,11 @@ PWindowData* WindowSystem::getWindowData( ci::app::WindowRef window )
         window->setUserData( winData );
 
         // When the window is closed, disconnect events and remove it from the master map
-        window->getSignalClose().connect(
-            [window, this](){
-            console() << "Window closed" << endl;
+//        window->getSignalClose().connect(
+//            [window, this](){
+//            console() << "Window closed" << endl;
             //window->setUserData(nullptr);
-        });
+//        });
     }
 
     return window->getUserData<PWindowData>();
@@ -67,7 +66,7 @@ void WindowSystem::drawSolidRect( ci::Rectf rect )
     gl::pushMatrices();
     gl::translate( rect.x1, rect.y1 );
     gl::scale( rect.getWidth(), rect.getHeight() );
-            getWindowData( getWindow() )->mSolidRectBatch->draw();
+    getWindowData( getWindow() )->mSolidRectBatch->draw();
     gl::popMatrices();
 }
 
@@ -77,7 +76,7 @@ void WindowSystem::drawStrokedRect( ci::Rectf rect )
     gl::translate( rect.x1, rect.y1 );
     gl::scale( rect.getWidth(), rect.getHeight() );
     
-            getWindowData( getWindow() )->mStrokedRectBatch->draw();
+    getWindowData( getWindow() )->mStrokedRectBatch->draw();
     gl::popMatrices();
 }
 
@@ -87,7 +86,7 @@ void WindowSystem::drawLine( ci::vec2 start, ci::vec2 end )
     gl::translate(start);
     gl::rotate( atan2( end.y-start.y, end.x-start.x ) );
     gl::scale( vec2( glm::length(end - start) ) );
-            getWindowData( getWindow() )->mLineBatch->draw();
+    getWindowData( getWindow() )->mLineBatch->draw();
     gl::popMatrices();
 }
 

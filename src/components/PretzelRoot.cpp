@@ -59,16 +59,22 @@ void PretzelRoot::addChild( PretzelGui *gui )
 
 void PretzelRoot::update()
 {
-    for( auto gui : mGuiList ){
-        gui->update();
+//    for( auto gui : mGuiList ){
+//        gui->update();
+//    }
+    for( auto it = mGuiList.rbegin(); it!=mGuiList.rend(); ++it){
+        (*it)->update();
     }
 }
 
 void PretzelRoot::draw()
 {
     // Draw all submodules
-    for( auto gui : mGuiList){
-        gui->draw();
+//    for( auto gui : mGuiList){
+//        gui->draw();
+//    }
+    for( auto it = mGuiList.rbegin(); it!=mGuiList.rend(); ++it){
+        (*it)->draw();
     }
 }
 

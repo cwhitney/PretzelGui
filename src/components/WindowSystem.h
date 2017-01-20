@@ -12,7 +12,6 @@ namespace pretzel
     class PWindowData {
       public:
         PretzelRoot*                mRoot;
-//        std::deque<PretzelGui*>     mGuiList;
         ci::gl::BatchRef            mSolidRectBatch, mStrokedRectBatch, mLineBatch;
     };
     

@@ -35,6 +35,7 @@
 		C8C08E8BE096407B8BD3F130 /* ScrollPane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79AA26ECD54045C8B5511AF0 /* ScrollPane.cpp */; };
 		CB37B3781E29486E009FC93A /* PretzelEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB37B3761E29486E009FC93A /* PretzelEnum.cpp */; };
 		CB58C3D71BF1142A006F650C /* PretzelRoot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB58C3D51BF1142A006F650C /* PretzelRoot.cpp */; };
+		CB5F7E401E31C7BA005D4869 /* WindowSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB5F7E3E1E31C7BA005D4869 /* WindowSystem.cpp */; };
 		CBBECB661C0031D80062589B /* hslBar.png in Resources */ = {isa = PBXBuildFile; fileRef = CBBECB651C0031D80062589B /* hslBar.png */; };
 		D7385DE01BC0D046005A3CEF /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7385DDF1BC0D046005A3CEF /* IOKit.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,8 @@
 		CB37B3771E29486E009FC93A /* PretzelEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PretzelEnum.h; path = ../../../src/modules/PretzelEnum.h; sourceTree = "<group>"; };
 		CB58C3D51BF1142A006F650C /* PretzelRoot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PretzelRoot.cpp; path = ../../../src/components/PretzelRoot.cpp; sourceTree = "<group>"; };
 		CB58C3D61BF1142A006F650C /* PretzelRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PretzelRoot.h; path = ../../../src/components/PretzelRoot.h; sourceTree = "<group>"; };
+		CB5F7E3E1E31C7BA005D4869 /* WindowSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WindowSystem.cpp; path = ../../../src/components/WindowSystem.cpp; sourceTree = "<group>"; };
+		CB5F7E3F1E31C7BA005D4869 /* WindowSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowSystem.h; path = ../../../src/components/WindowSystem.h; sourceTree = "<group>"; };
 		CBAD23EC1C3360BE00950E5C /* PretzelShaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PretzelShaders.h; path = ../../../src/modules/PretzelShaders.h; sourceTree = "<group>"; };
 		CBBECB651C0031D80062589B /* hslBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hslBar.png; sourceTree = "<group>"; };
 		D7385DDF1BC0D046005A3CEF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
@@ -243,6 +246,7 @@
 		ADF50C52C9804E16BF6D6BCC /* components */ = {
 			isa = PBXGroup;
 			children = (
+				CB5F7E3E1E31C7BA005D4869 /* WindowSystem.cpp */,
 				CB58C3D51BF1142A006F650C /* PretzelRoot.cpp */,
 				DF5EB86B88F341758DB12143 /* BasePretzel.cpp */,
 				BA37DB80280246EEB6ECD22F /* PretzelRow.cpp */,
@@ -251,6 +255,7 @@
 				6F0F438337F54EC89F5C8214 /* BasePretzel.h */,
 				0632B44C619A4AA187C2F998 /* PretzelRow.h */,
 				439C649954F24AB8965F49CD /* ScrollPane.h */,
+				CB5F7E3F1E31C7BA005D4869 /* WindowSystem.h */,
 			);
 			name = components;
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 				4D2AD507F7A24E8AA945759C /* PretzelToggle.cpp in Sources */,
 				B5B1A6A5B4E74B2E8F48CAA3 /* BasePretzel.cpp in Sources */,
 				BBD67D99EB894B14A1725D7A /* PretzelRow.cpp in Sources */,
+				CB5F7E401E31C7BA005D4869 /* WindowSystem.cpp in Sources */,
 				C8C08E8BE096407B8BD3F130 /* ScrollPane.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
