@@ -37,8 +37,6 @@ PWindowData* WindowSystem::getWindowData( ci::app::WindowRef window )
     PWindowData *data = window->getUserData<PWindowData>();
 
     if( data == nullptr ){
-        CI_LOG_I("Creating new window data");
-        
         auto winData = new PWindowData();
             winData->mRoot = new PretzelRoot();
             winData->mRoot->init(window);
