@@ -59,13 +59,13 @@ namespace pretzel
 		gl::pushMatrices(); {
 			gl::translate(mOffset);
             gl::color( mBgColor );
-            pretzel()->drawSolidRect( mButtonBounds );
+            PWindow()->drawSolidRect( mButtonBounds );
 
 			gl::color(mGlobal->P_HIGHLIGHT_COLOR);
-			pretzel()->drawLine(mButtonBounds.getUpperLeft() + vec2(0, 1), mButtonBounds.getUpperRight() + vec2(0, 1));
+			PWindow()->drawLine(mButtonBounds.getUpperLeft() + vec2(0, 1), mButtonBounds.getUpperRight() + vec2(0, 1));
 
 			gl::color(mGlobal->P_OUTLINE_COLOR);
-			pretzel()->drawStrokedRect(mButtonBounds);
+			PWindow()->drawStrokedRect(mButtonBounds);
 			mGlobal->renderTextCentered(mLabelText, vec2(mButtonBounds.getCenter().x, 5));
 		}gl::popMatrices();
 	}

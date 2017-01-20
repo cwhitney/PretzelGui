@@ -14,6 +14,25 @@ using namespace std;
 
 namespace pretzel
 {
+    // STATIC ---------------
+    PretzelGuiRef PretzelGui::create(std::string title){
+        return create(title, 200, 500);
+    }
+    
+    PretzelGuiRef PretzelGui::create(std::string title, int width, int height, ci::app::WindowRef window) {
+        return std::make_shared<PretzelGui>(title, width, height, window);
+    }
+    
+    void PretzelGui::drawAll()
+    {
+        PWindow()->getWindowData(ci::app::getWindow())->mRoot->draw();
+        
+//        for( auto gui : guiList ){
+//            gui->draw();
+//        }
+    }
+    
+    // NORMAL -----------------
 	PretzelGui::PretzelGui(std::string title, int width, int height, ci::app::WindowRef window) :
         ScrollPane(nullptr, width, height),
         mWindowRef(window)
@@ -41,14 +60,6 @@ namespace pretzel
     // Initialize the gui with a title
 	void PretzelGui::init(std::string title)
     {
-		bVisible = true;
-		bDragging = false;
-		bResizing = false;
-		bDrawMinimized = false;
-        bChangedCursor = false;
-        
-		mLastClickTime = 0.0;
-        
         mGlobal->P_ACTIVE_COLOR = ColorA(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 340)));
 		mGlobal->P_HOVER_COLOR = ColorA(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 360)));
 		mGlobal->P_GUI_BORDER = ColorA(mGlobal->mSkinSurf.getPixel(ci::vec2(10, 380)));
@@ -75,28 +86,15 @@ namespace pretzel
 		}
 		mDefaultLabel = new PretzelLabel(this, title);
         
-        auto pretzelRoot = PretzelRoot::getRootForWindow(mWindowRef);
-        pretzelRoot->addChild(this);
+//        auto pretzelRoot = pretzel()->getWindowData(mWindowRef)->mRoot;
+//        PretzelRoot* pretzelRoot = static_cast<PretzelRoot*>( pretzel()->getWindowData(mWindowRef)->mRoot );
+//        PWindowData *winData;       // TEMP TMP
+//        winData->mGuiList.push_back(this);
+        
+        PWindow()->getWindowData(mWindowRef)->mRoot->addChild(this);
         
 //        PretzelRoot::getInstance()->addChild(this);
 	}
-    
-    
-    void PretzelGui::drawAll()
-    {
-        //        for( int i=0; i<ci::app::getNumWindows(); i++){
-        //            auto win = ci::app::getWindowIndex(i);
-        //            auto pretzelRoot = PretzelRoot::getRootForWindow(win);
-        //            pretzelRoot->draw();
-        //        }
-        
-        auto pretzelRoot = PretzelRoot::getRootForWindow( ci::app::getWindow() );
-        pretzelRoot->draw();
-        
-        //        PretzelRoot::getInstance()->draw();
-        //        auto pretzelRoot = PretzelRoot::getRootForWindow(mWindowRef);
-        //        pretzelRoot->draw();
-    }
     
     ci::Rectf PretzelGui::getBounds(){
         if( bDrawMinimized ){
@@ -188,7 +186,7 @@ namespace pretzel
 		else if (bDrawMinimized){                                           // We are minimized, don't go further
 			return;
 		}
-		else if (mResizeRect.contains(pos - mGlobalOffset)){     // Hit in lower right corner for resize
+		else if (mResizeRect.contains(pos - mGlobalOffset)){                // Hit in lower right corner for resize
 			bResizing = true;
 			mResizeStartSize = mBounds.getSize();
 			mMouseOffset = pos - mGlobalOffset;
@@ -244,8 +242,7 @@ namespace pretzel
         }
 	}
     
-    void PretzelGui::mouseWheel(const float increment)
-    {
+    void PretzelGui::mouseWheel(const float increment) {
         ScrollPane::mouseWheel( increment * 4.0 );
     }
     
@@ -274,7 +271,7 @@ namespace pretzel
                 mDefaultLabel->draw();
                 
                 gl::color(mGlobal->P_GUI_BORDER);
-                pretzel()->drawStrokedRect(mDefaultLabel->getBounds());
+                PWindow()->drawStrokedRect(mDefaultLabel->getBounds());
             }gl::popMatrices();
         }
         else{
@@ -283,14 +280,14 @@ namespace pretzel
                 ScrollPane::draw();
                 
                 gl::color(mGlobal->P_TAB_COLOR);
-                pretzel()->drawSolidRect(Rectf(mBounds.getLowerLeft() - vec2(0, 10), mBounds.getLowerRight()));
+                PWindow()->drawSolidRect(Rectf(mBounds.getLowerLeft() - vec2(0, 10), mBounds.getLowerRight()));
                 
                 gl::color(mGlobal->P_BG_COLOR);
                 gl::drawSolidTriangle(mResizeRect.getLowerLeft(), mResizeRect.getUpperRight(), mResizeRect.getLowerRight());
                 
                 gl::color(mGlobal->P_GUI_BORDER);
-                pretzel()->drawLine( mResizeRect.getUpperRight() - vec2(mBounds.getWidth(), 0), mResizeRect.getUpperRight() );
-                pretzel()->drawStrokedRect( Rectf(mBounds.x1, mBounds.y1, mBounds.x2, mBounds.y2) );
+                PWindow()->drawLine( mResizeRect.getUpperRight() - vec2(mBounds.getWidth(), 0), mResizeRect.getUpperRight() );
+                PWindow()->drawStrokedRect( Rectf(mBounds.x1, mBounds.y1, mBounds.x2, mBounds.y2) );
             }gl::popMatrices();
         }
 	}

@@ -9,7 +9,7 @@
 #pragma once
 
 #include "cinder/app/App.h"
-#include "cinder/gl/Gl.h"
+#include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
 #include "cinder/gl/TextureFont.h"
 #include "cinder/Json.h"
@@ -21,6 +21,7 @@
 #endif
 
 #include "Resources.h"
+
 
 namespace pretzel
 {
@@ -50,11 +51,13 @@ namespace pretzel
         COLOR_PICKER,
         ENUM
     };
-    
-	class PretzelGlobal {
-	public:
-		static PretzelGlobal* getInstance();
 
+    
+    // ------------------------------------------------
+	class PretzelGlobal {
+	  public:
+		static PretzelGlobal* getInstance();
+        
 		ci::ColorA P_GUI_BORDER;
 		ci::ColorA P_BG_COLOR;
 		ci::ColorA P_TAB_COLOR;
@@ -101,9 +104,9 @@ namespace pretzel
 //        void setGlobalPos( const ci::vec2 &pos ){ mGlobalPos = pos; };
         //const ci::vec2 getGlobalPos(){ return mGlobalPos; };
         
-        void drawSolidRect( ci::Rectf rect );
-        void drawStrokedRect( ci::Rectf rect );
-        void drawLine( ci::vec2 start, ci::vec2 end );
+//        void drawSolidRect( ci::Rectf rect );
+//        void drawStrokedRect( ci::Rectf rect );
+//        void drawLine( ci::vec2 start, ci::vec2 end );
 
 	private:
         void setup();
@@ -119,7 +122,7 @@ namespace pretzel
             _COLORA
         };
 
-		struct PretzelParam{
+		struct PretzelParam {
 			std::string name;
 			void* value;
 			PretzelTypes type;
@@ -145,7 +148,8 @@ namespace pretzel
 		int	emHeight;
         
         // DRAWING
-        ci::gl::BatchRef mSolidRectBatch, mStrokedRectBatch, mLineBatch;
+//        ci::gl::VertBatch   mRectVerts, mStrokedRectVerts, mLineVerts;
+//        ci::gl::BatchRef mSolidRectBatch, mStrokedRectBatch, mLineBatch;
     };
     
     // pretzel namespace

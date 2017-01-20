@@ -49,14 +49,14 @@ namespace pretzel{
 
 			// draw light background
 			gl::color(mGlobal->P_TAB_COLOR);
-            pretzel()->drawSolidRect(mBounds);
+            PWindow()->drawSolidRect(mBounds);
 
 			gl::pushMatrices(); {
 				gl::translate(15, 1);
 
 				// draw dark background
 				gl::color(mGlobal->P_BG_COLOR);
-                pretzel()->drawSolidRect(textRect);
+                PWindow()->drawSolidRect(textRect);
 
 				// draw text
 				mGlobal->renderText(mMessage, mBounds.getUpperLeft() + vec2(0, 4));

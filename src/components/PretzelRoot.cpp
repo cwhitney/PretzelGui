@@ -13,51 +13,9 @@ using namespace ci::app;
 using namespace std;
 using namespace pretzel;
 
-//PretzelRoot* PretzelRoot::mInstance = NULL;
-std::map<ci::app::WindowRef, PretzelRoot*> PretzelRoot::mRootsMap;
-
-/*
-PretzelRoot* PretzelRoot::getInstance(){
-    if (!mInstance){
-        mInstance = new PretzelRoot();
-        mInstance->init();
-    }
-    return mInstance;
-}*/
-
-PretzelRoot* PretzelRoot::getRootForWindow( ci::app::WindowRef window )
-{
-    if( mRootsMap.count(window) == 0 ){
-        auto pr = new PretzelRoot();
-        pr->init(window);
-        mRootsMap[window] = pr;
-    }
-    
-    return mRootsMap[window];
-}
-
-//void PretzelRoot::init()
-//{
-//    init( getWindow() );
-//}
-
 void PretzelRoot::init( ci::app::WindowRef win )
 {
-    PWindowData *data = win->getUserData<PWindowData>();
-    if( data == nullptr ){
-        win->setUserData( new PWindowData() );
-    }
-    
     connectSignals( win );
-    
-    // When the window is closed, disconnect events and remove it from the master map
-    win->getSignalClose().connect(
-        [win, this](){
-            console() << "Window closed" << endl;
-            this->disconnectSignals();
-            mRootsMap.erase(win);
-        }
-    );
 }
 
 PretzelRoot::~PretzelRoot()
@@ -68,7 +26,6 @@ PretzelRoot::~PretzelRoot()
 void PretzelRoot::connectSignals(ci::app::WindowRef window)
 {
     if( !mMouseBeganCallback.isConnected() ){
-        //ci::app::WindowRef window = cinder::app::getWindow();
         
         // uses default priority 0
         mMouseBeganCallback = window->getSignalMouseDown().connect(std::bind(&PretzelRoot::onMouseDown, this, std::placeholders::_1));
@@ -97,45 +54,21 @@ void PretzelRoot::disconnectSignals()
 
 void PretzelRoot::addChild( PretzelGui *gui )
 {
-    PWindowData *data = getWindow()->getUserData<PWindowData>();
-    if( data == nullptr){
-        CI_LOG_E("Couldn't add module. Window not initialized.");
-        return;
-    }
-    data->mGuiList.push_front( gui );
+    mGuiList.push_front( gui );
 }
 
 void PretzelRoot::update()
 {
-    auto win = getWindow();
-    if( win == nullptr){
-        return;
-    }
-    
-    PWindowData *data = win->getUserData<PWindowData>();
-    if( data == nullptr){
-        return;
-    }
-    auto guiList = data->mGuiList;
-    
-    for( auto it = guiList.rbegin(); it!=guiList.rend(); ++it){
-        (*it)->update();
+    for( auto gui : mGuiList ){
+        gui->update();
     }
 }
 
 void PretzelRoot::draw()
 {
-    // TODO, loop through all windows checking for guis    
-    
-    PWindowData *data = getWindow()->getUserData<PWindowData>();
-    if( data == nullptr){
-        return;
-    }
-    
     // Draw all submodules
-    auto guiList = data->mGuiList;
-    for( auto it = guiList.rbegin(); it!=guiList.rend(); ++it){
-        (*it)->draw();
+    for( auto gui : mGuiList){
+        gui->draw();
     }
 }
 
@@ -146,11 +79,9 @@ void PretzelRoot::draw()
 void PretzelRoot::onMouseDown(ci::app::MouseEvent &event)
 {
     PretzelGui *pg;
-    PWindowData *data = getWindow()->getUserData<PWindowData>();
-    auto guiList = data->mGuiList;
     
     // only click the top-most gui
-    for( auto it = guiList.begin(); it!=guiList.end(); ++it){
+    for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
         pg = *it;
         
         if( pg->getGlobalBounds().contains( event.getPos() ) ){
@@ -160,22 +91,21 @@ void PretzelRoot::onMouseDown(ci::app::MouseEvent &event)
     }
     
     // If this gui isn't on top, do z sorting to bring it up
-    if( pg != guiList[0] ){
-        for( auto it = guiList.begin(); it!=guiList.end(); ){
+    if( pg != mGuiList[0] ){
+        for( auto it = mGuiList.begin(); it!=mGuiList.end(); ){
             if( *it == pg ){
-                it = guiList.erase(it);
+                it = mGuiList.erase(it);
             }else{
                 ++it;
             }
         }
         
-        guiList.push_front(pg);
+        mGuiList.push_front(pg);
     }
 }
 void PretzelRoot::onMouseDragged(ci::app::MouseEvent &event)
 {
-    PWindowData *data = getWindow()->getUserData<PWindowData>();
-    data->mGuiList[0]->mouseDragged( event.getPos() );
+    mGuiList[0]->mouseDragged( event.getPos() );
     
 //    for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
 //        PretzelGui *pg = *it;
@@ -188,8 +118,7 @@ void PretzelRoot::onMouseDragged(ci::app::MouseEvent &event)
 }
 void PretzelRoot::onMouseUp(ci::app::MouseEvent &event)
 {
-    PWindowData *data = getWindow()->getUserData<PWindowData>();
-    data->mGuiList[0]->mouseUp( event.getPos() );
+    mGuiList[0]->mouseUp( event.getPos() );
     
 //    for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
 //        PretzelGui *pg = *it;
@@ -206,10 +135,7 @@ void PretzelRoot::onMouseWheel(ci::app::MouseEvent &event)
     
     //    mGuiList[0]->mouseWheel( event.getWheelIncrement() );
     
-    PWindowData *data = getWindow()->getUserData<PWindowData>();
-    auto guiList = data->mGuiList;
-    
-    for( auto it = guiList.begin(); it!=guiList.end(); ++it){
+    for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
         PretzelGui *pg = *it;
         
         if( pg->getGlobalBounds().contains( event.getPos() ) ){
@@ -223,10 +149,8 @@ void PretzelRoot::onMouseMoved(ci::app::MouseEvent &event)
 //    for( auto it=mGuiList.begin(); it!=mGuiList.end(); ++it){
 //        (*it)->mouseMoved( event.getPos() );
 //    }
-    PWindowData *data = getWindow()->getUserData<PWindowData>();
-    auto guiList = data->mGuiList;
     
-    for( auto it = guiList.begin(); it!=guiList.end(); ++it){
+    for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
         PretzelGui *pg = *it;
         
         if( pg->getGlobalBounds().contains( event.getPos() ) ){
@@ -237,9 +161,7 @@ void PretzelRoot::onMouseMoved(ci::app::MouseEvent &event)
 }
 void PretzelRoot::onKeyDown(ci::app::KeyEvent &event)
 {
-    PWindowData *data = getWindow()->getUserData<PWindowData>();
-    
-    data->mGuiList[0]->keyDown( event.getChar(), event.getCode() );
+    mGuiList[0]->keyDown( event.getChar(), event.getCode() );
     
 //    for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
 //        PretzelGui *pg = *it;

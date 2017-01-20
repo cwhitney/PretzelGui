@@ -13,13 +13,16 @@
 
 #include "pretzel/PretzelGlobal.h"
 #include "components/BasePretzel.h"
+
 namespace pretzel{
-	class PretzelRow : public BasePretzel {
-	public:
+    
+	class PretzelRow : public BasePretzel
+    {
+	  public:
 		PretzelRow(BasePretzel *base, int width, int height);
         void draw() override;
 
-	protected:
+	  protected:
 		void updateChildrenBounds() override;
 		void initPretzel(BasePretzel *base, int width, int height);
 		bool bFillWidth, bFillHeight;

@@ -34,11 +34,11 @@ namespace pretzel{
 			RectT<float> tmpRect = mCheckBoxRect;
 
 			gl::color(mGlobal->P_SLIDER_COLOR);
-			pretzel()->drawSolidRect(tmpRect);
+			PWindow()->drawSolidRect(tmpRect);
 
 			tmpRect.inflate(vec2(-2, -2));
 			gl::color(mGlobal->P_BG_COLOR);
-			pretzel()->drawSolidRect(tmpRect);
+			PWindow()->drawSolidRect(tmpRect);
 
 			// draw check
 			if(*mValue){

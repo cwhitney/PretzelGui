@@ -317,11 +317,11 @@ namespace pretzel{
             // color
             if( bUseAlpha ){ gl::color( *mColorA ); }
             else { gl::color(*mColor); }
-			pretzel()->drawSolidRect(mColorPickRect);
+			PWindow()->drawSolidRect(mColorPickRect);
             
             // outline
             gl::color( mGlobal->P_OUTLINE_COLOR );
-//            pretzel()->drawStrokedRect(mColorPickRect);
+//            PWindow()->drawStrokedRect(mColorPickRect);
 
 			mGlobal->renderText(mLabel, vec2(25, 1));
             

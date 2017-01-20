@@ -100,25 +100,25 @@ namespace pretzel{
         // MINUS
         {
             gl::color( mMinusBg );
-            pretzel()->drawSolidRect(mRectMinus);
+            PWindow()->drawSolidRect(mRectMinus);
             
             gl::color(mGlobal->P_HIGHLIGHT_COLOR);
-            pretzel()->drawLine(mRectMinus.getUpperLeft() + vec2(0, 1), mRectMinus.getUpperRight() + vec2(0, 1));
+            PWindow()->drawLine(mRectMinus.getUpperLeft() + vec2(0, 1), mRectMinus.getUpperRight() + vec2(0, 1));
 
             gl::color(mGlobal->P_OUTLINE_COLOR);
-            pretzel()->drawStrokedRect(mRectMinus);
+            PWindow()->drawStrokedRect(mRectMinus);
             mGlobal->renderTextCentered("-", vec2(mRectMinus.getCenter().x, mRectMinus.y1 + 2));
         }
         // PLUS
         {
             gl::color( mPlusBg );
-            pretzel()->drawSolidRect(mRectPlus);
+            PWindow()->drawSolidRect(mRectPlus);
 
             gl::color(mGlobal->P_HIGHLIGHT_COLOR);
-            pretzel()->drawLine(mRectPlus.getUpperLeft() + vec2(0, 1), mRectPlus.getUpperRight() + vec2(0, 1));
+            PWindow()->drawLine(mRectPlus.getUpperLeft() + vec2(0, 1), mRectPlus.getUpperRight() + vec2(0, 1));
 
             gl::color(mGlobal->P_OUTLINE_COLOR);
-            pretzel()->drawStrokedRect(mRectPlus);
+            PWindow()->drawStrokedRect(mRectPlus);
             mGlobal->renderTextCentered("+", vec2(mRectPlus.getCenter().x, mRectPlus.y1 + 2));
         }
 	}

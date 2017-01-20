@@ -107,11 +107,11 @@ namespace pretzel {
     {
         if(bCanScroll){
             if( mScrollHandle.contains(pos) ){
-                mGlobal->setCursor(CursorType::HAND);
+                pretzel()->setCursor(CursorType::HAND);
                 bHover = true;
             }else{
                 if(bHover){
-                    mGlobal->setCursor(CursorType::ARROW);
+                    pretzel()->setCursor(CursorType::ARROW);
                 }
                 bHover = false;
             }
@@ -167,7 +167,7 @@ namespace pretzel {
         
         gl::ScopedScissor scSc(tPos.x, winH - tBounds.y2 - tPos.y, tBounds.getWidth(), tBounds.getHeight());
         
-        gl::color(mGlobal->P_BG_COLOR);
+        gl::color(pretzel()->P_BG_COLOR);
         gl::drawSolidRect( getBounds() );
         
         gl::translate(mOffset);
@@ -179,13 +179,13 @@ namespace pretzel {
             }gl::popMatrices();
             
             if( bDragging ){
-                gl::color( mGlobal->P_ACTIVE_COLOR );
+                gl::color( pretzel()->P_ACTIVE_COLOR );
             }else{
-                gl::color( mGlobal->P_SLIDER_COLOR );
+                gl::color( pretzel()->P_SLIDER_COLOR );
             }
             gl::drawSolidRect( mScrollHandle );
             
-            gl::color( mGlobal->P_GUI_BORDER );
+            gl::color( pretzel()->P_GUI_BORDER );
             gl::drawStrokedRect( mScrollHandle );
         }else{
             PretzelRow::draw();

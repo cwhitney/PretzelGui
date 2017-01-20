@@ -19,40 +19,67 @@ using namespace std;
 namespace pretzel {
 	PretzelGlobal* PretzelGlobal::mInstance = NULL;
 
-	PretzelGlobal * PretzelGlobal::getInstance(){
+    PretzelGlobal * PretzelGlobal::getInstance(){
 		if (!mInstance){
 			mInstance = new PretzelGlobal();
             mInstance->setup();
 
 #if defined( CINDER_MSW )
-		mInstance->mCursorArrow = ::LoadCursor(NULL, IDC_ARROW);
-		mInstance->mCursorIBeam = ::LoadCursor(NULL, IDC_IBEAM);
-		mInstance->mCursorHand = ::LoadCursor(NULL, IDC_HAND);
-		mInstance->mCursorResize = ::LoadCursor(NULL, IDC_SIZENWSE);
+		mInstance->mCursorArrow     = ::LoadCursor(NULL, IDC_ARROW);
+		mInstance->mCursorIBeam     = ::LoadCursor(NULL, IDC_IBEAM);
+		mInstance->mCursorHand      = ::LoadCursor(NULL, IDC_HAND);
+		mInstance->mCursorResize    = ::LoadCursor(NULL, IDC_SIZENWSE);
 #endif 
 		}
 		return mInstance;
 	}
+    /*
+    PWindowData* PretzelGlobal::getWindowData( ci::app::WindowRef window )
+    {
+        PWindowData *data = window->getUserData<PWindowData>();
+        
+        if( data == nullptr ){
+            auto winData = new PWindowData();
+//            winData->mRoot = new PretzelRoot(); //std::make_shared<PretzelRoot>();
+//            winData->mRoot->init(window);     // TODO get init back in
+            
+            // Batches can't be shared across contexts, so each window needs it's own.
+            winData->mSolidRectBatch    = gl::Batch::create( geom::Rect( Rectf(0,0,1,1) ), gl::getStockShader( gl::ShaderDef().color() ) );
+            winData->mStrokedRectBatch  = gl::Batch::create( mStrokedRectVerts, gl::getStockShader( gl::ShaderDef().color() ) );
+            winData->mLineBatch         = gl::Batch::create( mLineVerts, gl::getStockShader( gl::ShaderDef().color() ) );
+            
+            window->setUserData( winData );
+            
+            // When the window is closed, disconnect events and remove it from the master map
+            window->getSignalClose().connect(
+                [window, this](){
+                    console() << "Window closed" << endl;
+                    //window->setUserData(nullptr);
+                });
+        }
+        
+        return window->getUserData<PWindowData>();
+    }*/
     
     void PretzelGlobal::setup()
     {
         mSkinSurf = Surface(loadImage(ci::app::loadResource( PRETZEL_GUI_SKIN )));
         mSkinTex = gl::Texture::create(mInstance->mSkinSurf);
         
-        mSolidRectBatch = gl::Batch::create( geom::Rect( Rectf(0,0,1,1) ), gl::getStockShader( gl::ShaderDef().color() ) );
-        
-        gl::VertBatch vb(GL_LINE_STRIP);
-        vb.vertex(0,0);
-        vb.vertex(1,0);
-        vb.vertex(1,1);
-        vb.vertex(0,1);
-        vb.vertex(0,0);
-        mStrokedRectBatch = gl::Batch::create( vb, gl::getStockShader( gl::ShaderDef().color() ) );
-        
-        gl::VertBatch vl(GL_LINE_STRIP);
-        vl.vertex(0,0);
-        vl.vertex(1,0);
-        mLineBatch = gl::Batch::create( vl, gl::getStockShader( gl::ShaderDef().color() ) );
+//        //mSolidRectBatch = gl::Batch::create( geom::Rect( Rectf(0,0,1,1) ), gl::getStockShader( gl::ShaderDef().color() ) );
+//        
+//        mStrokedRectVerts = gl::VertBatch(GL_LINE_STRIP);
+//        mStrokedRectVerts.vertex(0,0);
+//        mStrokedRectVerts.vertex(1,0);
+//        mStrokedRectVerts.vertex(1,1);
+//        mStrokedRectVerts.vertex(0,1);
+//        mStrokedRectVerts.vertex(0,0);
+//        //mStrokedRectBatch = gl::Batch::create( vb, gl::getStockShader( gl::ShaderDef().color() ) );
+//        
+//        mLineVerts = gl::VertBatch(GL_LINE_STRIP);
+//        mLineVerts.vertex(0,0);
+//        mLineVerts.vertex(1,0);
+        //mLineBatch = gl::Batch::create( vl, gl::getStockShader( gl::ShaderDef().color() ) );
     }
 
 	void PretzelGlobal::renderTextInternal(std::string text, ci::vec2 pos, int align){
@@ -350,34 +377,33 @@ namespace pretzel {
         signalOnSettingsLoad.emit();
 	}
 
-//    template<typename T>
-    void PretzelGlobal::drawSolidRect( ci::Rectf rect )
-    {
-        gl::pushMatrices();
-        gl::translate( rect.x1, rect.y1 );
-        gl::scale( rect.getWidth(), rect.getHeight() );
-        mSolidRectBatch->draw();
-        gl::popMatrices();
-    }
-    
-//    template<typename T>
-    void PretzelGlobal::drawStrokedRect( ci::Rectf rect )
-    {
-        gl::pushMatrices();
-        gl::translate( rect.x1, rect.y1 );
-        gl::scale( rect.getWidth(), rect.getHeight() );
-        mStrokedRectBatch->draw();
-        gl::popMatrices();
-    }
-    
-    void PretzelGlobal::drawLine( ci::vec2 start, ci::vec2 end )
-    {
-        gl::pushMatrices();
-        gl::translate(start);
-        gl::rotate( atan2( end.y-start.y, end.x-start.x ) );
-        gl::scale( vec2( glm::length(end - start) ) );
-        mLineBatch->draw();
-        gl::popMatrices();
-    }
+//    void PretzelGlobal::drawSolidRect( ci::Rectf rect )
+//    {
+//        gl::pushMatrices();
+//        gl::translate( rect.x1, rect.y1 );
+//        gl::scale( rect.getWidth(), rect.getHeight() );
+////        getWindowData( getWindow() )->mSolidRectBatch->draw();
+//        gl::popMatrices();
+//    }
+//    
+//    void PretzelGlobal::drawStrokedRect( ci::Rectf rect )
+//    {
+//        gl::pushMatrices();
+//        gl::translate( rect.x1, rect.y1 );
+//        gl::scale( rect.getWidth(), rect.getHeight() );
+//        
+////        getWindowData( getWindow() )->mStrokedRectBatch->draw();
+//        gl::popMatrices();
+//    }
+//    
+//    void PretzelGlobal::drawLine( ci::vec2 start, ci::vec2 end )
+//    {
+//        gl::pushMatrices();
+//        gl::translate(start);
+//        gl::rotate( atan2( end.y-start.y, end.x-start.x ) );
+//        gl::scale( vec2( glm::length(end - start) ) );
+////        getWindowData( getWindow() )->mLineBatch->draw();
+//        gl::popMatrices();
+//    }
 
 }

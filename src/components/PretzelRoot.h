@@ -9,44 +9,33 @@
 #pragma once
 
 #include "cinder/app/App.h"
+#include "cinder/gl/Batch.h"
 
-#include "pretzel/PretzelGlobal.h"
 #include "pretzel/PretzelGui.h"
+#include "pretzel/PretzelGlobal.h"
 
 namespace pretzel
-{
-    class PretzelGui;
-    
+{    
     // ------------------------------------------------
-    class PWindowData {
-      public:
-        PWindowData() {};
-        std::deque<PretzelGui*>    mGuiList;
-    };
+    using PretzelRootRef = std::shared_ptr<class PretzelRoot>;
     
-    // ------------------------------------------------
     class PretzelRoot
     {
       public:
-//        static PretzelRoot* getInstance();
-        static PretzelRoot* getRootForWindow( ci::app::WindowRef window );
+        PretzelRoot() {};
+        ~PretzelRoot();
+        
+        void init( ci::app::WindowRef win );
         
         void addChild( PretzelGui *gui );
         void update();
+        
         void draw();
         
       protected:
         
       private:
-        PretzelRoot() {};
-        PretzelRoot(PretzelRoot const&){};
-        ~PretzelRoot();
-        
-        static PretzelRoot                                  *mInstance;
-        static  std::map<ci::app::WindowRef, PretzelRoot*>  mRootsMap;
-        
-//        void init();
-        void init( ci::app::WindowRef win );
+       
         
         // EVENTS ---------------------------
         void connectSignals(ci::app::WindowRef window);
@@ -69,6 +58,6 @@ namespace pretzel
                                 mUpdateCallback;
         
         // ----------
-//        std::deque<PretzelGui*>    mGuiList;
+        std::deque<PretzelGui*>    mGuiList;
     };
 }

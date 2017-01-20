@@ -13,12 +13,13 @@
 #include "cinder/ImageIo.h"
 #include "Resources.h"
 
-#include "pretzel/PretzelGlobal.h"
 
 #include "components/BasePretzel.h"
 #include "components/ScrollPane.h"
 #include "components/PretzelRow.h"
-#include "components/PretzelRoot.h"
+
+#include "components/PretzelRoot.h" // <--
+#include "pretzel/PretzelGlobal.h"  // <--
 
 #include "modules/PretzelLabel.h"
 #include "modules/PretzelSlider.h"
@@ -29,20 +30,22 @@
 #include "modules/PretzelColorPicker.h"
 #include "modules/PretzelEnum.h"
 
+#include "components/WindowSystem.h"
+
 namespace pretzel
-{
-    class PretzelGui;
-    typedef std::shared_ptr<PretzelGui> PretzelGuiRef;
-        
+{    
+    using PretzelGuiRef = std::shared_ptr<class PretzelGui>;
+    using PretzelRootRef = std::shared_ptr<class PretzelRoot>;
+    class PWindowData;
+    
 	class PretzelGui : public ScrollPane
     {
 	  public:
 		PretzelGui(std::string title, int width, int height, ci::app::WindowRef window=ci::app::getWindow());
         ~PretzelGui();
         
-        static PretzelGuiRef create(std::string title = ""){ return create(title, 200, 500); }
-//        static PretzelGuiRef create(std::string title, int width, int height) { return std::make_shared<PretzelGui>(title, width, height); }
-        static PretzelGuiRef create(std::string title, int width, int height, ci::app::WindowRef window=ci::app::getWindow()) { return std::make_shared<PretzelGui>(title, width, height, window); }
+        static PretzelGuiRef create(std::string title = "");
+        static PretzelGuiRef create(std::string title, int width, int height, ci::app::WindowRef window=ci::app::getWindow());
         static void drawAll();
         
 		void draw() override;
@@ -91,21 +94,22 @@ namespace pretzel
 		void init(std::string title = "");
         void onSettingsLoaded();
         
-        std::vector<BasePretzel*>    mWidgetList;
+//        PretzelRootRef              mPretzelRoot;
+        std::vector<BasePretzel*>   mWidgetList;
 
         ci::app::WindowRef  mWindowRef;
-		PretzelLabel	*mDefaultLabel;
-		bool			bVisible;
-		bool			bDragging;
-		bool			bResizing;
+		PretzelLabel        *mDefaultLabel;
+        
+		bool                bVisible        = true;
+		bool                bDragging       = false;
+		bool                bResizing       = false;
+        bool                bDrawMinimized  = false;
+        bool                bChangedCursor  = false;
 
-		ci::vec2		mMouseOffset;
-		ci::vec2		mResizeStartSize;
+		ci::vec2            mMouseOffset;
+		ci::vec2            mResizeStartSize;
+		ci::Rectf           mResizeRect;
 
-		ci::Rectf		mResizeRect;
-
-		double			mLastClickTime;
-		bool			bDrawMinimized;
-        bool            bChangedCursor;
+		double              mLastClickTime = 0.0f;
 	};
 }

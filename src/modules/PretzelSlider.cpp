@@ -107,7 +107,7 @@ namespace pretzel{
         
         gl::pushMatrices();{
             gl::color(mGlobal->P_SLIDER_COLOR);
-            pretzel()->drawLine(mSliderLeft, mSliderRight);
+            PWindow()->drawLine(mSliderLeft, mSliderRight);
             
             gl::translate(0, mPosOffset);
             

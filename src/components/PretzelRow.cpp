@@ -42,7 +42,7 @@ namespace pretzel{
 
 	// ---------------------------------------------------------------
 	void PretzelRow::draw(){
-		gl::color(mGlobal->P_BG_COLOR);
+		gl::color(pretzel()->P_BG_COLOR);
 		gl::drawSolidRect(mBounds);
 
         // Draw anything that is not a label
