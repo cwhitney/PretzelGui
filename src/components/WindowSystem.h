@@ -30,6 +30,8 @@ namespace pretzel
         void setup();
         ci::gl::VertBatch   mRectVerts, mStrokedRectVerts, mLineVerts;
         
+        std::map<ci::app::WindowRef, PWindowData *>   mDataMap;
+        
         // PRIVATE CONSTRUCTOR + COPY
         WindowSystem(){};
         WindowSystem(WindowSystem const&){};

@@ -34,7 +34,8 @@ void WindowSystem::setup()
 
 PWindowData* WindowSystem::getWindowData( ci::app::WindowRef window )
 {
-    PWindowData *data = window->getUserData<PWindowData>();
+//    PWindowData *data = window->getUserData<PWindowData>();
+    PWindowData *data = mDataMap[window];
 
     if( data == nullptr ){
         auto winData = new PWindowData();
@@ -46,7 +47,8 @@ PWindowData* WindowSystem::getWindowData( ci::app::WindowRef window )
         winData->mStrokedRectBatch  = gl::Batch::create( mStrokedRectVerts, gl::getStockShader( gl::ShaderDef().color() ) );
         winData->mLineBatch         = gl::Batch::create( mLineVerts, gl::getStockShader( gl::ShaderDef().color() ) );
 
-        window->setUserData( winData );
+//        window->setUserData( winData );
+        mDataMap[window] = winData;
 
         // When the window is closed, disconnect events and remove it from the master map
 //        window->getSignalClose().connect(
@@ -56,7 +58,8 @@ PWindowData* WindowSystem::getWindowData( ci::app::WindowRef window )
 //        });
     }
 
-    return window->getUserData<PWindowData>();
+    return mDataMap[window];
+//    return window->getUserData<PWindowData>();
 }
 
 void WindowSystem::drawSolidRect( ci::Rectf rect )

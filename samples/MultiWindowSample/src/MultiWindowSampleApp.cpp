@@ -16,25 +16,25 @@ class MultiWindowSampleApp : public App {
 	void update() override;
 	void draw() override;
     
-    pretzel::PretzelGuiRef  mGui1, mGui2;
-    
-    float b0=0, b1=0, b2=0, b3=0, b4=0;
-    
+    pretzel::PretzelGuiRef  mGuiL, mGuiR;
+    ci::Color mColLeft, mColRight;
 };
 
 void MultiWindowSampleApp::setup()
 {
-    mGui1 = pretzel::PretzelGui::create("Window 1", 350, 300);
-    mGui1->addSlider("slider 1", &b0, -1.0, 1.0);
-    mGui1->addSlider("slider 2", &b1, -1.0, 1.0);
-    mGui1->addSlider("slider 3", &b2, -1.0, 1.0);
-    
+    mGuiL = pretzel::PretzelGui::create("Left side", 300, 300);
+    mGuiL->addColorPicker("Right side color", &mColLeft);
     
     app::WindowRef newWindow = createWindow( Window::Format().size( 500, 500 ).pos(ivec2(550, 0)) );
     
-    mGui2 = pretzel::PretzelGui::create("Window 2", 350, 300, newWindow);
-    mGui2->addSlider("slider 4", &b3, -1.0, 1.0);
-    mGui2->addSlider("slider 5", &b4, -1.0, 1.0);
+    mGuiR = pretzel::PretzelGui::create("Right side", 300, 300, newWindow);
+    mGuiR->addColorPicker("Left side color", &mColRight);
+    
+    mColLeft  = Color::hex( 0x00FFE5 );
+    mColRight = Color::hex( 0xFF8A72 );
+    
+    ci::app::getWindowIndex(0)->setUserData( &mColRight );
+    ci::app::getWindowIndex(1)->setUserData( &mColLeft );
 }
 
 void MultiWindowSampleApp::mouseDown( MouseEvent event )
@@ -51,11 +51,12 @@ void MultiWindowSampleApp::update()
 
 void MultiWindowSampleApp::draw()
 {
-	gl::clear( Color( 0, 0, 0 ) );
+    ci::app::WindowRef win = ci::app::getWindow();
+    ci::Color *col = win->getUserData<ci::Color>();
+    
+	gl::clear( *col );
     
     pretzel::PretzelGui::drawAll();
-//    mGui1->draw();
-//    mGui2->draw();
 }
 
 CINDER_APP( MultiWindowSampleApp, RendererGl, [&](ci::app::App::Settings *settings){

@@ -45,7 +45,7 @@ namespace pretzel
         ~PretzelGui();
         
         static PretzelGuiRef create(std::string title = "");
-        static PretzelGuiRef create(std::string title, int width, int height, ci::app::WindowRef window=ci::app::getWindow());
+        static PretzelGuiRef create(std::string title, int width, int height, ci::app::WindowRef window=ci::app::getWindowIndex(0) );
         static void drawAll();
         
 		void draw() override;
