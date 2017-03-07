@@ -13,22 +13,22 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
     <Filter Include="Blocks">
-      <UniqueIdentifier>{F33FE38E-396E-44B4-A1F1-4483F6266183}</UniqueIdentifier>
+      <UniqueIdentifier>{F6D893B1-FE7A-4419-99E2-6C6F0D7A21A3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\PretzelGUI">
-      <UniqueIdentifier>{A710BB5E-209B-4202-A47A-8CBCB464932D}</UniqueIdentifier>
+      <UniqueIdentifier>{3AAB6DCD-AA05-4C9C-A069-B4E00D27A24D}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\PretzelGUI\src">
-      <UniqueIdentifier>{CF0035D3-1067-4C07-9728-87C75C5D378D}</UniqueIdentifier>
+      <UniqueIdentifier>{089AD7F3-647E-4D05-9017-FC99864A3D81}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\PretzelGUI\src\pretzel">
-      <UniqueIdentifier>{B81A9DF6-2385-454C-B047-AEAE0E0262AE}</UniqueIdentifier>
+      <UniqueIdentifier>{6D04DA08-E7E5-4B0B-9D11-9F4A4AB67C17}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\PretzelGUI\src\modules">
-      <UniqueIdentifier>{DFDC348A-B588-4AF2-95CE-BCA386E75C05}</UniqueIdentifier>
+      <UniqueIdentifier>{FDF78D00-D451-44DB-B26C-690A419341CD}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\PretzelGUI\src\components">
-      <UniqueIdentifier>{EE9191FB-7C7F-4947-AD63-8C86A379F3B5}</UniqueIdentifier>
+      <UniqueIdentifier>{B9671B67-C580-42F0-B962-35A5323B0B6D}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +86,9 @@
     <ClInclude Include="..\..\..\src\components\ScrollPane.h">
       <Filter>Blocks\PretzelGUI\src\components</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\components\WindowSystem.h">
+      <Filter>Blocks\PretzelGUI\src\components</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\..\src\components\BasePretzel.cpp">
       <Filter>Blocks\PretzelGUI\src\components</Filter>
     </ClCompile>
@@ -96,6 +99,9 @@
       <Filter>Blocks\PretzelGUI\src\components</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\components\ScrollPane.cpp">
+      <Filter>Blocks\PretzelGUI\src\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\components\WindowSystem.cpp">
       <Filter>Blocks\PretzelGUI\src\components</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\modules\PretzelButton.cpp">

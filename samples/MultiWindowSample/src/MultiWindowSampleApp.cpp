@@ -25,7 +25,7 @@ void MultiWindowSampleApp::setup()
     mGuiL = pretzel::PretzelGui::create("Left side", 300, 300);
     mGuiL->addColorPicker("Right side color", &mColLeft);
     
-    app::WindowRef newWindow = createWindow( Window::Format().size( 500, 500 ).pos(ivec2(550, 0)) );
+    app::WindowRef newWindow = createWindow( Window::Format().size( 500, 500 ).pos(ivec2(550, 40)) );
     
     mGuiR = pretzel::PretzelGui::create("Right side", 300, 300, newWindow);
     mGuiR->addColorPicker("Left side color", &mColRight);
@@ -61,5 +61,5 @@ void MultiWindowSampleApp::draw()
 
 CINDER_APP( MultiWindowSampleApp, RendererGl, [&](ci::app::App::Settings *settings){
     settings->setWindowSize(500, 500);
-    settings->setWindowPos(0, 0);
+    settings->setWindowPos(0, 40);
 })
