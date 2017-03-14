@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
@@ -119,10 +120,22 @@
     <ClCompile Include="..\..\..\src\pretzel\PretzelGui.cpp">
       <Filter>Blocks\PretzelGUI\src\pretzel</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\components\WindowSystem.cpp">
+      <Filter>Blocks\PretzelGUI\src\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\modules\PretzelEnum.cpp">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\components\WindowSystem.h">
+      <Filter>Blocks\PretzelGUI\src\components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\modules\PretzelEnum.h">
+      <Filter>Blocks\PretzelGUI\src\modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
