@@ -17,6 +17,7 @@ test/
 *.perspectivev3
 *.mode1v3
 *.mode2v3
+
 #XCode 4
 xcuserdata
 *.xcworkspace
@@ -29,6 +30,8 @@ xcuserdata
 *.ilk
 *.aps
 ipch/
+*.VC.db
+*.db
 
 #OSX
 .DS_Store
