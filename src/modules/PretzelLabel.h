@@ -15,6 +15,8 @@ namespace pretzel
         void draw() override;
         void updateBounds(const ci::vec2 &offset, const ci::Rectf &parentBounds) override;
         
+		std::string getText() { return mMessage; }
+
       private:
 		std::string		mMessage;
 		ci::Path2d		mOutlinePath;

@@ -30,6 +30,8 @@ namespace pretzel
 //        for( auto gui : guiList ){
 //            gui->draw();
 //        }
+		
+		gl::color(Color::white());
     }
     
     // NORMAL -----------------
@@ -143,6 +145,7 @@ namespace pretzel
     
     // Renders the gui visible/invisible and connects/disconnects all listener signals
 	void PretzelGui::setVisible(bool visible){
+		console() << mDefaultLabel->getText() << " Set visible :: " << visible << endl;
 		bVisible = visible;
 	}
     

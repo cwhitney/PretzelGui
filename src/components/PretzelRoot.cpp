@@ -84,14 +84,16 @@ void PretzelRoot::onMouseDown(ci::app::MouseEvent &event)
     for( auto it = mGuiList.begin(); it!=mGuiList.end(); ++it){
         pg = *it;
         
-        if( pg->getGlobalBounds().contains( event.getPos() ) ){
+		console() << pg->getGlobalBounds() << endl;
+
+        if( pg->isVisible() && pg->getGlobalBounds().contains( event.getPos() ) ){
             pg->mouseDown( event.getPos() );
             break;
         }
     }
     
     // If this gui isn't on top, do z sorting to bring it up
-    if( pg != mGuiList[0] ){
+    if( pg && pg != mGuiList[0] ){
         for( auto it = mGuiList.begin(); it!=mGuiList.end(); ){
             if( *it == pg ){
                 it = mGuiList.erase(it);
